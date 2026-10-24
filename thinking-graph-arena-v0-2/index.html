@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thinking Graph Arena v0.2 — Governed Team Orchestration</title>
+<meta name="description" content="Interactive proAM Labs prototype showing how LIVE, LAND, and authorized federated evidence move through a governed agent team from conflict and HOLD to requalification, human authority, and RELEASE.">
+<style>
+:root{
+  --bg:#06121d;--panel:#0c1e2b;--panel2:#102534;--line:#28465c;--text:#f3f7fb;--muted:#9eb4c6;
+  --cyan:#53dcff;--green:#73f29a;--gold:#ffc95c;--red:#ff5c62;--violet:#bd92ff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% -15%,rgba(83,220,255,.08),transparent 32%),linear-gradient(180deg,#071521,#050e16 82%);color:var(--text);font-family:Inter,Segoe UI,system-ui,sans-serif}
+header{max-width:1600px;margin:auto;padding:18px 20px 10px}
+h1{font-size:25px;margin:0 0 5px;letter-spacing:-.25px}
+.subtitle{font-size:13px;color:#a9c1d4;max-width:1050px;line-height:1.45}
+.app{max-width:1600px;margin:auto;padding:8px 20px 28px;display:grid;grid-template-columns:minmax(0,1fr) 390px;gap:14px}
+.shell,.side{background:linear-gradient(180deg,rgba(13,31,45,.97),rgba(7,18,28,.98));border:1px solid #213b4e;border-radius:15px;box-shadow:0 20px 55px rgba(0,0,0,.22)}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid #1d3547}
+button{appearance:none;border:1px solid #35566d;border-radius:9px;background:#0d2636;color:#f6fbff;font-weight:700;padding:9px 14px;cursor:pointer}
+button:hover{border-color:#5d829c}
+button:disabled{opacity:.42;cursor:not-allowed}
+button.primary{border-color:#4bb9d6;background:#123346}
+button.reset{border-color:#8c6c2a}
+.status{margin-left:auto;display:flex;align-items:center;gap:7px;color:#b7cada;font-size:12px}
+.status i{width:9px;height:9px;border-radius:50%;background:#446075}
+.status.running i{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.status.complete i{background:var(--green)}
+.arena{position:relative;height:650px;min-width:0;overflow:hidden;background:radial-gradient(circle at 55% 42%,rgba(83,220,255,.035),transparent 31%),linear-gradient(180deg,#091a28,#071520);border-bottom:1px solid #1d3547}
+.stage-svg{position:absolute;inset:0;width:100%;height:100%}
+.zone-label{fill:#92afc3;font-size:11px;letter-spacing:.7px}
+.boundary{fill:none;stroke:var(--red);stroke-width:3;stroke-dasharray:10 7;opacity:.8}
+.boundary-label{fill:#ff9a9e;font-size:10px;font-weight:700}
+.route{fill:none;stroke:#355267;stroke-width:3;opacity:.42}
+.route.data.active{stroke:var(--cyan);opacity:1;filter:url(#glowCyan)}
+.route.query{stroke:#2a6945}.route.query.active{stroke:var(--green);opacity:1;filter:url(#glowGreen)}
+.route.auth{stroke:#7a612a}.route.auth.active{stroke:var(--gold);opacity:1;filter:url(#glowGold)}
+.route.conflict.active{stroke:var(--red);opacity:1;filter:url(#glowRed)}
+.packet{r:6;fill:var(--cyan);opacity:0;filter:url(#glowCyan)}
+.packet.query{fill:var(--green);filter:url(#glowGreen)}
+.packet.auth{fill:var(--gold);filter:url(#glowGold)}
+.packet.conflict{fill:var(--red);filter:url(#glowRed)}
+.node{position:absolute;width:120px;min-height:68px;padding:11px 12px;border:1px solid #355a72;border-radius:11px;background:#0b2232;z-index:2;transition:.2s ease;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.node strong{display:block;font-size:13px;margin-bottom:6px}.node span{display:block;color:#a9c1d2;font-size:10px;line-height:1.5}
+.node.active{border-color:var(--cyan);box-shadow:0 0 17px rgba(83,220,255,.38)}
+.node.persist{border-color:var(--gold);box-shadow:0 0 15px rgba(255,201,92,.30)}
+.node.query-node{border-color:#2c7550}.node.conflict-node{border-color:var(--red)}.node.authority-node{border-color:#9e7930}
+.node.hold{border-color:var(--red);box-shadow:0 0 18px rgba(255,92,98,.32)}
+.n-live{left:4%;top:15%}.n-land{left:4%;top:35%}.n-a{left:27%;top:18%;min-height:118px}
+.n-andreas{left:48%;top:18%;min-height:92px}.n-conflict{left:48%;top:42%;min-height:84px}
+.n-query{left:25%;top:67%;min-height:88px}.n-source{left:48%;top:76%;min-height:70px}
+.n-tg{left:69%;top:18%;min-height:92px}.n-athena{left:72%;top:44%;min-height:90px}
+.n-alex{left:72%;top:68%;min-height:94px}.n-outcome{left:49%;top:70%;min-height:82px}
+.n-human{left:88%;top:75%;min-height:82px}
+.release-banner{position:absolute;left:36%;right:24%;top:6%;z-index:4;padding:7px 12px;border:1px solid #8b6b27;border-radius:999px;text-align:center;color:#ffe3a1;background:rgba(49,39,14,.88);font-size:11px;font-weight:800;opacity:0;transition:.25s}
+.release-banner.show{opacity:1}
+.flow-label{position:absolute;left:4%;bottom:46px;color:var(--cyan);font-weight:800;font-size:12px}
+.flow-sub{position:absolute;left:4%;bottom:27px;color:#9eb4c6;font-size:10px}
+.footerbar{padding:12px 14px 8px}
+.progress-label{display:flex;justify-content:space-between;color:#b9cbd8;font-size:11px;margin-bottom:6px}
+progress{width:100%;height:7px;border:0;border-radius:999px;overflow:hidden}
+progress::-webkit-progress-bar{background:#122737} progress::-webkit-progress-value{background:var(--cyan)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;padding:3px 14px 14px;color:#a6bbca;font-size:11px}
+.legend i{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px}
+.side{padding:14px;display:flex;flex-direction:column;min-height:760px}
+.side h2{font-size:15px;margin:3px 0 10px}
+.card{border:1px solid #274154;border-radius:12px;padding:12px;margin-bottom:13px;background:#0a1a27}
+.card .title{font-weight:800;font-size:15px;margin-bottom:6px;line-height:1.25}.card .desc{color:#a8bfd0;font-size:12px;line-height:1.45}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:11px}
+.mini{background:#0e2535;border:1px solid #223e52;border-radius:9px;padding:8px}.mini b{display:block;font-size:10px;color:#8eacc0;margin-bottom:4px;text-transform:uppercase;letter-spacing:.45px}.mini span{font-size:12px}
+.inspector{display:grid;grid-template-columns:92px 1fr;row-gap:7px;font-size:12px}.inspector span:nth-child(odd){color:#8eacc0}.inspector span:nth-child(even){font-weight:700}
+.trace{flex:1;overflow:auto;border-top:1px solid #213a4d}
+.trace-item{position:relative;padding:10px 7px 10px 28px;border-bottom:1px solid #162d3d;font-size:12px;line-height:1.35;color:#dce8f1}
+.trace-item::before{content:"";position:absolute;left:7px;top:14px;width:8px;height:8px;border-radius:50%;background:#446075}
+.trace-item.current::before{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}.trace-item.done::before{background:var(--green)}
+.trace-item .meta{color:#86a9bf;font-size:9px;margin-top:3px;text-transform:uppercase}
+.note{margin-top:10px;border-left:3px solid var(--gold);background:#101f29;padding:9px 10px;color:#c8d7e1;font-size:11px;line-height:1.45}
+@media(max-width:1050px){.app{grid-template-columns:1fr}.side{min-height:520px}.arena{height:620px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Thinking Graph Arena v0.2 — Governed Team Orchestration</h1>
+  <div class="subtitle">One case, multiple evidence paths. Watch LIVE and LAND observations create conflict, trigger an authorized federated query, requalify meaning, preserve selective continuity, and reach RELEASE only after human authority is verified.</div>
+</header>
+
+<div class="app">
+<main class="shell">
+  <div class="toolbar">
+    <button class="primary" id="play">▶ Play</button>
+    <button id="pause">Ⅱ Pause</button>
+    <button id="back">← Back</button>
+    <button id="step">Step →</button>
+    <button class="reset" id="reset">↻ Reset</button>
+    <div class="status" id="status"><i></i><span id="statusText">Ready</span></div>
+  </div>
+
+  <section class="arena">
+    <svg class="stage-svg" viewBox="0 0 1080 650" preserveAspectRatio="none">
+      <defs>
+        <filter id="glowCyan"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glowGreen"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glowGold"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        <filter id="glowRed"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      </defs>
+      <text x="36" y="34" class="zone-label">INGRESS / SOURCE</text>
+      <text x="275" y="34" class="zone-label">OBSERVE / QUALIFY</text>
+      <text x="610" y="34" class="zone-label">CONTINUITY</text>
+      <text x="805" y="34" class="zone-label">DECISION</text>
+      <text x="945" y="34" class="zone-label">AUTHORITY</text>
+      <rect x="238" y="55" width="815" height="535" rx="24" class="boundary"/>
+      <text x="258" y="78" class="boundary-label">PERSONAL TRUST / GOVERNANCE DOMAIN — PRIVATE CONTINUITY + QUALIFICATION + AUTHORITY</text>
+
+      <path id="p_live_a" class="route data" d="M145 125 C200 125 215 155 270 155"/>
+      <path id="p_land_a" class="route data" d="M145 240 C205 240 220 205 270 205"/>
+      <path id="p_a_andreas" class="route data" d="M390 175 C445 175 465 175 515 175"/>
+      <path id="p_andreas_conflict" class="route conflict" d="M575 230 C575 250 570 270 565 300"/>
+      <path id="p_conflict_gate" class="route query" d="M520 350 C430 410 360 430 305 465"/>
+      <path id="p_gate_source" class="route query" d="M340 500 C410 525 465 525 520 520"/>
+      <path id="p_source_a" class="route query" d="M525 510 C455 460 405 370 370 275"/>
+      <path id="p_andreas_tg" class="route data" d="M635 175 C675 175 700 175 745 175"/>
+      <path id="p_tg_athena" class="route data" d="M805 225 C835 255 835 305 825 330"/>
+      <path id="p_athena_alex" class="route data" d="M820 415 C830 440 830 465 820 485"/>
+      <path id="p_human_alex" class="route auth" d="M1000 520 C945 500 900 500 845 515"/>
+      <path id="p_alex_outcome" class="route auth" d="M790 530 C720 550 650 550 590 520"/>
+      <circle id="packet" class="packet" cx="0" cy="0"/>
+    </svg>
+
+    <div class="release-banner" id="releaseBanner">RELEASE — QUALIFICATION + AUTHORITY ALIGNED</div>
+
+    <div class="node n-live" id="n_live"><strong>LIVE</strong><span>Current LLM interaction</span></div>
+    <div class="node n-land" id="n_land"><strong>LAND</strong><span>Prior historical observation</span></div>
+
+    <div class="node n-a" id="n_a"><strong>Aletheia</strong><span>Observe</span><span>Recognition</span><span>Preserve difference</span><span>Preserve uncertainty</span></div>
+    <div class="node n-andreas" id="n_andreas"><strong>Andreas</strong><span>Qualify meaning</span><span>Ψ(u) / readiness</span></div>
+    <div class="node n-conflict conflict-node" id="n_conflict"><strong>Conflict</strong><span>Evidence disagrees</span><span>Uncertainty elevated</span></div>
+
+    <div class="node n-query query-node" id="n_query"><strong>Query Gate</strong><span>Evidence-on-demand</span><span>Authorization required</span></div>
+    <div class="node n-source query-node" id="n_source"><strong>Federated Source</strong><span>Consulted in place</span></div>
+
+    <div class="node n-tg" id="n_tg"><strong>Thinking Graph</strong><span>Continuity</span><span>Selective durable state</span></div>
+    <div class="node n-athena" id="n_athena"><strong>Athena</strong><span>Decision readiness</span><span>Justified action</span></div>
+    <div class="node n-alex conflict-node" id="n_alex"><strong>Alex</strong><span>Handler / steward</span><span>HOLD · RELEASE</span></div>
+    <div class="node n-outcome" id="n_outcome"><strong>Outcome</strong><span>Bounded action</span><span>Verify · learn</span></div>
+    <div class="node n-human authority-node" id="n_human"><strong>Human Authority</strong><span>Permission to bind remains human</span></div>
+
+    <div class="flow-label">DATA / EVIDENCE →</div>
+    <div class="flow-sub">identity and provenance persist through convergence</div>
+  </section>
+
+  <div class="footerbar">
+    <div class="progress-label"><span id="progressName">0 — Ready</span><span id="progressCount">0 / 12</span></div>
+    <progress id="progress" value="0" max="12"></progress>
+  </div>
+  <div class="legend">
+    <span><i style="background:var(--cyan)"></i>LIVE / qualified data</span>
+    <span><i style="background:var(--violet)"></i>LAND provenance</span>
+    <span><i style="background:var(--green)"></i>Federated evidence</span>
+    <span><i style="background:var(--gold)"></i>Qualified signal / authority</span>
+    <span><i style="background:var(--red)"></i>Conflict / governance</span>
+  </div>
+</main>
+
+<aside class="side">
+  <h2>Case</h2>
+  <div class="card">
+    <div class="title">Conflicting evidence → query → requalification → release</div>
+    <div class="desc">A LIVE observation conflicts with a prior LANDed observation. The system holds, queries an authorized external source, requalifies meaning, persists only authorized durable state, and releases a bounded action only after human authority is verified.</div>
+    <div class="grid">
+      <div class="mini"><b>Ingress</b><span>LIVE + LAND + FED</span></div>
+      <div class="mini"><b>Initial state</b><span>HOLD</span></div>
+      <div class="mini"><b>Durability</b><span>Selective</span></div>
+      <div class="mini"><b>Final state</b><span>RELEASE</span></div>
+    </div>
+  </div>
+
+  <h2>Inspector</h2>
+  <div class="card inspector">
+    <span>Arena</span><span>Architecture invariant</span>
+    <span>Trace</span><span>Case-specific</span>
+    <span>Principle</span><span>Trace drives animation</span>
+  </div>
+
+  <h2>Trace</h2>
+  <div class="trace" id="trace"></div>
+  <div class="note">v0.2 demonstrates governed teamwork inside a single case. v0.3 extends this exact mechanism across time by asking what qualified understanding should survive into the next interaction.</div>
+</aside>
+</div>
+
+<script>
+const steps = [
+  {label:'LIVE enters',meta:'LIVE',paths:['p_live_a'],nodes:['n_live','n_a'],type:'data',msg:'LIVE-017 enters from the current LLM interaction and reaches Aletheia.'},
+  {label:'LAND joins',meta:'LAND',paths:['p_land_a'],nodes:['n_land','n_a'],type:'data',msg:'LAND-084, a prior qualified historical observation, is surfaced with separate provenance.'},
+  {label:'Qualification',meta:'QUALIFY',paths:['p_a_andreas'],nodes:['n_a','n_andreas'],type:'data',msg:'Aletheia preserves the distinction between the observations; both move to Andreas for qualification.'},
+  {label:'Conflict → HOLD',meta:'HOLD',paths:['p_andreas_conflict'],nodes:['n_andreas','n_conflict','n_alex'],type:'conflict',msg:'Andreas detects a material conflict. Uncertainty rises and the case is held rather than forced to an answer.'},
+  {label:'Query authorized',meta:'AUTHORITY',paths:['p_conflict_gate'],nodes:['n_conflict','n_query'],type:'query',msg:'The unresolved conflict requires evidence-on-demand. The query gate confirms this source may be consulted.'},
+  {label:'Federated source consulted',meta:'QUERY',paths:['p_gate_source'],nodes:['n_query','n_source'],type:'query',msg:'An authorized external source is queried in place rather than automatically ingested into durable state.'},
+  {label:'Evidence returns with provenance',meta:'QUERY',paths:['p_source_a'],nodes:['n_source','n_a'],type:'query',msg:'Consulted evidence returns with provenance intact and is reintroduced as evidence, not as automatic truth.'},
+  {label:'Meaning requalified',meta:'QUALIFY',paths:['p_a_andreas'],nodes:['n_a','n_andreas'],type:'data',msg:'Aletheia preserves the changed evidence state; Andreas requalifies meaning in light of the new evidence.'},
+  {label:'Selective continuity',meta:'CONTINUITY',paths:['p_andreas_tg'],nodes:['n_andreas','n_tg'],type:'data',msg:'Only qualified, authorized continuity becomes durable. The conflicting historical observations remain preserved.'},
+  {label:'Decision readiness',meta:'DECISION',paths:['p_tg_athena'],nodes:['n_tg','n_athena'],type:'data',msg:'Athena evaluates the now-qualified state for decision readiness and a bounded justified action.'},
+  {label:'Governed handoff',meta:'GOVERNANCE',paths:['p_athena_alex'],nodes:['n_athena','n_alex'],type:'data',msg:'The action candidate reaches Alex. Capability exists, but release still depends on the authority boundary.'},
+  {label:'RELEASE',meta:'AUTHORITY',paths:['p_human_alex','p_alex_outcome'],nodes:['n_human','n_alex','n_outcome'],type:'auth',msg:'Human authority is verified. Alex releases the bounded action; the outcome remains inspectable and available for verification.'}
+];
+
+let index=0,paused=true,running=false;
+const $=id=>document.getElementById(id);
+const allNodes=[...document.querySelectorAll('.node')];
+const allPaths=[...document.querySelectorAll('.route')];
+
+function setStatus(label,kind){
+  $('statusText').textContent=label;
+  $('status').className='status'+(kind?' '+kind:'');
+}
+function clearActive(){
+  allNodes.forEach(n=>n.classList.remove('active','hold','persist'));
+  allPaths.forEach(p=>p.classList.remove('active'));
+  $('releaseBanner').classList.remove('show');
+}
+function renderTrace(){
+  $('trace').innerHTML='<div class="trace-item '+(index===0?'current':'done')+'"><strong>0. Ready</strong><div class="meta">STATE</div><div>The Arena is idle. Architecture is visible; no case path is active.</div></div>'+
+  steps.map((s,i)=>{
+    const cls=i<index?'done':(i===index?'current':'');
+    return '<div class="trace-item '+cls+'" id="t_'+i+'"><strong>'+(i+1)+'. '+s.label+'</strong><div>'+s.msg+'</div><div class="meta">'+s.meta+'</div></div>';
+  }).join('');
+  const current=$('t_'+Math.min(index,steps.length-1));
+  if(current) current.scrollIntoView({block:'nearest'});
+}
+function renderProgress(){
+  $('progress').value=index;
+  $('progressCount').textContent=index+' / '+steps.length;
+  $('progressName').textContent=(index===0?'0 — Ready':index+' — '+steps[index-1].label);
+  $('back').disabled=index===0;
+  $('step').disabled=index>=steps.length;
+  $('play').disabled=index>=steps.length;
+  renderTrace();
+}
+function showState(stepIndex){
+  clearActive();
+  if(stepIndex<=0){renderProgress();return}
+  const s=steps[stepIndex-1];
+  s.nodes.forEach(id=>{const n=$(id);if(n)n.classList.add('active')});
+  s.paths.forEach(id=>{const p=$(id);if(p)p.classList.add('active')});
+  if(s.type==='conflict'){$('n_conflict').classList.add('hold');$('n_alex').classList.add('hold')}
+  if(stepIndex>=9)$('n_tg').classList.add('persist');
+  if(stepIndex===steps.length)$('releaseBanner').classList.add('show');
+  renderProgress();
+}
+function animatePath(pathId,type,duration){
+  return new Promise(resolve=>{
+    const path=$(pathId), packet=$('packet');
+    if(!path){resolve();return}
+    path.classList.add('active');
+    const total=path.getTotalLength();
+    const start=performance.now();
+    packet.setAttribute('class','packet '+type);
+    packet.style.opacity='1';
+    function tick(now){
+      const t=Math.min(1,(now-start)/duration);
+      const pt=path.getPointAtLength(total*t);
+      packet.setAttribute('cx',pt.x);packet.setAttribute('cy',pt.y);
+      if(t<1)requestAnimationFrame(tick);else{packet.style.opacity='0';resolve()}
+    }
+    requestAnimationFrame(tick);
+  });
+}
+async function doStep(){
+  if(index>=steps.length)return false;
+  const s=steps[index];
+  clearActive();
+  s.nodes.forEach(id=>{const n=$(id);if(n)n.classList.add('active')});
+  if(s.type==='conflict'){$('n_conflict').classList.add('hold');$('n_alex').classList.add('hold')}
+  for(const p of s.paths)await animatePath(p,s.type,620);
+  index++;
+  showState(index);
+  return index<steps.length;
+}
+async function play(){
+  if(running||index>=steps.length)return;
+  paused=false;running=true;setStatus('Running','running');
+  while(!paused&&index<steps.length){
+    await doStep();
+    if(!paused)await new Promise(r=>setTimeout(r,350));
+  }
+  running=false;
+  if(index>=steps.length)setStatus('Complete','complete');
+  else if(paused)setStatus('Paused','');
+}
+$('play').addEventListener('click',play);
+$('pause').addEventListener('click',()=>{paused=true;setStatus('Paused','')});
+$('step').addEventListener('click',async()=>{paused=true;setStatus('Stepping','running');await doStep();setStatus(index>=steps.length?'Complete':'Ready',index>=steps.length?'complete':'')});
+$('back').addEventListener('click',()=>{paused=true;if(index>0)index--;showState(index);setStatus(index===0?'Ready':'Back','')});
+$('reset').addEventListener('click',()=>{paused=true;running=false;index=0;clearActive();renderProgress();setStatus('Ready','')});
+renderProgress();
+</script>
+</body>
+</html>
