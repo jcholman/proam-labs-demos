@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Thinking Graph Arena v0.3 — Continuity Across Interactions</title>
+<meta name="description" content="Interactive proAM Labs prototype showing how qualified understanding from one interaction can change the starting orientation of the next without rewriting history.">
+<style>
+:root{
+  --bg:#06121d;--panel:#0c1e2b;--panel2:#102534;--line:#28465c;--text:#f3f7fb;--muted:#9eb4c6;
+  --cyan:#53dcff;--green:#73f29a;--gold:#ffc95c;--red:#ff5c62;--violet:#bd92ff;--ink:#07131e;
+}
+*{box-sizing:border-box}
+body{margin:0;background:radial-gradient(circle at 50% -15%,rgba(83,220,255,.08),transparent 32%),linear-gradient(180deg,#071521,#050e16 82%);color:var(--text);font-family:Inter,Segoe UI,system-ui,sans-serif}
+header{max-width:1600px;margin:auto;padding:18px 20px 10px}
+h1{font-size:25px;margin:0 0 5px;letter-spacing:-.25px}
+.subtitle{font-size:13px;color:#a9c1d4}
+.app{max-width:1600px;margin:auto;padding:8px 20px 28px;display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:14px}
+.shell,.side{background:linear-gradient(180deg,rgba(13,31,45,.97),rgba(7,18,28,.98));border:1px solid #213b4e;border-radius:15px;box-shadow:0 20px 55px rgba(0,0,0,.22)}
+.toolbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid #1d3749}
+button,select{font:inherit;color:var(--text);background:#102638;border:1px solid #31526b;border-radius:9px;padding:8px 11px}
+button{cursor:pointer}button:hover{border-color:#5c86a3}button:disabled{opacity:.4;cursor:not-allowed}
+button.primary{background:#123d55;border-color:#31a0c5}
+select{min-width:230px}
+.status{margin-left:auto;display:flex;gap:7px;align-items:center;color:var(--muted);font-size:12px}
+.status i{width:9px;height:9px;border-radius:50%;background:#5b7180}.status.running i{background:var(--green);box-shadow:0 0 10px var(--green)}
+.phases{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;padding:12px 14px 0}
+.phase{padding:8px 10px;border:1px solid #27465b;border-radius:9px;color:#7f9aae;font-size:11px;text-align:center;text-transform:uppercase;letter-spacing:.65px;background:#091a27}
+.phase.active{color:#fff;border-color:var(--cyan);box-shadow:0 0 14px rgba(83,220,255,.13)}
+.phase.done{color:#c9f9d6;border-color:#3f7b57}
+.phase:nth-child(2).active{border-color:var(--gold);box-shadow:0 0 14px rgba(255,201,92,.14)}
+.arena{position:relative;height:650px;margin:10px 14px 0;border:1px solid #183246;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,#0a1b29,#071621)}
+.stage-svg{position:absolute;inset:0;width:100%;height:100%}
+.zone-label{fill:#92afc3;font-size:11px;letter-spacing:.7px}
+.boundary{fill:none;stroke:var(--red);stroke-width:3;stroke-dasharray:10 7;opacity:.78}
+.boundary-label{fill:#ff9a9e;font-size:10px;font-weight:700}
+.route{fill:none;stroke:#355267;stroke-width:3;opacity:.44}
+.route.data.active{stroke:var(--cyan);opacity:1;filter:url(#glowCyan)}
+.route.query{stroke:#2a6945}.route.query.active{stroke:var(--green);opacity:1;filter:url(#glowGreen)}
+.route.auth{stroke:#7a612a}.route.auth.active{stroke:var(--gold);opacity:1;filter:url(#glowGold)}
+.route.conflict.active{stroke:var(--red);opacity:1;filter:url(#glowRed)}
+.packet{r:6;fill:var(--cyan);opacity:0;filter:url(#glowCyan)}
+.packet.query{fill:var(--green);filter:url(#glowGreen)}.packet.auth{fill:var(--gold);filter:url(#glowGold)}.packet.conflict{fill:var(--red);filter:url(#glowRed)}
+.node{position:absolute;width:120px;min-height:68px;padding:11px 12px;border:1px solid #355a72;border-radius:11px;background:#0b2232;z-index:2;transition:.2s ease;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.node strong{display:block;font-size:13px;margin-bottom:6px}.node span{display:block;color:#a9c1d2;font-size:10px;line-height:1.5}
+.node.active{border-color:var(--cyan);box-shadow:0 0 16px rgba(83,220,255,.35)}
+.node.persist{border-color:var(--gold);box-shadow:0 0 15px rgba(255,201,92,.28)}
+.node.query-node{border-color:#2c7550}.node.conflict-node{border-color:var(--red)}.node.authority-node{border-color:#9e7930}
+.node.faded{opacity:.32;filter:saturate(.5)}
+.badge{position:absolute;right:7px;top:7px;font-size:9px!important;color:#fff!important;background:#18374a;border-radius:10px;padding:2px 5px}
+.n-live{left:3%;top:15%}.n-land{left:3%;top:32%}.n-query{left:3%;top:67%}
+.n-a{left:25%;top:17%;min-height:118px}.n-andreas{left:47%;top:18%;min-height:92px}.n-conflict{left:47%;top:40%;min-height:84px}
+.n-source{left:25%;top:69%}.n-tg{left:69%;top:18%;min-height:92px}.n-athena{left:72%;top:42%;min-height:90px}
+.n-alex{left:72%;top:65%;min-height:94px}.n-outcome{left:48%;top:69%;min-height:82px}.n-human{left:88%;top:68%;min-height:82px}
+.carry-banner{position:absolute;left:36%;right:18%;top:4%;z-index:4;padding:7px 12px;border:1px solid #8b6b27;border-radius:999px;text-align:center;color:#ffe3a1;background:rgba(49,39,14,.86);font-size:11px;font-weight:700;opacity:0;transform:translateY(-8px);transition:.25s}
+.carry-banner.show{opacity:1;transform:none}
+.principle{position:absolute;left:3%;bottom:4%;font-size:11px;color:#a7c0d1}.principle b{color:var(--cyan)}
+.footerbar{display:flex;align-items:center;gap:12px;padding:12px 14px}
+.progress-wrap{flex:1}.progress-label{display:flex;justify-content:space-between;color:#a6bdcc;font-size:10px;margin-bottom:5px}
+progress{width:100%;height:8px;accent-color:var(--cyan)}
+.legend{display:flex;gap:12px;flex-wrap:wrap;color:#9db4c4;font-size:10px;padding:0 14px 13px}.legend i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:5px}
+.side{padding:14px;min-height:760px}.side h2{font-size:14px;margin:4px 0 9px}.card{border:1px solid #29485d;background:#0a1b28;border-radius:11px;padding:11px;margin-bottom:12px}
+.card .title{font-size:15px;font-weight:800;margin-bottom:5px}.card .desc{color:#a9c0d1;font-size:11px;line-height:1.45}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:9px}.mini{border:1px solid #244255;background:#102535;border-radius:8px;padding:7px}.mini b{display:block;color:#90aabd;font-size:9px;text-transform:uppercase;letter-spacing:.6px;margin-bottom:3px}.mini span{font-size:11px}
+.carry{border-color:#6b572b}.carry h3{font-size:12px;margin:0 0 8px;color:#ffd77b}.carry-list{display:grid;gap:6px}.carry-item{font-size:10px;color:#b9cbd7;padding-left:18px;position:relative;line-height:1.35}.carry-item:before{content:"";position:absolute;left:1px;top:4px;width:8px;height:8px;border-radius:50%;background:#526878}.carry-item.on:before{background:var(--gold);box-shadow:0 0 8px var(--gold)}.carry-item.off{opacity:.5}
+.trace{max-height:400px;overflow:auto;border-top:1px solid #1f394c}.trace-item{position:relative;padding:9px 6px 9px 25px;border-bottom:1px solid #152d3d;font-size:10.5px;line-height:1.4;color:#dce8ef}.trace-item:before{content:"";position:absolute;left:6px;top:13px;width:8px;height:8px;border-radius:50%;background:#526a7a}.trace-item.done:before{background:var(--green)}.trace-item.current:before{background:var(--cyan);box-shadow:0 0 9px var(--cyan)}.trace-item .meta{font-size:9px;color:#7798ae;margin-top:2px;text-transform:uppercase;letter-spacing:.4px}
+.note{font-size:10px;line-height:1.4;color:#8faabe;margin-top:10px}
+@media(max-width:1100px){.app{grid-template-columns:1fr}.side{min-height:auto}.arena{height:610px}}
+@media(max-width:760px){header{padding-left:12px;padding-right:12px}.app{padding:6px 8px 20px}.arena{margin-left:8px;margin-right:8px;height:620px;overflow:auto}.node{transform:scale(.86);transform-origin:top left}.n-human{left:84%}.toolbar{padding:10px}.status{width:100%;margin-left:0}.phases{font-size:9px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Thinking Graph Arena v0.3 — Continuity Across Interactions</h1>
+  <div class="subtitle">Same Arena. New possession. Different starting orientation. v0.3 shows what qualified understanding survives one case and changes the next.</div>
+</header>
+
+<div class="app">
+  <main class="shell">
+    <div class="toolbar">
+      <select id="mode">
+        <option value="continuity">Qualified continuity available</option>
+        <option value="fresh">Fresh-start counterfactual</option>
+      </select>
+      <button class="primary" id="play">▶ Play</button>
+      <button id="pause">Ⅱ Pause</button>
+      <button id="back">← Back</button>
+      <button id="step">Step →</button>
+      <button id="reset">↻ Reset</button>
+      <div class="status" id="status"><i></i><span id="statusText">Ready</span></div>
+    </div>
+
+    <div class="phases">
+      <div class="phase active" id="phase0">Interaction N — conflict / resolution</div>
+      <div class="phase" id="phase1">Close / preserve — what should survive?</div>
+      <div class="phase" id="phase2">Interaction N+1 — reorientation</div>
+    </div>
+
+    <section class="arena">
+      <svg class="stage-svg" viewBox="0 0 1080 650" preserveAspectRatio="none">
+        <defs>
+          <filter id="glowCyan"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="glowGreen"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="glowGold"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          <filter id="glowRed"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <text x="30" y="35" class="zone-label">INGRESS / SOURCE</text>
+        <text x="275" y="35" class="zone-label">OBSERVE / QUALIFY</text>
+        <text x="610" y="35" class="zone-label">CONTINUITY</text>
+        <text x="805" y="35" class="zone-label">DECISION</text>
+        <text x="945" y="35" class="zone-label">AUTHORITY</text>
+        <rect x="238" y="55" width="815" height="535" rx="24" class="boundary"/>
+        <text x="258" y="78" class="boundary-label">PERSONAL TRUST / GOVERNANCE DOMAIN — PRIVATE CONTINUITY + QUALIFICATION + AUTHORITY</text>
+
+        <path id="p_live_a" class="route data" d="M150 130 C200 130 215 155 260 155"/>
+        <path id="p_land_a" class="route data" d="M150 240 C200 240 215 205 260 205"/>
+        <path id="p_a_andreas" class="route data" d="M380 180 C420 180 450 180 500 180"/>
+        <path id="p_andreas_conflict" class="route conflict" d="M560 230 C560 255 550 275 535 300"/>
+        <path id="p_query_source" class="route query" d="M150 455 C205 455 215 495 260 495"/>
+        <path id="p_source_conflict" class="route query" d="M380 500 C450 500 480 420 520 370"/>
+        <path id="p_conflict_a" class="route query" d="M505 330 C430 330 410 260 370 230"/>
+        <path id="p_andreas_tg" class="route data" d="M620 180 C655 180 690 180 720 180"/>
+        <path id="p_tg_athena" class="route data" d="M780 225 C815 250 825 285 815 320"/>
+        <path id="p_athena_alex" class="route data" d="M825 395 C850 420 850 445 825 470"/>
+        <path id="p_human_alex" class="route auth" d="M955 505 C925 505 900 500 870 500"/>
+        <path id="p_alex_outcome" class="route auth" d="M770 505 C700 515 650 520 610 520"/>
+        <path id="p_outcome_tg" class="route auth" d="M560 490 C610 440 675 315 745 225"/>
+        <path id="p_tg_surface" class="route auth" d="M720 165 C650 100 450 95 360 130"/>
+        <circle id="packet" class="packet" cx="0" cy="0"/>
+      </svg>
+
+      <div class="carry-banner" id="carryBanner">QUALIFIED CARRY-FORWARD — prior learning is available, historical state remains unchanged</div>
+
+      <div class="node n-live" id="n_live"><strong>LIVE</strong><span>Current LLM interaction</span></div>
+      <div class="node n-land" id="n_land"><strong>LAND</strong><span>Prior historical observation</span></div>
+      <div class="node n-query query-node" id="n_query"><strong>Query Gate</strong><span>Evidence-on-demand</span><span>Authorization required</span></div>
+
+      <div class="node n-a" id="n_a"><strong>Aletheia</strong><span>Observe</span><span>Preserve difference</span><span>Preserve uncertainty</span></div>
+      <div class="node n-andreas" id="n_andreas"><strong>Andreas</strong><span>Qualify meaning</span><span>Ψ(u) / readiness</span></div>
+      <div class="node n-conflict conflict-node" id="n_conflict"><strong>Conflict</strong><span>Evidence disagrees</span><span>Uncertainty elevated</span></div>
+      <div class="node n-source query-node" id="n_source"><strong>Federated Source</strong><span>Consulted in place</span></div>
+
+      <div class="node n-tg" id="n_tg"><strong>Thinking Graph</strong><span>Continuity</span><span>Selective durable state</span></div>
+      <div class="node n-athena" id="n_athena"><strong>Athena</strong><span>Decision readiness</span><span>Justified action</span></div>
+      <div class="node n-alex conflict-node" id="n_alex"><strong>Alex</strong><span>Handler / steward</span><span>HOLD · RELEASE · REORIENT</span></div>
+      <div class="node n-outcome" id="n_outcome"><strong>Outcome</strong><span>Bounded action</span><span>Verify · learn</span></div>
+      <div class="node n-human authority-node" id="n_human"><strong>Human Authority</strong><span>Permission to bind remains human</span></div>
+
+      <div class="principle"><b>v0.3 principle →</b> continuity is not remembering the answer; it is preserving enough qualified context that understanding does not start over.</div>
+    </section>
+
+    <div class="footerbar">
+      <div class="progress-wrap">
+        <div class="progress-label"><span id="progressName">0 — Ready</span><span id="progressCount">0 / 0</span></div>
+        <progress id="progress" value="0" max="100"></progress>
+      </div>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--cyan)"></i>LIVE / qualified data</span>
+      <span><i style="background:var(--green)"></i>Federated evidence</span>
+      <span><i style="background:var(--gold)"></i>Qualified carry-forward / authority</span>
+      <span><i style="background:var(--red)"></i>Conflict / governance</span>
+      <span><i style="background:var(--violet)"></i>LAND provenance</span>
+    </div>
+  </main>
+
+  <aside class="side">
+    <h2>Case</h2>
+    <div class="card">
+      <div class="title" id="caseTitle">Conflict → resolution → future reorientation</div>
+      <div class="desc" id="caseDesc">Interaction N resolves conflicting evidence. v0.3 then asks what should survive so Interaction N+1 can begin better oriented without treating prior resolution as permanent truth.</div>
+      <div class="grid">
+        <div class="mini"><b>Mode</b><span id="factMode">Continuity</span></div>
+        <div class="mini"><b>Historical state</b><span>Immutable</span></div>
+        <div class="mini"><b>Carry-forward</b><span id="factCarry">Qualified</span></div>
+        <div class="mini"><b>Authority</b><span>Human remains binding</span></div>
+      </div>
+    </div>
+
+    <h2>Continuity envelope</h2>
+    <div class="card carry">
+      <h3 id="carryTitle">Not yet created</h3>
+      <div class="carry-list">
+        <div class="carry-item" id="c1">LIVE and LAND remain historically distinct</div>
+        <div class="carry-item" id="c2">Prior material conflict preserved</div>
+        <div class="carry-item" id="c3">Authorized federated evidence resolved the prior case</div>
+        <div class="carry-item" id="c4">Human authority bounded the prior action</div>
+        <div class="carry-item" id="c5">Future case must re-check applicability, not replay the answer</div>
+      </div>
+    </div>
+
+    <h2>Trace</h2>
+    <div class="trace" id="trace"></div>
+    <div class="note" id="note">v0.3 intentionally does not score improvement. It makes the causal mechanism visible; v0.4 can later measure improvement or decay.</div>
+  </aside>
+</div>
+
+<script>
+const commonN = [
+  {phase:0,from:'n_live',to:'n_a',path:'p_live_a',type:'data',label:'LIVE enters',msg:'A current LIVE observation enters and reaches Aletheia with its own identity and provenance.'},
+  {phase:0,from:'n_land',to:'n_a',path:'p_land_a',type:'data',label:'LAND joins',msg:'A prior LANDed observation is surfaced separately; history is not rewritten to match the present.'},
+  {phase:0,from:'n_a',to:'n_andreas',path:'p_a_andreas',type:'data',label:'Qualification begins',msg:'Aletheia preserves the difference; Andreas evaluates whether the observations can coexist or materially conflict.'},
+  {phase:0,from:'n_andreas',to:'n_conflict',path:'p_andreas_conflict',type:'conflict',label:'Conflict → HOLD',msg:'A material conflict is recognized. Uncertainty rises and the case is held rather than forced into an answer.'},
+  {phase:0,from:'n_query',to:'n_source',path:'p_query_source',type:'query',label:'Authorized QIP',msg:'An authorized query retrieves only the external evidence needed to resolve the material uncertainty.'},
+  {phase:0,from:'n_source',to:'n_conflict',path:'p_source_conflict',type:'query',label:'Evidence returns',msg:'Consulted evidence returns with provenance intact and is compared against the unresolved conflict.'},
+  {phase:0,from:'n_conflict',to:'n_a',path:'p_conflict_a',type:'query',label:'Re-observe',msg:'New evidence does not erase the conflict; it changes what can now be observed and qualified.'},
+  {phase:0,from:'n_a',to:'n_andreas',path:'p_a_andreas',type:'data',label:'Requalification',msg:'Andreas requalifies meaning under the new evidence and preserves what remains uncertain.'},
+  {phase:0,from:'n_andreas',to:'n_tg',path:'p_andreas_tg',type:'data',label:'Selective durability',msg:'Only qualified, authorized continuity is written durable. Raw consulted evidence is not automatically ingested.'},
+  {phase:0,from:'n_tg',to:'n_athena',path:'p_tg_athena',type:'data',label:'Decision readiness',msg:'Athena evaluates the qualified state for a bounded action.'},
+  {phase:0,from:'n_athena',to:'n_alex',path:'p_athena_alex',type:'data',label:'Governance handoff',msg:'The action candidate reaches Alex; capability alone still does not authorize execution.'},
+  {phase:0,from:'n_human',to:'n_alex',path:'p_human_alex',type:'auth',label:'Human authority',msg:'Human authority supplies permission to bind the system to the bounded action.'},
+  {phase:0,from:'n_alex',to:'n_outcome',path:'p_alex_outcome',type:'auth',label:'RELEASE',msg:'Alex releases the bounded action after qualification and authority align.'}
+];
+
+const closeSteps = [
+  {phase:1,from:'n_outcome',to:'n_tg',path:'p_outcome_tg',type:'auth',label:'Verify / close',msg:'The outcome is verified and the case is closed. Closure asks what should survive rather than storing everything.'},
+  {phase:1,from:'n_tg',to:null,path:null,type:'auth',label:'Preserve qualified context',msg:'The Thinking Graph preserves the prior conflict, its resolution lineage, remaining uncertainty, and authority context as qualified carry-forward.'},
+  {phase:1,from:null,to:null,path:null,type:'auth',label:'Transient state fades',msg:'Case-specific activity can end while qualified continuity remains available. Good cleanup becomes future preparation.'}
+];
+
+const nextContinuity = [
+  {phase:2,from:'n_live',to:'n_a',path:'p_live_a',type:'data',label:'Interaction N+1 begins',msg:'A later related request arrives. The new observation remains new; continuity does not collapse it into the old case.'},
+  {phase:2,from:'n_tg',to:'n_a',path:'p_tg_surface',type:'auth',label:'Prior context surfaces',msg:'Relevant qualified history surfaces immediately: prior conflict, prior resolution, provenance boundaries, and remaining uncertainty.'},
+  {phase:2,from:'n_a',to:'n_andreas',path:'p_a_andreas',type:'data',label:'Applicability check',msg:'Andreas asks whether the prior resolution still applies under current conditions instead of blindly replaying the old answer.'},
+  {phase:2,from:'n_andreas',to:'n_tg',path:'p_andreas_tg',type:'data',label:'Reorientation complete',msg:'Only the genuinely new uncertainty must be reconstructed. Prior qualified orientation is reused without manufacturing certainty.'},
+  {phase:2,from:'n_tg',to:'n_athena',path:'p_tg_athena',type:'data',label:'Decision work resumes',msg:'Athena receives a better-oriented state and can focus attention on what changed rather than rediscovering the entire prior case.'},
+  {phase:2,from:'n_athena',to:'n_alex',path:'p_athena_alex',type:'data',label:'Next handoff',msg:'The governed team continues from preserved understanding. The value is not remembered answers; it is reduced unnecessary reconstruction.'}
+];
+
+const nextFresh = [
+  {phase:2,from:'n_live',to:'n_a',path:'p_live_a',type:'data',label:'Interaction N+1 begins',msg:'A later related request arrives, but prior qualified continuity is unavailable to this interaction.'},
+  {phase:2,from:'n_land',to:'n_a',path:'p_land_a',type:'data',label:'History rediscovered',msg:'The system must locate and reconstruct the prior observation again rather than beginning from preserved orientation.'},
+  {phase:2,from:'n_a',to:'n_andreas',path:'p_a_andreas',type:'data',label:'Requalification repeats',msg:'The team repeats interpretation work needed merely to understand why the question mattered before.'},
+  {phase:2,from:'n_andreas',to:'n_conflict',path:'p_andreas_conflict',type:'conflict',label:'Conflict rediscovered',msg:'The same conflict must be surfaced again because its prior qualification did not survive as usable continuity.'},
+  {phase:2,from:'n_query',to:'n_source',path:'p_query_source',type:'query',label:'Query repeats',msg:'Evidence-on-demand is repeated to rebuild context that had already been established in Interaction N.'},
+  {phase:2,from:'n_source',to:'n_conflict',path:'p_source_conflict',type:'query',label:'Orientation reconstructed',msg:'The system eventually recovers enough context to proceed. The visible cost is repeated orientation, not a failed model answer.'}
+];
+
+let steps=[],index=0,running=false,paused=true;
+const $=id=>document.getElementById(id);
+const nodeIds=['n_live','n_land','n_query','n_a','n_andreas','n_conflict','n_source','n_tg','n_athena','n_alex','n_outcome','n_human'];
+const routeIds=['p_live_a','p_land_a','p_a_andreas','p_andreas_conflict','p_query_source','p_source_conflict','p_conflict_a','p_andreas_tg','p_tg_athena','p_athena_alex','p_human_alex','p_alex_outcome','p_outcome_tg','p_tg_surface'];
+const packet=$('packet');
+
+function build(){
+  const mode=$('mode').value;
+  steps=commonN.concat(closeSteps,mode==='continuity'?nextContinuity:nextFresh);
+  $('factMode').textContent=mode==='continuity'?'Qualified continuity':'Fresh start';
+  $('factCarry').textContent=mode==='continuity'?'Qualified':'Unavailable at N+1';
+  $('caseDesc').textContent=mode==='continuity'
+    ?'Interaction N resolves conflicting evidence, preserves only qualified carry-forward, then shows how Interaction N+1 starts better oriented without treating prior resolution as permanent truth.'
+    :'The same first interaction is followed by a counterfactual N+1 where qualified continuity is unavailable and previously solved orientation work must be reconstructed.';
+  $('trace').innerHTML=steps.map((s,i)=>'<div class="trace-item" id="t'+i+'"><strong>'+(i+1)+'. '+s.label+'</strong><div>'+s.msg+'</div><div class="meta">'+['Interaction N','Close / Preserve','Interaction N+1'][s.phase]+' · '+s.type+'</div></div>').join('');
+  index=0;paused=true;running=false;render();
+}
+
+function clearVisual(){
+  nodeIds.forEach(id=>{$(id).classList.remove('active','persist','faded')});
+  routeIds.forEach(id=>$(id).classList.remove('active'));
+  packet.style.opacity=0;packet.classList.remove('query','auth','conflict');
+  $('carryBanner').classList.remove('show');
+  document.querySelectorAll('.carry-item').forEach(x=>x.classList.remove('on','off'));
+}
+
+function phaseFor(i){
+  if(i<=0)return 0;
+  if(i>=steps.length)return 2;
+  return steps[Math.min(i,steps.length-1)].phase;
+}
+
+function render(){
+  clearVisual();
+  const phase=phaseFor(index);
+  for(let p=0;p<3;p++){
+    const el=$('phase'+p);el.classList.remove('active','done');
+    if(p<phase)el.classList.add('done'); else if(p===phase)el.classList.add('active');
+  }
+  document.querySelectorAll('.trace-item').forEach((el,i)=>{
+    el.classList.toggle('done',i<index);
+    el.classList.toggle('current',i===index && index<steps.length);
+  });
+  const closeEnd=commonN.length+closeSteps.length;
+  const continuity=$('mode').value==='continuity';
+  const carryExists=index>commonN.length;
+  if(carryExists){
+    $('carryTitle').textContent='Qualified carry-forward created';
+    document.querySelectorAll('.carry-item').forEach(x=>x.classList.add('on'));
+    $('n_tg').classList.add('persist');
+  } else {
+    $('carryTitle').textContent='Not yet created';
+  }
+  if(index>=closeEnd){
+    if(continuity){
+      $('carryBanner').classList.add('show');
+      $('n_tg').classList.add('persist');
+    }else{
+      $('carryTitle').textContent='Prior continuity unavailable in this counterfactual';
+      document.querySelectorAll('.carry-item').forEach(x=>{x.classList.remove('on');x.classList.add('off')});
+      $('n_tg').classList.add('faded');
+    }
+  }
+  if(index<steps.length){
+    const s=steps[index];
+    if(s.from)$(s.from).classList.add('active');
+    if(s.to)$(s.to).classList.add('active');
+    $('progressName').textContent=(index+1)+' — '+s.label;
+  } else $('progressName').textContent='Complete — next interaction is differently oriented';
+  $('progressCount').textContent=index+' / '+steps.length;
+  $('progress').max=steps.length;$('progress').value=index;
+  setStatus(index>=steps.length?'Complete':'Ready',false);
+}
+
+function setStatus(txt,on){
+  $('statusText').textContent=txt;$('status').classList.toggle('running',!!on);
+}
+
+function point(path,f){const len=path.getTotalLength();return path.getPointAtLength(len*f)}
+function animate(path,type,duration){
+  return new Promise(resolve=>{
+    packet.classList.remove('query','auth','conflict');
+    if(type==='query')packet.classList.add('query');
+    if(type==='auth')packet.classList.add('auth');
+    if(type==='conflict')packet.classList.add('conflict');
+    packet.style.opacity=1;
+    const start=performance.now();
+    function tick(now){
+      const f=Math.min(1,(now-start)/duration);
+      const e=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;
+      const p=point(path,e);packet.setAttribute('cx',p.x);packet.setAttribute('cy',p.y);
+      if(f<1)requestAnimationFrame(tick);else{packet.style.opacity=0;resolve()}
+    }
+    requestAnimationFrame(tick);
+  });
+}
+
+async function advance(){
+  if(index>=steps.length)return false;
+  const s=steps[index];
+  clearVisual();
+  const closeEnd=commonN.length+closeSteps.length;
+  if(index>commonN.length){$('n_tg').classList.add('persist');document.querySelectorAll('.carry-item').forEach(x=>x.classList.add('on'))}
+  if(index>=closeEnd && $('mode').value==='continuity')$('carryBanner').classList.add('show');
+  if(s.from)$(s.from).classList.add('active');
+  if(s.to)$(s.to).classList.add('active');
+  if(s.path){const p=$(s.path);p.classList.add('active');await animate(p,s.type,720)} else await new Promise(r=>setTimeout(r,560));
+  index++;render();return index<steps.length;
+}
+
+async function play(){
+  if(running)return;running=true;paused=false;setStatus('Running',true);
+  while(!paused && index<steps.length){await advance();await new Promise(r=>setTimeout(r,300))}
+  running=false;setStatus(index>=steps.length?'Complete':paused?'Paused':'Ready',false);
+}
+
+$('play').onclick=play;
+$('pause').onclick=()=>{paused=true;setStatus('Paused',false)};
+$('step').onclick=async()=>{paused=true;setStatus('Stepping',true);await advance();setStatus(index>=steps.length?'Complete':'Ready',false)};
+$('back').onclick=()=>{paused=true;if(index>0)index--;render()};
+$('reset').onclick=()=>{paused=true;index=0;render()};
+$('mode').onchange=build;
+build();
+</script>
+</body>
+</html>
