@@ -9,3 +9,5 @@ Interactive product and architecture demos from proAM Labs.
 ## Orientation Graph
 
 - [v0.1 — Read-only 24-observation human exploration](./orientation-graph-v0-1/) — Frozen Step 6B pre-48 history, governed source inspection, qualification boundaries, checkpoint comparison and Executor Orientation (no Thinking Graph mutation).
+
+- [v0.2 — Minimal Relationship Landscape](./orientation-graph-v0-2/) — Expand the same 24 verified observations into documented historical statement neighborhoods, while keeping unverified cross-observation connections undrawn.
