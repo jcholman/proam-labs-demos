@@ -11,3 +11,15 @@ Interactive product and architecture demos from proAM Labs.
 - [v0.1 — Read-only 24-observation human exploration](./orientation-graph-v0-1/) — Frozen Step 6B pre-48 history, governed source inspection, qualification boundaries, checkpoint comparison and Executor Orientation (no Thinking Graph mutation).
 
 - [v0.2 — Minimal Relationship Landscape](./orientation-graph-v0-2/) — Expand the same 24 verified observations into documented historical statement neighborhoods, while keeping unverified cross-observation connections undrawn.
+
+## What comes next (planned)
+
+These are prospective demonstrations, not published or verified capabilities. Live demo links will be added here when the prototypes are ready.
+
+- **Arena v0.35 — Switching Quarterbacks** *(planned)* — Add or change LLMs, note-taking apps, and other tools while preserving qualified continuity, stable contracts, provenance, and human authority.
+- **POS-Lite — Mobile-First Bridge** *(in design)* — Find observations, inspect documented relationships and available metric states, ask what needs attention, and initiate a governed Output Contract from a phone.
+- **Output Demo v0.4 — Intent to Artifact** *(proposed)* — Follow a small request, such as updating a demo from a phone, from prior orientation and authority checks through a bounded change, verification, and carry-forward.
+
+---
+
+[View the enhanced demo library](./enhanced/) — Same four demos and prospective work in a more visual layout. This page remains the **Basic View**.
