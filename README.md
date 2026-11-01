@@ -1,6 +1,14 @@
 # proam-labs-demos
 Interactive product and architecture demos from proAM Labs.
 
+## What if your AI didn't make you start over?
+
+Today, conversations, research, decisions, and project history are scattered across applications. Every interruption, handoff, or change of tools can force us to reconstruct what we already understood.
+
+proAM Labs is exploring a different approach: **preserving qualified understanding across time, tools, and interactions**, while keeping evidence, uncertainty, and human authority intact.
+
+These interactive prototypes show how that approach is being developed—and what it may eventually make possible. They are demonstrations of specific capabilities, **not a claim that the full system is already operating in production**.
+
 ## Thinking Graph Arena
 
 - [v0.2 — Governed Team Orchestration](./thinking-graph-arena-v0-2/) — Follow a conflicting-evidence case through LIVE + LAND inputs, HOLD, authorized federated query, requalification, human authority, and RELEASE.
