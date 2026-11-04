@@ -20,6 +20,10 @@ These interactive prototypes show how that approach is being developed—and wha
 
 - [v0.2 — Minimal Relationship Landscape](./orientation-graph-v0-2/) — Expand the same 24 verified observations into documented historical statement neighborhoods, while keeping unverified cross-observation connections undrawn.
 
+## Continuity Search
+
+- [v0.1 — Find your thread](./continuity-search-v0-1/) — Search four de-identified fixtures by curated concepts, inspect artifact packages, and prepare an editable continuation brief. Browser-local prototype; no embeddings, live corpus/TG queries, or private source links.
+
 ## What comes next (planned)
 
 These are prospective demonstrations, not published or verified capabilities. Live demo links will be added here when the prototypes are ready.
