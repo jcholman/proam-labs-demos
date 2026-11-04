@@ -22,7 +22,7 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## Continuity Search
 
-- [v0.1 — Find your thread](./continuity-search-v0-1/) — Search four de-identified fixtures by curated concepts, inspect artifact packages, and prepare an editable continuation brief. Browser-local prototype; no embeddings, live corpus/TG queries, or private source links.
+- [v0.1 — Find your thread](./continuity-search-v0-1/) — Find prior work by idea or unfinished task, inspect Publication and RTS artifact packages, and prepare an editable continuation brief. Four de-identified examples use browser-local concept/synonym matching; no sign-in, embeddings, live corpus/TG queries, or private source links.
 
 ## What comes next (planned)
 
@@ -34,4 +34,4 @@ These are prospective demonstrations, not published or verified capabilities. Li
 
 ---
 
-[View the enhanced demo library](./enhanced/) — Same four demos and prospective work in a more visual layout. This page remains the **Basic View**.
+[View the enhanced demo library](./enhanced/) — All five demos and prospective work in a more visual layout. This page remains the **Basic View**.
