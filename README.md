@@ -11,7 +11,7 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## proAM Labs · Minimal website
 
-[Open the three-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, and the Signal Before Action concept in a minimal parchment, navy, and gold design.
+[Open the four-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, Find Your Thread in Practice, and the Signal Before Action concept in a minimal parchment, navy, and gold design.
 
 ## Thinking Graph Arena
 
