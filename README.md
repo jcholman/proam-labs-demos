@@ -26,9 +26,9 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## Continuity Value Explorer
 
-[Open the interactive preview](https://raw.githack.com/jcholman/proam-labs-demos/main/continuity-value-v0-1/index.html) · [GitHub Pages address (if enabled)](https://jcholman.github.io/proam-labs-demos/continuity-value-v0-1/) · [View source](./continuity-value-v0-1/)
+[Open the interactive app on GitHub Pages](https://jcholman.github.io/proam-labs-demos/continuity-value-v0-1/) · [View source](./continuity-value-v0-1/)
 
-- [v0.1 — What could continuity be worth?](https://raw.githack.com/jcholman/proam-labs-demos/main/continuity-value-v0-1/index.html) — Adjust people affected, daily time recovered, loaded hourly cost, workdays, and realization to explore potential annual recovered-capacity value. Optional implementation and operating costs support net scenarios; blank costs remain unknown. Illustrative only: no measured Thinking Graph savings, guaranteed cash return, or customer valuation.
+- [v0.1 — What could continuity be worth?](https://jcholman.github.io/proam-labs-demos/continuity-value-v0-1/) — Adjust people affected, daily time recovered, loaded hourly cost, workdays, and realization to explore potential annual recovered-capacity value. Optional implementation and operating costs support net scenarios; blank costs remain unknown. Illustrative only: no measured Thinking Graph savings, guaranteed cash return, or customer valuation.
 
 ## What comes next (planned)
 
@@ -40,4 +40,4 @@ These are prospective demonstrations, not published or verified capabilities. Li
 
 ---
 
-[View the enhanced demo library](./enhanced/) — All five demos and prospective work in a more visual layout. This page remains the **Basic View**.
+[View the enhanced demo library](./enhanced/) — All six demos and prospective work in a more visual layout. This page remains the **Basic View**.
