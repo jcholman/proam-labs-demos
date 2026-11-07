@@ -6,6 +6,7 @@ Recovered from the master HTML component in the saved “Front Porch to Website 
 
 ## November 7 integration
 
+- Default introduction is Standard (8.9 seconds); Cinematic and Static Plate remain selectable.
 - Orientation question updated to “What are we going to do, now?”
 - Enter POS-Lite opens the verified POS-Lite v0.35 demo in the same tab.
 - Example prompts fill the starting context; Enter also activates the handoff.
