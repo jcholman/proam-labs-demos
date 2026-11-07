@@ -13,6 +13,10 @@ These interactive prototypes show how that approach is being developed—and wha
 
 [Open the four-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, Find Your Thread in Practice, and the Signal Before Action concept in a minimal parchment, navy, and gold design.
 
+## Front Porch
+
+- [v1.0 — Original Master Component](https://jcholman.github.io/proam-labs-demos/front-porch-v1-0/) — Recovered original introduction with cinematic, standard, and static modes. HTML/SVG animation and entry interface only; no AI submission, registration, or POS-Lite backend. [Source & test boundaries](./front-porch-v1-0/README.md).
+
 ## Thinking Graph Arena
 
 - [v0.2 — Governed Team Orchestration](./thinking-graph-arena-v0-2/) — Follow a conflicting-evidence case through LIVE + LAND inputs, HOLD, authorized federated query, requalification, human authority, and RELEASE.
