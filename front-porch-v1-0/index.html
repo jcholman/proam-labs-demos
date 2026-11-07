@@ -286,7 +286,13 @@
             h1 { font-size: 1.6rem; }
             #dev-controls { bottom: 20px; top: auto; right: auto; justify-content: center; width: calc(100% - 40px); left: 20px; }
         }
-    </style>
+    
+        .enter-pos{display:inline-block;margin:0 0 14px;padding:12px 22px;border-radius:6px;background:#64FFDA;color:#0B151F;text-decoration:none;font-weight:650}
+        .handoff-note{font-size:.75rem;color:var(--text-secondary);margin:0 0 20px}
+        #ui-stage{box-sizing:border-box}
+        body,html{overflow:auto}#app-container{min-height:950px}
+        @media(max-width:600px){#app-container{min-height:1000px}#ui-stage{top:42%}#dev-controls{position:absolute;bottom:auto;top:14px} .state-7 #svg-stage{transform:scale(.35) translateY(-130%)}}
+        </style>
 </head>
 <body>
 
@@ -470,12 +476,12 @@
 
         <!-- USER INTERFACE -->
         <div id="ui-stage">
-            <h1>What's on your mind today?</h1>
+            <h1>What are we going to do, now?</h1>
             <p class="subtitle">Begin with an opportunity, a priority, or a change you are trying to understand.</p>
             <div class="input-wrapper">
-                <input type="text" placeholder="Describe what you are trying to understand..." />
+                <input id="starting-context" type="text" aria-label="Your starting context" placeholder="Describe what you are trying to understand..." maxlength="4000" />
             </div>
-            <div class="examples">
+            <a class="enter-pos" id="enter-pos" href="https://jcholman.github.io/thinking-graph-arena/pos-lite/">Enter POS-Lite →</a><p class="handoff-note" id="handoff-note">Your starting context stays in this tab’s session. Opens the POS-Lite demo.</p><div class="examples">
                 <button class="example-prompt">I’m considering a job opportunity.</button>
                 <button class="example-prompt">I need to organize competing priorities.</button>
                 <button class="example-prompt">I’m trying to understand something that is changing.</button>
@@ -548,6 +554,17 @@
             });
         }
         
+        const contextInput=document.getElementById('starting-context');
+        document.querySelectorAll('.example-prompt').forEach(button=>button.addEventListener('click',()=>{contextInput.value=button.textContent;contextInput.focus();}));
+        document.getElementById('enter-pos').addEventListener('click',event=>{
+            try{
+                sessionStorage.removeItem('proam.frontPorch.context.v1');
+                if(contextInput.value.trim())sessionStorage.setItem('proam.frontPorch.context.v1',JSON.stringify({text:contextInput.value.trim(),at:Date.now()}));
+            }catch(error){
+                if(contextInput.value.trim()){event.preventDefault();document.getElementById('handoff-note').textContent='Local session storage is unavailable. Copy your context, then open POS-Lite using the link again, or clear the field to continue.';}
+            }
+        });
+        contextInput.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();document.getElementById('enter-pos').click();}});
         // Initialize
         window.addEventListener("load", () => {
             setMode(frontPorchMode);
