@@ -11,7 +11,7 @@
 - Existing emblem preserved; only the surrounding white background removed for compositing.
 - Square corners and inset artwork allow Apple to apply its Home Screen mask.
 
-## Use when implemented
+## Implementation
 
 Add this to the head of each page intended for Home Screen saving (adjust path for the relevant repository):
 
@@ -19,4 +19,4 @@ Add this to the head of each page intended for Home Screen saving (adjust path f
 <link rel="apple-touch-icon" sizes="180x180" href="/proam-labs-demos/showcase/assets/icons/proam-labs-apple-touch-icon-180x180.png">
 ```
 
-Reference asset only: no page icon tags or Home Screen settings were changed in this revision. The prior white-and-navy version remains in Git history.
+Apple Touch icon tags and concise Home Screen names are enabled on all four showcase pages, Front Porch, Find Your Thread, the Value Explorer, Enhanced library, and POS-Lite. A version query on the icon reference refreshes the former reference asset. The prior white-and-navy version remains in Git history. Existing iPhone shortcuts may need to be removed and added again; adding a new shortcut is the device-level verification step.
