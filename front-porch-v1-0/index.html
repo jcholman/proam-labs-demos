@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proAM Labs - Master Front Porch Component</title>
+    <style>
+        /* =====================================================
+           CORE STYLES & VARIABLES
+           ===================================================== */
+        :root {
+            --bg-deep-navy: #051021;
+            --modern-navy: #0B151F;
+            --modern-cyan: #64FFDA;
+            --text-primary: #FFFFFF;
+            --text-secondary: #8892B0;
+            
+            --timing-fast: 0.4s;
+            --timing-med: 0.8s;
+            --timing-slow: 1.2s;
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+
+            /* Archival Reasoning Variables */
+            --trace-reveal: 2.7s;
+            --trace-fade: 2.3s;
+            --trace-glow: rgba(126, 78, 24, 0.62);
+            --trace-ink: #000000;
+            --trace-ink-soft: #090705;
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            width: 100%; height: 100%;
+            background-color: var(--modern-navy);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            overflow: hidden;
+            color: var(--text-primary);
+        }
+
+        #app-container {
+            position: relative;
+            width: 100vw; height: 100vh;
+            display: flex;
+            justify-content: center; align-items: center;
+        }
+
+        /* --- SVG STAGE --- */
+        #svg-stage {
+            position: absolute;
+            width: 100%; max-width: 90vh;
+            aspect-ratio: 1 / 1;
+            transform-origin: center center;
+            transition: transform var(--timing-slow) var(--ease-in-out);
+            z-index: 10;
+        }
+        svg { width: 100%; height: 100%; display: block; }
+
+        /* --- UI STAGE --- */
+        #ui-stage {
+            position: absolute;
+            top: 55%; left: 50%;
+            transform: translateX(-50%);
+            width: 100%; max-width: 600px;
+            padding: 0 20px; text-align: center;
+            z-index: 20; pointer-events: none;
+        }
+        h1 {
+            font-size: 2rem; font-weight: 400; margin: 0 0 10px 0;
+            letter-spacing: -0.02em; opacity: 0;
+            transform: translateY(20px);
+            transition: all var(--timing-med) var(--ease-out-expo);
+        }
+        p.subtitle {
+            font-size: 1.1rem; color: var(--text-secondary); margin: 0 0 40px 0;
+            opacity: 0; transform: translateY(20px);
+            transition: all var(--timing-med) var(--ease-out-expo); transition-delay: 0.1s;
+        }
+        .input-wrapper {
+            position: relative; margin-bottom: 30px; opacity: 0; transform: translateY(20px);
+            transition: all var(--timing-med) var(--ease-out-expo); transition-delay: 0.2s;
+        }
+        input[type="text"] {
+            width: 100%; background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(100, 255, 218, 0.2); border-radius: 8px;
+            padding: 16px 20px; font-size: 1.1rem; color: var(--text-primary);
+            outline: none; box-sizing: border-box;
+            transition: border-color 0.3s ease, background 0.3s ease;
+        }
+        input[type="text"]:focus { border-color: var(--modern-cyan); background: rgba(255, 255, 255, 0.08); }
+        input[type="text"]::placeholder { color: rgba(136, 146, 176, 0.5); }
+        
+        .examples { display: flex; flex-direction: column; gap: 12px; text-align: left; }
+        .example-prompt {
+            background: transparent; border: 1px solid rgba(136, 146, 176, 0.2);
+            color: var(--text-secondary); padding: 12px 16px; border-radius: 6px;
+            font-size: 0.95rem; cursor: pointer; transition: all 0.2s ease;
+            opacity: 0; transform: translateY(15px);
+            transition: all var(--timing-fast) var(--ease-out-expo);
+        }
+        .example-prompt:hover {
+            border-color: rgba(100, 255, 218, 0.5); color: var(--modern-cyan);
+            background: rgba(100, 255, 218, 0.05);
+        }
+
+        /* --- DEV CONTROLS (For Demonstration) --- */
+        #dev-controls {
+            position: fixed; top: 20px; right: 20px;
+            display: flex; gap: 8px; z-index: 100;
+            background: rgba(5, 16, 33, 0.8); padding: 8px; border-radius: 8px;
+            border: 1px solid rgba(136, 146, 176, 0.2); backdrop-filter: blur(4px);
+        }
+        .dev-btn {
+            background: transparent; border: 1px solid var(--text-secondary);
+            color: var(--text-secondary); padding: 6px 12px; border-radius: 4px;
+            cursor: pointer; font-size: 0.75rem; transition: all 0.2s ease;
+        }
+        .dev-btn:hover, .dev-btn.active {
+            border-color: var(--modern-cyan); color: var(--modern-cyan);
+            background: rgba(100, 255, 218, 0.1);
+        }
+
+        /* =====================================================
+           BASE SVG SETUP (Hidden initially)
+           ===================================================== */
+        #parchment-bg, #corner-details, #institutional-seal, #core-archival, #core-modern, #activation-halo {
+            opacity: 0;
+            transition: opacity 1.1s ease, filter 1.1s ease, transform 1.1s var(--ease-in-out);
+        }
+        
+        #drafting-axis-cluster, #drafting-equation-cluster, #drafting-compass-cluster, 
+        #drafting-lower-right-cluster, #drafting-construction-cluster {
+            opacity: 0; filter: blur(1.8px); transform-box: fill-box; transform-origin: center; transform: scale(0.985);
+            transition: opacity var(--trace-fade) ease, filter var(--trace-fade) ease, transform var(--trace-fade) var(--ease-out-expo);
+            will-change: opacity, filter, transform;
+        }
+
+        #drafting-axis-cluster text, #drafting-equation-cluster text, 
+        #drafting-compass-cluster text, #drafting-lower-right-cluster text {
+            transition: fill 0.65s ease, opacity 0.65s ease;
+        }
+        
+        #drafting-axis-cluster circle, #drafting-axis-cluster ellipse, #drafting-axis-cluster line,
+        #drafting-equation-cluster path, #drafting-equation-cluster line,
+        #drafting-compass-cluster path, #drafting-compass-cluster line, #drafting-compass-cluster circle,
+        #drafting-lower-right-cluster path, #drafting-lower-right-cluster line, #drafting-lower-right-cluster circle,
+        #drafting-construction-cluster line, #drafting-construction-cluster circle {
+            transition: stroke 0.65s ease, fill 0.65s ease, opacity 0.65s ease, stroke-width 0.65s ease;
+        }
+
+        @keyframes reasoning-reveal {
+            0% { opacity: 0; filter: blur(3px); transform: scale(0.96); }
+            20% { opacity: 0.45; filter: blur(1.2px) drop-shadow(0 0 5px rgba(211, 168, 93, 0.34)); transform: scale(0.985); }
+            45% { opacity: 1; filter: blur(0) drop-shadow(0 0 8px rgba(126, 78, 24, 0.58)); transform: scale(1.035); }
+            70% { opacity: 1; filter: blur(0) contrast(1.15); transform: scale(1.025); }
+            100% { opacity: 1; filter: blur(0) contrast(1.3) drop-shadow(0 1px 0 rgba(0, 0, 0, 0.22)); transform: scale(1.025); }
+        }
+
+        /* =====================================================
+           ANIMATED MODES (Cinematic & Standard Logic)
+           ===================================================== */
+        
+        /* Frame 1: Institution Appears */
+        .state-1 #svg-stage { transform: scale(1); transition: transform 2.4s ease-out; }
+        .state-1 #parchment-bg { opacity: 1; }
+        .state-1 #corner-details { opacity: 0.78; }
+        .state-1 #drafting-construction-cluster { opacity: 0.42; filter: blur(0.6px); transform: scale(1); }
+        .state-1 #institutional-seal, .state-1 #core-archival { opacity: 1; }
+        
+        /* Frame 2: First Trace */
+        .state-2 #drafting-axis-cluster {
+            opacity: 1; filter: blur(0) drop-shadow(0 0 7px rgba(126, 78, 24, 0.46)); transform: scale(1.025);
+            animation: reasoning-reveal var(--trace-reveal) ease-out; mix-blend-mode: multiply;
+        }
+        .state-2 #drafting-axis-cluster text { fill: #160D07; font-weight: 700; }
+        .state-2 #drafting-axis-cluster circle, .state-2 #drafting-axis-cluster ellipse, .state-2 #drafting-axis-cluster line { stroke: #160D07; }
+        .state-2 #drafting-construction-cluster { opacity: 0.58; filter: blur(0) drop-shadow(0 0 2px rgba(142, 98, 47, 0.2)); transform: scale(1); mix-blend-mode: multiply; }
+
+        /* Frame 3: Black-Ink Certainty */
+        .state-3 #drafting-axis-cluster, .state-3 #drafting-equation-cluster,
+        .state-3 #drafting-compass-cluster, .state-3 #drafting-lower-right-cluster,
+        .state-3 #drafting-construction-cluster {
+            mix-blend-mode: multiply;
+        }
+        .state-3 #drafting-axis-cluster { opacity: 1; }
+        
+        /* Staggered Reveals */
+        .state-3 #drafting-compass-cluster { animation: reasoning-reveal var(--trace-reveal) ease-out 0s both; }
+        .state-3 #drafting-equation-cluster { animation: reasoning-reveal var(--trace-reveal) ease-out 0.5s both; }
+        .state-3 #drafting-lower-right-cluster { animation: reasoning-reveal var(--trace-reveal) ease-out 1s both; }
+
+        .state-3 #drafting-axis-cluster text, .state-3 #drafting-equation-cluster text,
+        .state-3 #drafting-compass-cluster text, .state-3 #drafting-lower-right-cluster text {
+            fill: var(--trace-ink); opacity: 1; font-weight: 700; letter-spacing: 0.015em;
+        }
+        .state-3 #drafting-axis-cluster circle, .state-3 #drafting-axis-cluster ellipse, .state-3 #drafting-axis-cluster line,
+        .state-3 #drafting-compass-cluster circle, .state-3 #drafting-compass-cluster path, .state-3 #drafting-compass-cluster line,
+        .state-3 #drafting-lower-right-cluster path, .state-3 #drafting-lower-right-cluster line {
+            stroke: var(--trace-ink); stroke-width: 2; opacity: 1;
+        }
+        .state-3 #drafting-equation-cluster line { stroke: var(--trace-ink); stroke-width: 2.25; opacity: 1; }
+        .state-3 #drafting-equation-cluster path { stroke: var(--trace-ink); stroke-width: 3.5; opacity: 1; }
+        .state-3 #drafting-lower-right-cluster circle { stroke: var(--trace-ink); opacity: 1; }
+        .state-3 #drafting-lower-right-cluster circle[fill] { fill: var(--trace-ink); }
+        .state-3 #drafting-construction-cluster { opacity: 1; filter: none; transform: scale(1.01); }
+        .state-3 #drafting-construction-cluster line, .state-3 #drafting-construction-cluster circle {
+            stroke: var(--trace-ink-soft); stroke-width: 1.15; opacity: 0.92;
+        }
+
+        /* Frame 4: Understanding Concentrates */
+        .state-4 #drafting-axis-cluster, .state-4 #drafting-equation-cluster,
+        .state-4 #drafting-compass-cluster, .state-4 #drafting-lower-right-cluster,
+        .state-4 #drafting-construction-cluster, .state-4 #corner-details {
+            opacity: 0; filter: blur(1.4px); transform: scale(0.99); transition-duration: var(--trace-fade);
+        }
+        .state-4 #parchment-bg { opacity: 0.42; }
+        .state-4 #svg-stage { transform: scale(0.95); transition: transform 1.5s var(--ease-in-out); }
+
+        /* Frame 5: System Activates */
+        .state-5 #activation-halo { opacity: 1; }
+        .state-5 #core-archival { opacity: 0; }
+        .state-5 #core-modern { opacity: 1; }
+
+        /* Frame 6: Seal Resolves */
+        .state-6 #institutional-seal { opacity: 0; }
+        .state-6 #parchment-bg { opacity: 0; }
+        .state-6 #svg-stage { transform: scale(0.7); } 
+
+        /* Frame 7 & 8: UI Appears */
+        .state-7 #svg-stage { transform: scale(0.4) translateY(-60%); }
+        .state-7 h1, .state-7 p.subtitle { opacity: 1; transform: translateY(0); }
+        .state-8 #ui-stage { pointer-events: auto; }
+        .state-8 .input-wrapper { opacity: 1; transform: translateY(0); }
+        .state-8 .example-prompt:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.3s; }
+        .state-8 .example-prompt:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.4s; }
+        .state-8 .example-prompt:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.5s; }
+
+        /* =====================================================
+           STATIC MODE (Permanent Archival Ink Plate)
+           ===================================================== */
+        .mode-static * {
+            animation: none !important;
+            transition: none !important;
+        }
+        .mode-static #parchment-bg, .mode-static #corner-details, 
+        .mode-static #institutional-seal, .mode-static #core-archival, 
+        .mode-static #activation-halo {
+            opacity: 1 !important;
+        }
+        .mode-static #core-modern, .mode-static #ui-stage {
+            opacity: 0 !important; pointer-events: none !important; display: none !important;
+        }
+        .mode-static #svg-stage {
+            transform: scale(1) !important;
+        }
+        /* Lock in Frame 3 Black Ink permanently */
+        .mode-static #drafting-axis-cluster, .mode-static #drafting-equation-cluster,
+        .mode-static #drafting-compass-cluster, .mode-static #drafting-lower-right-cluster,
+        .mode-static #drafting-construction-cluster {
+            opacity: 1 !important; filter: none !important; transform: scale(1.025) !important; mix-blend-mode: multiply !important;
+        }
+        .mode-static #drafting-construction-cluster { transform: scale(1.01) !important; }
+
+        .mode-static #drafting-axis-cluster text, .mode-static #drafting-equation-cluster text,
+        .mode-static #drafting-compass-cluster text, .mode-static #drafting-lower-right-cluster text {
+            fill: var(--trace-ink) !important; font-weight: 700 !important; letter-spacing: 0.015em !important; opacity: 1 !important;
+        }
+        .mode-static #drafting-axis-cluster circle, .mode-static #drafting-axis-cluster ellipse, .mode-static #drafting-axis-cluster line,
+        .mode-static #drafting-compass-cluster circle, .mode-static #drafting-compass-cluster path, .mode-static #drafting-compass-cluster line,
+        .mode-static #drafting-lower-right-cluster path, .mode-static #drafting-lower-right-cluster line {
+            stroke: var(--trace-ink) !important; stroke-width: 2 !important; opacity: 1 !important;
+        }
+        .mode-static #drafting-equation-cluster line { stroke: var(--trace-ink) !important; stroke-width: 2.25 !important; opacity: 1 !important; }
+        .mode-static #drafting-equation-cluster path { stroke: var(--trace-ink) !important; stroke-width: 3.5 !important; opacity: 1 !important; }
+        .mode-static #drafting-lower-right-cluster circle { stroke: var(--trace-ink) !important; opacity: 1 !important; }
+        .mode-static #drafting-lower-right-cluster circle[fill] { fill: var(--trace-ink) !important; }
+        
+        .mode-static #drafting-construction-cluster line, .mode-static #drafting-construction-cluster circle {
+            stroke: var(--trace-ink-soft) !important; stroke-width: 1.15 !important; opacity: 0.92 !important;
+        }
+
+        /* Mobile specific adjustments */
+        @media (max-width: 600px) {
+            .state-7 #svg-stage { transform: scale(0.35) translateY(-85%); }
+            #ui-stage { top: 45%; }
+            h1 { font-size: 1.6rem; }
+            #dev-controls { bottom: 20px; top: auto; right: auto; justify-content: center; width: calc(100% - 40px); left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Dev Controls -->
+    <div id="dev-controls">
+        <button class="dev-btn" id="btn-cinematic" onclick="setMode('cinematic')">Cinematic (15.5s)</button>
+        <button class="dev-btn" id="btn-standard" onclick="setMode('standard')">Standard (8.9s)</button>
+        <button class="dev-btn" id="btn-static" onclick="setMode('static')">Static Plate</button>
+    </div>
+
+    <div id="app-container">
+        
+        <!-- MASTER GOVERNED SVG -->
+        <div id="svg-stage">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
+                <defs>
+                    <!-- Gradients -->
+                    <radialGradient id="parchment-base" cx="50%" cy="50%" r="75%">
+                        <stop offset="0%" stop-color="#E9D6A6" />
+                        <stop offset="70%" stop-color="#D9BE83" />
+                        <stop offset="100%" stop-color="#B89C61" />
+                    </radialGradient>
+                    <radialGradient id="archival-navy" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#26394A" />
+                        <stop offset="100%" stop-color="#0B151F" />
+                    </radialGradient>
+                    <linearGradient id="aged-brass" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#8E622F" />
+                        <stop offset="50%" stop-color="#D3A85D" />
+                        <stop offset="100%" stop-color="#5E3D1D" />
+                    </linearGradient>
+                    <linearGradient id="aged-silver" x1="100%" y1="0%" x2="0%" y2="100%">
+                        <stop offset="0%" stop-color="#F0E6C8" />
+                        <stop offset="50%" stop-color="#A89B7D" />
+                        <stop offset="100%" stop-color="#4F3924" />
+                    </linearGradient>
+                    <radialGradient id="archival-nucleus" cx="30%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="#E3C17B" />
+                        <stop offset="100%" stop-color="#5E3D1D" />
+                    </radialGradient>
+                    <radialGradient id="modern-nucleus" cx="30%" cy="30%" r="70%">
+                        <stop offset="0%" stop-color="#FFFFFF" />
+                        <stop offset="20%" stop-color="#F4C35B" />
+                        <stop offset="100%" stop-color="#D4AF37" />
+                    </radialGradient>
+                    <radialGradient id="activation-glow" cx="50%" cy="50%" r="50%">
+                        <stop offset="0%" stop-color="#64FFDA" stop-opacity="0.3" />
+                        <stop offset="50%" stop-color="#4D8B8F" stop-opacity="0.1" />
+                        <stop offset="100%" stop-color="#051021" stop-opacity="0" />
+                    </radialGradient>
+                    <pattern id="fine-grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#4F3924" stroke-width="0.5" stroke-opacity="0.2"/>
+                    </pattern>
+                </defs>
+
+                <!-- Background -->
+                <g id="parchment-bg">
+                    <rect width="1000" height="1000" fill="url(#parchment-base)" />
+                    <rect width="1000" height="1000" fill="url(#fine-grid)" />
+                    <rect x="20" y="20" width="960" height="960" fill="none" stroke="#4F3924" stroke-width="2" opacity="0.5" />
+                    <rect x="26" y="26" width="948" height="948" fill="none" stroke="#4F3924" stroke-width="1" opacity="0.3" />
+                </g>
+
+                <!-- Corner Details -->
+                <g id="corner-details" stroke="url(#aged-brass)" stroke-width="2" fill="none">
+                    <circle cx="40" cy="40" r="8" fill="url(#aged-brass)" />
+                    <path d="M 40 100 L 40 40 L 100 40" />
+                    <circle cx="960" cy="40" r="8" fill="url(#aged-brass)" />
+                    <path d="M 960 100 L 960 40 L 900 40" />
+                    <circle cx="40" cy="960" r="8" fill="url(#aged-brass)" />
+                    <path d="M 40 900 L 40 960 L 100 960" />
+                    <circle cx="960" cy="960" r="8" fill="url(#aged-brass)" />
+                    <path d="M 960 900 L 960 960 L 900 960" />
+                </g>
+
+                <!-- 4 Quadrants of Reasoning Traces -->
+                <g id="drafting-axis-cluster" stroke="#4F3924" fill="none">
+                    <circle cx="180" cy="180" r="80" stroke-width="1" />
+                    <ellipse cx="180" cy="180" rx="80" ry="30" stroke-width="0.5" />
+                    <ellipse cx="180" cy="180" rx="30" ry="80" stroke-width="0.5" />
+                    <line x1="80" y1="180" x2="280" y2="180" stroke-width="1" stroke-dasharray="4,4" />
+                    <line x1="180" y1="80" x2="180" y2="280" stroke-width="1" stroke-dasharray="4,4" />
+                    <text x="290" y="185" font-family="'Times New Roman', serif" font-style="italic" font-size="16" fill="#4F3924" stroke="none">y</text>
+                    <text x="175" y="70" font-family="'Times New Roman', serif" font-style="italic" font-size="16" fill="#4F3924" stroke="none">z</text>
+                    <text x="65" y="185" font-family="'Times New Roman', serif" font-style="italic" font-size="16" fill="#4F3924" stroke="none">x</text>
+                </g>
+
+                <g id="drafting-equation-cluster">
+                    <text x="100" y="820" font-family="'Times New Roman', serif" font-style="italic" font-size="24" fill="#4F3924">E = mc<tspan font-size="16" dy="-10">2</tspan></text>
+                    <text x="100" y="880" font-family="'Times New Roman', serif" font-style="italic" font-size="24" fill="#4F3924">∂<tspan font-size="16" dy="-10">2</tspan><tspan dy="10">ψ / ∂t</tspan><tspan font-size="16" dy="-10">2</tspan><tspan dy="10"> = ∇</tspan><tspan font-size="16" dy="-10">2</tspan><tspan dy="10">ψ</tspan></text>
+                    <line x1="100" y1="910" x2="200" y2="910" stroke="#4F3924" stroke-width="1" />
+                    <path d="M 100 930 Q 120 910 140 930 T 180 925" fill="none" stroke="#4F3924" stroke-width="2" />
+                </g>
+
+                <g id="drafting-compass-position" transform="translate(820 180)">
+                    <g id="drafting-compass-cluster">
+                        <circle cx="0" cy="0" r="70" fill="none" stroke="#4F3924" stroke-width="1"/>
+                        <circle cx="0" cy="0" r="60" fill="none" stroke="#4F3924" stroke-width="0.5" stroke-dasharray="2 2"/>
+                        <path d="M 0 -70 L 10 -15 L 70 0 L 10 15 L 0 70 L -10 15 L -70 0 L -10 -15 Z" fill="none" stroke="#4F3924" stroke-width="1"/>
+                        <path d="M 0 -70 L 0 70 M -70 0 L 70 0" stroke="#4F3924" stroke-width="1"/>
+                        <text x="-5" y="-80" font-family="serif" font-size="16" fill="#4F3924">N</text>
+                        <text x="-5" y="90" font-family="serif" font-size="16" fill="#4F3924">S</text>
+                        <text x="80" y="5" font-family="serif" font-size="16" fill="#4F3924">E</text>
+                        <text x="-95" y="5" font-family="serif" font-size="16" fill="#4F3924">W</text>
+                    </g>
+                </g>
+
+                <g id="drafting-lower-right-position" transform="translate(820 820)">
+                    <g id="drafting-lower-right-cluster" fill="none" stroke="#4F3924" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M -110 90 A 200 200 0 0 1 90 -110" stroke-width="1.2"/>
+                        <path d="M -82 90 A 172 172 0 0 1 90 -82" stroke-width="0.9"/>
+                        <path d="M -54 90 A 144 144 0 0 1 90 -54" stroke-width="0.7" stroke-dasharray="3 5"/>
+                        <line x1="-110" y1="90" x2="115" y2="90" stroke-width="1"/>
+                        <line x1="-110" y1="90" x2="-110" y2="-135" stroke-width="1"/>
+                        <line x1="-110" y1="90" x2="48" y2="-68" stroke-width="0.8" stroke-dasharray="5 5"/>
+                        <line x1="-110" y1="90" x2="82" y2="-20" stroke-width="0.7" stroke-dasharray="3 6"/>
+                        <line x1="-78" y1="84" x2="-78" y2="96" stroke-width="1"/>
+                        <line x1="-42" y1="84" x2="-42" y2="96" stroke-width="1"/>
+                        <line x1="-116" y1="54" x2="-104" y2="54" stroke-width="1"/>
+                        <line x1="-116" y1="18" x2="-104" y2="18" stroke-width="1"/>
+                        <circle cx="-110" cy="90" r="4" fill="#4F3924" stroke="none"/>
+                        <path d="M -76 90 A 34 34 0 0 0 -86 66" stroke-width="1.2"/>
+                        <text x="-76" y="72" font-family="'Times New Roman', serif" font-style="italic" font-size="16" fill="#4F3924" stroke="none">θ</text>
+                        <text x="100" y="96" font-family="'Times New Roman', serif" font-style="italic" font-size="15" fill="#4F3924" stroke="none">x</text>
+                        <text x="-116" y="-142" font-family="'Times New Roman', serif" font-style="italic" font-size="15" fill="#4F3924" stroke="none">y</text>
+                    </g>
+                </g>
+
+                <g id="drafting-construction-cluster" stroke="#4F3924" stroke-width="0.5">
+                    <line x1="100" y1="500" x2="900" y2="500" stroke-dasharray="10, 10" />
+                    <line x1="500" y1="100" x2="500" y2="900" stroke-dasharray="10, 10" />
+                    <circle cx="500" cy="500" r="460" fill="none" />
+                </g>
+
+                <!-- Institutional Seal -->
+                <g id="institutional-seal">
+                    <circle cx="500" cy="500" r="420" fill="url(#archival-navy)" stroke="url(#aged-brass)" stroke-width="16" />
+                    <circle cx="500" cy="500" r="404" fill="none" stroke="url(#aged-silver)" stroke-width="3" />
+                    <circle cx="500" cy="500" r="390" fill="none" stroke="url(#aged-brass)" stroke-width="6" />
+                    <circle cx="500" cy="500" r="375" fill="none" stroke="#A89B7D" stroke-width="10" stroke-dasharray="2, 8" opacity="0.5" />
+                    <g fill="url(#aged-brass)" stroke="#0B151F" stroke-width="2">
+                        <circle cx="500" cy="88" r="10" />
+                        <circle cx="912" cy="500" r="10" />
+                        <circle cx="500" cy="912" r="10" />
+                        <circle cx="88" cy="500" r="10" />
+                    </g>
+                </g>
+
+                <!-- Core Power Mark Components -->
+                <circle cx="500" cy="500" r="340" fill="#0B151F" />
+                <circle id="activation-halo" cx="500" cy="500" r="320" fill="url(#activation-glow)" />
+
+                <g id="core-archival">
+                    <g fill="none" stroke-width="8">
+                        <ellipse cx="500" cy="500" rx="80" ry="280" stroke="url(#aged-brass)" transform="rotate(0, 500, 500)" />
+                        <ellipse cx="500" cy="500" rx="80" ry="280" stroke="url(#aged-silver)" transform="rotate(60, 500, 500)" />
+                        <ellipse cx="500" cy="500" rx="80" ry="280" stroke="url(#aged-brass)" transform="rotate(120, 500, 500)" />
+                    </g>
+                    <circle cx="500" cy="220" r="14" fill="url(#aged-silver)" stroke="#0B151F" stroke-width="3" transform="rotate(0, 500, 500)" />
+                    <circle cx="500" cy="780" r="14" fill="url(#aged-brass)" stroke="#0B151F" stroke-width="3" transform="rotate(60, 500, 500)" />
+                    <circle cx="500" cy="220" r="14" fill="url(#aged-brass)" stroke="#0B151F" stroke-width="3" transform="rotate(120, 500, 500)" />
+                    <circle cx="500" cy="500" r="45" fill="url(#archival-nucleus)" stroke="#5E3D1D" stroke-width="4" />
+                </g>
+
+                <g id="core-modern">
+                    <circle cx="500" cy="500" r="340" fill="none" stroke="#64FFDA" stroke-width="4" opacity="0.8" />
+                    <circle cx="500" cy="500" r="320" fill="none" stroke="#F4C35B" stroke-width="2" opacity="0.6" />
+                    <circle cx="500" cy="500" r="330" fill="none" stroke="#4D8B8F" stroke-width="1" opacity="0.4" />
+                    <g fill="none" stroke-width="10">
+                        <ellipse cx="500" cy="500" rx="80" ry="280" stroke="#64FFDA" transform="rotate(0, 500, 500)" />
+                        <ellipse cx="500" cy="500" rx="80" ry="280" stroke="#4D8B8F" transform="rotate(60, 500, 500)" />
+                        <ellipse cx="500" cy="500" rx="80" ry="280" stroke="#D4AF37" transform="rotate(120, 500, 500)" />
+                    </g>
+                    <circle cx="500" cy="220" r="14" fill="#F4C35B" transform="rotate(0, 500, 500)" />
+                    <circle cx="500" cy="780" r="14" fill="#F4C35B" transform="rotate(60, 500, 500)" />
+                    <circle cx="500" cy="220" r="14" fill="#F4C35B" transform="rotate(120, 500, 500)" />
+                    <circle cx="500" cy="500" r="50" fill="url(#modern-nucleus)" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- USER INTERFACE -->
+        <div id="ui-stage">
+            <h1>What's on your mind today?</h1>
+            <p class="subtitle">Begin with an opportunity, a priority, or a change you are trying to understand.</p>
+            <div class="input-wrapper">
+                <input type="text" placeholder="Describe what you are trying to understand..." />
+            </div>
+            <div class="examples">
+                <button class="example-prompt">I’m considering a job opportunity.</button>
+                <button class="example-prompt">I need to organize competing priorities.</button>
+                <button class="example-prompt">I’m trying to understand something that is changing.</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /**
+         * MASTER COMPONENT CONTROLLER
+         * Single governed source driving 3 different modes.
+         */
+        const app = document.getElementById("app-container");
+        const btns = document.querySelectorAll('.dev-btn');
+        let sequenceTimers = [];
+        
+        // Expose the global configuration mode: "cinematic", "standard", or "static"
+        let frontPorchMode = "cinematic"; 
+
+        function clearSequenceTimers() {
+            while (sequenceTimers.length > 0) {
+                clearTimeout(sequenceTimers.pop());
+            }
+        }
+        
+        function clearAllStates() {
+            clearSequenceTimers();
+            for (let i = 1; i <= 8; i++) {
+                app.classList.remove(`state-${i}`);
+            }
+            app.classList.remove('mode-cinematic', 'mode-standard', 'mode-static');
+        }
+        
+        function addState(stateNumber, delay) {
+            const timer = setTimeout(() => {
+                app.classList.add(`state-${stateNumber}`);
+            }, delay);
+            sequenceTimers.push(timer);
+        }
+        
+        function setMode(mode) {
+            frontPorchMode = mode;
+            
+            // Update UI buttons
+            btns.forEach(b => b.classList.remove('active'));
+            document.getElementById(`btn-${mode}`).classList.add('active');
+
+            runSequence();
+        }
+
+        function runSequence() {
+            clearAllStates();
+            
+            // Force browser reflow to reset CSS animations
+            void app.offsetWidth;
+            
+            // Apply the chosen mode class
+            app.classList.add(`mode-${frontPorchMode}`);
+
+            // If static, the CSS handles everything permanently. We abort the animation.
+            if (frontPorchMode === "static") return;
+
+            // Otherwise, load the specific timeline arrays
+            const timings = frontPorchMode === "cinematic"
+                ? [0, 1800, 4800, 10400, 13200, 14100, 14900, 15500] // 15.5s Cinematic Sequence
+                : [0, 900, 2400, 5200, 6600, 7500, 8300, 8900];      // 8.9s Standard Sequence
+
+            timings.forEach((time, index) => {
+                addState(index + 1, time);
+            });
+        }
+        
+        // Initialize
+        window.addEventListener("load", () => {
+            setMode(frontPorchMode);
+        });
+    </script>
+</body>
+</html>
