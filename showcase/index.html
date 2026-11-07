@@ -1,0 +1,157 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Explore the potential value of continuity, the Thinking Graph Arena, and Signal Before Action."><title>proAM Labs · What could continuity be worth?</title><link rel="stylesheet" href="calculator.css"><link rel="stylesheet" href="style.css"></head><body><header class="site-header"><div class="site-nav"><a class="site-brand" href="index.html"><img src="assets/proam-logo.png" alt="proAM Labs emblem">proAM Labs</a><nav class="site-links" aria-label="Main navigation"><a href="index.html" aria-current="page">01 · Value</a><a href="arena.html" >02 · Arena</a><a href="signal.html" >03 · Signal Before Action</a></nav></div></header><img class="site-banner" src="assets/parchment.jpg" alt="proAM Labs. A different way of seeing. Fit for purpose."><main class="wrap">
+    <section class="hero"><div>
+      <div class="eyebrow">01 · Explore the value</div>
+      <h1>What could continuity be worth?</h1>
+      <p class="sub">When people can recover the context and reasoning behind prior work, they may spend less time starting over. Explore the <strong>potential value of recovered productive capacity</strong>—then examine what would have to be proven.</p>
+    </div><p class="scope">Illustrative scenario · No connection to a live Thinking Graph, company data, or customer evidence.</p></section>
+    <div class="layout">
+      <section class="card" aria-labelledby="assumptions-title">
+        <div class="cardhead"><div class="eyebrow">01 · Set the assumptions</div><h2 id="assumptions-title">Your organization</h2><p class="intro">Use the controls to explore a scenario. Defaults are hypothetical, not findings about proAM Labs customers.</p></div>
+        <div class="cardbody">
+          <div class="field"><div class="fieldtop"><label for="people">People affected</label><output id="people-out" for="people">100</output></div><input type="range" id="people" min="10" max="1000" step="10" value="100"><div class="range-ends"><span>10</span><span>1,000</span></div><small>Number of people who would benefit from better context recovery.</small></div>
+          <div class="field"><div class="fieldtop"><label for="minutes">Minutes recovered per person per day</label><output id="minutes-out" for="minutes">15 min</output></div><input type="range" id="minutes" min="0" max="60" step="5" value="15"><div class="range-ends"><span>0</span><span>60 min</span></div><small>Incremental time saved versus the existing way of working—not total time spent searching.</small></div>
+          <div class="field"><div class="fieldtop"><label for="rate">Fully loaded labor cost</label><output id="rate-out" for="rate">$75/hr</output></div><input type="range" id="rate" min="30" max="150" step="5" value="75"><div class="range-ends"><span>$30/hr</span><span>$150/hr</span></div><small>Illustrative hourly cost including employer overhead; not a measured salary.</small></div>
+          <div class="field"><div class="fieldtop"><label for="days">Workdays per year</label><output id="days-out" for="days">220 days</output></div><input type="range" id="days" min="100" max="260" step="10" value="220"><div class="range-ends"><span>100</span><span>260</span></div><small>Annual days the assumed daily savings are applicable.</small></div>
+          <div class="field"><div class="fieldtop"><label for="capture">Value realization</label><output id="capture-out" for="capture">60%</output></div><input type="range" id="capture" min="0" max="100" step="5" value="60"><div class="range-ends"><span>0%</span><span>100%</span></div><small>Share of potential time recovered that becomes useful productive capacity. Includes adoption and practical realization effects.</small></div>
+          <div class="costs">
+            <h3>Optional cost assumptions</h3>
+            <p class="intro">Leave blank if unknown. We will not treat missing costs as zero.</p>
+            <div class="costgrid">
+              <div class="costfield"><label for="operating">Annual operating cost ($)</label><input id="operating" type="number" min="0" step="1000" inputmode="decimal" placeholder="Not specified"><small>Licensing, support, qualification, upkeep.</small></div>
+              <div class="costfield"><label for="setup">One-time implementation cost ($)</label><input id="setup" type="number" min="0" step="1000" inputmode="decimal" placeholder="Not specified"><small>Setup, integration, change management.</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="result-title">
+        <div class="cardhead"><div class="eyebrow">02 · Explore the potential</div><h2 id="result-title">Illustrative value</h2><p class="intro">Recovered capacity is an economic proxy. It is not guaranteed cash savings, revenue, customer willingness to pay, or demonstrated product ROI.</p></div>
+        <div class="results" aria-live="polite" aria-atomic="true">
+          <div class="big-label">Potential annual recovered-capacity value</div>
+          <div class="big-value" id="gross">$247,500</div>
+          <p class="big-note">Estimated productive capacity value before implementation and ongoing costs, under your selected assumptions.</p>
+          <div class="stats"><div class="stat"><strong id="hours">3,300</strong><span>Productive hours recovered/year</span></div><div class="stat"><strong id="perperson">33.0</strong><span>Hours recovered/person/year</span></div></div>
+          <div class="calculation">
+            <h3>After modeled costs</h3>
+            <div class="calcrow"><span>Ongoing annual net capacity value</span><strong id="ongoing-net">Not modeled</strong></div>
+            <div class="calcrow"><span>Year-one net capacity value</span><strong id="yearone-net">Not modeled</strong></div>
+            <p class="smallprint" id="cost-note">Enter both optional cost assumptions to calculate a net scenario. A zero must be entered explicitly to mean zero cost.</p>
+          </div>
+          <div class="section callout"><strong>This is a hypothesis, not a valuation.</strong> The calculator does not estimate total business value, the worth of human understanding, or the Thinking Graph's proven impact. It tests how sensitive a time-recovery hypothesis is to your assumptions.</div>
+          <div class="actions"><button class="primary" id="download" type="button">Download scenario (.txt)</button><button class="secondary" id="reset" type="button">Reset assumptions</button></div>
+          <p id="status" class="smallprint" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </div>
+    <div class="explain section">
+      <section class="card"><div class="cardhead"><div class="eyebrow">03 · Interpret with care</div><h2>Assumptions & limitations</h2></div><div class="cardbody">
+        <p><strong>What it models:</strong> the capacity value of fewer restarts, faster orientation, and less repeated context reconstruction.</p>
+        <div class="formula">People × (minutes saved ÷ 60) × workdays × (realization % ÷ 100) × fully loaded hourly cost</div>
+        <ul>
+          <li>The 100 people, 15 minutes, $75/hour, 220 days, and 60% realization are illustrative defaults, <strong>not measured outcomes</strong>.</li>
+          <li>Actual savings depend on the current baseline, successful adoption, task mix, data quality, operational design, and what employees do with recovered time.</li>
+          <li>Time recovered is not automatically a reduction in payroll or a financial return.</li>
+          <li>Costs must include setup, integrations, maintenance, evidence qualification, human review, and change management; unspecified costs remain unknown.</li>
+          <li>Risk reduction, faster decisions, retention, trust, cognitive relief, and other potential benefits are <strong>excluded</strong> because no credible numeric basis is established here.</li>
+        </ul>
+      </div></section>
+      <section class="card"><div class="cardhead"><div class="eyebrow">04 · From hypothesis to evidence</div><h2>What proAM Labs is trying to test</h2></div><div class="cardbody">
+        <p>The goal is not simply a better summary. It is the ability to <strong>reconstruct qualified understanding</strong> with evidence, context, uncertainty, relationships, and decision boundaries intact.</p>
+        <p><strong>Proof-of-value question:</strong> Can another person or agent use preserved context to reach a reliable, decision-useful understanding with less effort than conventional retrieval or an ordinary LLM assistant?</p>
+        <ul>
+          <li>Compare source search, LLM-assisted retrieval, and governed continuity on the <strong>same tasks</strong>.</li>
+          <li>Measure time to orientation, factual fidelity, recognition of unknowns, decision quality, and total cost of transfer.</li>
+          <li>Use independently checked evidence and observe real-world adoption before claiming benefit.</li>
+        </ul>
+        <p><strong>Commercial readiness:</strong> This prototype illustrates a possible value mechanism. It does not demonstrate technical effectiveness, scalable unit economics, product-market fit, or a price customers will pay.</p>
+        <p><a href="../continuity-search-v0-1/">Explore how continuity could work in RTS and Publications ↗</a></p>
+      </div></section>
+    </div>
+    
+  </main><div class="site-main next-link"><a href="arena.html">See how continuity could work →</a></div><footer class="site-footer"><span>proAM Labs · A different way of seeing.</span><a href="../enhanced/">Explore the demo library ↗</a><span>Fit for purpose.</span></footer><script>
+    'use strict';
+    // This small, deterministic model is intentionally separate from presentation.
+    const defaults = Object.freeze({people:100,minutes:15,rate:75,days:220,capture:60});
+    const fieldIds = Object.keys(defaults);
+    const $ = id => document.getElementById(id);
+    const money = n => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
+    const count = n => new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n);
+    function calculateValue(a){
+      const hours = a.people * (a.minutes / 60) * a.days * (a.capture / 100);
+      const gross = hours * a.rate;
+      const operatingKnown = a.operating !== null;
+      const setupKnown = a.setup !== null;
+      return {hours,gross,perPerson:a.people ? hours/a.people : 0,
+        ongoingNet:operatingKnown ? gross - a.operating : null,
+        yearOneNet:operatingKnown && setupKnown ? gross - a.operating - a.setup : null};
+    }
+    function optionalCost(id){
+      const input = $(id), raw = input.value.trim();
+      if(raw === '' || !input.validity.valid) return null;
+      const n = Number(raw);
+      return Number.isFinite(n) && n >= 0 ? n : null;
+    }
+    function getAssumptions(){
+      const a = {};
+      for(const id of fieldIds) a[id] = Number($(id).value);
+      a.operating = optionalCost('operating');
+      a.setup = optionalCost('setup');
+      return a;
+    }
+    function display(){
+      const a = getAssumptions(), v = calculateValue(a);
+      $('people-out').textContent = count(a.people);
+      $('minutes-out').textContent = count(a.minutes) + ' min';
+      $('rate-out').textContent = money(a.rate) + '/hr';
+      $('days-out').textContent = count(a.days) + ' days';
+      $('capture-out').textContent = count(a.capture) + '%';
+      $('gross').textContent = money(v.gross);
+      $('hours').textContent = count(v.hours);
+      $('perperson').textContent = v.perPerson.toFixed(1);
+      $('ongoing-net').textContent = v.ongoingNet === null ? 'Not modeled' : money(v.ongoingNet);
+      $('yearone-net').textContent = v.yearOneNet === null ? 'Not modeled' : money(v.yearOneNet);
+      $('cost-note').textContent = a.operating === null || a.setup === null
+        ? 'Enter both optional cost assumptions for a year-one net scenario. A zero must be entered explicitly to mean zero cost.'
+        : 'Net values deduct only the two cost amounts entered; they are capacity-value scenarios, not verified cash returns.';
+      return {a,v};
+    }
+    function exportScenario(){
+      const data = display(), a = data.a, v = data.v;
+      const maybeCost = n => n === null ? 'Not specified' : money(n);
+      const lines = [
+        'proAM Labs - Continuity Value Explorer v0.1',
+        'Illustrative scenario; not a measured Thinking Graph benefit or financial forecast.',
+        '',
+        'People affected: ' + a.people,
+        'Minutes recovered per person per day: ' + a.minutes,
+        'Fully loaded labor cost per hour: ' + money(a.rate),
+        'Workdays per year: ' + a.days,
+        'Value realization: ' + a.capture + '%',
+        'Annual operating cost: ' + maybeCost(a.operating),
+        'One-time implementation cost: ' + maybeCost(a.setup),
+        '',
+        'Annual productive hours recovered: ' + count(v.hours),
+        'Annual gross recovered-capacity value: ' + money(v.gross),
+        'Ongoing annual net capacity value: ' + maybeCost(v.ongoingNet),
+        'Year-one net capacity value: ' + maybeCost(v.yearOneNet),
+        '',
+        'Formula: people x (minutes/60) x workdays x (realization/100) x labor rate.',
+        'No claim of cash savings, product efficacy, ROI, revenue, or customer willingness to pay.',
+        'Time savings and all inputs must be independently validated for actual use.'
+      ];
+      const blob = new Blob([lines.join('\n')+'\n'],{type:'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url; link.download = 'proam-continuity-value-scenario.txt';
+      document.body.appendChild(link); link.click(); link.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),1000);
+      $('status').textContent = 'Scenario downloaded locally. No data sent to proAM Labs.';
+    }
+    fieldIds.concat(['operating','setup']).forEach(id => $(id).addEventListener('input',()=>{display();$('status').textContent='';}));
+    $('reset').addEventListener('click',()=>{
+      for(const [id,value] of Object.entries(defaults)) $(id).value=String(value);
+      $('operating').value='';$('setup').value='';
+      display();$('status').textContent='Illustrative defaults restored.';
+    });
+    $('download').addEventListener('click',exportScenario);
+    display();
+  </script></body></html>
