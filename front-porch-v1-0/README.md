@@ -1,17 +1,19 @@
-# Front Porch — Master Component v1.0
+# Front Porch — Master Component v1.0 + POS-Lite handoff
 
-[Open the demo](https://jcholman.github.io/proam-labs-demos/front-porch-v1-0/)
+[Open Front Porch](https://jcholman.github.io/proam-labs-demos/front-porch-v1-0/) · [Open POS-Lite v0.35](https://jcholman.github.io/thinking-graph-arena/pos-lite/)
 
-Recovered from the HTML source in the saved “Front Porch to Website · Logo Design Feedback” conversation, August 6, 2026. Only the complete master HTML component was extracted; the conversation and its private references are not published.
+Recovered from the master HTML component in the saved “Front Porch to Website · Logo Design Feedback” conversation, August 6, 2026. Private conversation content is not published.
 
-## What this test contains
+## November 7 integration
 
-- Original shared SVG, CSS animation, and browser-local state controller.
-- Cinematic (15.5 seconds), Standard (8.9 seconds), and Static Plate controls.
-- Original cinematic default and original visual design preserved.
+- Orientation question updated to “What are we going to do, now?”
+- Enter POS-Lite opens the verified POS-Lite v0.35 demo in the same tab.
+- Example prompts fill the starting context; Enter also activates the handoff.
+- Starting context is placed in sessionStorage on the shared jcholman.github.io origin, never in URL parameters. POS-Lite displays it as plain text, separate from fixtures. Context expires after one hour and can be cleared there. No server API receives it.
+- Minor viewport adjustments keep the added handoff controls reachable.
+
+Original cinematic, standard, and static SVG modes remain available. The Git history preserves the recovered original.
 
 ## Boundaries
 
-This file has no external libraries, APIs, server runtime, authentication, or build dependencies. GitHub Pages can serve the original component as a static page. The text field is a visual entry control; example prompts have no click handlers and there is no submission, AI interpretation, account registration, persistence, POS-Lite routing, or Thinking Graph integration in this recovered source. These limitations belong to the original prototype, not a GitHub Pages failure.
-
-Returning-visitor memory, reduced-motion behavior, skip control, and further accessibility/mobile refinements were discussed as subsequent work but are not implemented by this unmodified recovery.
+This connects two static prototypes. It does not add AI interpretation, registration, durable context storage, automatic fixture matching, Thinking Graph ingestion, or real output execution. Future POS-Lite hosting on another origin requires a new handoff contract; sessionStorage does not cross origins.
