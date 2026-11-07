@@ -26,7 +26,9 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## Continuity Value Explorer
 
-- [v0.1 — What could continuity be worth?](./continuity-value-v0-1/) — Adjust people affected, daily time recovered, loaded hourly cost, workdays, and realization to explore potential annual recovered-capacity value. Optional implementation and operating costs support net scenarios; blank costs remain unknown. Illustrative only: no measured Thinking Graph savings, guaranteed cash return, or customer valuation.
+[Open the interactive preview](https://raw.githack.com/jcholman/proam-labs-demos/main/continuity-value-v0-1/index.html) · [GitHub Pages address (if enabled)](https://jcholman.github.io/proam-labs-demos/continuity-value-v0-1/) · [View source](./continuity-value-v0-1/)
+
+- [v0.1 — What could continuity be worth?](https://raw.githack.com/jcholman/proam-labs-demos/main/continuity-value-v0-1/index.html) — Adjust people affected, daily time recovered, loaded hourly cost, workdays, and realization to explore potential annual recovered-capacity value. Optional implementation and operating costs support net scenarios; blank costs remain unknown. Illustrative only: no measured Thinking Graph savings, guaranteed cash return, or customer valuation.
 
 ## What comes next (planned)
 
