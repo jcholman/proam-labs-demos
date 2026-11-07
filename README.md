@@ -9,6 +9,10 @@ proAM Labs is exploring a different approach: **preserving qualified understandi
 
 These interactive prototypes show how that approach is being developed—and what it may eventually make possible. They are demonstrations of specific capabilities, **not a claim that the full system is already operating in production**.
 
+## proAM Labs · Minimal website
+
+[Open the three-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, and the Signal Before Action concept in a minimal parchment, navy, and gold design.
+
 ## Thinking Graph Arena
 
 - [v0.2 — Governed Team Orchestration](./thinking-graph-arena-v0-2/) — Follow a conflicting-evidence case through LIVE + LAND inputs, HOLD, authorized federated query, requalification, human authority, and RELEASE.
