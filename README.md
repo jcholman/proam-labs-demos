@@ -42,4 +42,4 @@ These are prospective demonstrations, not published or verified capabilities. Li
 
 ---
 
-[View the enhanced demo library](./enhanced/) — All six demos and prospective work in a more visual layout. This page remains the **Basic View**.
+[View the enhanced demo library](https://jcholman.github.io/proam-labs-demos/enhanced/) — All six demos and prospective work in a more visual layout. This page remains the **Basic View**.
