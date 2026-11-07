@@ -2,7 +2,7 @@
 
 A static, browser-local, mobile-responsive demonstration of a **hypothesis about the potential value of recovered organizational context**. It visually follows the proAM Labs “Find Your Thread” demo and reuses the identical emblem already committed at `../continuity-search-v0-1/assets/proam-emblem.png`.
 
-[Open rendered interactive preview](https://raw.githack.com/jcholman/proam-labs-demos/main/continuity-value-v0-1/index.html) (served from this public repository through a third-party static preview CDN). [View HTML source](./index.html). No build tool, authentication, app analytics, application backend, or live Thinking Graph data is required. The third-party preview host can receive standard requests and access logs; calculator inputs stay browser-local.
+[Open the interactive app on GitHub Pages](https://jcholman.github.io/proam-labs-demos/continuity-value-v0-1/). [View HTML source](./index.html). The application is a static, browser-local page, following the same GitHub Pages deployment pattern as the other proAM Labs demos. No third-party preview host, build tool, authentication, analytics, application backend, or live Thinking Graph data is required. Inputs stay in the browser.
 
 ## Assumptions and model
 
