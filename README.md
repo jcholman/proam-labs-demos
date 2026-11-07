@@ -24,6 +24,10 @@ These interactive prototypes show how that approach is being developed—and wha
 
 - [v0.1 — Find your thread](./continuity-search-v0-1/) — Find prior work by idea or unfinished task, inspect Publication and RTS artifact packages, and prepare an editable continuation brief. Four de-identified examples use browser-local concept/synonym matching; no sign-in, embeddings, live corpus/TG queries, or private source links.
 
+## Continuity Value Explorer
+
+- [v0.1 — What could continuity be worth?](./continuity-value-v0-1/) — Adjust people affected, daily time recovered, loaded hourly cost, workdays, and realization to explore potential annual recovered-capacity value. Optional implementation and operating costs support net scenarios; blank costs remain unknown. Illustrative only: no measured Thinking Graph savings, guaranteed cash return, or customer valuation.
+
 ## What comes next (planned)
 
 These are prospective demonstrations, not published or verified capabilities. Live demo links will be added here when the prototypes are ready.

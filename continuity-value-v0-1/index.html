@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f1">
+  <meta name="description" content="Explore the illustrative value of recovering organizational context, reducing the orientation tax, and transferring understanding. proAM Labs prototype.">
+  <title>proAM Labs · Continuity Value Explorer</title>
+  <style>
+    :root{--ink:#132a42;--muted:#61717d;--line:#dbe3e7;--paper:#f6f5f1;--white:#fff;--gold:#b68c40;--blue:#e9f1f7;--teal:#286577;--soft:#f2f6f7}
+    *{box-sizing:border-box}
+    body{margin:0;min-width:320px;background:var(--paper);color:var(--ink);font:15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+    a{color:var(--ink);text-underline-offset:3px}
+    button,input{font:inherit}
+    a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+    button{cursor:pointer}
+    header{background:#fff;border-bottom:1px solid var(--line)}
+    .top{max-width:1200px;margin:auto;min-height:76px;padding:14px 30px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:23px;letter-spacing:-1px;white-space:nowrap}
+    .brand img{width:48px;height:48px;object-fit:contain;border-radius:50%;flex:none}
+    .brand span{font-weight:400;color:var(--gold)}
+    nav{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+    nav a{font-size:12px;text-decoration:none;color:#526576}
+    nav a:hover{text-decoration:underline}
+    .prototype{color:#7d612c;font-size:11px;border:1px solid #dfd4be;border-radius:20px;padding:5px 11px;letter-spacing:.5px;text-transform:uppercase;white-space:nowrap}
+    .wrap{max-width:1200px;margin:auto;padding:34px 30px}
+    .eyebrow{font-size:11px;font-weight:750;letter-spacing:1.6px;text-transform:uppercase;color:#8a6a32}
+    h1{font-size:clamp(29px,3.7vw,46px);letter-spacing:-1.6px;line-height:1.13;margin:10px 0 13px;font-weight:680}
+    h2{font-size:21px;letter-spacing:-.55px;margin:0 0 8px}
+    h3{font-size:15px;margin:0 0 8px}
+    p{margin:0 0 12px}
+    .sub{color:var(--muted);max-width:760px}
+    .hero{display:flex;gap:24px;align-items:end;justify-content:space-between;margin-bottom:23px}
+    .hero .scope{max-width:295px;font-size:12px;color:var(--muted);text-align:right}
+    .layout{display:grid;grid-template-columns:minmax(310px,.92fr) minmax(350px,1.08fr);gap:22px;align-items:start}
+    .card{background:var(--white);border:1px solid var(--line);border-radius:13px;overflow:hidden}
+    .cardhead{padding:22px 24px 15px;border-bottom:1px solid var(--line)}
+    .cardbody{padding:22px 24px}
+    .intro{color:var(--muted);font-size:13px}
+    .field{padding:0 0 18px}
+    .field+.field{border-top:1px solid #eff2f3;padding-top:17px}
+    .fieldtop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+    .field label{font-size:13px;font-weight:650}
+    .field output{font-weight:750;font-variant-numeric:tabular-nums;color:#254d6b}
+    input[type=range]{width:100%;accent-color:#254d6b;cursor:pointer}
+    .range-ends{display:flex;justify-content:space-between;color:#74838f;font-size:11px}
+    .field small,.costfield small{display:block;margin-top:5px;color:var(--muted);font-size:11px}
+    .costs{margin-top:5px;padding:16px;background:#f5f8f9;border:1px solid var(--line);border-radius:10px}
+    .costs h3{margin-bottom:3px}
+    .costgrid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px}
+    .costfield label{display:block;font-size:12px;font-weight:600;margin-bottom:5px}
+    .costfield input{width:100%;min-width:0;border:1px solid #c8d5db;border-radius:7px;padding:9px 10px;color:var(--ink);background:#fff}
+    .callout{border-left:3px solid var(--gold);background:#fcf7ed;padding:13px 15px;border-radius:0 8px 8px 0;font-size:12px;color:#655633}
+    .results{padding:20px 24px 24px}
+    .big-label{font-size:11px;color:#607887;letter-spacing:1.15px;text-transform:uppercase;font-weight:750}
+    .big-value{font-size:clamp(37px,5vw,58px);font-weight:750;letter-spacing:-2px;line-height:1.1;margin:6px 0;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+    .big-note{font-size:12px;color:var(--muted);max-width:470px}
+    .stats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0}
+    .stat{background:var(--soft);border-radius:9px;padding:15px}
+    .stat strong{font-size:22px;letter-spacing:-.5px;display:block;font-variant-numeric:tabular-nums}
+    .stat span{color:var(--muted);font-size:11px}
+    .calculation{border-top:1px solid var(--line);padding-top:17px}
+    .calcrow{display:flex;justify-content:space-between;align-items:baseline;gap:15px;margin:9px 0;font-size:13px}
+    .calcrow span{color:#5c7080}
+    .calcrow strong{font-variant-numeric:tabular-nums;text-align:right}
+    .smallprint{font-size:11px;color:var(--muted);margin-top:11px}
+    .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+    .primary,.secondary{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;border-radius:7px;padding:10px 15px;font-size:13px;font-weight:650}
+    .primary{background:var(--ink);color:#fff;border:1px solid var(--ink)}
+    .secondary{background:#fff;color:var(--ink);border:1px solid #cfd8de}
+    .section{margin-top:23px}
+    .explain{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+    .explain .cardbody{font-size:13px;color:#506575}
+    .explain strong{color:var(--ink)}
+    .explain ul{padding-left:18px;margin:9px 0}
+    .explain li{margin:6px 0}
+    .formula{background:#eff4f6;color:#1e475f;border-radius:8px;padding:13px;font-size:12px;overflow-wrap:anywhere;margin:12px 0}
+    footer{border-top:1px solid var(--line);margin-top:29px;padding-top:20px;color:var(--muted);font-size:11px;display:flex;gap:18px;justify-content:space-between}
+    .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+    @media(max-width:900px){.layout,.explain{grid-template-columns:1fr}.hero{display:block}.hero .scope{text-align:left;max-width:none;margin-top:10px}}
+    @media(max-width:620px){.wrap{padding:26px 17px}.top{padding:12px 17px;align-items:flex-start}.brand{font-size:20px;gap:8px}.brand img{width:40px;height:40px}nav{justify-content:flex-end;gap:7px}.prototype{display:none}.cardhead,.cardbody,.results{padding:19px}.costgrid{grid-template-columns:1fr}footer{display:block}footer span{display:block;margin-bottom:8px}}
+    @media(prefers-reduced-motion:no-preference){button,a{transition:background .15s,border-color .15s}}
+  </style>
+</head>
+<body>
+  <header><div class="top">
+    <div class="brand"><img src="../continuity-search-v0-1/assets/proam-emblem.png" width="48" height="48" alt="proAM Labs gold and navy emblem"><div>proAM <span>Labs</span></div></div>
+    <nav aria-label="Demo navigation"><a href="../">Basic index</a><a href="../enhanced/">Demo library</a><a href="../continuity-search-v0-1/">Find your thread</a><span class="prototype">Interactive prototype</span></nav>
+  </div></header>
+  <main class="wrap">
+    <section class="hero"><div>
+      <div class="eyebrow">Explore · Understand · Evaluate</div>
+      <h1>What could continuity be worth?</h1>
+      <p class="sub">When people can recover the context and reasoning behind prior work, they may spend less time starting over. Explore the <strong>potential value of recovered productive capacity</strong>—then examine what would have to be proven.</p>
+    </div><p class="scope">Illustrative scenario · No connection to a live Thinking Graph, company data, or customer evidence.</p></section>
+    <div class="layout">
+      <section class="card" aria-labelledby="assumptions-title">
+        <div class="cardhead"><div class="eyebrow">01 · Set the assumptions</div><h2 id="assumptions-title">Your organization</h2><p class="intro">Use the controls to explore a scenario. Defaults are hypothetical, not findings about proAM Labs customers.</p></div>
+        <div class="cardbody">
+          <div class="field"><div class="fieldtop"><label for="people">People affected</label><output id="people-out" for="people">100</output></div><input type="range" id="people" min="10" max="1000" step="10" value="100"><div class="range-ends"><span>10</span><span>1,000</span></div><small>Number of people who would benefit from better context recovery.</small></div>
+          <div class="field"><div class="fieldtop"><label for="minutes">Minutes recovered per person per day</label><output id="minutes-out" for="minutes">15 min</output></div><input type="range" id="minutes" min="0" max="60" step="5" value="15"><div class="range-ends"><span>0</span><span>60 min</span></div><small>Incremental time saved versus the existing way of working—not total time spent searching.</small></div>
+          <div class="field"><div class="fieldtop"><label for="rate">Fully loaded labor cost</label><output id="rate-out" for="rate">$75/hr</output></div><input type="range" id="rate" min="30" max="150" step="5" value="75"><div class="range-ends"><span>$30/hr</span><span>$150/hr</span></div><small>Illustrative hourly cost including employer overhead; not a measured salary.</small></div>
+          <div class="field"><div class="fieldtop"><label for="days">Workdays per year</label><output id="days-out" for="days">220 days</output></div><input type="range" id="days" min="100" max="260" step="10" value="220"><div class="range-ends"><span>100</span><span>260</span></div><small>Annual days the assumed daily savings are applicable.</small></div>
+          <div class="field"><div class="fieldtop"><label for="capture">Value realization</label><output id="capture-out" for="capture">60%</output></div><input type="range" id="capture" min="0" max="100" step="5" value="60"><div class="range-ends"><span>0%</span><span>100%</span></div><small>Share of potential time recovered that becomes useful productive capacity. Includes adoption and practical realization effects.</small></div>
+          <div class="costs">
+            <h3>Optional cost assumptions</h3>
+            <p class="intro">Leave blank if unknown. We will not treat missing costs as zero.</p>
+            <div class="costgrid">
+              <div class="costfield"><label for="operating">Annual operating cost ($)</label><input id="operating" type="number" min="0" step="1000" inputmode="decimal" placeholder="Not specified"><small>Licensing, support, qualification, upkeep.</small></div>
+              <div class="costfield"><label for="setup">One-time implementation cost ($)</label><input id="setup" type="number" min="0" step="1000" inputmode="decimal" placeholder="Not specified"><small>Setup, integration, change management.</small></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="card" aria-labelledby="result-title">
+        <div class="cardhead"><div class="eyebrow">02 · Explore the potential</div><h2 id="result-title">Illustrative value</h2><p class="intro">Recovered capacity is an economic proxy. It is not guaranteed cash savings, revenue, customer willingness to pay, or demonstrated product ROI.</p></div>
+        <div class="results" aria-live="polite" aria-atomic="true">
+          <div class="big-label">Potential annual recovered-capacity value</div>
+          <div class="big-value" id="gross">$247,500</div>
+          <p class="big-note">Estimated productive capacity value before implementation and ongoing costs, under your selected assumptions.</p>
+          <div class="stats"><div class="stat"><strong id="hours">3,300</strong><span>Productive hours recovered/year</span></div><div class="stat"><strong id="perperson">33.0</strong><span>Hours recovered/person/year</span></div></div>
+          <div class="calculation">
+            <h3>After modeled costs</h3>
+            <div class="calcrow"><span>Ongoing annual net capacity value</span><strong id="ongoing-net">Not modeled</strong></div>
+            <div class="calcrow"><span>Year-one net capacity value</span><strong id="yearone-net">Not modeled</strong></div>
+            <p class="smallprint" id="cost-note">Enter both optional cost assumptions to calculate a net scenario. A zero must be entered explicitly to mean zero cost.</p>
+          </div>
+          <div class="section callout"><strong>This is a hypothesis, not a valuation.</strong> The calculator does not estimate total business value, the worth of human understanding, or the Thinking Graph's proven impact. It tests how sensitive a time-recovery hypothesis is to your assumptions.</div>
+          <div class="actions"><button class="primary" id="download" type="button">Download scenario (.txt)</button><button class="secondary" id="reset" type="button">Reset assumptions</button></div>
+          <p id="status" class="smallprint" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+    </div>
+    <div class="explain section">
+      <section class="card"><div class="cardhead"><div class="eyebrow">03 · Interpret with care</div><h2>Assumptions & limitations</h2></div><div class="cardbody">
+        <p><strong>What it models:</strong> the capacity value of fewer restarts, faster orientation, and less repeated context reconstruction.</p>
+        <div class="formula">People × (minutes saved ÷ 60) × workdays × (realization % ÷ 100) × fully loaded hourly cost</div>
+        <ul>
+          <li>The 100 people, 15 minutes, $75/hour, 220 days, and 60% realization are illustrative defaults, <strong>not measured outcomes</strong>.</li>
+          <li>Actual savings depend on the current baseline, successful adoption, task mix, data quality, operational design, and what employees do with recovered time.</li>
+          <li>Time recovered is not automatically a reduction in payroll or a financial return.</li>
+          <li>Costs must include setup, integrations, maintenance, evidence qualification, human review, and change management; unspecified costs remain unknown.</li>
+          <li>Risk reduction, faster decisions, retention, trust, cognitive relief, and other potential benefits are <strong>excluded</strong> because no credible numeric basis is established here.</li>
+        </ul>
+      </div></section>
+      <section class="card"><div class="cardhead"><div class="eyebrow">04 · From hypothesis to evidence</div><h2>What proAM Labs is trying to test</h2></div><div class="cardbody">
+        <p>The goal is not simply a better summary. It is the ability to <strong>reconstruct qualified understanding</strong> with evidence, context, uncertainty, relationships, and decision boundaries intact.</p>
+        <p><strong>Proof-of-value question:</strong> Can another person or agent use preserved context to reach a reliable, decision-useful understanding with less effort than conventional retrieval or an ordinary LLM assistant?</p>
+        <ul>
+          <li>Compare source search, LLM-assisted retrieval, and governed continuity on the <strong>same tasks</strong>.</li>
+          <li>Measure time to orientation, factual fidelity, recognition of unknowns, decision quality, and total cost of transfer.</li>
+          <li>Use independently checked evidence and observe real-world adoption before claiming benefit.</li>
+        </ul>
+        <p><strong>Commercial readiness:</strong> This prototype illustrates a possible value mechanism. It does not demonstrate technical effectiveness, scalable unit economics, product-market fit, or a price customers will pay.</p>
+        <p><a href="../continuity-search-v0-1/">Explore how continuity could work in RTS and Publications ↗</a></p>
+      </div></section>
+    </div>
+    <footer><span>proAM Labs · Signal Before Action · Prototype v0.1</span><span>Model is browser-local. No input is sent to a server or stored by this demo.</span></footer>
+  </main>
+  <script>
+    'use strict';
+    // This small, deterministic model is intentionally separate from presentation.
+    const defaults = Object.freeze({people:100,minutes:15,rate:75,days:220,capture:60});
+    const fieldIds = Object.keys(defaults);
+    const $ = id => document.getElementById(id);
+    const money = n => new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
+    const count = n => new Intl.NumberFormat('en-US',{maximumFractionDigits:0}).format(n);
+    function calculateValue(a){
+      const hours = a.people * (a.minutes / 60) * a.days * (a.capture / 100);
+      const gross = hours * a.rate;
+      const operatingKnown = a.operating !== null;
+      const setupKnown = a.setup !== null;
+      return {hours,gross,perPerson:a.people ? hours/a.people : 0,
+        ongoingNet:operatingKnown ? gross - a.operating : null,
+        yearOneNet:operatingKnown && setupKnown ? gross - a.operating - a.setup : null};
+    }
+    function optionalCost(id){
+      const input = $(id), raw = input.value.trim();
+      if(raw === '' || !input.validity.valid) return null;
+      const n = Number(raw);
+      return Number.isFinite(n) && n >= 0 ? n : null;
+    }
+    function getAssumptions(){
+      const a = {};
+      for(const id of fieldIds) a[id] = Number($(id).value);
+      a.operating = optionalCost('operating');
+      a.setup = optionalCost('setup');
+      return a;
+    }
+    function display(){
+      const a = getAssumptions(), v = calculateValue(a);
+      $('people-out').textContent = count(a.people);
+      $('minutes-out').textContent = count(a.minutes) + ' min';
+      $('rate-out').textContent = money(a.rate) + '/hr';
+      $('days-out').textContent = count(a.days) + ' days';
+      $('capture-out').textContent = count(a.capture) + '%';
+      $('gross').textContent = money(v.gross);
+      $('hours').textContent = count(v.hours);
+      $('perperson').textContent = v.perPerson.toFixed(1);
+      $('ongoing-net').textContent = v.ongoingNet === null ? 'Not modeled' : money(v.ongoingNet);
+      $('yearone-net').textContent = v.yearOneNet === null ? 'Not modeled' : money(v.yearOneNet);
+      $('cost-note').textContent = a.operating === null || a.setup === null
+        ? 'Enter both optional cost assumptions for a year-one net scenario. A zero must be entered explicitly to mean zero cost.'
+        : 'Net values deduct only the two cost amounts entered; they are capacity-value scenarios, not verified cash returns.';
+      return {a,v};
+    }
+    function exportScenario(){
+      const data = display(), a = data.a, v = data.v;
+      const maybeCost = n => n === null ? 'Not specified' : money(n);
+      const lines = [
+        'proAM Labs - Continuity Value Explorer v0.1',
+        'Illustrative scenario; not a measured Thinking Graph benefit or financial forecast.',
+        '',
+        'People affected: ' + a.people,
+        'Minutes recovered per person per day: ' + a.minutes,
+        'Fully loaded labor cost per hour: ' + money(a.rate),
+        'Workdays per year: ' + a.days,
+        'Value realization: ' + a.capture + '%',
+        'Annual operating cost: ' + maybeCost(a.operating),
+        'One-time implementation cost: ' + maybeCost(a.setup),
+        '',
+        'Annual productive hours recovered: ' + count(v.hours),
+        'Annual gross recovered-capacity value: ' + money(v.gross),
+        'Ongoing annual net capacity value: ' + maybeCost(v.ongoingNet),
+        'Year-one net capacity value: ' + maybeCost(v.yearOneNet),
+        '',
+        'Formula: people x (minutes/60) x workdays x (realization/100) x labor rate.',
+        'No claim of cash savings, product efficacy, ROI, revenue, or customer willingness to pay.',
+        'Time savings and all inputs must be independently validated for actual use.'
+      ];
+      const blob = new Blob([lines.join('\n')+'\n'],{type:'text/plain;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url; link.download = 'proam-continuity-value-scenario.txt';
+      document.body.appendChild(link); link.click(); link.remove();
+      setTimeout(()=>URL.revokeObjectURL(url),1000);
+      $('status').textContent = 'Scenario downloaded locally. No data sent to proAM Labs.';
+    }
+    fieldIds.concat(['operating','setup']).forEach(id => $(id).addEventListener('input',()=>{display();$('status').textContent='';}));
+    $('reset').addEventListener('click',()=>{
+      for(const [id,value] of Object.entries(defaults)) $(id).value=String(value);
+      $('operating').value='';$('setup').value='';
+      display();$('status').textContent='Illustrative defaults restored.';
+    });
+    $('download').addEventListener('click',exportScenario);
+    display();
+  </script>
+</body>
+</html>
