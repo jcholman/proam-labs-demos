@@ -22,7 +22,9 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## Continuity Search
 
-- [v0.1 — Find your thread](./continuity-search-v0-1/) — Find prior work by idea or unfinished task, inspect Publication and RTS artifact packages, and prepare an editable continuation brief. Four de-identified examples use browser-local concept/synonym matching; no sign-in, embeddings, live corpus/TG queries, or private source links.
+- [v0.1 — Find your thread — Open application](https://jcholman.github.io/proam-labs-demos/continuity-search-v0-1/) — Search prior work, inspect Publication and RTS artifact packages, and explore the Demo tab with the Continuity Value calculator and Thinking Graph Arena. Includes four de-identified thread examples and two embedded demos; browser-local concept/synonym matching, no sign-in or live corpus/TG connection.
+
+[View application source](./continuity-search-v0-1/)
 
 ## Continuity Value Explorer
 
