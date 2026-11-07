@@ -15,7 +15,7 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## Front Porch
 
-- [v1.0 — Original Master Component](https://jcholman.github.io/proam-labs-demos/front-porch-v1-0/) — Recovered original introduction with cinematic, standard, and static modes. HTML/SVG animation and entry interface only; no AI submission, registration, or POS-Lite backend. [Source & test boundaries](./front-porch-v1-0/README.md).
+- [v1.0 — Front Porch → POS-Lite](https://jcholman.github.io/proam-labs-demos/front-porch-v1-0/) — Cinematic, standard, and static introductions lead to “What are we going to do, now?” and a direct POS-Lite v0.35 handoff. Starting context carries locally within the tab; no AI interpretation, registration, or Thinking Graph writes. [Source & test boundaries](./front-porch-v1-0/README.md).
 
 ## Thinking Graph Arena
 
