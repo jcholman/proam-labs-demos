@@ -40,6 +40,12 @@ These interactive prototypes show how that approach is being developed—and wha
 
 - [v0.1 — What could continuity be worth?](https://jcholman.github.io/proam-labs-demos/continuity-value-v0-1/) — Adjust people affected, daily time recovered, loaded hourly cost, workdays, and realization to explore potential annual recovered-capacity value. Optional implementation and operating costs support net scenarios; blank costs remain unknown. Illustrative only: no measured Thinking Graph savings, guaranteed cash return, or customer valuation.
 
+## Resume-to-Submission — RTS Checkpoint Pilot
+
+- [v0.1 — Open the interactive checkpoint demo](https://jcholman.github.io/proam-labs-demos/rts-checkpoint-pilot-v0-1/) — Follow a qualified opportunity through alignment, verified resume, human readiness, submission receipt, and observed outcome. At each checkpoint, answer two lightweight questions: **Is this trustworthy and fit for my purpose?** and **Did this materially improve my continuity?** No answers open contextual correction/improvement notes; trust failures create a HOLD without advancing. The demo records local dated events, supports multiple opportunities, and exports JSON/CSV for a recurring personal pilot. [Design, boundaries & review tests](./rts-checkpoint-pilot-v0-1/README.md).
+
+This is a **publicly accessible GitHub Pages prototype** for demonstration, not an integrated RTS tracker or employment application service. It has **not** been added to the enhanced library, website showcase, or proAM Labs website. Survey answers are self-reported and browser-local; do not enter confidential data.
+
 ## What comes next (planned)
 
 These are prospective demonstrations, not published or verified capabilities. Live demo links will be added here when the prototypes are ready.
