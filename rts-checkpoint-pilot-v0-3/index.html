@@ -23,6 +23,7 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
   <link rel="stylesheet" href="./sheet-gallery.css">
+  <link rel="stylesheet" href="./tracker-workspace.css">
 </head>
 <body>
 <header class="top"><div class="frame topinner">
@@ -31,7 +32,7 @@
 </div></header>
 <main class="frame">
  <div class="eyebrow">Signal Before Action · From opportunity to outcome</div>
- <section class="hero" aria-labelledby="pagetitle"><div><h1 id="pagetitle">Resume-to-Submission</h1><p>An opportunity is the starting signal. Follow the job description through qualification, alignment, resume preparation, readiness, verified submission and outcomes—while measuring elapsed time and asking whether each checkpoint helped you.</p></div><div class="aside-label">Browser-local learning prototype. Not an ATS, a submission tool, or the authoritative RTS tracker.</div></section>
+ <section class="hero" aria-labelledby="pagetitle"><div><h1 id="pagetitle">Resume-to-Submission</h1><p>An opportunity is the starting signal. Follow the job description through qualification, alignment, resume preparation, readiness, verified submission and outcomes—while measuring elapsed time and asking whether each checkpoint helped you.</p></div><div class="aside-label">Read-only Google Sheet tracker gallery plus separate browser-local measurement instrument. Not an ATS or submission tool.</div></section>
  
  <section class="card sheet-gallery" id="rtsSheetGallery" aria-labelledby="sgHeading">
   <div class="sg-top">
@@ -53,21 +54,44 @@
    <p class="sg-smallprint" id="sgNotice">Opportunity stages are inferred cautiously from tracker fields; the existing v0.3 checkpoint pilot below remains browser-local and independent.</p>
   </div>
  </section>
- <section class="card" aria-labelledby="casehead"><div class="cardhead"><div class="row spread wrap"><div><div class="eyebrow">01 · Select an opportunity</div><h2 id="casehead">Pilot workspace</h2></div><span class="tag gold">Private to this browser</span></div></div>
- <div class="cardbody"><div class="workbar"><div><label class="label" for="caseSelect">Opportunity</label><select id="caseSelect" class="field" aria-describedby="caseHelp"></select><span id="caseHelp" class="helper">Use de-identified examples; don't paste sensitive resume or recruiter data.</span></div><div><label class="label" for="newName">New opportunity label</label><input id="newName" class="field" maxlength="95" placeholder="Company — Role (optional)"></div><button type="button" id="addCase" class="btn btn-secondary newcase">+ New opportunity</button></div></div></section>
- <section class="summary" aria-label="Local pilot summary">
+ <section class="card" aria-labelledby="casehead"><div class="cardhead"><div class="row spread wrap"><div><div class="eyebrow">01 · Select an opportunity</div><h2 id="casehead">Selected opportunity · live tracker</h2></div><span class="tag gold" id="rtsWorkspacePrivacy">Read-only · Google Sheet</span></div><div class="rts-modebar" role="group" aria-label="Workspace data source">
+   <button type="button" id="rtsModeTracker" aria-pressed="true">Connected RTS tracker · read-only</button>
+   <button type="button" id="rtsModePilot" aria-pressed="false">Local checkpoint measurement pilot</button>
+  </div><p class="rts-mode-hint">Tracker view reads actual opportunity state; the separate local pilot records browser-only experiments and is never auto-synchronized.</p></div>
+ <div class="cardbody"><div id="rtsTrackerChooser"><label class="label" for="tmRecordSelect">Select a tracker opportunity</label><select class="field" id="tmRecordSelect" aria-label="Select a tracker opportunity"><option>Loading tracker opportunities…</option></select><p class="helper">Selecting a tracker record also selects it in the gallery above. No changes are written to Google Sheets or Workday.</p></div><div id="rtsLocalCaseControls" hidden><div class="workbar"><div><label class="label" for="caseSelect">Opportunity</label><select id="caseSelect" class="field" aria-describedby="caseHelp"></select><span id="caseHelp" class="helper">Use de-identified examples; don't paste sensitive resume or recruiter data.</span></div><div><label class="label" for="newName">New opportunity label</label><input id="newName" class="field" maxlength="95" placeholder="Company — Role (optional)"></div><button type="button" id="addCase" class="btn btn-secondary newcase">+ New opportunity</button></div></div></div></section>
+ <section id="rtsTrackerMirror" aria-label="Tracker-backed checkpoint workspace" hidden>
+ <div class="tm-intro"><span class="tm-tags" id="tmSource">Loading tracker</span><h2 id="tmTitle">Loading opportunity…</h2><p>Read-only evidence and status from the published RTS Inventory. Source data and preserved versions remain authoritative in their own records.</p></div>
+ <div class="tm-summary" aria-label="Tracker evidence summary">
+  <div class="kpi"><div class="lbl">Current opportunity progress</div><div id="tmProgress" class="val">—</div><div class="hint" id="tmProgressHint">Stage evidence; not all approvals established</div></div>
+  <div class="kpi"><div class="lbl">Trust / fit observations</div><div id="tmTrust" class="val">—</div><div class="hint" id="tmTrustHint">Not yet measured in tracker</div></div>
+  <div class="kpi"><div class="lbl">Continuity observations</div><div id="tmContinuity" class="val">—</div><div class="hint" id="tmContinuityHint">Not yet measured in tracker</div></div>
+  <div class="kpi"><div class="lbl">Time impact reported</div><div id="tmImpact" class="val">—</div><div class="hint" id="tmImpactHint">No measured savings</div></div>
+ </div>
+ <div class="tm-timings" aria-label="Tracker measurement availability">
+  <div class="tm-time"><div class="lbl">Current checkpoint / state</div><strong id="tmCurrent">Not measured</strong><span class="helper" id="tmCurrentDetail">Waiting for opportunity records</span></div>
+  <div class="tm-time"><div class="lbl">Opportunity Presented → Ready to Submit</div><strong id="tmCycle">Not measured</strong><span class="helper">Exact start and authorized end timestamps required</span></div>
+  <div class="tm-time"><div class="lbl">Opportunity Presented → Submission Verified</div><strong id="tmSubmissionElapsed">Not measured</strong><span class="helper">Owner report alone is not a receipt</span></div>
+  <div class="tm-time"><div class="lbl">Resume Presented → Ready to Submit</div><strong id="tmReviewElapsed">Not measured</strong><span class="helper">Actual presentation and readiness times required</span></div>
+ </div>
+ <div class="tm-layout">
+  <section class="tm-box" aria-label="Evidence-based checkpoint journey"><h2>02 · Checkpoint journey</h2><div class="tm-box-body"><ol class="tm-steps" id="tmStages"></ol></div></section>
+  <section class="tm-box" aria-label="Read-only checkpoint and resume evidence"><h2>03 · Readiness &amp; supporting records</h2><div class="tm-box-body" id="tmReview"></div></section>
+ </div>
+ <p class="tm-footer" id="tmNotes">No browser-local checkpoint record is created by this read-only mirror.</p>
+</section>
+ <section class="summary" id="rtsLocalSummary" aria-label="Local pilot summary" hidden>
  <div class="kpi"><div class="lbl">Current opportunity progress</div><div id="progress" class="val">0 / 8</div><div class="hint">Accepted checkpoint transitions</div></div>
  <div class="kpi"><div class="lbl">Trust / fit observations</div><div id="trustCount" class="val">—</div><div class="hint">Yes of answered checkpoints</div></div>
  <div class="kpi"><div class="lbl">Continuity observations</div><div id="continuityCount" class="val">—</div><div class="hint">Yes of answered checkpoints</div></div>
  <div class="kpi"><div class="lbl">Time impact reported</div><div id="timeTotal" class="val">—</div><div class="hint">Self-estimated minutes; not a verified saving</div></div>
  </section>
- <section class="timingoverview" aria-label="Recorded elapsed time">
+ <section class="timingoverview" id="rtsLocalTiming" aria-label="Recorded elapsed time" hidden>
   <div><div class="lbl">Current checkpoint · actual elapsed time</div><strong id="clockCurrent">Not started</strong><span id="clockCurrentContext" class="helper">Record the instant the job description is presented.</span></div>
   <div><div class="lbl">Opportunity Presented → Ready to Submit</div><strong id="clockResume">Not measured</strong><span id="clockResumeContext" class="helper">Primary cycle time: begins when the job description is presented; ends at human-approved Ready to Submit.</span></div>
   <div><div class="lbl">Opportunity Presented → Submission Verified</div><strong id="clockSubmission">Not measured</strong><span id="clockSubmissionContext" class="helper">End-to-end elapsed time to receipt; not an employment outcome.</span></div>
   <div><div class="lbl">Resume Presented → Ready to Submit</div><strong id="clockReview">Not measured</strong><span id="clockReviewContext" class="helper">Secondary measure of resume review and corrections.</span></div>
 </section>
-<div class="cols">
+<div class="cols" id="rtsLocalCheckpointPanels" hidden>
    <section class="card" aria-labelledby="roadmaphead"><div class="cardhead"><div class="eyebrow">02 · Track real changes</div><h2 id="roadmaphead">Checkpoint journey</h2></div><div class="cardbody"><ol id="steps" class="steps"></ol><div class="line-note"><strong>State is evidence-dependent.</strong> Completing a document does not establish submission. A claim of submission is not a verified receipt. No simulated action submits an application.</div></div></section>
    <section class="card" aria-labelledby="formhead"><div class="cardhead"><div class="row spread wrap"><div><div class="eyebrow">03 · One checkpoint at a time</div><h2 id="formhead">Human review</h2></div><span class="tag" id="stepStatus">Review</span></div></div><div class="cardbody">
     <div id="activeWrap"><h3 id="activeTitle">Opportunity / Job Description Presented</h3><p id="activeDesc" class="muted small"></p>
@@ -94,13 +118,13 @@
      <div id="completeWrap" class="subtlebox" hidden><strong>All eight checkpoints recorded.</strong><p style="margin:7px 0 0">Review or export the local history. You can start another opportunity to compare recurring experiences; nothing is submitted or written to your RTS inventory.</p></div>
    </div></section>
  </div>
- <div class="bottom">
+ <div class="bottom" id="rtsLocalHistory" hidden>
   <section class="card" aria-labelledby="historyhead"><div class="cardhead"><div class="row spread wrap"><div><div class="eyebrow">04 · Learn from each handoff</div><h2 id="historyhead">Checkpoint history</h2></div><span id="eventCount" class="tag">0 events</span></div></div><div class="cardbody"><div id="history" aria-live="polite"></div></div></section>
   <section class="card" aria-labelledby="exporthead"><div class="cardhead"><div class="eyebrow">05 · Carry it forward</div><h2 id="exporthead">Personal pilot record</h2></div><div class="cardbody stack"><p class="muted small">Each accepted milestone retains start/end timestamps and elapsed time, with separate actual active effort and self-estimated time savings. A local record makes the feedback reviewable across opportunities. Export it when you need to compare patterns or propose process changes.</p><div class="actionrow"><button type="button" class="btn btn-primary" id="exportJson">Export JSON</button><button type="button" class="btn btn-secondary" id="exportCsv">Export CSV</button></div><p id="exportMsg" class="helper" role="status"></p><div class="subtlebox"><strong>Local-only:</strong> saved in this browser using localStorage. No backend sync, authentication, or organizational tracker write. Data can disappear if browser storage is cleared. An export is needed for portable review.</div><button type="button" class="btn btn-link" id="removeCase">Delete selected local opportunity</button></div></section>
  </div>
  <section class="card" style="margin-top:20px" aria-labelledby="boundshead"><div class="cardhead"><div class="eyebrow">Contract boundary</div><h2 id="boundshead">What this demo does—and does not establish</h2></div><div class="cardbody"><div class="detailGrid"><div><h3 style="font-size:14px">Operational continuity</h3><ul class="rulelist"><li>Each accepted stage records a dated <strong>user-attested</strong> milestone with an optional supporting locator.</li><li>A negative trust evaluation creates a HOLD and invites a corrected review, without erasing earlier feedback.</li><li>A negative continuity evaluation is saved as a refinement candidate, not an automatic blocker.</li></ul></div><div><h3 style="font-size:14px">Governance and claims</h3><ul class="rulelist"><li><strong>Evidence reference ≠ independently verified evidence.</strong> This demo cannot inspect ATS receipts or validate claims.</li><li><strong>Ready to Submit ≠ submission.</strong> Human review is required; no external application is performed.</li><li><strong>Wall-clock elapsed time ≠ active work or saved time.</strong> The duration includes breaks, waiting and nights. User-corrected historical timestamps are flagged; system clock accuracy is not independently verified.</li><li><strong>Self-estimated time ≠ measured benefit.</strong> Wall-clock includes overnight waits and does not represent active effort. Optional reporting does not establish causal value.</li></ul></div></div></div></section>
 </main>
-<footer class="frame footer"><span>proAM Labs · Resume-to-Submission · Pilot v0.3</span><span>Prototype / not the canonical RTS tracker · No publication to the proAM Labs website</span></footer>
+<footer class="frame footer"><span>proAM Labs · Resume-to-Submission · Pilot v0.3</span><span>Public portfolio gallery · browser-local checkpoint pilot · not a submission tool</span></footer>
 <script>
 'use strict';
 (() => {
@@ -226,5 +250,6 @@ window.__RTS_DEMO_TEST__={stages:STAGES.map(({key})=>key),schema:VERSION,elapsed
 })();
 </script>
   <script defer src="./sheet-gallery.js"></script>
+  <script defer src="./tracker-workspace.js"></script>
 </body>
 </html>
