@@ -26,7 +26,7 @@
 
   function str(x){return x==null?'':String(x).trim();}
   function safeUrl(value){
-    try{var url=new URL(str(value));return url.protocol==='https:'?url.href:null;}catch(e){return null;}
+    try{var url=new URL(str(value),window.location.href);return url.protocol==='https:'?url.href:null;}catch(e){return null;}
   }
   function key(x){return [x.company||'',x.requisition||x.role||''].join('|');}
   function output(name,value,klass){
