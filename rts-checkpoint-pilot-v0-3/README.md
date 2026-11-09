@@ -6,6 +6,18 @@
 - [Basic View](../README.md)
 - [v0.2 prior version](../rts-checkpoint-pilot-v0-2/), preserved unchanged
 
+## Source-backed gallery and public proof-of-work supplement (November 9, 2026)
+
+The existing URL now defaults to a **read-only tracker-backed workspace** rather than an empty Illustrative RTS opportunity. Select among the five opportunity records from the public, anyone-with-link Viewer RTS Inventory. Google Sheets is queried from the browser when available; a published, dated JSON snapshot is an explicitly marked fallback.
+
+The original localStorage-driven eight-checkpoint experiment is **not deleted or synchronized**. Switch to **Local checkpoint measurement pilot** to see its independent forms and local timeline. The tracker mirror shows only what the source establishes: accepted checkpoints for Humana R-425570, historical stages for earlier opportunities, owner-reported submission claims without receipt verification, and NOT_MEASURED where timing evidence is missing. Jack's unresolved role remains blocked; Advantage Tech's GEHA-named resume mismatch is not silently promoted. No ATS action, tracker write, fabricated receipt or inferred authorization is implemented by the public site.
+
+- [Open connected v0.3 tracker workspace — Humana R-425570](https://jcholman.github.io/proam-labs-demos/rts-checkpoint-pilot-v0-3/?case=R-425570#rtsTrackerMirror)
+- [Open print-friendly portfolio companion (optional resume supplement)](https://jcholman.github.io/proam-labs-demos/rts-checkpoint-pilot-v0-3/proof-of-work.html?case=R-425570)
+- [Read source RTS Inventory](https://docs.google.com/spreadsheets/d/14LChbwEP7Ugd2tUbSqKuGFInVPECnb78Jb6wTnyzh5M/edit?gid=1043935481)
+
+Portfolio maturity language: the webpage demonstrates a working prototype and read-only file navigation; the LLM-assisted employer-thread workflow, not this browser application, produced the resume versions. Individual source documents, code and employer outcomes need their own assurance.
+
 ## Why v0.3 exists
 
 The primary process starts when the **opportunity / job description is presented**. The primary clock **does not** begin when a resume draft is shown or submitted. A resume is a derivative artifact within the larger process; external placement and outcomes are distinct later states.

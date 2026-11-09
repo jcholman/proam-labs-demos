@@ -10,11 +10,23 @@
   var snapshot=[],cases=[],selected=null,source='loading',lastChecked='',inFlight=false;
   var status=el('sgStatus'),track=el('sgTrack'),detail=el('sgDetail'),position=el('sgPosition');
   var filters={search:'',type:'all'};
+  var preferredCase=(new URLSearchParams(window.location.search).get('case')||'').trim();
+  function applyRequestedSelection(){
+    var match=cases.find(function(x){return preferredCase && (x.requisition===preferredCase || key(x)===preferredCase);});
+    if(!match && !selected) match=cases.find(function(x){return x.requisition==='R-425570';});
+    if(match && (!selected || preferredCase)){selected=key(match);preferredCase='';}
+  }
+  window.__RTS_GALLERY_READ_ONLY__={
+    getCurrent:function(){return cases.find(function(x){return key(x)===selected;})||null;},
+    getSource:function(){return source;},
+    select:function(identity){var found=cases.find(function(x){return x.requisition===identity || key(x)===identity;});if(found)select(found);return !!found;},
+    all:function(){return cases.slice();}
+  };
   var headers=['Opportunity','Qualified','Aligned','Resume presented','Resume verified','Ready to submit','Receipt verified','Outcome observed'];
 
   function str(x){return x==null?'':String(x).trim();}
   function safeUrl(value){
-    try{var url=new URL(str(value));return url.protocol==='https:'?url.href:null;}catch(e){return null;}
+    try{var url=new URL(str(value),window.location.href);return url.protocol==='https:'?url.href:null;}catch(e){return null;}
   }
   function key(x){return [x.company||'',x.requisition||x.role||''].join('|');}
   function output(name,value,klass){
@@ -70,7 +82,8 @@
       submitted?'accepted':'open',outcome?'recorded':'open'
     ];
   }
-  function stateName(x){return submissionVerified(x)?'Receipt verified':/not authorized/i.test(x.authorization)?'Readiness not authorized':/blocked/i.test(x.package)?'Artifact blocked':x.lifecycle||'Status not recorded';}
+  function ownerReported(x){return /user.reported.submitted/i.test(str(x.application));}
+  function stateName(x){return submissionVerified(x)?'Receipt verified':/blocked/i.test(x.package)?'Artifact blocked':ownerReported(x)?'Owner reports submitted · receipt pending':/not authorized/i.test(x.authorization)?'Readiness not authorized':x.lifecycle||'Status not recorded';}
   function filtered(){
     return cases.filter(function(x){
       if(filters.type==='resume'&&!usableResume(x))return false;
@@ -81,7 +94,7 @@
   }
   function render(){
     var visible=filtered(),count=cases.filter(submissionVerified).length;
-    el('sgTotals').textContent=cases.length+' opportunity records · '+cases.filter(usableResume).length+' with grounded resume links · '+count+' verified submissions';
+    el('sgTotals').textContent=cases.length+' opportunities · '+cases.filter(usableResume).length+' with resume links · '+cases.filter(ownerReported).length+' owner-reported submitted · '+count+' receipt-verified';
     var candidate=visible.find(function(x){return key(x)===selected;});
     if(!candidate){candidate=visible[0]||null;selected=candidate?key(candidate):null;}
     position.textContent=candidate?(visible.indexOf(candidate)+1)+' of '+visible.length:'No matches';
@@ -101,6 +114,7 @@
     detail.replaceChildren();
     if(candidate)renderDetail(candidate);
     else detail.append(output('p','No opportunities match this filter. The tracker currently has no receipt-verified submissions.','sg-placeholder'));
+    window.dispatchEvent(new CustomEvent('rts:sheet-opportunity-selected',{detail:{record:candidate,source:source,checkedAt:lastChecked}}));
   }
   function select(x){
     selected=key(x);render();
@@ -125,9 +139,13 @@
       timeline.append(tile);
     });
     detail.append(timeline);
+    if(ownerReported(x)&&!submissionVerified(x)){
+      detail.append(output('p','Owner reports application submitted; no matching external receipt has been verified in the tracker. This does not independently establish readiness authorization or placement time.','sg-warning'));
+    }
     var grid=output('div',null,'sg-grid'),one=output('div',null,'sg-column'),two=output('div',null,'sg-column');
     one.append(output('h4','Opportunity evidence & current source'));
     var links=output('div',null,'sg-links');
+    links.append(link('Proof-of-work companion · printable overview','./proof-of-work.html?case='+encodeURIComponent(x.requisition||x.company+'|'+x.role),'Shareable link to evidence, resume versions and RTS v0.3'));
     if(safeUrl(x.folderUrl))links.append(link('Open canonical opportunity folder',x.folderUrl,'Full up-to-date file inventory'));
     if(safeUrl(x.sourceUrl))links.append(link('Original source / job description',x.sourceUrl));
     if(safeUrl(x.alignmentUrl))links.append(link('Candidate alignment',x.alignmentUrl));
@@ -153,7 +171,7 @@
   }
   function acceptLive(payload){
     try{
-      var live=normalizeTable(payload);cases=live;source='live';lastChecked=new Date().toLocaleString();
+      var live=normalizeTable(payload);cases=live;source='live';applyRequestedSelection();lastChecked=new Date().toLocaleString();
       changeStatus('LIVE GOOGLE SHEET · checked '+lastChecked,'live');render();
     }catch(e){
       changeStatus('SNAPSHOT ONLY · live read unavailable','failed');
@@ -187,7 +205,7 @@
   el('sgNext').addEventListener('click',function(){step(1);});
   track.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();step(1);}else if(e.key==='ArrowLeft'){e.preventDefault();step(-1);}});
   fetch('./sheet-gallery-snapshot.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw Error('Snapshot fetch failed');return r.json();}).then(function(data){
-    snapshot=Array.isArray(data.records)?data.records:[];cases=snapshot.slice();source='snapshot';
+    snapshot=Array.isArray(data.records)?data.records:[];cases=snapshot.slice();source='snapshot';applyRequestedSelection();
     changeStatus('SNAPSHOT · '+(data.capturedDate||'date unknown'),'');
     render();refresh();
   }).catch(function(){

@@ -3,7 +3,7 @@
   "sourceSheet": "https://docs.google.com/spreadsheets/d/14LChbwEP7Ugd2tUbSqKuGFInVPECnb78Jb6wTnyzh5M/edit?gid=1043935481",
   "sourceRange": "'Opportunity Inventory'!A4:Z150",
   "capturedDate": "2026-11-09",
-  "status": "Published read-only snapshot; refreshed with live sheet when accessible",
+  "status": "Dated public snapshot of Google Sheet, with candidate-reported submission statuses preserved as NOT_RECEIPT_VERIFIED. Browser will request current Sheet data.",
   "records": [
     {
       "row": 5,
@@ -18,7 +18,7 @@
       "alignment": "Historical alignment completed in thread; artifact not yet materialized",
       "resumeState": "DERIVED — verified Drive copy",
       "authorization": "NOT VERIFIED",
-      "application": "Submission state not verified",
+      "application": "USER REPORTED SUBMITTED — RECEIPT NOT VERIFIED",
       "submissionDate": "",
       "interview": "NOT VERIFIED",
       "outcome": "OPEN / UNKNOWN",
@@ -42,7 +42,8 @@
           "status": "Preserved, not submission proof",
           "url": "https://drive.google.com/file/d/1JL5Qfh-oaGQv-AC4XykJS-CEDBuGdrya/view"
         }
-      ]
+      ],
+      "ownerReportProvenance": "Owner statement in Clarity RTS project, November 9 2026; receipt not independently verified"
     },
     {
       "row": 6,
@@ -84,7 +85,7 @@
       "alignment": "Historical alignment completed; alignment artifact not yet materialized",
       "resumeState": "DERIVED — FINAL copy persisted",
       "authorization": "NOT VERIFIED",
-      "application": "Application state not verified",
+      "application": "USER REPORTED SUBMITTED — RECEIPT NOT VERIFIED",
       "submissionDate": "",
       "interview": "NOT VERIFIED",
       "outcome": "OPEN / UNKNOWN",
@@ -108,7 +109,8 @@
           "status": "FINAL file; placement not verified",
           "url": "https://drive.google.com/file/d/1KEqfErnyTEGlxM3ChTCJOUwMQS0P9dCf/view"
         }
-      ]
+      ],
+      "ownerReportProvenance": "Owner statement in Clarity RTS project, November 9 2026; receipt not independently verified"
     },
     {
       "row": 8,
@@ -123,7 +125,7 @@
       "alignment": "Historical alignment completed; alignment artifact not yet materialized",
       "resumeState": "DERIVED — FINAL copy persisted",
       "authorization": "NOT VERIFIED",
-      "application": "Recruiter submission/interview state not verified",
+      "application": "USER REPORTED SUBMITTED — RECEIPT NOT VERIFIED",
       "submissionDate": "",
       "interview": "NOT VERIFIED",
       "outcome": "OPEN / UNKNOWN",
@@ -135,7 +137,8 @@
       "applicationUrl": "",
       "receiptUrl": "",
       "archives": [],
-      "warning": "Folder contains GEHA-named derived resumes. Identity must be reconciled before displaying them as Advantage Tech resume evidence."
+      "warning": "Folder contains GEHA-named derived resumes. Identity must be reconciled before displaying them as Advantage Tech resume evidence.",
+      "ownerReportProvenance": "Owner statement in Clarity RTS project, November 9 2026; receipt not independently verified"
     },
     {
       "row": 9,
@@ -150,7 +153,7 @@
       "alignment": "Checkpoint 3 — ALIGNMENT_REVIEWED: ACCEPTED (YES/YES); EVENT: alignment-review acceptance; completion time UNRESOLVED / NOT_MEASURED (11:46 AM misattribution corrected).",
       "resumeState": "Checkpoint 4 — RESUME_PRESENTED: ACCEPTED (YES/YES); EVENT human draft review-acceptance 2026-11-09 11:46 AM EST USER_ENTERED_HISTORICAL; initial presentation NOT_MEASURED. Checkpoint 5 — RESUME_VERIFIED: ACCEPTED; EVENT candidate human verification acceptance 2026-11-09 12:23 PM EST (clock 12:23 user-entered; PM inferred from local context). Feedback for CP5 not separately captured. Preserved DRAFT file names; no FINAL label or authorization.",
       "authorization": "NOT AUTHORIZED",
-      "application": "NOT REVIEWED",
+      "application": "USER REPORTED SUBMITTED — RECEIPT NOT VERIFIED",
       "submissionDate": "",
       "interview": "NOT VERIFIED",
       "outcome": "OPEN / UNKNOWN",
@@ -223,7 +226,8 @@
           "url": "https://docs.google.com/document/d/1CJFQDjKtvWRB472sfXPrSVImbpll2a_Rg0rEvn7ET0s/edit"
         }
       ],
-      "warning": "Checkpoint 6 HOLD: v3 PDF font QA failed; Workday prior-application check pending. Sheet's primary resume URL still points to an earlier DRAFT."
+      "warning": "Owner reports submission; no external receipt/date/version verified. Current RTS checkpoint history still records CP6 HOLD, PDF_FONT_QA_FAIL on v3, and pending Workday history check. This mismatch requires reconciliation; do not infer a verified CP6 or CP7.",
+      "ownerReportProvenance": "Owner statement in Clarity RTS project, November 9 2026; submission date/channel/version unspecified"
     }
   ]
 }
