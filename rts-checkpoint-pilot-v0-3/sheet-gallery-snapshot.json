@@ -1,0 +1,229 @@
+{
+  "schema": "proam_rts_gallery_snapshot_v1",
+  "sourceSheet": "https://docs.google.com/spreadsheets/d/14LChbwEP7Ugd2tUbSqKuGFInVPECnb78Jb6wTnyzh5M/edit?gid=1043935481",
+  "sourceRange": "'Opportunity Inventory'!A4:Z150",
+  "capturedDate": "2026-11-09",
+  "status": "Published read-only snapshot; refreshed with live sheet when accessible",
+  "records": [
+    {
+      "row": 5,
+      "qualified": "2026-10-11",
+      "company": "Cognizant",
+      "role": "Senior AI Technical Lead",
+      "requisition": "",
+      "location": "",
+      "sourceDescription": "Recruiter outreach",
+      "lifecycle": "QUALIFIED TO WORK",
+      "package": "PARTIAL",
+      "alignment": "Historical alignment completed in thread; artifact not yet materialized",
+      "resumeState": "DERIVED — verified Drive copy",
+      "authorization": "NOT VERIFIED",
+      "application": "Submission state not verified",
+      "submissionDate": "",
+      "interview": "NOT VERIFIED",
+      "outcome": "OPEN / UNKNOWN",
+      "risk": "",
+      "sourceUrl": "",
+      "folderUrl": "https://drive.google.com/drive/folders/1EZZyBCXuhOB5Y6cSe1gPniOLSBoyeW69",
+      "alignmentUrl": "",
+      "resumeUrl": "https://drive.google.com/file/d/1JL5Qfh-oaGQv-AC4XykJS-CEDBuGdrya/view?usp=drivesdk",
+      "applicationUrl": "",
+      "receiptUrl": "",
+      "archives": [
+        {
+          "label": "Derived resume · DOCX",
+          "type": "Word",
+          "status": "Preserved, not submission proof",
+          "url": "https://docs.google.com/document/d/1Nvl7J_asII4uWwncJSJWAUfkDGoPMWUL/edit"
+        },
+        {
+          "label": "Derived resume v1 · PDF",
+          "type": "PDF",
+          "status": "Preserved, not submission proof",
+          "url": "https://drive.google.com/file/d/1JL5Qfh-oaGQv-AC4XykJS-CEDBuGdrya/view"
+        }
+      ]
+    },
+    {
+      "row": 6,
+      "qualified": "2026-10-12",
+      "company": "UNRESOLVED — recruiter Jack",
+      "role": "AI Engineer II",
+      "requisition": "",
+      "location": "",
+      "sourceDescription": "Recruiter outreach",
+      "lifecycle": "QUALIFIED TO WORK",
+      "package": "BLOCKED",
+      "alignment": "Historical fit evaluation and resume work occurred in thread",
+      "resumeState": "GENERATED IN THREAD — durable Drive artifact not yet grounded",
+      "authorization": "NOT VERIFIED",
+      "application": "NOT VERIFIED",
+      "submissionDate": "",
+      "interview": "NOT VERIFIED",
+      "outcome": "OPEN / UNKNOWN",
+      "risk": "",
+      "sourceUrl": "",
+      "folderUrl": "",
+      "alignmentUrl": "",
+      "resumeUrl": "",
+      "applicationUrl": "",
+      "receiptUrl": "",
+      "archives": [],
+      "warning": "Employer/client identity unresolved; no durable derived resume verified."
+    },
+    {
+      "row": 7,
+      "qualified": "2026-10-23",
+      "company": "Humana",
+      "role": "Director Data Quality & Integrity — Provider Network Operations",
+      "requisition": "",
+      "location": "",
+      "sourceDescription": "Recruiter outreach + job posting",
+      "lifecycle": "QUALIFIED TO WORK",
+      "package": "PARTIAL",
+      "alignment": "Historical alignment completed; alignment artifact not yet materialized",
+      "resumeState": "DERIVED — FINAL copy persisted",
+      "authorization": "NOT VERIFIED",
+      "application": "Application state not verified",
+      "submissionDate": "",
+      "interview": "NOT VERIFIED",
+      "outcome": "OPEN / UNKNOWN",
+      "risk": "",
+      "sourceUrl": "https://drive.google.com/file/d/12G2IjgFvGW5jzYi5RjM0tAzWt-xeHdHW/view?usp=drivesdk",
+      "folderUrl": "https://drive.google.com/drive/folders/1Vn9If0AQp2PQ2U9l4EIodNqjZZnaGdJE",
+      "alignmentUrl": "",
+      "resumeUrl": "https://drive.google.com/file/d/1KEqfErnyTEGlxM3ChTCJOUwMQS0P9dCf/view?usp=drivesdk",
+      "applicationUrl": "https://drive.google.com/file/d/1b7kmBjdx_hkAh_7QhIvlb9pnYuixJqon/view?usp=drivesdk",
+      "receiptUrl": "",
+      "archives": [
+        {
+          "label": "Derived resume · DOCX",
+          "type": "Word",
+          "status": "FINAL file; placement not verified",
+          "url": "https://docs.google.com/document/d/1hx5MG3ll5HQWUXi_wNxxdblfLDkVoxud/edit"
+        },
+        {
+          "label": "Derived resume · PDF",
+          "type": "PDF",
+          "status": "FINAL file; placement not verified",
+          "url": "https://drive.google.com/file/d/1KEqfErnyTEGlxM3ChTCJOUwMQS0P9dCf/view"
+        }
+      ]
+    },
+    {
+      "row": 8,
+      "qualified": "2026-10-26",
+      "company": "Advantage Tech",
+      "role": "Sr. AI Context Engineer",
+      "requisition": "",
+      "location": "GEHA client",
+      "sourceDescription": "Recruiter — Christie Douglas",
+      "lifecycle": "QUALIFIED TO WORK",
+      "package": "PARTIAL",
+      "alignment": "Historical alignment completed; alignment artifact not yet materialized",
+      "resumeState": "DERIVED — FINAL copy persisted",
+      "authorization": "NOT VERIFIED",
+      "application": "Recruiter submission/interview state not verified",
+      "submissionDate": "",
+      "interview": "NOT VERIFIED",
+      "outcome": "OPEN / UNKNOWN",
+      "risk": "",
+      "sourceUrl": "https://drive.google.com/file/d/1uRxrHol6d_iuznB1hoM8qBXNEReGTqC6/view?usp=drivesdk",
+      "folderUrl": "https://drive.google.com/drive/folders/18YncdqE7b6I_zDzF70DYSaFFnQ7rOASQ",
+      "alignmentUrl": "",
+      "resumeUrl": "https://drive.google.com/file/d/1IbQ_-1RjxU6hg70NdpA5JR9d7LuPolMJ/view?usp=drivesdk",
+      "applicationUrl": "",
+      "receiptUrl": "",
+      "archives": [],
+      "warning": "Folder contains GEHA-named derived resumes. Identity must be reconciled before displaying them as Advantage Tech resume evidence."
+    },
+    {
+      "row": 9,
+      "qualified": "2026-11-09",
+      "company": "Humana",
+      "role": "Lead AI Technical Product Manager",
+      "requisition": "R-425570",
+      "location": "Louisville, KY — hybrid, 3 days/week",
+      "sourceDescription": "",
+      "lifecycle": "IN PREPARATION",
+      "package": "PARTIAL",
+      "alignment": "Checkpoint 3 — ALIGNMENT_REVIEWED: ACCEPTED (YES/YES); EVENT: alignment-review acceptance; completion time UNRESOLVED / NOT_MEASURED (11:46 AM misattribution corrected).",
+      "resumeState": "Checkpoint 4 — RESUME_PRESENTED: ACCEPTED (YES/YES); EVENT human draft review-acceptance 2026-11-09 11:46 AM EST USER_ENTERED_HISTORICAL; initial presentation NOT_MEASURED. Checkpoint 5 — RESUME_VERIFIED: ACCEPTED; EVENT candidate human verification acceptance 2026-11-09 12:23 PM EST (clock 12:23 user-entered; PM inferred from local context). Feedback for CP5 not separately captured. Preserved DRAFT file names; no FINAL label or authorization.",
+      "authorization": "NOT AUTHORIZED",
+      "application": "NOT REVIEWED",
+      "submissionDate": "",
+      "interview": "NOT VERIFIED",
+      "outcome": "OPEN / UNKNOWN",
+      "risk": "",
+      "sourceUrl": "https://drive.google.com/file/d/16_x86450HL2THBLpl-hYmRgFKGf9iwdM/view?usp=drivesdk",
+      "folderUrl": "https://drive.google.com/drive/folders/16FGzeW38AC1BMm_QHUgfyOY3R7PKkcbF",
+      "alignmentUrl": "https://docs.google.com/document/d/1bmXvjkWgCW-OhAgXUMZTfzAmcHq8zBuEgu-2DQ9Vgug/edit",
+      "resumeUrl": "https://docs.google.com/document/d/1A_CSUrTBkUNOgQpPldv7rJ0clZZYZCBf/edit",
+      "applicationUrl": "",
+      "receiptUrl": "",
+      "archives": [
+        {
+          "label": "Original DRAFT · DOCX",
+          "type": "Word",
+          "status": "Draft",
+          "url": "https://docs.google.com/document/d/1A_CSUrTBkUNOgQpPldv7rJ0clZZYZCBf/edit"
+        },
+        {
+          "label": "Original DRAFT · PDF",
+          "type": "PDF",
+          "status": "Draft",
+          "url": "https://drive.google.com/file/d/1XayBu2oXa1I9roK50mXoOpjBi7b20xNx/view"
+        },
+        {
+          "label": "Submission Review v1 · DOCX",
+          "type": "Word",
+          "status": "Review",
+          "url": "https://docs.google.com/document/d/1Mnh812DCz95Gg0KueVxAlD166UgDOyz7/edit"
+        },
+        {
+          "label": "Submission Review v1 · PDF",
+          "type": "PDF",
+          "status": "Review",
+          "url": "https://drive.google.com/file/d/1K6guhcJO5MoaQDtTkkl_n6iVWn1cYnH7/view"
+        },
+        {
+          "label": "Submission Review v2 · DOCX",
+          "type": "Word",
+          "status": "Wording accepted; font mismatch",
+          "url": "https://docs.google.com/document/d/1ZhsNMZDKztRn1AgmrvktYI_h_yuaOZ3D/edit"
+        },
+        {
+          "label": "Submission Review v2 · PDF",
+          "type": "PDF",
+          "status": "Review",
+          "url": "https://drive.google.com/file/d/16ej2GYvq649im1YH3SajMl_TUENVCoBQ/view"
+        },
+        {
+          "label": "Submission Review v3 · DOCX",
+          "type": "Word",
+          "status": "Aptos Display declared; review pending",
+          "url": "https://docs.google.com/document/d/1w6c19QvMl0sd2axslXH5-j3TPNOc3uKA/edit"
+        },
+        {
+          "label": "Submission Review v3 · PDF",
+          "type": "PDF",
+          "status": "FONT_QA_FAIL · DO NOT SUBMIT",
+          "url": "https://drive.google.com/file/d/1HvGALcDwuU6dSN_sGoBKAQdAgH7S8rPK/view"
+        },
+        {
+          "label": "Evidence fidelity matrix",
+          "type": "Evidence",
+          "status": "Working review",
+          "url": "https://docs.google.com/document/d/19s8bK7I9MMpjJRmS60vKJ09iqo7pFfNIaxMoJsBHkcA/edit"
+        },
+        {
+          "label": "Content & typography QA",
+          "type": "QA",
+          "status": "Working review",
+          "url": "https://docs.google.com/document/d/1CJFQDjKtvWRB472sfXPrSVImbpll2a_Rg0rEvn7ET0s/edit"
+        }
+      ],
+      "warning": "Checkpoint 6 HOLD: v3 PDF font QA failed; Workday prior-application check pending. Sheet's primary resume URL still points to an earlier DRAFT."
+    }
+  ]
+}
