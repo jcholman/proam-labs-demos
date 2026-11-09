@@ -22,6 +22,7 @@
     @media(max-width:560px){.timingoverview{grid-template-columns:1fr}.clock-panel{align-items:start;flex-direction:column}.clock-action{justify-items:start;text-align:left}.frame{width:calc(100% - 28px)}.topinner{padding:9px 0;align-items:start}.brand{font-size:19px}.brand img{width:38px;height:38px}.navlinks{justify-content:flex-end;gap:6px}.navlinks a{font-size:11px}.stamp{display:none}main{padding-top:24px}.hero h1{font-size:32px}.workbar,.summary,.detailGrid{grid-template-columns:1fr}.cardbody{padding:17px}.cardhead{padding:17px}.kpi{min-height:90px}.event{grid-template-columns:1fr;gap:2px}.footactions .btn{width:100%}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
+  <link rel="stylesheet" href="./sheet-gallery.css">
 </head>
 <body>
 <header class="top"><div class="frame topinner">
@@ -31,6 +32,27 @@
 <main class="frame">
  <div class="eyebrow">Signal Before Action · From opportunity to outcome</div>
  <section class="hero" aria-labelledby="pagetitle"><div><h1 id="pagetitle">Resume-to-Submission</h1><p>An opportunity is the starting signal. Follow the job description through qualification, alignment, resume preparation, readiness, verified submission and outcomes—while measuring elapsed time and asking whether each checkpoint helped you.</p></div><div class="aside-label">Browser-local learning prototype. Not an ATS, a submission tool, or the authoritative RTS tracker.</div></section>
+ 
+ <section class="card sheet-gallery" id="rtsSheetGallery" aria-labelledby="sgHeading">
+  <div class="sg-top">
+   <div><div class="eyebrow">Live tracker · Browse real RTS opportunities</div>
+    <h2 id="sgHeading">Opportunity &amp; resume gallery</h2>
+    <p class="sg-intro">Scroll through the tracker’s opportunity records and their preserved resume versions. Each stage is evidence-based; a saved resume is not proof an application was submitted.</p>
+   </div><span class="sg-status" id="sgStatus" role="status" aria-live="polite">Loading tracker…</span>
+  </div>
+  <div class="sg-body">
+   <div class="sg-controls">
+    <label for="sgSearch">Find an opportunity<input type="search" id="sgSearch" placeholder="Company, title, or requisition"></label>
+    <label for="sgFilter">Show<select id="sgFilter"><option value="all">All opportunity records</option><option value="resume">With verified resume links</option><option value="verified">Submission receipts verified</option></select></label>
+    <button type="button" id="sgRefresh" class="btn btn-secondary">↻ Refresh from Sheet</button>
+   </div>
+   <div class="sg-meta"><span class="sg-pill" id="sgTotals">Loading opportunities…</span><span>Read-only public tracker view · No applications are submitted here</span></div>
+   <div class="sg-nav"><strong id="sgPosition">Loading…</strong><div><button id="sgPrev" type="button" aria-label="Previous opportunity">← Previous</button><button id="sgNext" type="button" aria-label="Next opportunity">Next →</button></div></div>
+   <div class="sg-track" id="sgTrack" role="region" aria-label="Horizontally scrollable opportunity choices" tabindex="0"></div>
+   <div class="sg-detail" id="sgDetail" aria-live="polite"><p class="sg-placeholder">Loading the read-only opportunity index…</p></div>
+   <p class="sg-smallprint" id="sgNotice">Opportunity stages are inferred cautiously from tracker fields; the existing v0.3 checkpoint pilot below remains browser-local and independent.</p>
+  </div>
+ </section>
  <section class="card" aria-labelledby="casehead"><div class="cardhead"><div class="row spread wrap"><div><div class="eyebrow">01 · Select an opportunity</div><h2 id="casehead">Pilot workspace</h2></div><span class="tag gold">Private to this browser</span></div></div>
  <div class="cardbody"><div class="workbar"><div><label class="label" for="caseSelect">Opportunity</label><select id="caseSelect" class="field" aria-describedby="caseHelp"></select><span id="caseHelp" class="helper">Use de-identified examples; don't paste sensitive resume or recruiter data.</span></div><div><label class="label" for="newName">New opportunity label</label><input id="newName" class="field" maxlength="95" placeholder="Company — Role (optional)"></div><button type="button" id="addCase" class="btn btn-secondary newcase">+ New opportunity</button></div></div></section>
  <section class="summary" aria-label="Local pilot summary">
@@ -203,5 +225,6 @@ $('removeCase').addEventListener('click',()=>{if(!confirm('Delete this opportuni
 window.__RTS_DEMO_TEST__={stages:STAGES.map(({key})=>key),schema:VERSION,elapsedMs,displayDuration,opportunityWindow,reviewWindow,stageStart};
 })();
 </script>
+  <script defer src="./sheet-gallery.js"></script>
 </body>
 </html>
