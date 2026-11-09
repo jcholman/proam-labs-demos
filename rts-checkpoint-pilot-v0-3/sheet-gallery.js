@@ -145,6 +145,7 @@
     var grid=output('div',null,'sg-grid'),one=output('div',null,'sg-column'),two=output('div',null,'sg-column');
     one.append(output('h4','Opportunity evidence & current source'));
     var links=output('div',null,'sg-links');
+    links.append(link('Proof-of-work companion · printable overview','./proof-of-work.html?case='+encodeURIComponent(x.requisition||x.company+'|'+x.role),'Shareable link to evidence, resume versions and RTS v0.3'));
     if(safeUrl(x.folderUrl))links.append(link('Open canonical opportunity folder',x.folderUrl,'Full up-to-date file inventory'));
     if(safeUrl(x.sourceUrl))links.append(link('Original source / job description',x.sourceUrl));
     if(safeUrl(x.alignmentUrl))links.append(link('Candidate alignment',x.alignmentUrl));
