@@ -1,0 +1,46 @@
+
+/* An independent read-only tracker mirror. The existing v0.3 local pilot keeps its own state. */
+.rts-modebar{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:12px}
+.rts-modebar button{border:1px solid #cbdae1;border-radius:20px;background:white;color:#3b6374;min-height:35px;padding:7px 12px;font-size:12px;font-weight:750;cursor:pointer}
+.rts-modebar button[aria-pressed=true]{background:#18354a;border-color:#18354a;color:white}
+.rts-mode-hint{font-size:11px;color:#627a89;margin:8px 0 2px}
+#rtsTrackerChooser{padding-top:16px}
+#rtsTrackerChooser select{max-width:640px}
+#rtsTrackerMirror{margin-top:17px}
+#rtsTrackerMirror .tm-intro{background:#f5f8f9;border:1px solid #d9e5e9;border-radius:11px;padding:15px 17px;margin-bottom:15px}
+#rtsTrackerMirror .tm-intro h2{font-size:20px;margin:3px 0}
+#rtsTrackerMirror .tm-intro p{color:#607889;font-size:12px;margin:5px 0 0}
+#rtsTrackerMirror .tm-tags{font-size:11px;font-weight:750;color:#466779;text-transform:uppercase;letter-spacing:.6px}
+#rtsTrackerMirror .tm-summary{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}
+#rtsTrackerMirror .tm-summary .kpi{min-height:110px}
+#rtsTrackerMirror .tm-summary .val{font-size:25px}
+#rtsTrackerMirror .tm-timings{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-bottom:18px}
+#rtsTrackerMirror .tm-time{border:1px solid #cbdde5;border-radius:10px;background:#eaf1f4;padding:13px 16px}
+#rtsTrackerMirror .tm-time strong{display:block;font-size:18px;color:#19465f;margin:2px 0 4px}
+#rtsTrackerMirror .tm-time .lbl{font-size:11px;color:#526f81;font-weight:720}
+#rtsTrackerMirror .tm-time .helper{font-size:11px}
+#rtsTrackerMirror .tm-layout{display:grid;grid-template-columns:1fr 1.08fr;gap:16px;align-items:start}
+#rtsTrackerMirror .tm-box{border:1px solid #dbe5e9;background:white;border-radius:12px;overflow:hidden}
+#rtsTrackerMirror .tm-box>h2{font-size:17px;margin:0;padding:15px 18px;border-bottom:1px solid #e3eaee}
+#rtsTrackerMirror .tm-box-body{padding:14px 18px}
+#rtsTrackerMirror .tm-steps{list-style:none;padding:0;margin:0}
+#rtsTrackerMirror .tm-step{display:flex;align-items:start;gap:12px;border-bottom:1px solid #e8eff2;padding:9px 0}
+#rtsTrackerMirror .tm-step:last-child{border:0}
+#rtsTrackerMirror .tm-step .tm-number{border:1px solid #cbd5db;color:#607d8c;background:white;display:grid;place-items:center;font-size:12px;font-weight:800;border-radius:50%;height:27px;width:27px;flex:none}
+#rtsTrackerMirror .tm-step.tm-accepted .tm-number{background:#e7f4eb;border-color:#bdd9c8;color:#195d3c}
+#rtsTrackerMirror .tm-step.tm-recorded .tm-number{background:#e6f1f6;color:#26536b}
+#rtsTrackerMirror .tm-step.tm-hold .tm-number{background:#fff2df;color:#986025;border-color:#e5cda4}
+#rtsTrackerMirror .tm-step.tm-reported .tm-number{background:#fcf3e8;color:#90652d;border-color:#e4cdaa}
+#rtsTrackerMirror .tm-step.tm-history .tm-number{background:#edf0f5}
+#rtsTrackerMirror .tm-step strong{font-size:12px}
+#rtsTrackerMirror .tm-step p{font-size:10px;line-height:1.4;color:#687d8d;margin:3px 0 0}
+#rtsTrackerMirror .tm-marker{font-size:10px;margin-left:7px;color:#6e8391;font-weight:600}
+#rtsTrackerMirror .tm-warning{background:#fff7ec;color:#785220;border:1px solid #f1dfbf;border-radius:8px;margin:11px 0;padding:9px 11px;font-size:11px}
+#rtsTrackerMirror .tm-facts{display:grid;grid-template-columns:110px 1fr;gap:7px 12px;margin:16px 0;font-size:11px}
+#rtsTrackerMirror .tm-facts dt{color:#667e8e;font-weight:720}
+#rtsTrackerMirror .tm-facts dd{margin:0;overflow-wrap:anywhere}
+#rtsTrackerMirror .tm-actions{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}
+#rtsTrackerMirror .tm-actions a{border:1px solid #cbdce4;border-radius:8px;background:#fff;padding:8px 11px;font-size:11px;text-decoration:none;font-weight:750;color:#2b586c}
+#rtsTrackerMirror .tm-footer{margin:16px 0 2px;color:#657c8b;font-size:11px}
+@media(max-width:940px){#rtsTrackerMirror .tm-layout{grid-template-columns:1fr}}
+@media(max-width:620px){#rtsTrackerMirror .tm-summary{grid-template-columns:repeat(2,minmax(0,1fr))}#rtsTrackerMirror .tm-timings{grid-template-columns:1fr}}
