@@ -85,7 +85,7 @@ footer{border-top:1px solid var(--line);color:var(--muted);padding:20px 0;font-s
    get('caseWarning').replaceChildren();
    if(rec.warning){var note=document.createElement('div');note.className='warning';note.textContent=rec.warning;get('caseWarning').append(note);}
    var chosen=list.filter(function(a){return a.type==='PDF'&&!/qa.fail/i.test(a.status);}).pop();
-   if(!chosen&&safe(rec.resumeUrl)&&/\.pdf|drive.google.com\/file/i.test(rec.resumeUrl))chosen={url:rec.resumeUrl,label:'Tracker-linked PDF'};
+   if(!chosen&&!(rec.company==='Advantage Tech'&&rec.role==='Sr. AI Context Engineer')&&safe(rec.resumeUrl)&&/\.pdf|drive.google.com\/file/i.test(rec.resumeUrl))chosen={url:rec.resumeUrl,label:'Tracker-linked PDF'};
    var iframe=get('pdfPreview'),direct=get('pdfDirect');
    if(chosen){
       var match=chosen.url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
