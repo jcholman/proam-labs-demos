@@ -88,7 +88,7 @@ function render(){
  if(/blocked/i.test(r.package)){desc.append(make('p','BLOCKED — employer/client identity unresolved. No resume submission established.','tm-warning'));}
  var actions=make('div',null,'tm-actions');
  if(safe(r.folderUrl))actions.append(link('Canonical opportunity folder',r.folderUrl));
- if(safe(r.resumeUrl))actions.append(link('Tracker-linked resume',r.resumeUrl));
+ if(safe(r.resumeUrl)&&!(r.company==='Advantage Tech'&&r.role==='Sr. AI Context Engineer'))actions.append(link('Tracker-linked resume',r.resumeUrl));
  var c=r.requisition||r.role,caseUrl='./proof-of-work.html?case='+encodeURIComponent(c);
  actions.append(link('Proof-of-work companion ↗',caseUrl));
  desc.append(actions);
