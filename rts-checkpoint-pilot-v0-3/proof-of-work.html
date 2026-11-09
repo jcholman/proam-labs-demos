@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#f6f5f1">
+<meta name="description" content="Resume-to-Submission v0.3 — an inspectable applied AI product and governed resume workflow case study by proAM Labs.">
+<title>Proof of Work · Resume-to-Submission v0.3 · proAM Labs</title>
+<style>
+:root{--ink:#17334a;--muted:#5a7182;--gold:#ae7f31;--line:#dbe3e7;--paper:#f7f6f2}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);font:14px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+a{color:#245a74;text-underline-offset:3px}a:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid #aa8742;outline-offset:3px}
+header{background:white;border-bottom:1px solid var(--line)}.shell{max-width:1120px;width:calc(100% - 38px);margin:auto}
+header .shell{display:flex;align-items:center;justify-content:space-between;gap:13px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:11px;font-size:21px;letter-spacing:-.5px;font-weight:750}.brand img{width:39px;height:39px}.brand span{color:var(--gold);font-weight:450}
+nav{display:flex;flex-wrap:wrap;gap:13px;font-size:12px}.btn{display:inline-flex;align-items:center;justify-content:center;min-height:39px;padding:9px 14px;border:1px solid #cbd9df;border-radius:8px;background:white;text-decoration:none;font-size:12px;font-weight:700}
+.btn.primary{color:white;border-color:var(--ink);background:var(--ink)}
+main{padding:29px 0 45px}.eyebrow{text-transform:uppercase;letter-spacing:1.3px;color:#906824;font-size:11px;font-weight:850}
+.hero{display:grid;grid-template-columns:1.25fr .75fr;align-items:center;gap:22px;margin:10px 0 22px}.hero h1{font-size:clamp(29px,4vw,44px);line-height:1.09;letter-spacing:-1.3px;margin:10px 0}.hero p{color:var(--muted);max-width:750px}
+.hero aside{background:white;border:1px solid var(--line);padding:20px;border-radius:12px}.hero aside strong{font-size:12px}.hero aside p{font-size:12px;margin:6px 0}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:13px;margin-bottom:20px}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:18px}
+.card strong{font-size:14px}.card p{font-size:12px;color:var(--muted);margin:8px 0 0}
+h2{font-size:20px;margin:0 0 9px;letter-spacing:-.35px}.section{background:white;border:1px solid var(--line);border-radius:12px;padding:22px;margin:18px 0}
+.bar{display:flex;align-items:end;justify-content:space-between;gap:15px;flex-wrap:wrap}
+label{font-weight:720;font-size:12px}select{display:block;font:inherit;font-size:12px;padding:10px;background:white;color:var(--ink);border:1px solid #c9d7dd;border-radius:8px;max-width:490px;width:100%;margin-top:4px}
+.meta{display:flex;gap:9px;flex-wrap:wrap;margin:12px 0}.pill{border-radius:20px;background:#eef3f5;color:#466478;padding:6px 10px;font-size:11px;font-weight:730}.pill.warn{background:#fff4e4;color:#936527}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.small{font-size:12px;color:var(--muted)}.record-links{display:grid;gap:8px;margin-top:11px}
+.record-links a{border:1px solid var(--line);border-radius:7px;padding:10px 12px;text-decoration:none;font-size:12px;font-weight:680}
+.record-links small{display:block;color:#657e8d;font-size:10px;font-weight:450;margin-top:3px}
+.warning{color:#835921;background:#fff7e9;border:1px solid #efdfbf;border-radius:8px;padding:12px;font-size:12px}
+.preview{height:420px;width:100%;border:1px solid #d9e4e8;border-radius:7px;background:#f4f7f8}
+footer{border-top:1px solid var(--line);color:var(--muted);padding:20px 0;font-size:11px}
+@media(max-width:850px){.hero,.grid{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.preview{height:350px}}
+@media print{@page{size:letter;margin:0.42in}body{background:white;font-size:10pt}.shell{width:100%;max-width:none}header .shell{padding:0 0 8px}main{padding:10px 0}nav,.no-print,.preview{display:none!important}.hero{display:block;margin:5px 0}.hero h1{font-size:24pt}.hero aside{padding:9px;margin-top:9px}.cards{grid-template-columns:repeat(3,1fr)}.card,.section{padding:10px;margin:7px 0;break-inside:avoid}.section h2{font-size:13pt}.grid{grid-template-columns:1fr 1fr;gap:13px}.record-links{gap:3px}.record-links a{padding:4px 6px;overflow-wrap:anywhere}.warning{padding:6px}.print-url:after{content:" — " attr(href);font-size:8pt;overflow-wrap:anywhere}footer{padding:5px}}
+</style></head><body>
+<header><div class="shell"><div class="brand"><img src="../continuity-search-v0-1/assets/proam-emblem.png" alt="proAM Labs emblem">proAM <span>Labs</span></div><nav><a href="../">Demo library</a><a href="./">RTS v0.3 interactive</a><a href="../continuity-search-v0-1/">Find Your Thread</a></nav></div></header>
+<main class="shell">
+ <div class="eyebrow">Applied AI Product Development · Public portfolio companion</div>
+ <div class="hero">
+  <div><h1>Evidence behind the resume.</h1><p>This proof-of-work companion connects the derived resume to the prototypes, human-reviewed decisions, supporting documentation and limitations that produced it. Review the live RTS v0.3 experience, then inspect preserved versions for a selected opportunity.</p>
+  <div class="no-print" style="display:flex;gap:10px;flex-wrap:wrap;margin:13px 0"><a id="openInteractive" class="btn primary" href="./?case=R-425570#rtsTrackerMirror">Open interactive RTS v0.3</a><button class="btn" onclick="window.print()">Print / save companion</button></div></div>
+  <aside><strong>WHAT THIS IS — AND IS NOT</strong><p>RTS v0.3 is a working browser prototype and read-only presentation of the opportunity tracker. The actual resume artifacts were produced through an LLM-assisted, human-reviewed workflow and preserved in Google Drive—not automatically generated or submitted by this webpage.</p><p>Production AI deployment, external employer receipts and outcome claims require their own evidence.</p></aside>
+ </div>
+ <div class="cards">
+  <div class="card"><strong>Technical product prototyping</strong><p>Observable checkpoint interface, interaction logic, evidence-aware gates and source-linked opportunity gallery.</p></div>
+  <div class="card"><strong>Governed evidence &amp; review</strong><p>Traceability of source claims and human authorization; explicit HOLD states, corrections, versions, and unresolved risks.</p></div>
+  <div class="card"><strong>Continuity of the deliverable</strong><p>Resume revisions and quality findings remain inspectable without overstating placement or measured savings.</p></div>
+ </div>
+ <section class="section" aria-labelledby="caseHeading">
+  <div class="bar"><div><div class="eyebrow">Inspect an opportunity</div><h2 id="caseHeading">Resume versions and source lineage</h2></div>
+  <label class="no-print" for="casePick">Opportunity<select id="casePick"><option>Loading source records…</option></select></label></div>
+  <div id="caseInfo" class="small">Loading verified public index…</div>
+  <div class="grid"><div><h2>Supporting records</h2><div id="caseSources" class="record-links"></div></div>
+   <div><h2>Preserved resume versions</h2><div id="caseVersions" class="record-links"></div></div>
+  </div>
+  <div id="caseWarning" style="margin-top:15px"></div>
+ </section>
+ <section class="section">
+  <h2>Review a preserved PDF</h2><p class="small" id="previewDescription">The embedded preview is a convenience. Open the original Drive file if the preview is blocked; a preview does not confer submission approval.</p>
+  <iframe class="preview" id="pdfPreview" title="Preserved PDF preview" loading="lazy" referrerpolicy="no-referrer" sandbox="allow-scripts allow-same-origin allow-popups"></iframe>
+  <div class="no-print" style="margin-top:10px"><a id="pdfDirect" class="btn" target="_blank" rel="noopener noreferrer" href="#">Open source PDF directly</a></div>
+ </section>
+ <section class="section">
+  <h2>Limits and candidate authority</h2><p class="small">The employer may inspect demonstrated prototype capabilities and decide their relevance. A prototype, working pilot and verified production deployment are different maturity states. No application receipt is inferred from a saved resume or a candidate-reported submission. Exact dates and independently verified employer outcomes remain evidence-dependent. The Google Sheet owns the live tracker state; this page displays a dated portfolio index for resume versions and can link to the live RTS workspace.</p>
+  <a class="print-url" id="caseLiveLink" href="./?case=R-425570#rtsTrackerMirror">Interactive source: RTS v0.3</a>
+ </section>
+</main><footer class="shell"><strong>proAM Labs</strong> · Applied AI Prototyping · Evidence before claims · Human authority retained</footer>
+<script>
+(function(){
+ 'use strict';
+ var get=function(id){return document.getElementById(id);};
+ var url=new URLSearchParams(location.search),requested=url.get('case')||'R-425570',records=[];
+ var safe=function(link){try{var u=new URL(link,location.href);return u.protocol==='https:'?u.href:null;}catch(e){return null;}};
+ function makeLink(title,href,note){if(!safe(href))return null;var a=document.createElement('a');a.href=safe(href);a.target='_blank';a.rel='noopener noreferrer';a.textContent=title;if(note){var s=document.createElement('small');s.textContent=note;a.append(s);}return a;}
+ function render(rec){
+   if(!rec)return;
+   var id=rec.requisition||rec.company+'|'+rec.role;
+   var link='./?case='+encodeURIComponent(rec.requisition||rec.company+'|'+rec.role)+'#rtsTrackerMirror';
+   get('openInteractive').href=link;get('caseLiveLink').href=link;
+   var hdr=document.createElement('div'),h=document.createElement('h3');h.textContent=rec.company+' — '+rec.role+(rec.requisition?' · '+rec.requisition:'');hdr.append(h);
+   var p=document.createElement('p');p.className='meta';[['Tracker state',rec.lifecycle||'Not verified'],['Application',rec.application||'Not verified'],['Authorization',rec.authorization||'Not verified']].forEach(function(x){var s=document.createElement('span');s.className='pill'+(/not|pending|reported|hold|blocked/i.test(x[1])?' warn':'');s.textContent=x[0]+': '+x[1];p.append(s);});
+   hdr.append(p);get('caseInfo').replaceChildren(hdr);
+   var src=get('caseSources'),versions=get('caseVersions');src.replaceChildren();versions.replaceChildren();
+   [['Canonical folder',rec.folderUrl,'Verify current file inventory'],['Source job description',rec.sourceUrl,'Original requirement'],['Candidate alignment',rec.alignmentUrl,'Provenance of matching claims'],['Tracker source', 'https://docs.google.com/spreadsheets/d/14LChbwEP7Ugd2tUbSqKuGFInVPECnb78Jb6wTnyzh5M/edit?gid=1043935481','Current placement and checkpoint status']].forEach(function(row){var a=makeLink(row[0],row[1],row[2]);if(a)src.append(a);});
+   var list=rec.archives||[];list.forEach(function(a){var l=makeLink(a.label,a.url,a.status+' · '+a.type);if(l)versions.append(l);});
+   if(!list.length){var warn=document.createElement('p');warn.textContent='No verified matching resume versions are available in this index.';versions.append(warn);}
+   get('caseWarning').replaceChildren();
+   if(rec.warning){var note=document.createElement('div');note.className='warning';note.textContent=rec.warning;get('caseWarning').append(note);}
+   var chosen=list.filter(function(a){return a.type==='PDF'&&!/qa.fail/i.test(a.status);}).pop();
+   if(!chosen&&safe(rec.resumeUrl)&&/\.pdf|drive.google.com\/file/i.test(rec.resumeUrl))chosen={url:rec.resumeUrl,label:'Tracker-linked PDF'};
+   var iframe=get('pdfPreview'),direct=get('pdfDirect');
+   if(chosen){
+      var match=chosen.url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+      iframe.src=match?'https://drive.google.com/file/d/'+encodeURIComponent(match[1])+'/preview':'about:blank';
+      iframe.hidden=!match;direct.href=chosen.url;direct.hidden=false;
+      get('previewDescription').textContent='For inspection only: '+chosen.label+'. The preview may show an earlier version; it does not establish a submission-ready artifact. If embedding fails, open the Drive link.';
+   }else{
+     iframe.removeAttribute('src');iframe.hidden=true;direct.hidden=true;
+     get('previewDescription').textContent='No suitable same-opportunity PDF is available for preview. The source folder and tracker remain available above.';
+   }
+   get('casePick').value=id;
+   history.replaceState(null,'',location.pathname+'?case='+encodeURIComponent(rec.requisition||rec.company+'|'+rec.role));
+ }
+ function select(){var value=get('casePick').value,rec=records.find(function(x){return x.requisition===value||x.company+'|'+x.role===value;});render(rec);}
+ get('casePick').addEventListener('change',select);
+ fetch('./sheet-gallery-snapshot.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw Error('No snapshot');return r.json();}).then(function(data){
+  records=data.records||[];
+  var select=get('casePick');select.replaceChildren();
+  records.forEach(function(r){var o=document.createElement('option');o.value=r.requisition||r.company+'|'+r.role;o.textContent=r.company+' — '+r.role;select.append(o);});
+  var wanted=records.find(function(x){return x.requisition===requested||x.company+'|'+x.role===requested;})||records.find(function(x){return x.requisition==='R-425570';})||records[0];
+  if(wanted)render(wanted);
+ }).catch(function(){get('caseInfo').textContent='The source index could not be loaded. Open the interactive RTS demo for the current tracker.';get('pdfPreview').hidden=true;get('pdfDirect').hidden=true;});
+})();
+</script></body></html>
