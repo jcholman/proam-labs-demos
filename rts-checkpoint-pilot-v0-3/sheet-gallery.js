@@ -58,8 +58,12 @@
     });
   }
   function submissionVerified(x){
-    // A recruiter message, final-named resume, or inferred date does NOT establish a verified receipt.
-    return !!safeUrl(x.receiptUrl)&&/submission.verified|receipt verified/i.test(str(x.application));
+    // A recruiter message, final-named resume, or inferred date does NOT establish verified submission.
+    // The tracker may carry either a durable receipt URL OR a governed VERIFIED placement state with an exact submission date.
+    var state=str(x.application);
+    var datedVerified=/^verified$/i.test(state)&&!!str(x.submissionDate);
+    var receiptVerified=!!safeUrl(x.receiptUrl)&&/submission.verified|receipt verified|verified/i.test(state);
+    return datedVerified||receiptVerified;
   }
   function usableResume(x){
     // Refuse to endorse the GEHA-named file as the Advantage Tech role's resume.
@@ -83,7 +87,7 @@
     ];
   }
   function ownerReported(x){return /user.reported.submitted/i.test(str(x.application));}
-  function stateName(x){return submissionVerified(x)?'Receipt verified':/blocked/i.test(x.package)?'Artifact blocked':ownerReported(x)?'Owner reports submitted · receipt pending':/not authorized/i.test(x.authorization)?'Readiness not authorized':x.lifecycle||'Status not recorded';}
+  function stateName(x){return submissionVerified(x)?'Submission verified':/blocked/i.test(x.package)?'Artifact blocked':ownerReported(x)?'Owner reports submitted · receipt pending':/not authorized/i.test(x.authorization)?'Readiness not authorized':x.lifecycle||'Status not recorded';}
   function filtered(){
     return cases.filter(function(x){
       if(filters.type==='resume'&&!usableResume(x))return false;
@@ -94,7 +98,7 @@
   }
   function render(){
     var visible=filtered(),count=cases.filter(submissionVerified).length;
-    el('sgTotals').textContent=cases.length+' opportunities · '+cases.filter(usableResume).length+' with resume links · '+cases.filter(ownerReported).length+' owner-reported submitted · '+count+' receipt-verified';
+    el('sgTotals').textContent=cases.length+' opportunities · '+cases.filter(usableResume).length+' with resume links · '+cases.filter(ownerReported).length+' owner-reported submitted · '+count+' submission-verified';
     var candidate=visible.find(function(x){return key(x)===selected;});
     if(!candidate){candidate=visible[0]||null;selected=candidate?key(candidate):null;}
     position.textContent=candidate?(visible.indexOf(candidate)+1)+' of '+visible.length:'No matches';
@@ -208,6 +212,9 @@
     snapshot=Array.isArray(data.records)?data.records:[];cases=snapshot.slice();source='snapshot';applyRequestedSelection();
     changeStatus('SNAPSHOT · '+(data.capturedDate||'date unknown'),'');
     render();refresh();
+    // Keep the read-only tracker current without requiring a hard refresh.
+    setInterval(function(){if(!document.hidden)refresh();},60000);
+    document.addEventListener('visibilitychange',function(){if(!document.hidden)refresh();});
   }).catch(function(){
     changeStatus('Tracker records unavailable','failed');
     el('sgNotice').textContent='Unable to load the published snapshot. Live Sheet retrieval will still be attempted.';
