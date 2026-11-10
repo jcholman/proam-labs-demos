@@ -1,7 +1,7 @@
 {
   "schema": "proam_rts_gallery_snapshot_v1",
   "sourceSheet": "https://docs.google.com/spreadsheets/d/14LChbwEP7Ugd2tUbSqKuGFInVPECnb78Jb6wTnyzh5M/edit?gid=1043935481",
-  "sourceRange": "'Opportunity Inventory'!A4:Z150",
+  "sourceRange": "'Opportunity Inventory'!A4:AB150",
   "capturedDate": "2026-11-10",
   "status": "Dated public snapshot of Google Sheet. R-425570 submission is verified from candidate-supplied Workday UI evidence; browser still requests current Sheet data.",
   "records": [
@@ -227,7 +227,9 @@
         }
       ],
       "warning": "Workday UI evidence verifies submission for exact requisition R-425570 on November 10, 2026. CP6 READY_TO_SUBMIT remains historically NOT AUTHORIZED in the measured sequence; this is preserved as a sequence-control exception. Exact submitted resume version is not inferred.",
-      "ownerReportProvenance": "Superseded for submission status by Workday UI evidence supplied November 10, 2026."
+      "ownerReportProvenance": "Superseded for submission status by Workday UI evidence supplied November 10, 2026.",
+      "atsUsed": "Workday",
+      "employerAtsUrl": "https://humana.wd5.myworkdayjobs.com/en-US/humana_external_career_site/userHome?jr_id=6a7cc6e877d5f033c4b9095a"
     }
   ]
 }
