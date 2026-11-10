@@ -15,7 +15,7 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## Applied AI Portfolio — Resume Page 3
 
-[Open the current Applied AI Portfolio Supplement](https://drive.google.com/file/d/1wU4WERS2eOEUWOTeMk-ETvwGyOhTyKR4/view) — A reusable employer-facing Page 3 portfolio supplement connecting Jason Holman’s resume claims to inspectable proAM Labs demonstrations and public proof of work.
+[Open the current Applied AI Portfolio Supplement — Portrait](https://drive.google.com/file/d/1wU4WERS2eOEUWOTeMk-ETvwGyOhTyKR4/view) · [Open the Landscape Portfolio](https://jcholman.github.io/proam-labs-demos/applied-ai-portfolio-landscape/) — Reusable employer-facing Page 3 portfolio options connecting Jason Holman’s resume claims to inspectable proAM Labs demonstrations and public proof of work.
 
 Purpose-driven and personally motivated, Jason is building proAM Labs as a nonprofit-oriented applied-intelligence initiative focused on **Fit-for-Purpose teams of AI agents**. The work explores how individuals and organizations can evaluate evidence, create shared understanding, preserve continuity of care across decisions, and move from qualified insight to human-authorized action. The supplement highlights Resume-to-Submission, Find Your Thread, Thinking Graph Arena, and Continuity Value Explorer, with links to the broader proAM Labs website, demo library, LinkedIn profile, and GitHub repository.
 
