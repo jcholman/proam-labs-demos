@@ -2,8 +2,8 @@
   "schema": "proam_rts_gallery_snapshot_v1",
   "sourceSheet": "https://docs.google.com/spreadsheets/d/14LChbwEP7Ugd2tUbSqKuGFInVPECnb78Jb6wTnyzh5M/edit?gid=1043935481",
   "sourceRange": "'Opportunity Inventory'!A4:Z150",
-  "capturedDate": "2026-11-09",
-  "status": "Dated public snapshot of Google Sheet, with candidate-reported submission statuses preserved as NOT_RECEIPT_VERIFIED. Browser will request current Sheet data.",
+  "capturedDate": "2026-11-10",
+  "status": "Dated public snapshot of Google Sheet. R-425570 submission is verified from candidate-supplied Workday UI evidence; browser still requests current Sheet data.",
   "records": [
     {
       "row": 5,
@@ -148,13 +148,13 @@
       "requisition": "R-425570",
       "location": "Louisville, KY — hybrid, 3 days/week",
       "sourceDescription": "",
-      "lifecycle": "IN PREPARATION",
+      "lifecycle": "SUBMITTED",
       "package": "PARTIAL",
       "alignment": "Checkpoint 3 — ALIGNMENT_REVIEWED: ACCEPTED (YES/YES); EVENT: alignment-review acceptance; completion time UNRESOLVED / NOT_MEASURED (11:46 AM misattribution corrected).",
       "resumeState": "Checkpoint 4 — RESUME_PRESENTED: ACCEPTED (YES/YES); EVENT human draft review-acceptance 2026-11-09 11:46 AM EST USER_ENTERED_HISTORICAL; initial presentation NOT_MEASURED. Checkpoint 5 — RESUME_VERIFIED: ACCEPTED; EVENT candidate human verification acceptance 2026-11-09 12:23 PM EST (clock 12:23 user-entered; PM inferred from local context). Feedback for CP5 not separately captured. Preserved DRAFT file names; no FINAL label or authorization.",
       "authorization": "NOT AUTHORIZED",
-      "application": "USER REPORTED SUBMITTED — RECEIPT NOT VERIFIED",
-      "submissionDate": "",
+      "application": "VERIFIED",
+      "submissionDate": "2026-11-10",
       "interview": "NOT VERIFIED",
       "outcome": "OPEN / UNKNOWN",
       "risk": "",
@@ -226,8 +226,8 @@
           "url": "https://docs.google.com/document/d/1CJFQDjKtvWRB472sfXPrSVImbpll2a_Rg0rEvn7ET0s/edit"
         }
       ],
-      "warning": "Owner reports submission; no external receipt/date/version verified. Current RTS checkpoint history still records CP6 HOLD, PDF_FONT_QA_FAIL on v3, and pending Workday history check. This mismatch requires reconciliation; do not infer a verified CP6 or CP7.",
-      "ownerReportProvenance": "Owner statement in Clarity RTS project, November 9 2026; submission date/channel/version unspecified"
+      "warning": "Workday UI evidence verifies submission for exact requisition R-425570 on November 10, 2026. CP6 READY_TO_SUBMIT remains historically NOT AUTHORIZED in the measured sequence; this is preserved as a sequence-control exception. Exact submitted resume version is not inferred.",
+      "ownerReportProvenance": "Superseded for submission status by Workday UI evidence supplied November 10, 2026."
     }
   ]
 }
