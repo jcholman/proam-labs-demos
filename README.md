@@ -61,6 +61,16 @@ This is designed as an **optional reusable resume supplement** for future opport
 
 This is a **publicly accessible GitHub Pages prototype** for demonstration, not an integrated RTS tracker or employment application service. It has **not** been added to the enhanced library, website showcase, or proAM Labs website. Survey answers are self-reported and browser-local; do not enter confidential data.
 
+## Resume-to-Submission — Proof of Work Companion
+
+[Open the R-425570 proof-of-work companion](https://jcholman.github.io/proam-labs-demos/rts-checkpoint-pilot-v0-3/proof-of-work.html?case=R-425570) — A recruiter- and reviewer-facing view of one live RTS opportunity package. It brings together the opportunity identity, checkpoint progression, canonical source links, candidate alignment, preserved resume versions, QA records, submission state, and supporting proof surfaces in one place.
+
+Use it to inspect **what was presented, what was qualified, what changed, what was verified, what remains unresolved, and where the durable artifacts live**. It is designed to reduce orientation cost for a reviewer without replacing the canonical Google Drive opportunity package or the RTS Inventory.
+
+For R-425570, the companion now reflects a **verified Workday submission on November 10, 2026**, while preserving the earlier CP6 HOLD / NOT AUTHORIZED history as a sequence-control exception rather than rewriting it. It also exposes the employer ATS locator so the application can be revisited directly.
+
+This is a **read-only proof surface**. It does not submit applications, modify Workday, or establish employment outcomes on its own.
+
 ## What comes next (planned)
 
 These are prospective demonstrations, not published or verified capabilities. Live demo links will be added here when the prototypes are ready.
