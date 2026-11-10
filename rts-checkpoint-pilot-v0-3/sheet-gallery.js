@@ -40,13 +40,14 @@
   function normalizeTable(payload){
     if(!payload||payload.status!=='ok'||!payload.table||!Array.isArray(payload.table.rows))throw Error('The sheet returned no usable table.');
     var out=payload.table.rows.map(function(r,i){
-      var a=Array.from({length:26},function(_,j){return safeCell((r.c||[])[j]);});
+      var a=Array.from({length:28},function(_,j){return safeCell((r.c||[])[j]);});
       return {
         row:i+5,qualified:a[0],company:a[1],role:a[2],requisition:a[3],location:a[4],
         sourceDescription:a[5],lifecycle:a[6],package:a[7],alignment:a[8],resumeState:a[9],
         authorization:a[10],application:a[11],submissionDate:a[12],interview:a[13],
-        outcome:a[14],risk:a[17],sourceUrl:a[20],folderUrl:a[18],
-        alignmentUrl:a[21],resumeUrl:a[22],applicationUrl:a[23],receiptUrl:a[24]
+        outcome:a[14],risk:a[16],sourceUrl:a[20],folderUrl:a[18],
+        alignmentUrl:a[21],resumeUrl:a[22],applicationUrl:a[23],receiptUrl:a[24],
+        atsUsed:a[25],employerAtsUrl:a[26],notes:a[27]
       };
     }).filter(function(x){return x.company&&x.role&&x.company.toLowerCase()!=='company';});
     if(!out.length)throw Error('The public tracker returned no opportunity rows.');
@@ -156,6 +157,7 @@
     if(safeUrl(x.resumeUrl)&&!(x.company==='Advantage Tech'&&x.role==='Sr. AI Context Engineer'))
       links.append(link('Resume linked in live tracker',x.resumeUrl,'May point to an earlier version; see preserved versions'));
     if(safeUrl(x.receiptUrl))links.append(link('Recorded receipt reference (requires verification)',x.receiptUrl));
+    if(safeUrl(x.employerAtsUrl))links.append(link('Open employer ATS'+(x.atsUsed?' — '+x.atsUsed:''),x.employerAtsUrl,'Return to the employer application system'));
     if(!links.children.length)one.append(output('p','No durable source link recorded for this opportunity.','sg-placeholder'));else one.append(links);
     two.append(output('h4','Preserved resume progression & QA'));
     var versions=output('div',null,'sg-links');
@@ -198,7 +200,7 @@
     script.onerror=function(){finish(false);};
     var tqx='out:json;responseHandler:'+callback;
     script.src='https://docs.google.com/spreadsheets/d/'+SHEET_ID+'/gviz/tq?gid='+GID+
-      '&range=A4:Z500&headers=1&tqx='+encodeURIComponent(tqx)+'&_='+Date.now();
+      '&range=A4:AB500&headers=1&tqx='+encodeURIComponent(tqx)+'&_='+Date.now();
     document.head.append(script);
   }
   el('sgSearch').addEventListener('input',function(e){filters.search=e.target.value;render();});
