@@ -1,28 +1,13 @@
-# The Foundation.org — proAM Labs Foundation concept (demo v0.1)
+# The Foundation.org — Demo v0.2
 
-[**Open the Foundation demo**](https://jcholman.github.io/proam-labs-demos/the-foundation-org/)
+The Foundation.org is a separate person-facing **GitHub Pages demonstration** under `/the-foundation-org/` and is not a registered or configured custom .org domain. The legal and tax status of a future foundation is not asserted.
 
-This is a separate *individual-facing* experience from the [organization-facing proAM Labs Showcase](../showcase/). "The Foundation.org" is a working label for the Foundation demo, **not** a claim that a separate .org domain is configured or that the Foundation is already incorporated or IRS tax-exempt.
+## This revision
+- Personal framing: "A system that starts by understanding me," including goals, purpose and experience; service/commitment language appears in the veterans' pathway.
+- Footer attribution: "Powered by" followed by a 24px copy of the official proAM Labs emblem, then linked name, on all five pages.
+- Progressively editable career profile: begin with one detail, optional headline, purpose, experience, community contribution, skills, career goals, private constraints and checkpoint.
+- Private by default. Opt-in browser-local save, resume and continuity export/import, and a distinct, simulated organization-profile preview/visibility-choice control at the end. No server persistence, live AI, real employer access or actual publishing exists.
+- Local storage is unencrypted and unsafe for sensitive data on shared devices. A future service needs secure accounts, privacy/security reviews, purpose-limited consent, human review and revocation.
+- Employer fees never authorize access to private job-search history.
 
-## Site pages
-- `index.html` — mission and pathways for an individual job seeker
-- `identity.html` — browser-only career identity and resume draft, export/import
-- `resources.html` — searchable 21-program directory; official-source-reviewed leads, not personal eligibility decisions
-- `organizations.html` — future fee-supported model, fictional examples only
-- `trust.html` — trust, privacy, consent, and human authorization
-- `resources.json` — structured review snapshot (the page also embeds the same snapshot for self-contained rendering)
-
-## Governance
-- No accounts, enrollment, payments, cloud resumes, actual employer matching, or referrals operate in this demo.
-- Personal resume text stays in the visitor's browser unless deliberately exported; it is not submitted to proAM Labs or employers.
-- The proposed employer offering may use only **explicitly consented, purpose-limited talent profiles** or appropriately aggregated workforce insights. Payment grants **no automatic access to private job-search histories, raw observations, or a person's career identity**.
-- Providers listed are for information; partner endorsement, current openings, benefits entitlement, funding, and individual eligibility are not asserted.
-- A live service requires review of legal entity status, data rights, governance, privacy, security, accessibility, nondiscrimination, partner terms, and fee practices.
-
-## Visual lineage and future exploration
-v0.1 follows the existing demo's parchment, navy, gold, editorial typography and emblem. It uses fully inlined presentation and JS, with the emblem referenced from `../showcase/assets/proam-logo.png`.
-
-For **v0.2**, https://buildingtomorrow.org/ is a reference for bold mission storytelling, community photographs, evidence-backed impact, clear navigation and actions. Do not copy their copy, photography, code, branding or impact figures; no relationship is implied.
-
-## Validation
-Static navigation checks, catalog record counts and JavaScript syntax checks were passed by the source candidate. Browser navigation testing was blocked in this environment; accessibility and mobile real-device qualification are still pending. A source commit does not by itself prove the GitHub Pages CDN has deployed the latest version.
+The 21-program resource directory and its source caveats remain unchanged. The existing organization-facing [showcase](../showcase/) remains separate. The source version is a prototype; website/mobile accessibility audits and legal review are not implied by a successful GitHub Pages deploy.
