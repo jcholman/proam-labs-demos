@@ -95,6 +95,22 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 .desktop-card .glyph{font-size:22px;color:#a98441}
 .desktop-card strong{font:clamp(22px,2.2vw,29px)/1.2 Georgia,serif}
 .desktop-card span:last-child{font-size:14px;color:#535a56}
+
+/* v0.3.2: Show ALL of the approved image, without cutting off the headline or people. */
+@media(min-width:1101px){
+  .visual-cover .approved-art{
+    display:block;width:100%;height:min(67svh,700px);max-height:none;object-fit:contain;
+    object-position:center center;background:var(--navy);
+  }
+}
+@media(max-width:1100px){
+  .mobile-landing img.mobile-photo{
+    display:block;width:100%;height:auto;aspect-ratio:16 / 9;
+    object-fit:contain;object-position:center;background:var(--navy);
+    max-height:none;min-height:0;overflow:visible;
+  }
+  .mobile-landing img.mobile-photo::after{content:none}
+}
 </style>
 </head>
 <body>
@@ -103,7 +119,7 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 <div class="visual-cover" aria-label="The Foundation concept cover">
  <header class="cover-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><a class="power" href="../showcase/" aria-label="Powered by proAM Labs — visit technology showcase"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></header>
  <h1 class="sr-only">Serving Those Who Serve Us</h1>
- <img class="approved-art" src="assets/approved-foundation-cover.jpg?v=clean-hero-20261111" width="1536" height="864" alt="Six people from service and professional roles stand together overlooking a city at sunrise. Overlaid text: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." fetchpriority="high">
+ <img class="approved-art" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six people from service and professional roles stand together overlooking a city at sunrise. Overlaid text: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." fetchpriority="high">
  <main class="desktop-content" id="desktop-main">
   <div class="desktop-next">
    <p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p>
@@ -118,7 +134,7 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 </div>
 <div class="mobile-landing" id="entry-mobile">
  <header class="mobile-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><a class="power" href="../showcase/"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></header>
- <div class="mobile-photo" role="img" aria-label="A group of people serving their community stands together, looking across a city at sunrise"></div>
+ <img class="mobile-photo" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six service and community professionals stand shoulder to shoulder overlooking a city at sunrise. Text in the artwork: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." loading="eager">
  <main class="mobile-message"><p class="kicker">A different way of seeing · Fit for purpose</p><h1>Serving Those Who Serve Us</h1><p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p><div class="mobile-actions"><a id="mobile-profile" href="identity.html">Build My Profile →</a><a href="resources.html#catalog">Find Community Resources →</a></div></main>
  <section class="mobile-cards" aria-label="Explore Foundation pathways">
   <a class="mobile-card" href="identity.html"><span class="glyph" aria-hidden="true">◇</span><strong>Career Identity</strong><span>Clarify your strengths, experience, and purpose to build a path that fits the next chapter of your service.</span></a>
