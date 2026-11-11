@@ -111,13 +111,33 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
   }
   .mobile-landing img.mobile-photo::after{content:none}
 }
+
+/* Service attribution and opportunity-recognition narrative, responsive and readable. */
+.visual-cover .brand-context,.mobile-header .brand-context{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap}
+.visual-cover .assistance-label,.mobile-header .assistance-label{color:#e5c38a;font-weight:650;font-size:clamp(11px,1vw,14px);white-space:nowrap}
+.mobile-header .assistance-label{font-size:12px}
+.recognition-story{background:#faf6ed;border-top:1px solid #d9c9a9;padding:clamp(36px,6vw,75px) 22px}
+.recognition-story-inner{max-width:1160px;margin:0 auto}
+.recognition-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#926f37;font-weight:700;margin:0 0 12px}
+.recognition-story h2{font:clamp(29px,4vw,45px)/1.16 Georgia,serif;max-width:880px;letter-spacing:-.02em;margin:0 0 19px}
+.recognition-lead{max-width:900px;font-size:clamp(16px,1.5vw,19px);line-height:1.7;margin:0 0 29px;color:#344957}
+.recognition-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:25px}
+.recognition-steps>div{border-top:2px solid #b9904c;padding:16px 8px 10px 0}
+.recognition-number{display:block;font-size:12px;font-weight:700;color:#8e6d39;margin-bottom:9px}
+.recognition-steps strong{font:22px/1.2 Georgia,serif;display:block}
+.recognition-steps p{font-size:14px;color:#565c58;line-height:1.55}
+.recognition-honesty{background:#f2e9d8;border-left:3px solid #a78449;padding:14px 18px;font-size:14px;line-height:1.55;color:#394954;margin:14px 0 19px}
+.recognition-links{display:flex;gap:12px 30px;flex-wrap:wrap;font-size:15px;font-weight:600}
+.recognition-links a{color:#203c4a;text-decoration-color:#b9904c}
+@media(max-width:1100px){.mobile-header .brand-context{gap:8px}.recognition-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.mobile-header .brand-context{width:100%}.recognition-steps{grid-template-columns:1fr;gap:3px}.recognition-story{padding:32px 18px}.recognition-story h2{font-size:31px}}
 </style>
 </head>
 <body>
 <a class="skip skip-desktop" href="#desktop-profile">Skip to Foundation services</a>
 <a class="skip skip-mobile" href="#mobile-profile">Skip to Foundation services</a>
 <div class="visual-cover" aria-label="The Foundation concept cover">
- <header class="cover-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><a class="power" href="../showcase/" aria-label="Powered by proAM Labs — visit technology showcase"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></header>
+ <header class="cover-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
  <h1 class="sr-only">Serving Those Who Serve Us</h1>
  <img class="approved-art" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six people from service and professional roles stand together overlooking a city at sunrise. Overlaid text: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." fetchpriority="high">
  <main class="desktop-content" id="desktop-main">
@@ -133,7 +153,7 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
  </main>
 </div>
 <div class="mobile-landing" id="entry-mobile">
- <header class="mobile-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><a class="power" href="../showcase/"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></header>
+ <header class="mobile-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
  <img class="mobile-photo" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six service and community professionals stand shoulder to shoulder overlooking a city at sunrise. Text in the artwork: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." loading="eager">
  <main class="mobile-message"><p class="kicker">A different way of seeing · Fit for purpose</p><h1>Your next chapter shouldn’t start from zero.</h1><p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p><div class="mobile-actions"><a id="mobile-profile" href="identity.html">Build My Profile →</a><a href="resources.html#catalog">Find Community Resources →</a></div></main>
  <section class="mobile-cards" aria-label="Explore Foundation pathways">
@@ -142,5 +162,21 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
   <a class="mobile-card" href="resources.html#catalog"><span class="glyph" aria-hidden="true">⌁</span><strong>New Opportunities</strong><span>Discover training, connections, and career pathways that build on your service and open what’s next.</span></a>
  </section>
 </div>
+
+<section class="recognition-story" aria-labelledby="recognition-title">
+ <div class="recognition-story-inner">
+  <p class="recognition-kicker">What applied AI assistance could make possible</p>
+  <h2 id="recognition-title">The right opportunity may be one you didn't know to ask about.</h2>
+  <p class="recognition-lead">You might come looking for help with a resume, a career change, or understanding a repayment option. There may also be a training program, housing resource, or other community service worth exploring. The aim is to connect <strong>what matters to you</strong> with <strong>possibilities you may not yet see</strong>—without assuming what you need or what you qualify for.</p>
+  <div class="recognition-steps" aria-label="Proposed assistance process">
+   <div><span class="recognition-number">01</span><strong>Start with you</strong><p>Your experience, goals, and what you choose to share.</p></div>
+   <div><span class="recognition-number">02</span><strong>Find a possible connection</strong><p>Explore relevant programs and the evidence behind them.</p></div>
+   <div><span class="recognition-number">03</span><strong>Check before recommending</strong><p>A human reviews fit, costs, unanswered questions, and the provider's rules.</p></div>
+   <div><span class="recognition-number">04</span><strong>You choose what comes next</strong><p>Decide whether to investigate, contact a provider, or hold.</p></div>
+  </div>
+  <p class="recognition-honesty"><strong>Our current status:</strong> This is the proposed service model. Today you can build a browser-based career profile and explore a source-reviewed catalog. Personalized AI matching, benefits screening, eligibility decisions, and referrals are <strong>not</strong> operating through this website.</p>
+  <div class="recognition-links"><a href="mission.html">Why we're building this →</a><a href="trust.html">How human review and your choice fit in →</a></div>
+ </div>
+</section>
 <footer class="information" aria-label="Foundation site navigation"><nav class="links"><a href="mission.html">About the Foundation</a><a href="identity.html">Build your profile</a><a href="resources.html#catalog">Community resources</a><a href="organizations.html">For organizations</a><a href="trust.html">Privacy &amp; trust</a><a href="../showcase/">proAM Labs technology showcase</a></nav><p>The Foundation is a concept demonstration. Profile drafts are private by default; employer visibility requires a separate, explicit future authorization. No real referrals, employer matching, public profile publishing, or nonprofit status is represented as operational.</p></footer>
 </body></html>

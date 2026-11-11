@@ -51,3 +51,10 @@ Source asset: user-uploaded `440847D7-393B-456A-9578-7333C903E71B.jpeg` (second 
 
 ## v0.3.2 — Full-frame responsive hero correction (2026-11-11)
 The approved image did not fit mobile because the original background-size `auto 720px` and fixed `height:215px` severely cropped the scene. The mobile hero now uses a responsive semantic `<img>` with full 16:9 aspect ratio and `object-fit: contain`. Desktop image height is bounded by the viewport with `object-fit: contain` to show the entire frame, with navy letterboxing instead of clipping. The existing real linked profile/resource controls, privacy model, source asset, and Foundation branding are preserved. No backend behavior or catalog record is changed.
+
+
+## v0.4 — Applied AI Assistance / Opportunity Recognition (November 11, 2026)
+
+This revision adds a service descriptor **Applied AI Assistance · Powered by proAM Labs** to the six concept pages and develops the Foundation's public value proposition around helping individuals notice relevant resources or opportunities they may not have known to ask about. New homepage and About-page text explains source-backed possibility recognition, human review, provider authority over eligibility, individual choice, and continuity. Resource, profile, trust, and organization pages now state those same boundaries in the context of their existing experiences.
+
+This is **concept articulation only**. It does not add AI processing, eligibility screening, automated benefits matching, referral services, live participant intake, backend storage or partnerships. The approved hero artwork, functional profile/resource links, original catalog records, form/export mechanics, and privacy model remain unchanged. The broader Foundation mission continues beyond veterans; the proposed veteran pilot is one bounded pathway.
