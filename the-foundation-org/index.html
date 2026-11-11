@@ -46,7 +46,7 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
  .mobile-header .foundation-brand{font-family:Georgia,serif;font-size:clamp(17px,4vw,25px);text-decoration:none}
  .mobile-header .power{display:flex;align-items:center;gap:7px;text-decoration:none;font-size:12px}
  .mobile-header .power img{width:24px;height:24px;object-fit:cover;border-radius:50%;background:var(--cream)}
- .mobile-photo{height:clamp(180px,32vw,290px);position:relative;overflow:hidden;background-image:url('assets/approved-foundation-cover.jpg');background-size:auto 730px;background-repeat:no-repeat;background-position:center -62px}
+ .mobile-photo{height:clamp(180px,32vw,290px);position:relative;overflow:hidden;background-image:url('assets/approved-foundation-cover.jpg?v=clean-hero-20261111');background-size:auto 730px;background-repeat:no-repeat;background-position:center -62px}
  .mobile-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,39,47,.58),transparent 60%)}
  .mobile-message{background:var(--navy);color:var(--white);padding:27px 25px 35px;text-align:center}
  .mobile-message .kicker{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#e8c587;margin:0 0 12px}
@@ -77,20 +77,44 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
  .links{justify-content:center}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:after{transition:none!important}}
+
+/* v0.3.1: clean user-selected hero image with real, accessible CTA and card links */
+.visual-cover .cover-header{position:relative;top:auto;left:auto;right:auto;min-height:76px;height:auto;padding-top:15px;padding-bottom:15px}
+.visual-cover .approved-art{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.desktop-content{background:var(--cream)}
+.desktop-next{background:var(--navy);color:var(--white);text-align:center;padding:27px 30px 32px}
+.desktop-next p{max-width:930px;margin:0 auto 22px;font:italic clamp(17px,1.75vw,24px)/1.5 Georgia,serif;color:#f0e7dc}
+.desktop-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:15px}
+.desktop-actions a{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 24px;border:1px solid #eddfbe;border-radius:5px;text-decoration:none;font:18px/1.2 Georgia,serif;transition:background .15s ease}
+.desktop-actions a:hover{outline:2px solid #e7c586;outline-offset:2px}
+.desktop-actions .entry-primary{color:#1d2b33;background:#dfbb78;border-color:#dfbb78}
+.desktop-actions .entry-secondary{color:#fffcf5;background:transparent}
+.desktop-cards{padding:31px max(4%,calc((100vw - 1440px)/2));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.desktop-card{display:flex;flex-direction:column;gap:9px;background:var(--white);border:1px solid var(--line);border-radius:7px;padding:26px;text-decoration:none;min-height:188px}
+.desktop-card:hover{border-color:var(--gold);box-shadow:0 4px 18px rgba(23,44,56,.09)}
+.desktop-card .glyph{font-size:22px;color:#a98441}
+.desktop-card strong{font:clamp(22px,2.2vw,29px)/1.2 Georgia,serif}
+.desktop-card span:last-child{font-size:14px;color:#535a56}
 </style>
 </head>
 <body>
 <a class="skip skip-desktop" href="#desktop-profile">Skip to Foundation services</a>
 <a class="skip skip-mobile" href="#mobile-profile">Skip to Foundation services</a>
 <div class="visual-cover" aria-label="The Foundation concept cover">
- <img class="approved-art" src="assets/approved-foundation-cover.jpg" width="1536" height="864" alt="" fetchpriority="high">
  <header class="cover-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><a class="power" href="../showcase/" aria-label="Powered by proAM Labs — visit technology showcase"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></header>
- <div id="entry" class="sr-only"><h1>Serving Those Who Serve Us</h1><p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p></div>
- <a id="desktop-profile" class="hotspot profile" href="identity.html" aria-label="Build My Profile — start a private career identity"><span class="sr-only">Build My Profile</span></a>
- <a class="hotspot resources-button" href="resources.html#catalog" aria-label="Find Community Resources"><span class="sr-only">Find Community Resources</span></a>
- <a class="hotspot identity-card" href="identity.html" aria-label="Career Identity: clarify your strengths, experience and purpose"><span class="sr-only">Career Identity</span></a>
- <a class="hotspot community-card" href="resources.html#catalog" aria-label="Community Resources: discover community support, services and guidance"><span class="sr-only">Community Resources</span></a>
- <a class="hotspot opportunities-card" href="resources.html#catalog" aria-label="New Opportunities: explore training, connections and career pathways"><span class="sr-only">New Opportunities</span></a>
+ <h1 class="sr-only">Serving Those Who Serve Us</h1>
+ <img class="approved-art" src="assets/approved-foundation-cover.jpg?v=clean-hero-20261111" width="1536" height="864" alt="Six people from service and professional roles stand together overlooking a city at sunrise. Overlaid text: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." fetchpriority="high">
+ <main class="desktop-content" id="desktop-main">
+  <div class="desktop-next">
+   <p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p>
+   <div class="desktop-actions"><a id="desktop-profile" class="entry-primary" href="identity.html">Build My Profile <span aria-hidden="true">→</span></a><a class="entry-secondary" href="resources.html#catalog">Find Community Resources <span aria-hidden="true">→</span></a></div>
+  </div>
+  <section class="desktop-cards" aria-label="Explore Foundation pathways">
+   <a class="desktop-card" href="identity.html"><span class="glyph" aria-hidden="true">◇</span><strong>Career Identity</strong><span>Clarify your strengths, experience, and purpose to build a path that fits the next chapter of your service.</span></a>
+   <a class="desktop-card" href="resources.html#catalog"><span class="glyph" aria-hidden="true">♧</span><strong>Community Resources</strong><span>Access trusted support, services, and guidance designed for those who serve their communities.</span></a>
+   <a class="desktop-card" href="resources.html#catalog"><span class="glyph" aria-hidden="true">⌁</span><strong>New Opportunities</strong><span>Discover training, connections, and career pathways that build on your service and open what’s next.</span></a>
+  </section>
+ </main>
 </div>
 <div class="mobile-landing" id="entry-mobile">
  <header class="mobile-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><a class="power" href="../showcase/"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></header>

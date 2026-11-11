@@ -41,3 +41,9 @@ The Foundation.org is a separate person-facing **GitHub Pages demonstration** un
 - Employer fees never authorize access to private job-search history.
 
 The 21-program resource directory and its source caveats remain unchanged. The existing organization-facing [showcase](../showcase/) remains separate. The source version is a prototype; website/mobile accessibility audits and legal review are not implied by a successful GitHub Pages deploy.
+
+## v0.3.1 clean hero correction — November 11, 2026
+
+The user supplied a cleaner, separate 1536×864 hero image after finding that the original asset contained screenshot/composite elements. Updated `assets/approved-foundation-cover.jpg` with the **second image supplied** (six diverse service and professional people standing together, with title and subtitle in the image). The desktop header is HTML above the image; the profile and resource CTAs plus three feature cards are now actual visible, keyboard-accessible HTML links below it, rather than invisible hotspots targeted at a composite screenshot. Mobile retains responsive real text and controls with a crop of the corrected image.
+
+Source asset: user-uploaded `440847D7-393B-456A-9578-7333C903E71B.jpeg` (second picture). This is an AI-generated illustration, not licensed stock photography or a portrayal of identified real people. GitHub Pages deployment and browser QA must be verified independently.
