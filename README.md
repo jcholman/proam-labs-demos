@@ -9,6 +9,10 @@ proAM Labs is exploring a different approach: **preserving qualified understandi
 
 These interactive prototypes show how that approach is being developed—and what it may eventually make possible. They are demonstrations of specific capabilities, **not a claim that the full system is already operating in production**.
 
+## The Foundation.org — Individual-facing Foundation demo
+
+[Explore The Foundation.org concept](https://jcholman.github.io/proam-labs-demos/the-foundation-org/) — Five pages for career identity, community resource navigation, continuity, and possible consent-based employer discovery. This is an independent, individual-first **demonstration**, not an operating nonprofit or a private talent-data marketplace.
+
 ## proAM Labs · Minimal website
 
 [Open the four-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, Find Your Thread in Practice, and the Signal Before Action concept in a minimal parchment, navy, and gold design.

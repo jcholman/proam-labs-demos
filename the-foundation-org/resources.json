@@ -1,0 +1,844 @@
+{
+  "catalog_id": "proam-foundation-community-pathways",
+  "version": "0.1.0-candidate",
+  "reviewed_on": "2026-11-09",
+  "state": "candidate_not_published",
+  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set.",
+  "review_standard": {
+    "official_source": "recorded",
+    "provider_confirmed": false,
+    "enrollment_availability": "not_checked",
+    "individual_eligibility": "never_assumed"
+  },
+  "affiliation": "Independent proAM Labs demonstration; no affiliation, sponsorship or endorsement implied.",
+  "programs": [
+    {
+      "id": "kentuckianaworks",
+      "title": "KentuckianaWorks — Career Services",
+      "provider": "KentuckianaWorks",
+      "category": "Career coaching",
+      "summary": "Regional career planning, resume support, training information, workshops and employer connections.",
+      "audiences": [
+        "all"
+      ],
+      "areas": [
+        "louisville",
+        "kentucky"
+      ],
+      "geography": "Louisville seven-county region",
+      "cost_code": "no_cost",
+      "cost_note": "Career resources are publicly described; confirm individual service terms.",
+      "eligibility_to_check": "Residence, training-program funding, services available at the selected career center.",
+      "important_to_know": "Services vary by site and individual circumstances. Inclusion is not a confirmed enrollment or referral.",
+      "first_step": "Find a Kentucky Career Center or connect with the regional team.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://www.kentuckianaworks.org/kcclou",
+          "publisher": "KentuckianaWorks",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "general"
+    },
+    {
+      "id": "kcc-general",
+      "title": "Kentucky Career Center — Job Search",
+      "provider": "Kentucky Career Center",
+      "category": "Job search",
+      "summary": "State workforce-system assistance with job openings, skills training, interview preparation and resume help.",
+      "audiences": [
+        "all"
+      ],
+      "areas": [
+        "louisville",
+        "kentucky"
+      ],
+      "geography": "Kentucky statewide; Louisville centers",
+      "cost_code": "no_cost",
+      "cost_note": "Career resources are publicly described; confirm individual service terms.",
+      "eligibility_to_check": "Service type, local office access, training funding, and any benefits rules.",
+      "important_to_know": "Services vary by site and individual circumstances. Inclusion is not a confirmed enrollment or referral.",
+      "first_step": "Find a local career center and ask about available services.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://kcc.ky.gov/Training/Pages/Individuals.aspx",
+          "publisher": "Kentucky Career Center",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "general"
+    },
+    {
+      "id": "goodwill-west",
+      "title": "Goodwill West Louisville Opportunity Center",
+      "provider": "Goodwill Industries of Kentucky",
+      "category": "Community support",
+      "summary": "Career coaching with complementary local resources, including digital skills, financial support, transport and housing referrals.",
+      "audiences": [
+        "all"
+      ],
+      "areas": [
+        "louisville"
+      ],
+      "geography": "2820 West Broadway · Louisville",
+      "cost_code": "no_cost",
+      "cost_note": "Career resources are publicly described; confirm individual service terms.",
+      "eligibility_to_check": "Service-specific eligibility and availability; confirm hours before visiting.",
+      "important_to_know": "Services vary by site and individual circumstances. Inclusion is not a confirmed enrollment or referral.",
+      "first_step": "Review the Opportunity Center services and plan a visit.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://goodwillky.org/wloc/",
+          "publisher": "Goodwill Industries of Kentucky",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "general"
+    },
+    {
+      "id": "goodwill-south",
+      "title": "Goodwill South Louisville Opportunity Center",
+      "provider": "Goodwill Industries of Kentucky",
+      "category": "Community support",
+      "summary": "Resume building, career coaching, training, digital literacy and support-service navigation.",
+      "audiences": [
+        "all"
+      ],
+      "areas": [
+        "louisville"
+      ],
+      "geography": "6201 Preston Hwy, Suite A · Louisville",
+      "cost_code": "no_cost",
+      "cost_note": "Career resources are publicly described; confirm individual service terms.",
+      "eligibility_to_check": "Program participation and availability; verify before visiting.",
+      "important_to_know": "Services vary by site and individual circumstances. Inclusion is not a confirmed enrollment or referral.",
+      "first_step": "Review support services and center hours.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://goodwillky.org/southlouisville/",
+          "publisher": "Goodwill Industries of Kentucky",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "general"
+    },
+    {
+      "id": "goodwill-downtown",
+      "title": "Goodwill Downtown Louisville Opportunity Center",
+      "provider": "Goodwill Industries of Kentucky",
+      "category": "Community support",
+      "summary": "Career coaching, employment readiness and connections to housing, transportation and other community supports.",
+      "audiences": [
+        "all"
+      ],
+      "areas": [
+        "louisville"
+      ],
+      "geography": "909 East Broadway · Louisville",
+      "cost_code": "no_cost",
+      "cost_note": "Career resources are publicly described; confirm individual service terms.",
+      "eligibility_to_check": "Services and program conditions; verify before visiting.",
+      "important_to_know": "Services vary by site and individual circumstances. Inclusion is not a confirmed enrollment or referral.",
+      "first_step": "Review this center’s current programs.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://goodwillky.org/metrolouisville/",
+          "publisher": "Goodwill Industries of Kentucky",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "general"
+    },
+    {
+      "id": "ky-ovr",
+      "title": "Kentucky Office of Vocational Rehabilitation",
+      "provider": "Kentucky Office of Vocational Rehabilitation",
+      "category": "Specialized support",
+      "summary": "Employment planning, resume development, job readiness and placement support for eligible participants.",
+      "audiences": [
+        "disability"
+      ],
+      "areas": [
+        "kentucky"
+      ],
+      "geography": "Kentucky statewide",
+      "cost_code": "check",
+      "cost_note": "Confirm any applicable program, training, or incidental costs with the provider.",
+      "eligibility_to_check": "Disability-related eligibility and individualized vocational evaluation; this catalog does not assess entitlement.",
+      "important_to_know": "Services vary by site and individual circumstances. Inclusion is not a confirmed enrollment or referral.",
+      "first_step": "Read official job placement services and contact the agency.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://kcc.ky.gov/Vocational-Rehabilitation/seeking-services/programservices/Pages/Job-Placement-Services.aspx",
+          "publisher": "Kentucky Office of Vocational Rehabilitation",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "general"
+    },
+    {
+      "id": "ky-valor",
+      "title": "KY VALOR — Accelerated Career Pathways",
+      "provider": "KY VALOR",
+      "category": "Career guidance",
+      "summary": "Translate relevant military specialties into Kentucky occupations, licensing pathways and employer connections.",
+      "audiences": [
+        "veteran",
+        "transitioning",
+        "spouse"
+      ],
+      "areas": [
+        "kentucky"
+      ],
+      "geography": "Kentucky statewide",
+      "cost_code": "check",
+      "cost_note": "Program costs and any occupational licensing fees need confirmation.",
+      "eligibility_to_check": "Military specialty, occupational pathway, credential rules and individual circumstances.",
+      "important_to_know": "KY VALOR lists 44 pathways to 55 licensed/certified occupations; a listed pathway is not an individual license or job guarantee.",
+      "first_step": "Explore the applicable pathway and contact KY VALOR.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://kyvalor.com/pathways/",
+          "publisher": "KY VALOR",
+          "reviewed_on": "2026-11-09"
+        },
+        {
+          "label": "About KY VALOR",
+          "url": "https://kyvalor.com/about-us/",
+          "publisher": "KY VALOR",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "veterans"
+    },
+    {
+      "id": "kentucky-career-center",
+      "title": "Kentucky Career Center — Veterans Services",
+      "provider": "Kentucky Career Center",
+      "category": "Career guidance",
+      "summary": "Veteran-priority career assistance, including resume translation, interviewing, labor-market information and job search support.",
+      "audiences": [
+        "veteran",
+        "transitioning",
+        "spouse"
+      ],
+      "areas": [
+        "kentucky"
+      ],
+      "geography": "Kentucky statewide, including Louisville",
+      "cost_code": "no_cost",
+      "cost_note": "Public employment assistance; any separate training costs depend on service and eligibility.",
+      "eligibility_to_check": "Veteran or eligible-spouse priority-of-service status; specialized service eligibility varies.",
+      "important_to_know": "Priority of Service does not mean automatic admission to every training or placement program.",
+      "first_step": "Contact Kentucky Career Center Veterans Services.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://kcc.ky.gov/veterans/Pages/default.aspx",
+          "publisher": "Kentucky Career Center",
+          "reviewed_on": "2026-11-09"
+        },
+        {
+          "label": "Priority-of-service policy",
+          "url": "https://kcc.ky.gov/KCC%20Policies/KCC%20Customer%20Flow%20for%20Veterans.pdf",
+          "publisher": "Kentucky Career Center",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "veterans"
+    },
+    {
+      "id": "usa-cares-transition",
+      "title": "USA Cares — Career Transition Program",
+      "provider": "USA Cares",
+      "category": "Career guidance",
+      "summary": "One-to-one resume, interview and career preparation, with employer referrals for qualified participants.",
+      "audiences": [
+        "veteran",
+        "transitioning",
+        "spouse"
+      ],
+      "areas": [
+        "kentucky",
+        "national",
+        "online"
+      ],
+      "geography": "Kentucky-based organization; national online resources",
+      "cost_code": "no_cost",
+      "cost_note": "Free online readiness training; additional financial assistance is conditional.",
+      "eligibility_to_check": "Post-9/11 military background and the application criteria for relevant services.",
+      "important_to_know": "Possible short-term financial support is case-by-case; employer introductions are not guaranteed.",
+      "first_step": "Review program eligibility and contact USA Cares.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://usacares.org/career-transition-program/",
+          "publisher": "USA Cares",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "veterans"
+    },
+    {
+      "id": "o2o",
+      "title": "Onward to Opportunity (O2O)",
+      "provider": "Syracuse University IVMF",
+      "category": "Training & credentials",
+      "summary": "No-cost certification preparation and career coaching for technology, business and project-management pathways.",
+      "audiences": [
+        "veteran",
+        "transitioning",
+        "spouse"
+      ],
+      "areas": [
+        "online",
+        "national"
+      ],
+      "geography": "Online nationwide; select installation sites",
+      "cost_code": "no_cost",
+      "cost_note": "No-cost program; certification exam support depends on program terms and eligibility.",
+      "eligibility_to_check": "Honorable-discharge and service-duration requirements for veterans; different rules for transitioning personnel and spouses.",
+      "important_to_know": "Course access does not establish eligibility for every certification exam, credential, or cohort.",
+      "first_step": "Read the published eligibility criteria before applying.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://ivmf.syracuse.edu/programs/o2o",
+          "publisher": "Syracuse University IVMF",
+          "reviewed_on": "2026-11-09"
+        },
+        {
+          "label": "Published eligibility criteria",
+          "url": "https://ivmf.syracuse.edu/programs/o2o/application",
+          "publisher": "Syracuse University IVMF",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 1,
+      "track": "veterans"
+    },
+    {
+      "id": "acp-mentoring",
+      "title": "Veteran Career Mentoring",
+      "provider": "American Corporate Partners",
+      "category": "Mentorship",
+      "summary": "One-to-one professional mentorship focused on career decisions, networking, interviews and transitioning skills.",
+      "audiences": [
+        "veteran",
+        "transitioning",
+        "spouse"
+      ],
+      "areas": [
+        "online",
+        "national"
+      ],
+      "geography": "Virtual mentorship, nationwide",
+      "cost_code": "no_cost",
+      "cost_note": "No-cost mentorship for eligible participants.",
+      "eligibility_to_check": "Service history, post-9/11 eligibility criteria, and spouse eligibility exceptions.",
+      "important_to_know": "Mentorship is not a job-placement or guaranteed-hiring program.",
+      "first_step": "Review eligibility and request a mentoring match.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://www.acp-usa.org/programs/",
+          "publisher": "American Corporate Partners",
+          "reviewed_on": "2026-11-09"
+        },
+        {
+          "label": "Eligibility details",
+          "url": "https://www.acp-usa.org/spouses/",
+          "publisher": "American Corporate Partners",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 2,
+      "track": "veterans"
+    },
+    {
+      "id": "fourblock",
+      "title": "Veteran Career Readiness Program",
+      "provider": "FourBlock",
+      "category": "Career guidance",
+      "summary": "Ten-week employer-connected career readiness, industry exploration, community and coaching.",
+      "audiences": [
+        "veteran",
+        "transitioning",
+        "spouse"
+      ],
+      "areas": [
+        "online",
+        "national"
+      ],
+      "geography": "Virtual cohorts and select in-person cities",
+      "cost_code": "no_cost",
+      "cost_note": "Provider describes the core Career Readiness Program as free.",
+      "eligibility_to_check": "Cohort availability, selection, participation expectations and program fit.",
+      "important_to_know": "Virtual cohorts exist, but specific dates and enrollment are not confirmed by this catalog.",
+      "first_step": "Review program format and cohort application.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://www.fourblock.org/apply",
+          "publisher": "FourBlock",
+          "reviewed_on": "2026-11-09"
+        },
+        {
+          "label": "Programs and formats",
+          "url": "https://www.fourblock.org/programs",
+          "publisher": "FourBlock",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 2,
+      "track": "veterans"
+    },
+    {
+      "id": "va-vre",
+      "title": "Veteran Readiness and Employment (VR&E)",
+      "provider": "U.S. Department of Veterans Affairs",
+      "category": "Benefits & support",
+      "summary": "Individualized vocational counseling, training and employment support for service-connected employment barriers.",
+      "audiences": [
+        "veteran",
+        "transitioning"
+      ],
+      "areas": [
+        "national"
+      ],
+      "geography": "U.S. nationwide, through VA",
+      "cost_code": "benefit",
+      "cost_note": "VA determines eligibility and entitlement; benefits vary by case.",
+      "eligibility_to_check": "VA service-connected disability rating, discharge status and other statutory criteria, with different service-member routes.",
+      "important_to_know": "Applying and meeting minimum conditions do not automatically establish entitlement; a VA counselor makes that determination.",
+      "first_step": "Read the official VA eligibility and application guidance.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://www.va.gov/careers-employment/vocational-rehabilitation/eligibility",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 2,
+      "track": "veterans"
+    },
+    {
+      "id": "dol-tap",
+      "title": "Transition Assistance Program (TAP)",
+      "provider": "U.S. Department of Labor",
+      "category": "Career guidance",
+      "summary": "Employment workshops, career exploration and transition resources for departing service members and spouses.",
+      "audiences": [
+        "transitioning",
+        "spouse"
+      ],
+      "areas": [
+        "national",
+        "online"
+      ],
+      "geography": "Military installations and selected online curricula",
+      "cost_code": "no_cost",
+      "cost_note": "Government transition assistance.",
+      "eligibility_to_check": "Service component, transition timing, local installation and online enrollment criteria.",
+      "important_to_know": "Certain online courses are available more broadly, but installation TAP participation follows military procedures.",
+      "first_step": "Contact the installation TAP office or review online resources.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://www.dol.gov/agencies/vets/programs/tap",
+          "publisher": "U.S. Department of Labor",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 2,
+      "track": "veterans"
+    },
+    {
+      "id": "enpp",
+      "title": "Employment Navigator & Partnership Program",
+      "provider": "U.S. Department of Labor",
+      "category": "Career guidance",
+      "summary": "One-to-one transition career planning and introductions to approved employment-support partners.",
+      "audiences": [
+        "transitioning",
+        "spouse"
+      ],
+      "areas": [
+        "national",
+        "online"
+      ],
+      "geography": "Select installations, including Fort Campbell; virtual center",
+      "cost_code": "no_cost",
+      "cost_note": "Government employment-navigation assistance.",
+      "eligibility_to_check": "Participating in TAP, timing of separation or retirement, and applicable program conditions.",
+      "important_to_know": "A navigator can refer to partner services; this is not automatic eligibility for any partner program.",
+      "first_step": "Review the locations and schedule an employment navigator appointment.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://www.dol.gov/agencies/vets/programs/tap/employment-navigator-partnership",
+          "publisher": "U.S. Department of Labor",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 2,
+      "track": "veterans"
+    },
+    {
+      "id": "usa-cares-csp",
+      "title": "Fort Knox CSP Corporate Fellowship",
+      "provider": "USA Cares",
+      "category": "Fellowships & experience",
+      "summary": "Eight-week employer-based transition fellowship serving Fort Knox and the Kentuckiana region.",
+      "audiences": [
+        "transitioning"
+      ],
+      "areas": [
+        "kentucky"
+      ],
+      "geography": "Kentuckiana / Fort Knox",
+      "cost_code": "check",
+      "cost_note": "Program described as unpaid employer fellowship; confirm service-member pay/benefits and incidental costs.",
+      "eligibility_to_check": "Transitioning status, Army/command approval, Fort Knox program rules, selection and cohort windows.",
+      "important_to_know": "2027 cohort dates are published, but participant openings and eligibility have not been confirmed.",
+      "first_step": "Ask USA Cares about the application and command requirements.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://usacares.org/csp-corporate-fellowship/",
+          "publisher": "USA Cares",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 2,
+      "track": "veterans"
+    },
+    {
+      "id": "hoh-cfp",
+      "title": "Corporate Fellowship Program",
+      "provider": "Hiring Our Heroes",
+      "category": "Fellowships & experience",
+      "summary": "Career experience with host companies and cohort learning before military separation.",
+      "audiences": [
+        "transitioning"
+      ],
+      "areas": [
+        "national"
+      ],
+      "geography": "National host locations; locations vary by cohort",
+      "cost_code": "no_cost",
+      "cost_note": "The fellowship is described as free to participate; individual logistics require review.",
+      "eligibility_to_check": "Active duty or transition leave, within 180 days of transition, command approval and program requirements.",
+      "important_to_know": "A fellowship placement or later employment is not guaranteed; deadlines and host companies change.",
+      "first_step": "Check active cohorts, locations and command approval.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://www.hiringourheroes.org/career-services/fellowships/internships/cfp/",
+          "publisher": "Hiring Our Heroes",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 3,
+      "track": "veterans"
+    },
+    {
+      "id": "npower-skillbridge",
+      "title": "SkillBridge Cybersecurity",
+      "provider": "NPower",
+      "category": "Training & credentials",
+      "summary": "Ten-week no-tuition cybersecurity training and credential preparation before separation.",
+      "audiences": [
+        "transitioning"
+      ],
+      "areas": [
+        "online",
+        "national"
+      ],
+      "geography": "Program-delivery arrangements require confirmation",
+      "cost_code": "no_cost",
+      "cost_note": "Provider advertises no tuition and covered testing/credentials for accepted participants.",
+      "eligibility_to_check": "Active service member within 180 days of transition and commanding-officer approval.",
+      "important_to_know": "Published 2027 cohorts are listed; confirm application windows and delivery format directly.",
+      "first_step": "Review the NPower program and verify the active intake window.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://www.npower.org/skillbridge-cybersecurity/",
+          "publisher": "NPower",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 3,
+      "track": "veterans"
+    },
+    {
+      "id": "uwf-cyberskills",
+      "title": "CyberSkills2Work — Cybersecurity & AI",
+      "provider": "University of West Florida",
+      "category": "Training & credentials",
+      "summary": "Asynchronous online cybersecurity upskilling, certification preparation and career support for eligible groups.",
+      "audiences": [
+        "veteran",
+        "transitioning",
+        "spouse"
+      ],
+      "areas": [
+        "online",
+        "national"
+      ],
+      "geography": "100% asynchronous online",
+      "cost_code": "no_cost",
+      "cost_note": "Free to accepted eligible participants under grant-funded cohorts.",
+      "eligibility_to_check": "Specific pathway qualifications, experience prerequisites and future intake windows.",
+      "important_to_know": "The posted 2027 cohort application deadline was November 4, 2026—already passed as of this review. Check for new or reopened intakes.",
+      "first_step": "Monitor the official page for a new application period.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://uwf.edu/centers/cybersecurity-and-ai/workforce-development/uwf-cyberskills2work-program/",
+          "publisher": "University of West Florida",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "published_deadline_passed"
+      },
+      "display_priority": 4,
+      "track": "veterans"
+    },
+    {
+      "id": "usvets-career-centers",
+      "title": "U.S.VETS Career Centers",
+      "provider": "U.S.VETS",
+      "category": "Career guidance",
+      "summary": "In-person career counseling, resume support, networking and job-search services through participating U.S.VETS locations.",
+      "audiences": [
+        "veteran"
+      ],
+      "areas": [
+        "national"
+      ],
+      "geography": "Select U.S.VETS cities; no Louisville center listed",
+      "cost_code": "no_cost",
+      "cost_note": "Career development support is described as free; confirm site-specific offerings.",
+      "eligibility_to_check": "Veteran status and access at the nearest participating U.S.VETS center.",
+      "important_to_know": "No U.S.VETS career center is currently listed in Louisville; this catalog is not affiliated with U.S.VETS.",
+      "first_step": "Check the official list of Career Center locations.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://usvets.org/how-we-serve/workforce-development/",
+          "publisher": "U.S.VETS",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 4,
+      "track": "veterans"
+    },
+    {
+      "id": "mycomputer-cyber",
+      "title": "Cyber Warrior Program",
+      "provider": "MyComputerCareer",
+      "category": "Training & credentials",
+      "summary": "Commercial CompTIA-focused IT and cybersecurity training with veteran and SkillBridge marketing routes.",
+      "audiences": [
+        "veteran",
+        "transitioning"
+      ],
+      "areas": [
+        "online",
+        "national"
+      ],
+      "geography": "Online offerings; state-specific terms",
+      "cost_code": "paid",
+      "cost_note": "Published online daytime cost $23,805; evening cost $24,805 before applicable aid or benefits.",
+      "eligibility_to_check": "Actual VA benefit coverage, GI Bill approval, local program details, outcomes and remaining out-of-pocket cost.",
+      "important_to_know": "Paid commercial program: do not infer it is free because veteran benefits or SkillBridge are advertised. Independent funding review required.",
+      "first_step": "Use the VA GI Bill Comparison Tool and obtain a written full-cost disclosure before applying.",
+      "sources": [
+        {
+          "label": "Official program information",
+          "url": "https://www.mycomputercareer.edu/cyber-warrior-program/",
+          "publisher": "MyComputerCareer",
+          "reviewed_on": "2026-11-09"
+        },
+        {
+          "label": "Published tuition by program",
+          "url": "https://www.mycomputercareer.edu/veteran-program-information/",
+          "publisher": "MyComputerCareer",
+          "reviewed_on": "2026-11-09"
+        },
+        {
+          "label": "VA GI Bill Comparison Tool",
+          "url": "https://www.va.gov/education/gi-bill-comparison-tool/",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-09"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-09",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked"
+      },
+      "display_priority": 5,
+      "track": "veterans"
+    }
+  ]
+}
