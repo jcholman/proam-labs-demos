@@ -11,7 +11,7 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## The Foundation.org — Individual-facing Foundation demo
 
-[Explore The Foundation.org concept](https://jcholman.github.io/proam-labs-demos/the-foundation-org/) — Five pages for career identity, community resource navigation, continuity, and possible consent-based employer discovery. This is an independent, individual-first **demonstration**, not an operating nonprofit or a private talent-data marketplace.
+[Explore The Foundation.org concept](https://jcholman.github.io/proam-labs-demos/the-foundation-org/) — A new image-led cover and five existing pages for career identity, community resource navigation, continuity, and possible consent-based employer discovery. This is an independent, individual-first **demonstration**, not an operating nonprofit or a private talent-data marketplace.
 
 ## proAM Labs · Minimal website
 
