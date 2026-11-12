@@ -1,31 +1,209 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Foundation Blurred Hero QA</title>
+<html lang="en">
+<head>
+<base href="../">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Serving Those Who Serve Us. Build a career identity, find community resources, and discover opportunities without starting over. The Foundation is a proAM Labs concept demonstration.">
+<meta name="theme-color" content="#172c38">
+<title>QA · Blurred Hero | The Foundation — Concept</title>
+<link rel="icon" type="image/png" href="../showcase/assets/icons/proam-labs-apple-touch-icon-180x180.png">
 <style>
-:root{--navy:#172c38;--gold:#bf9652;--cream:#f4eddd;--white:#fffcf5}
-*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--white);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-.qa{background:#0d2230;color:#efd18e;text-align:center;padding:8px 14px;font-size:12px;letter-spacing:.06em;text-transform:uppercase}
-.head{height:76px;border-bottom:2px solid var(--gold);display:flex;align-items:center;justify-content:space-between;padding:0 max(4%,calc((100vw - 1440px)/2));gap:16px}
-.brand{font:clamp(18px,2vw,28px)/1.1 Georgia,serif}.powered{font-size:13px;color:#eee0c9}
-.hero{position:relative;width:100%;overflow:hidden;background:#172c38}
-.hero img{display:block;width:100%;height:auto}
-.message{text-align:center;padding:20px 20px 28px;max-width:920px;margin:auto}
-.message p{font:italic clamp(15px,1.7vw,21px)/1.5 Georgia,serif;margin:0 0 18px;color:#f0e7dc}
-.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.actions a{padding:11px 18px;border:1px solid #efdaa9;border-radius:4px;text-decoration:none;color:inherit;font-family:Georgia,serif}.actions a:first-child{background:#dfbb78;color:#1e2830;border-color:#dfbb78}
-.notes{background:#f6efe0;color:#1d3442;padding:18px 22px;font-size:13px}.notes strong{color:#805f28}
-@media(max-width:700px){
- .head{height:auto;min-height:68px;padding:12px 18px;align-items:flex-start;flex-direction:column;gap:4px}
- .hero{aspect-ratio:4/3}
- .hero img{width:100%;height:100%;object-fit:cover;object-position:center center}
- .message{padding:22px 18px 28px}
- .actions{flex-direction:column;align-items:stretch}
- .actions a{text-align:center}
+:root{--navy:#172c38;--gold:#bf9652;--cream:#f4eddd;--white:#fffcf5;--text:#142d3c;--line:#d9c9a9;--mute:#5f655f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--text);font:16px/1.55 system-ui,-apple-system,'Segoe UI',sans-serif}
+a{color:inherit;text-underline-offset:3px}
+a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
+.skip{position:absolute;left:-10000px;top:0;z-index:20;background:white;color:#172c38;padding:12px 20px}
+.skip:focus{left:12px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%)}
+.foundation-activity-banner{background:#102a3a;color:#fff;border-bottom:1px solid #c7a15d;font-size:13px;letter-spacing:.01em}
+.foundation-activity-banner a{max-width:1200px;margin:0 auto;padding:9px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;text-decoration:none;color:inherit}
+.foundation-activity-banner strong{font-weight:700}
+.foundation-activity-banner .activity-link{color:#efcf92;font-weight:650}
+@media(max-width:670px){.foundation-activity-banner a{padding:9px 16px;flex-direction:column;align-items:flex-start;gap:2px;font-size:12px}}
+
+.visual-cover{position:relative;width:100%;background:#172c38;overflow:hidden}
+.visual-cover .approved-art{display:block;width:100%;height:auto}
+.visual-cover .cover-header{position:absolute;top:0;left:0;right:0;min-height:8.6%;height:8.6%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 max(4%,calc((100vw - 1440px)/2));color:#fdf7e9;background:#172c38;border-bottom:2px solid #c6a05c;z-index:4}
+.cover-header .foundation-brand{color:inherit;font:clamp(13px,2.0vw,28px)/1.1 Georgia,serif;letter-spacing:.045em;text-decoration:none;white-space:nowrap}
+.cover-header .power{display:inline-flex;align-items:center;gap:9px;text-decoration:none;font-size:clamp(10px,1.05vw,15px);white-space:nowrap}
+.cover-header .power img{display:block;width:24px;height:24px;border-radius:50%;object-fit:cover;background:var(--cream)}
+.hotspot{position:absolute;display:block;z-index:3;border:2px solid transparent;border-radius:8px;text-decoration:none;transition:background .15s,border-color .15s,box-shadow .15s}
+.hotspot:hover{background:rgba(255,255,255,.11);border-color:#e8c98c;box-shadow:0 0 0 3px rgba(20,38,45,.25)}
+.hotspot:focus-visible{outline:4px solid #ffe29c;outline-offset:2px;border-color:var(--white)}
+.hotspot.profile{left:28.05%;top:61.35%;width:19.0%;height:6.4%}
+.hotspot.resources-button{left:49.2%;top:61.35%;width:23.55%;height:6.4%}
+.hotspot.identity-card{left:4.1%;top:75.9%;width:29.75%;height:17.2%}
+.hotspot.community-card{left:35%;top:75.9%;width:30.15%;height:17.2%}
+.hotspot.opportunities-card{left:65.9%;top:75.9%;width:30.2%;height:17.2%}
+.mobile-landing{display:none}
+.information{max-width:1200px;margin:0 auto;padding:29px 30px 45px}
+.links{display:flex;gap:14px 24px;flex-wrap:wrap;justify-content:center;align-items:center;font-size:13px}
+.links a{text-decoration:none;border-bottom:1px solid var(--gold);padding:4px 0}
+.information p{text-align:center;font-size:12px;color:var(--mute);margin:22px auto 0;max-width:860px}
+@media(min-width:1101px) and (max-width:1500px){.cover-header{padding-left:5%;padding-right:5%}}
+@media(min-width:1101px){.skip-mobile{display:none}}
+@media(max-width:1100px){
+ .skip-desktop{display:none}
+ .visual-cover{display:none}
+ .mobile-landing{display:block;background:var(--cream)}
+ .mobile-header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 16px;padding:13px 19px;background:var(--navy);color:var(--white);border-bottom:2px solid var(--gold)}
+ .mobile-header .foundation-brand{font-family:Georgia,serif;font-size:clamp(17px,4vw,25px);text-decoration:none}
+ .mobile-header .power{display:flex;align-items:center;gap:7px;text-decoration:none;font-size:12px}
+ .mobile-header .power img{width:24px;height:24px;object-fit:cover;border-radius:50%;background:var(--cream)}
+ .mobile-photo{height:clamp(180px,32vw,290px);position:relative;overflow:hidden;background-image:url('assets/approved-foundation-cover.jpg?v=clean-hero-20261111');background-size:auto 730px;background-repeat:no-repeat;background-position:center -62px}
+ .mobile-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,39,47,.58),transparent 60%)}
+ .mobile-message{background:var(--navy);color:var(--white);padding:27px 25px 35px;text-align:center}
+ .mobile-message .kicker{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:#e8c587;margin:0 0 12px}
+ .mobile-message h1{font:clamp(33px,6.7vw,54px)/1.12 Georgia,serif;letter-spacing:-.4px;margin:0 auto 20px;max-width:680px}
+ .mobile-message p{font:italic clamp(15px,3.3vw,20px)/1.5 Georgia,serif;margin:0 auto 22px;max-width:700px;color:#e8e1d5}
+ .mobile-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+ .mobile-actions a{display:inline-block;padding:12px 20px;border-radius:4px;border:1px solid #efdaa9;text-decoration:none;font-family:Georgia,serif;min-height:48px}
+ .mobile-actions a:first-child{background:#dfbb78;color:#1e2830;border-color:#dfbb78}
+ .mobile-cards{padding:24px 18px 18px;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+ .mobile-card{display:block;text-decoration:none;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:21px 17px;min-height:170px}
+ .mobile-card:focus-visible{outline-color:var(--gold)}
+ .mobile-card .glyph{color:#b78f46;font-size:23px;display:block;margin-bottom:10px}
+ .mobile-card strong{display:block;font:24px Georgia,serif;margin-bottom:9px}
+ .mobile-card span:last-child{color:#535a56;font-size:14px}
 }
-</style></head>
+@media(max-width:670px){
+ .mobile-header{align-items:center}
+ .mobile-header .foundation-brand{font-size:18px}
+ .mobile-photo{height:215px;background-size:auto 720px;background-position:center -65px}
+ .mobile-message{padding:30px 22px 34px}
+ .mobile-message h1{font-size:clamp(34px,9vw,46px)}
+ .mobile-actions{flex-direction:column;align-items:stretch}
+ .mobile-actions a{font-size:17px}
+ .mobile-cards{grid-template-columns:1fr;gap:10px;padding:16px}
+ .mobile-card{min-height:0}
+ .mobile-card strong{font-size:24px}
+ .information{padding:24px 18px 38px}
+ .links{justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:after{transition:none!important}}
+
+/* v0.3.1: clean user-selected hero image with real, accessible CTA and card links */
+.visual-cover .cover-header{position:relative;top:auto;left:auto;right:auto;min-height:76px;height:auto;padding-top:15px;padding-bottom:15px}
+.visual-cover .approved-art{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
+.desktop-content{background:var(--cream)}
+.desktop-next{background:var(--navy);color:var(--white);text-align:center;padding:27px 30px 32px}
+.desktop-next p{max-width:930px;margin:0 auto 22px;font:italic clamp(17px,1.75vw,24px)/1.5 Georgia,serif;color:#f0e7dc}
+.desktop-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:15px}
+.desktop-actions a{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:48px;padding:12px 24px;border:1px solid #eddfbe;border-radius:5px;text-decoration:none;font:18px/1.2 Georgia,serif;transition:background .15s ease}
+.desktop-actions a:hover{outline:2px solid #e7c586;outline-offset:2px}
+.desktop-actions .entry-primary{color:#1d2b33;background:#dfbb78;border-color:#dfbb78}
+.desktop-actions .entry-secondary{color:#fffcf5;background:transparent}
+.desktop-cards{padding:31px max(4%,calc((100vw - 1440px)/2));display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.desktop-card{display:flex;flex-direction:column;gap:9px;background:var(--white);border:1px solid var(--line);border-radius:7px;padding:26px;text-decoration:none;min-height:188px}
+.desktop-card:hover{border-color:var(--gold);box-shadow:0 4px 18px rgba(23,44,56,.09)}
+.desktop-card .glyph{font-size:22px;color:#a98441}
+.desktop-card strong{font:clamp(22px,2.2vw,29px)/1.2 Georgia,serif}
+.desktop-card span:last-child{font-size:14px;color:#535a56}
+
+/* v0.3.2: Show ALL of the approved image, without cutting off the headline or people. */
+@media(min-width:1101px){
+  .visual-cover .approved-art{
+    display:block;width:100%;height:min(67svh,700px);max-height:none;object-fit:contain;
+    object-position:center center;background:var(--navy);
+  }
+}
+@media(max-width:1100px){
+  .mobile-landing img.mobile-photo{
+    display:block;width:100%;height:auto;aspect-ratio:16 / 9;
+    object-fit:contain;object-position:center;background:var(--navy);
+    max-height:none;min-height:0;overflow:visible;
+  }
+  .mobile-landing img.mobile-photo::after{content:none}
+}
+
+/* Service attribution and opportunity-recognition narrative, responsive and readable. */
+.visual-cover .brand-context,.mobile-header .brand-context{display:flex;align-items:center;gap:8px 12px;flex-wrap:wrap}
+.visual-cover .assistance-label,.mobile-header .assistance-label{color:#e5c38a;font-weight:650;font-size:clamp(11px,1vw,14px);white-space:nowrap}
+.mobile-header .assistance-label{font-size:12px}
+.recognition-story{background:#faf6ed;border-top:1px solid #d9c9a9;padding:clamp(36px,6vw,75px) 22px}
+.recognition-story-inner{max-width:1160px;margin:0 auto}
+.recognition-kicker{font-size:12px;text-transform:uppercase;letter-spacing:.16em;color:#926f37;font-weight:700;margin:0 0 12px}
+.recognition-story h2{font:clamp(29px,4vw,45px)/1.16 Georgia,serif;max-width:880px;letter-spacing:-.02em;margin:0 0 19px}
+.recognition-lead{max-width:900px;font-size:clamp(16px,1.5vw,19px);line-height:1.7;margin:0 0 29px;color:#344957}
+.recognition-steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:25px}
+.recognition-steps>div{border-top:2px solid #b9904c;padding:16px 8px 10px 0}
+.recognition-number{display:block;font-size:12px;font-weight:700;color:#8e6d39;margin-bottom:9px}
+.recognition-steps strong{font:22px/1.2 Georgia,serif;display:block}
+.recognition-steps p{font-size:14px;color:#565c58;line-height:1.55}
+.recognition-honesty{background:#f2e9d8;border-left:3px solid #a78449;padding:14px 18px;font-size:14px;line-height:1.55;color:#394954;margin:14px 0 19px}
+.recognition-links{display:flex;gap:12px 30px;flex-wrap:wrap;font-size:15px;font-weight:600}
+.recognition-links a{color:#203c4a;text-decoration-color:#b9904c}
+@media(max-width:1100px){.mobile-header .brand-context{gap:8px}.recognition-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.mobile-header .brand-context{width:100%}.recognition-steps{grid-template-columns:1fr;gap:3px}.recognition-story{padding:32px 18px}.recognition-story h2{font-size:31px}}
+
+.qa-only-banner{background:#0d2230;color:#efd18e;text-align:center;padding:7px 14px;font:11px/1.4 system-ui,sans-serif;letter-spacing:.08em;text-transform:uppercase;border-bottom:1px solid #bf9652}
+.qa-hero-stage{position:relative;overflow:hidden;background:#172c38;isolation:isolate}
+.qa-hero-stage::before{content:"";position:absolute;inset:-32px;background:url("assets/approved-foundation-cover.jpg?v=full-frame-20261111") center/cover no-repeat;filter:blur(26px);transform:scale(1.08);opacity:.82;z-index:-2}
+.qa-hero-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,44,56,.16),transparent 20%,transparent 80%,rgba(23,44,56,.16));z-index:-1;pointer-events:none}
+.qa-hero-stage .approved-art{position:relative;z-index:1;width:min(100%,1100px)!important;height:auto!important;max-height:none!important;object-fit:contain!important;margin:0 auto;background:transparent!important}
+@media(max-width:1100px){
+  .qa-hero-stage::before{filter:blur(20px);inset:-24px}
+  .qa-hero-stage .approved-art{width:100%!important;max-width:none}
+}
+@media(max-width:670px){
+  .qa-only-banner{font-size:10px;padding:6px 10px}
+  .qa-hero-stage{aspect-ratio:16/9}
+  .qa-hero-stage .approved-art{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+  .qa-hero-stage::before{filter:blur(18px);transform:scale(1.12)}
+}
+
+</style>
+</head>
 <body>
-<div class="qa">QA only · repository-hosted precomposed blurred-edge hero · production unchanged</div>
-<header class="head"><div class="brand">THE FOUNDATION - CONCEPT</div><div class="powered">Applied AI Assistance · Powered by proAM Labs</div></header>
-<section class="hero" aria-label="Blurred-edge hero QA"><img src="foundation-hero-blur-qa.webp?v=qa2" alt="Serving Those Who Serve Us hero with a sharp center image and blurred extensions on both sides"></section>
-<section class="message"><p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p><div class="actions"><a href="../identity.html">Build My Profile →</a><a href="../resources.html#catalog">Find Community Resources →</a></div></section>
-<div class="notes"><strong>What to test:</strong> desktop width, phone portrait, phone landscape, image sharpness at the center, whether the blurred edges feel natural, and whether mobile cropping keeps the people/title legible. This QA uses one repository-hosted baked WebP asset; no CSS blur, canvas, or JavaScript image processing is running.</div>
+<div class="qa-only-banner">QA ONLY · BLURRED-SIDE HERO TEST · PRODUCTION UNCHANGED</div>
+<aside class="foundation-activity-banner" aria-label="proAM Labs updates"><a href="https://www.linkedin.com/company/proam-labs" target="_blank" rel="noopener noreferrer"><strong>Behind the scenes at proAM Labs</strong><span class="activity-link">Follow the work powering this concept on LinkedIn ↗</span></a></aside>
+
+<a class="skip skip-desktop" href="#desktop-profile">Skip to Foundation services</a>
+<a class="skip skip-mobile" href="#mobile-profile">Skip to Foundation services</a>
+<div class="visual-cover" aria-label="The Foundation concept cover">
+ <header class="cover-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
+ <h1 class="sr-only">Serving Those Who Serve Us</h1>
+ <div class="qa-hero-stage"><img class="approved-art" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six people from service and professional roles stand together overlooking a city at sunrise. Overlaid text: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." fetchpriority="high"></div>
+ <main class="desktop-content" id="desktop-main">
+  <div class="desktop-next">
+   <p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p>
+   <div class="desktop-actions"><a id="desktop-profile" class="entry-primary" href="identity.html">Build My Profile <span aria-hidden="true">→</span></a><a class="entry-secondary" href="resources.html#catalog">Find Community Resources <span aria-hidden="true">→</span></a></div>
+  </div>
+  <section class="desktop-cards" aria-label="Explore Foundation pathways">
+   <a class="desktop-card" href="identity.html"><span class="glyph" aria-hidden="true">◇</span><strong>Career Identity</strong><span>Clarify your strengths, experience, and purpose to build a path that fits the next chapter of your service.</span></a>
+   <a class="desktop-card" href="resources.html#catalog"><span class="glyph" aria-hidden="true">♧</span><strong>Community Resources</strong><span>Access trusted support, services, and guidance designed for those who serve their communities.</span></a>
+   <a class="desktop-card" href="resources.html#catalog"><span class="glyph" aria-hidden="true">⌁</span><strong>New Opportunities</strong><span>Discover training, connections, and career pathways that build on your service and open what’s next.</span></a>
+  </section>
+ </main>
+</div>
+<div class="mobile-landing" id="entry-mobile">
+ <header class="mobile-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
+ <img class="mobile-photo" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six service and community professionals stand shoulder to shoulder overlooking a city at sunrise. Text in the artwork: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." loading="eager">
+ <main class="mobile-message"><p class="kicker">A different way of seeing · Fit for purpose</p><h1>Your next chapter shouldn’t start from scratch.</h1><p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p><div class="mobile-actions"><a id="mobile-profile" href="identity.html">Build My Profile →</a><a href="resources.html#catalog">Find Community Resources →</a></div></main>
+ <section class="mobile-cards" aria-label="Explore Foundation pathways">
+  <a class="mobile-card" href="identity.html"><span class="glyph" aria-hidden="true">◇</span><strong>Career Identity</strong><span>Clarify your strengths, experience, and purpose to build a path that fits the next chapter of your service.</span></a>
+  <a class="mobile-card" href="resources.html#catalog"><span class="glyph" aria-hidden="true">♧</span><strong>Community Resources</strong><span>Access trusted support, services, and guidance designed for those who serve their communities.</span></a>
+  <a class="mobile-card" href="resources.html#catalog"><span class="glyph" aria-hidden="true">⌁</span><strong>New Opportunities</strong><span>Discover training, connections, and career pathways that build on your service and open what’s next.</span></a>
+ </section>
+</div>
+
+<section class="recognition-story" aria-labelledby="recognition-title">
+ <div class="recognition-story-inner">
+  <p class="recognition-kicker">What applied AI assistance could make possible</p>
+  <h2 id="recognition-title">The right opportunity may be one you didn't know to ask about.</h2>
+  <p class="recognition-lead">You might come looking for help with a resume, a career change, or understanding a repayment option. There may also be a training program, housing resource, or other community service worth exploring. The aim is to connect <strong>what matters to you</strong> with <strong>possibilities you may not yet see</strong>—without assuming what you need or what you qualify for.</p>
+  <div class="recognition-steps" aria-label="Proposed assistance process">
+   <div><span class="recognition-number">01</span><strong>Start with you</strong><p>Your experience, goals, and what you choose to share.</p></div>
+   <div><span class="recognition-number">02</span><strong>Find a possible connection</strong><p>Explore relevant programs and the evidence behind them.</p></div>
+   <div><span class="recognition-number">03</span><strong>Check before recommending</strong><p>A human reviews fit, costs, unanswered questions, and the provider's rules.</p></div>
+   <div><span class="recognition-number">04</span><strong>You choose what comes next</strong><p>Decide whether to investigate, contact a provider, or hold.</p></div>
+  </div>
+  <p class="recognition-honesty"><strong>Our current status:</strong> This is the proposed service model. Today you can build a browser-based career profile and explore a source-reviewed catalog. Personalized AI matching, benefits screening, eligibility decisions, and referrals are <strong>not</strong> operating through this website.</p>
+  <div class="recognition-links"><a href="mission.html">Why we're building this →</a><a href="trust.html">How human review and your choice fit in →</a></div>
+ </div>
+</section>
+<footer class="information" aria-label="Foundation site navigation"><nav class="links"><a href="mission.html">About the Foundation</a><a href="identity.html">Build your profile</a><a href="resources.html#catalog">Community resources</a><a href="organizations.html">For organizations</a><a href="trust.html">Privacy &amp; trust</a><a href="../showcase/">proAM Labs technology showcase</a></nav><p>The Foundation is a concept demonstration. Profile drafts are private by default; employer visibility requires a separate, explicit future authorization. No real referrals, employer matching, public profile publishing, or nonprofit status is represented as operational.</p></footer>
 </body></html>
