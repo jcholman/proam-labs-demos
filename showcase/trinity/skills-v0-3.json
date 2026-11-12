@@ -1,0 +1,273 @@
+{
+  "product": "The Trinity",
+  "version": "v0.3",
+  "date": "2026-11-12",
+  "source": "Canonical Master Resume v2 (2026-11-10) and v0.2.1 profile evidence",
+  "notes": "Purpose-specific grouped skills, pipe-separated; public demo excludes personal phone/email; these skills require human confirmation prior to external ATS distribution",
+  "skills": {
+    "master": [
+      [
+        "Decision Intelligence & Responsible AI",
+        "Decision Intelligence",
+        "Human-in-the-Loop AI",
+        "AI Evaluation",
+        "Responsible AI",
+        "AI Assurance",
+        "Information Continuity",
+        "Provenance & Traceability",
+        "Semantic Fidelity",
+        "Governance & Authority Controls",
+        "Applied Research & Experimentation"
+      ],
+      [
+        "Enterprise Data & Information Governance",
+        "Master Data Management",
+        "Golden Record Architecture",
+        "Data Quality",
+        "Identity Resolution",
+        "Enterprise Information Governance",
+        "Business Rules",
+        "Consumer Data Management",
+        "Consent Governance",
+        "IBM InfoSphere"
+      ],
+      [
+        "Business Intelligence & Decision Support",
+        "BI & Analytics Strategy",
+        "Power BI",
+        "Executive Reporting",
+        "Operational Analytics",
+        "Performance Measurement",
+        "Forecasting & Capacity Planning",
+        "Workflow Intelligence",
+        "Enterprise Reporting Architecture",
+        "Tableau",
+        "QlikView"
+      ],
+      [
+        "Applied AI & Evaluation Tools",
+        "Generative AI",
+        "Retrieval-Augmented Generation (RAG)",
+        "Vector Search",
+        "Embeddings",
+        "Prompt Chaining",
+        "Workflow Orchestration",
+        "LangChain",
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "NotebookLM"
+      ],
+      [
+        "Data Platforms & Development",
+        "Azure Synapse Analytics",
+        "Microsoft Fabric",
+        "Databricks",
+        "SQL",
+        "Oracle SQL",
+        "Microsoft SQL Server",
+        "ETL",
+        "Data Pipelines",
+        "Python",
+        "Jupyter",
+        "Google Colab",
+        "JSON",
+        "XML",
+        "HTML"
+      ],
+      [
+        "Product, Workflow & Delivery",
+        "Technical Product Ownership",
+        "Product & Platform Strategy",
+        "Cross-Functional Leadership",
+        "Stakeholder Management",
+        "Agile Portfolio Management",
+        "Agile Delivery",
+        "SharePoint",
+        "PowerApps",
+        "Azure DevOps",
+        "Microsoft Planner"
+      ],
+      [
+        "Healthcare & Interoperability",
+        "HL7",
+        "FHIR",
+        "X12",
+        "SAML",
+        "Clinical Data Exchange",
+        "Member / Provider / Consumer Data",
+        "TCPA Consent Governance"
+      ]
+    ],
+    "business-intelligence": [
+      [
+        "Business Intelligence & Reporting",
+        "BI & Analytics Strategy",
+        "Power BI",
+        "Enterprise Reporting Architecture",
+        "Executive Reporting",
+        "Operational Analytics",
+        "Performance Measurement",
+        "Quality Reporting",
+        "Tableau",
+        "QlikView"
+      ],
+      [
+        "Data Platforms & Integration",
+        "Azure Synapse Analytics",
+        "SQL",
+        "Microsoft SQL Server",
+        "Oracle SQL",
+        "Microsoft Fabric",
+        "Databricks",
+        "ETL",
+        "Data Pipelines",
+        "Data Quality",
+        "IBM InfoSphere"
+      ],
+      [
+        "Operational Performance & Planning",
+        "Forecasting & Capacity Planning",
+        "Workflow Intelligence",
+        "Audience Health Tracking",
+        "Resource Allocation",
+        "Cycle-Time Analysis",
+        "Defect Tracking",
+        "Operational Readiness"
+      ],
+      [
+        "Product Delivery & Collaboration",
+        "Technical Product Ownership",
+        "Cross-Functional Leadership",
+        "Stakeholder Management",
+        "Agile Delivery",
+        "Microsoft Planner",
+        "SharePoint",
+        "PowerApps",
+        "Azure DevOps"
+      ],
+      [
+        "Supporting Research & Methods",
+        "Decision Intelligence",
+        "Information Continuity",
+        "Provenance & Traceability",
+        "Applied Research & Experimentation"
+      ]
+    ],
+    "ai-product": [
+      [
+        "AI Governance & Evaluation",
+        "Human-in-the-Loop AI",
+        "Responsible AI",
+        "AI Evaluation",
+        "AI Assurance",
+        "Information Continuity",
+        "Semantic Fidelity",
+        "Provenance & Traceability",
+        "Governance & Authority Controls"
+      ],
+      [
+        "Generative AI & LLM Methods",
+        "Generative AI",
+        "Retrieval-Augmented Generation (RAG)",
+        "Vector Search",
+        "Embeddings",
+        "Prompt Chaining",
+        "Workflow Orchestration",
+        "LangChain",
+        "ChatGPT",
+        "Claude",
+        "Gemini",
+        "NotebookLM"
+      ],
+      [
+        "Technical Product Leadership",
+        "Technical Product Ownership",
+        "Product & Platform Strategy",
+        "Agile Portfolio Management",
+        "Stakeholder Management",
+        "Cross-Functional Leadership",
+        "Agile Delivery",
+        "Operational Readiness"
+      ],
+      [
+        "Prototyping & Analytics",
+        "Python",
+        "Jupyter",
+        "Google Colab",
+        "SQL",
+        "JSON",
+        "XML",
+        "HTML",
+        "Power BI",
+        "Azure Synapse Analytics"
+      ],
+      [
+        "Information & Decision Architecture",
+        "Decision Intelligence",
+        "Enterprise Information Governance",
+        "Master Data Management",
+        "Golden Record Architecture",
+        "Data Quality",
+        "Business Rules",
+        "Identity Resolution"
+      ]
+    ],
+    "data-governance": [
+      [
+        "Enterprise Data Governance & MDM",
+        "Master Data Management",
+        "Golden Record Architecture",
+        "Identity Resolution",
+        "Data Quality",
+        "Enterprise Information Governance",
+        "Business Rules",
+        "Consumer Data Management",
+        "Consent Governance",
+        "IBM InfoSphere"
+      ],
+      [
+        "Data Integration & Architecture",
+        "ETL",
+        "Data Pipelines",
+        "Azure Synapse Analytics",
+        "Microsoft SQL Server",
+        "Oracle SQL",
+        "SQL",
+        "Microsoft Fabric",
+        "Databricks",
+        "SSIS",
+        "Enterprise Reporting Architecture"
+      ],
+      [
+        "Healthcare Interoperability & Privacy",
+        "HL7",
+        "FHIR",
+        "X12",
+        "SAML",
+        "Clinical Data Exchange",
+        "Member / Provider / Consumer Data",
+        "TCPA Consent Governance"
+      ],
+      [
+        "Quality, Lineage & Information Trust",
+        "Provenance & Traceability",
+        "Semantic Fidelity",
+        "Information Continuity",
+        "Performance Measurement",
+        "Workflow Intelligence",
+        "Governance & Authority Controls"
+      ],
+      [
+        "Product Ownership & Delivery",
+        "Technical Product Ownership",
+        "Stakeholder Management",
+        "Cross-Functional Leadership",
+        "Agile Delivery",
+        "Operational Readiness",
+        "Power BI",
+        "SharePoint"
+      ]
+    ]
+  }
+}
