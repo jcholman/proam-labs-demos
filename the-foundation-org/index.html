@@ -137,6 +137,35 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 .recognition-links a{color:#203c4a;text-decoration-color:#b9904c}
 @media(max-width:1100px){.mobile-header .brand-context{gap:8px}.recognition-steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:600px){.mobile-header .brand-context{width:100%}.recognition-steps{grid-template-columns:1fr;gap:3px}.recognition-story{padding:32px 18px}.recognition-story h2{font-size:31px}}
+
+.qa-hero-stage{position:relative;overflow:hidden;background:#172c38;isolation:isolate}
+.qa-hero-stage::before{content:"";position:absolute;inset:-32px;background:url("assets/approved-foundation-cover.jpg?v=full-frame-20261111") center/cover no-repeat;filter:blur(26px);transform:scale(1.08);opacity:.82;z-index:-2}
+.qa-hero-stage::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,44,56,.16),transparent 20%,transparent 80%,rgba(23,44,56,.16));z-index:-1;pointer-events:none}
+.qa-hero-stage .approved-art{position:relative;z-index:1;width:min(100%,1100px)!important;height:auto!important;max-height:none!important;object-fit:contain!important;margin:0 auto;background:transparent!important}
+@media(max-width:1100px){
+  .qa-hero-stage::before{filter:blur(20px);inset:-24px}
+  .qa-hero-stage .approved-art{width:100%!important;max-width:none}
+}
+@media(max-width:670px){.qa-hero-stage{aspect-ratio:16/9}
+  .qa-hero-stage .approved-art{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important}
+  .qa-hero-stage::before{filter:blur(18px);transform:scale(1.12)}
+}
+
+
+@media(min-width:1101px){
+  .foundation-activity-banner>a,
+  .visual-cover .cover-header{
+    max-width:1100px;
+    margin-left:auto;
+    margin-right:auto;
+    width:100%;
+  }
+  .visual-cover .cover-header{
+    padding-left:18px;
+    padding-right:18px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -147,10 +176,10 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 <div class="visual-cover" aria-label="The Foundation concept cover">
  <header class="cover-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
  <h1 class="sr-only">Serving Those Who Serve Us</h1>
- <img class="approved-art" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six people from service and professional roles stand together overlooking a city at sunrise. Overlaid text: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." fetchpriority="high">
+ <div class="qa-hero-stage"><img class="approved-art" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six people from service and professional roles stand together overlooking a city at sunrise. Overlaid text: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." fetchpriority="high"></div>
  <main class="desktop-content" id="desktop-main">
   <div class="desktop-next">
-   <p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p>
+   <p>A system that starts by understanding you, your goals, and your purpose. You've already demonstrated purpose through your commitment to the community — let’s start there.</p>
    <div class="desktop-actions"><a id="desktop-profile" class="entry-primary" href="identity.html">Build My Profile <span aria-hidden="true">→</span></a><a class="entry-secondary" href="resources.html#catalog">Find Community Resources <span aria-hidden="true">→</span></a></div>
   </div>
   <section class="desktop-cards" aria-label="Explore Foundation pathways">
@@ -163,7 +192,7 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 <div class="mobile-landing" id="entry-mobile">
  <header class="mobile-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
  <img class="mobile-photo" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six service and community professionals stand shoulder to shoulder overlooking a city at sunrise. Text in the artwork: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." loading="eager">
- <main class="mobile-message"><p class="kicker">A different way of seeing · Fit for purpose</p><h1>Your next chapter shouldn’t start from scratch.</h1><p>A system that starts by understanding me, my goals, and my purpose. You have already demonstrated purpose through your commitment to the community — let’s start there.</p><div class="mobile-actions"><a id="mobile-profile" href="identity.html">Build My Profile →</a><a href="resources.html#catalog">Find Community Resources →</a></div></main>
+ <main class="mobile-message"><p class="kicker">A different way of seeing · Fit for purpose</p><h1>Your next chapter shouldn’t start from scratch.</h1><p>A system that starts by understanding you, your goals, and your purpose. You've already demonstrated purpose through your commitment to the community — let’s start there.</p><div class="mobile-actions"><a id="mobile-profile" href="identity.html">Build My Profile →</a><a href="resources.html#catalog">Find Community Resources →</a></div></main>
  <section class="mobile-cards" aria-label="Explore Foundation pathways">
   <a class="mobile-card" href="identity.html"><span class="glyph" aria-hidden="true">◇</span><strong>Career Identity</strong><span>Clarify your strengths, experience, and purpose to build a path that fits the next chapter of your service.</span></a>
   <a class="mobile-card" href="resources.html#catalog"><span class="glyph" aria-hidden="true">♧</span><strong>Community Resources</strong><span>Access trusted support, services, and guidance designed for those who serve their communities.</span></a>
