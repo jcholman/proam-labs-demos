@@ -58,3 +58,10 @@ The approved image did not fit mobile because the original background-size `auto
 This revision adds a service descriptor **Applied AI Assistance · Powered by proAM Labs** to the six concept pages and develops the Foundation's public value proposition around helping individuals notice relevant resources or opportunities they may not have known to ask about. New homepage and About-page text explains source-backed possibility recognition, human review, provider authority over eligibility, individual choice, and continuity. Resource, profile, trust, and organization pages now state those same boundaries in the context of their existing experiences.
 
 This is **concept articulation only**. It does not add AI processing, eligibility screening, automated benefits matching, referral services, live participant intake, backend storage or partnerships. The approved hero artwork, functional profile/resource links, original catalog records, form/export mechanics, and privacy model remain unchanged. The broader Foundation mission continues beyond veterans; the proposed veteran pilot is one bounded pathway.
+
+
+## v0.4.1 — Natural-language headline and future continuity research (2026-11-11)
+
+Public-facing headline refined to **“Your next chapter shouldn’t start from scratch.”** on both home and mission views. The reason is familiar, conversational language that communicates recovering prior effort instead of reconstructing it.
+
+**Program design question — deferred, not implemented:** How could two distinct, time-varying records—**personal continuity** (what the individual elects to share, choose, explore and learn, under their control) and **resource continuity** (what programs offer, changes in conditions, effective dates and outstanding verification)—be responsibly compared when circumstances change? Possible future event: re-evaluate an individually authorized navigation option when a qualified resource record changes. Constraints: consent, minimization, temporal provenance, verification, provider authority, human review, revocation, and no automatic eligibility inference or referral. No feature is activated by this note.
