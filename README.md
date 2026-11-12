@@ -1,3 +1,10 @@
+<div id="basic-demo-linkedin" style="float:right; text-align:right; margin:0 0 12px 18px; font-size:14px; line-height:1.6;">
+  <a href="https://www.linkedin.com/in/jcholman" target="_blank" rel="noopener noreferrer" aria-label="Follow Jason Holman's progress on LinkedIn (opens in a new tab)" style="display:inline-flex; align-items:center; gap:6px; font-weight:600; text-decoration:none;">
+    Follow my progress on LinkedIn
+    <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:none;"><path d="M15 3h6v6"/><path d="m10 14 11-11"/><path d="M21 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1 2-2V5a2 2 0 0 1 2-2h6"/></svg>
+  </a>
+</div>
+
 # proam-labs-demos
 Interactive product and architecture demos from proAM Labs.
 
