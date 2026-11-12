@@ -24,9 +24,13 @@ These interactive prototypes show how that approach is being developed—and wha
 
 [Open the four-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, Find Your Thread in Practice, and the Signal Before Action concept in a minimal parchment, navy, and gold design.
 
-## The Trinity — Resume & Candidate Representation Pilot (v0.3.1)
+## The Trinity — MASTER + Career Expressions + Presentation Contracts
 
-[Explore The Trinity v0.3.1 — Master + Three Professional Resumes](https://jcholman.github.io/proam-labs-demos/showcase/trinity/?v=0.3.1&utm_source=chatgpt.com) — See one evidence-grounded Master resume and three simultaneous, purpose-specific expressions: **Business Intelligence & Analytics**, **AI & Technical Product**, and **Data Governance & Integration**. Each presents the same candidate experience through a different professional lens, with two-sentence work summaries, categorized pipe-separated Skills, purpose-specific headline taglines, and a LinkedIn contact route. The version history makes changes inspectable while the pilot evaluates ATS discoverability, content fidelity, and market response. This read-only demonstration does not submit applications, synchronize recruiter platforms, or replace the governed candidate record.
+[Open The Trinity](https://jcholman.github.io/proam-labs-demos/showcase/trinity/) — Start with one evidence-grounded **MASTER** candidate representation, then compare three simultaneous professional expressions: **Business Intelligence & Analytics**, **AI & Technical Product**, and **Data Governance & Integration**.
+
+The current experience also includes a **Presentation Contract selector** that previews the same governed candidate evidence through four different presentation systems: **proAM CLASSIC, BALANCED, CLEAN, and CLASSIC**. The candidate selects how approved information is presented; the presentation contract changes expression and layout, not the underlying evidence.
+
+Use The Trinity to inspect the MASTER, compare role-family positioning, review version continuity, open the Applied AI Portfolio, and test how one candidate profile can remain source-grounded while supporting different human and ATS-facing presentations. This is a read-only demonstration; it does not replace the canonical candidate record or submit applications.
 
 ## Applied AI Portfolio — Resume Page 3
 
