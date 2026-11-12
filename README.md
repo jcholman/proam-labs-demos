@@ -17,6 +17,10 @@ These interactive prototypes show how that approach is being developed—and wha
 
 [Open the four-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, Find Your Thread in Practice, and the Signal Before Action concept in a minimal parchment, navy, and gold design.
 
+## The Trinity — Resume & Candidate Representation Pilot (v0.3)
+
+[Explore The Trinity v0.3 — Master + Three Professional Resumes](https://jcholman.github.io/proam-labs-demos/showcase/trinity/?v=0.3&utm_source=chatgpt.com) — See one evidence-grounded Master resume and three simultaneous, purpose-specific expressions: **Business Intelligence & Analytics**, **AI & Technical Product**, and **Data Governance & Integration**. Each presents the same candidate experience through a different professional lens, with two-sentence work summaries and categorized, pipe-separated Skills. The version history makes changes inspectable while the pilot evaluates ATS discoverability, content fidelity, and market response. This read-only demonstration does not submit applications, synchronize recruiter platforms, or replace the governed candidate record.
+
 ## Applied AI Portfolio — Resume Page 3
 
 [Open the current Applied AI Portfolio Supplement — Portrait](https://drive.google.com/file/d/1wU4WERS2eOEUWOTeMk-ETvwGyOhTyKR4/view) · [Open the Landscape Portfolio](https://jcholman.github.io/proam-labs-demos/applied-ai-portfolio-landscape/) — Reusable employer-facing Page 3 portfolio options connecting Jason Holman’s resume claims to inspectable proAM Labs demonstrations and public proof of work.
