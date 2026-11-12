@@ -17,6 +17,12 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 .skip{position:absolute;left:-10000px;top:0;z-index:20;background:white;color:#172c38;padding:12px 20px}
 .skip:focus{left:12px}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%)}
+.foundation-activity-banner{background:#102a3a;color:#fff;border-bottom:1px solid #c7a15d;font-size:13px;letter-spacing:.01em}
+.foundation-activity-banner a{max-width:1200px;margin:0 auto;padding:9px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;text-decoration:none;color:inherit}
+.foundation-activity-banner strong{font-weight:700}
+.foundation-activity-banner .activity-link{color:#efcf92;font-weight:650}
+@media(max-width:670px){.foundation-activity-banner a{padding:9px 16px;flex-direction:column;align-items:flex-start;gap:2px;font-size:12px}}
+
 .visual-cover{position:relative;width:100%;background:#172c38;overflow:hidden}
 .visual-cover .approved-art{display:block;width:100%;height:auto}
 .visual-cover .cover-header{position:absolute;top:0;left:0;right:0;min-height:8.6%;height:8.6%;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 max(4%,calc((100vw - 1440px)/2));color:#fdf7e9;background:#172c38;border-bottom:2px solid #c6a05c;z-index:4}
@@ -134,6 +140,8 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 </style>
 </head>
 <body>
+<aside class="foundation-activity-banner" aria-label="proAM Labs updates"><a href="https://www.linkedin.com/company/proam-labs" target="_blank" rel="noopener noreferrer"><strong>Behind the scenes at proAM Labs</strong><span class="activity-link">Follow the work powering this concept on LinkedIn ↗</span></a></aside>
+
 <a class="skip skip-desktop" href="#desktop-profile">Skip to Foundation services</a>
 <a class="skip skip-mobile" href="#mobile-profile">Skip to Foundation services</a>
 <div class="visual-cover" aria-label="The Foundation concept cover">
