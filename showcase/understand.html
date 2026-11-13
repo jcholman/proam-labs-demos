@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#041b29">
+<meta name="description" content="UNDERSTAND: an interactive Surface of Understanding concept preview by proAM Labs. Explore Recognition Ridge through observation, context, and understanding.">
+<title>UNDERSTAND · Surface of Understanding · proAM Labs</title>
+<link rel="icon" type="image/png" href="assets/proam-logo.png">
+<link rel="apple-touch-icon" href="assets/icons/proam-labs-apple-touch-icon-180x180.png">
+<style>
+:root{color-scheme:dark;--night:#041624;--deep:#071e2c;--panel:#09283a;--panel2:#0b3448;--gold:#e9bf68;--goldlight:#ffe1a1;--teal:#50d8d9;--mist:#b4cbcf;--white:#fcf7ed;--border:rgba(218,179,100,.37)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;color:var(--white);font:15px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;background:radial-gradient(ellipse at 24% 8%,#0a3d4b 0%,transparent 36%),radial-gradient(ellipse at 90% 65%,#0a2b3c 0%,transparent 40%),linear-gradient(#03121d,#061c2b 58%,#031420)}
+button,a,input{font:inherit}a{color:#f1d396;text-underline-offset:4px}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #ffe2a6;outline-offset:4px}button{cursor:pointer}
+main{max-width:1450px;margin:auto;padding:0 34px 54px}
+.top{max-width:1450px;margin:0 auto;padding:21px 34px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid rgba(216,178,103,.23)}
+.brand{display:flex;align-items:center;gap:13px;text-decoration:none;color:var(--white)}.brand img{width:53px;height:53px;border-radius:50%;object-fit:cover;box-shadow:0 0 15px #d7ab553b}.brand strong{font:24px Georgia,serif;display:block}.brand small{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:#aec5c7}
+.nav{display:flex;align-items:center;gap:23px;flex-wrap:wrap}.nav a{text-decoration:none;font-size:12px;letter-spacing:.07em;text-transform:uppercase;color:#d1e0df}.nav a:hover{color:var(--goldlight)}.nav .basic{border:1px solid #d4ac6a77;padding:9px 12px;border-radius:7px;color:#ffe0a5}
+.hero{text-align:center;padding:44px 10px 30px;position:relative}.kicker{font-size:11px;font-weight:750;text-transform:uppercase;letter-spacing:.25em;color:var(--gold)}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}.hero h1{margin:10px 0 4px;font-size:clamp(40px,5.7vw,82px);line-height:1.08;color:var(--goldlight);letter-spacing:.015em;text-shadow:0 4px 28px #0006}
+.hero .sub{color:#d8e7e5;font-size:clamp(13px,1.23vw,17px);text-transform:uppercase;letter-spacing:.19em;margin:12px 0 13px}.hero .intro{margin:0 auto;color:#c4d5d5;max-width:770px;font-size:15px}
+.gold-rule{width:min(620px,83%);height:1px;margin:23px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.sequence{display:flex;gap:10px;align-items:center;justify-content:center;flex-wrap:wrap;margin:14px 0 0;color:#afc5ca;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.sequence strong{color:#ffe1a1;border:1px solid #dfb96777;border-radius:99px;padding:5px 10px;background:#183b49}
+.workspace{display:grid;grid-template-columns:minmax(0,1.72fr) minmax(308px,.73fr);gap:20px;align-items:start}
+.panel{background:linear-gradient(157deg,#092b3cae,#041a29f7);border:1px solid var(--border);border-radius:18px;box-shadow:0 18px 55px #0005;overflow:hidden}
+.panel-head{padding:23px 26px 0;display:flex;align-items:flex-start;justify-content:space-between;gap:17px}
+.panel-head h2{font-size:27px;line-height:1.16;margin:5px 0 6px;color:#fff0c7}.panel-head p{color:#b9cbcf;margin:0;font-size:13px;max-width:560px}
+.outline-tag{border:1px solid #c49a558c;border-radius:25px;white-space:nowrap;padding:5px 12px;font-size:10px;color:#ffe0a5;letter-spacing:.12em;text-transform:uppercase}
+.figure{position:relative;padding:0 11px 5px;min-height:410px}.figure canvas{display:block;width:100%;height:435px;touch-action:pan-y}
+.legend{display:flex;align-items:center;gap:18px;flex-wrap:wrap;padding:5px 26px 23px;color:#bbd5d5;font-size:11px}.swatch{width:20px;height:3px;display:inline-block;margin-right:6px;vertical-align:middle;border-radius:5px;box-shadow:0 0 7px currentColor}
+.note{padding:12px 24px 17px;border-top:1px solid rgba(218,179,100,.21);display:flex;gap:12px;align-items:flex-start;color:#bfccd1;font-size:12px;line-height:1.45}
+.controls{padding:22px;display:flex;flex-direction:column}.controls h2{font-size:29px;color:#ffe5aa;margin:0 0 4px}.controls .lead{font-size:13px;color:#bacacf;margin:0 0 16px}
+.control{margin:0 0 12px;padding:17px 16px 14px;background:linear-gradient(135deg,#0e3b4b9a,#071f308a);border:1px solid #7ec9c820;border-radius:12px}
+.control-head{margin:0 0 11px;display:flex;justify-content:space-between;align-items:center}
+.control label{font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:750;color:#f6e8cc}
+.value{color:#f9d991;font-weight:800;font-size:15px;font-variant-numeric:tabular-nums}.control input[type=range]{width:100%;margin:0;cursor:pointer;accent-color:var(--gold);height:24px}
+.limits{display:flex;justify-content:space-between;color:#8fa7b2;font-size:10px}.help{color:#a9c0c6;font-size:11px;line-height:1.45;margin-top:8px}
+.controls-footer{margin-top:auto;padding-top:7px}.control-buttons{display:flex;flex-wrap:wrap;gap:9px}.btn{background:linear-gradient(180deg,#efd59b,#ca9c4b);color:#132b36;border:0;border-radius:8px;font-weight:760;font-size:12px;padding:11px 17px;min-height:43px}
+.btn-secondary{color:#d8e2df;background:#123b4d;border:1px solid #648b8e80}
+.tiny-note{font-size:11px;color:#aabec3;line-height:1.48;margin:12px 0 0}
+.live-readout{margin-top:12px;border:1px solid #c9a46467;border-radius:12px;padding:14px 16px;background:radial-gradient(circle at 5% 0%,#ad7f2519,transparent 90%)}
+.live-readout .readout-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.16em;color:#ecd08d}.live-readout h3{font-size:19px;color:#fff0c5;margin:5px 0 6px}.live-readout p{color:#bdd0cf;font-size:12px;margin:0}
+.below{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px;margin-top:22px}
+.feature{padding:25px;background:#082837a8;border:1px solid #d0a76049;border-radius:13px}.feature .index{font-size:11px;font-weight:750;color:var(--gold);letter-spacing:.18em}.feature h3{font-size:22px;color:#f8e6bd;margin:8px 0}.feature p{font-size:13px;color:#b8cbce;margin:0}
+.recognition{display:flex;gap:18px;align-items:center;border-top:1px solid #d5ac6b44;border-bottom:1px solid #d5ac6b44;margin:30px 0;padding:23px 4px}.recognition .mark{font-size:34px;color:var(--gold);font-family:Georgia,serif}.recognition p{font:20px/1.45 Georgia,serif;letter-spacing:.01em;color:#f8e3b5;margin:0}
+.sources{border-top:1px solid #d0a65d44;color:#b4c4c5;font-size:12px;padding:23px 0;margin-top:30px;display:flex;gap:15px;align-items:center}.sources img{width:62px;height:62px;border-radius:50%}.sources p{margin:0}.sources small{display:block;font-size:11px;color:#9ab1b6;margin-top:4px}
+footer{border-top:1px solid #ab8c554d;padding-top:23px;margin-top:22px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:12px;color:#b6c7c9}
+@media(max-width:1110px){.workspace{grid-template-columns:1fr}.controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}.controls>h2,.controls>.lead,.controls-footer,.live-readout{grid-column:1/-1}.control{margin:0}.figure canvas{height:430px}}
+@media(max-width:760px){main{padding:0 15px 35px}.top{padding:13px 16px}.brand img{width:43px;height:43px}.brand strong{font-size:20px}.brand small{font-size:8px;letter-spacing:.07em}.nav a:not(.basic){display:none}.nav{gap:0}.hero{padding:30px 0 20px}.hero h1{font-size:clamp(35px,9vw,58px)}.hero .sub{font-size:11px;letter-spacing:.11em}.workspace{gap:15px}.panel-head{padding:19px 17px 0;display:block}.panel-head h2{font-size:23px}.outline-tag{display:inline-block;margin-top:10px}.figure{min-height:292px;padding:0 3px}.figure canvas{height:300px}.legend{padding:5px 15px 17px;gap:10px}.note{padding:12px 15px 17px}.controls{display:block;padding:17px}.control{margin-bottom:12px}.below{grid-template-columns:1fr}.feature{padding:20px}.recognition p{font-size:18px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="top">
+ <a class="brand" href="../" aria-label="proAM Labs — Basic Demo"><img alt="proAM Labs gold orbital emblem" src="assets/proam-logo.png"><span><strong>proAM Labs</strong><small>A different way of seeing</small></span></a>
+ <nav class="nav" aria-label="Page navigation"><a href="#surface">The surface</a><a href="#meaning">What emerges</a><a href="https://jcholman.github.io/proam-labs-demos/" class="basic">← Basic Demo</a></nav>
+</header>
+<main>
+<section class="hero" aria-labelledby="title"><div class="kicker">UNDERSTAND · Experimental demo · v0.2</div><h1 id="title">The Surface of Understanding</h1><p class="sub">From observation to recognition, context, and qualified understanding</p><p class="intro">What if understanding were a fabric—formed by threads of observation, evidence, and context, woven together across time?</p><div class="sequence" aria-label="Proposed future website sequence"><span>ARENA</span><span>→</span><span>PRACTICE</span><span>→</span><strong>UNDERSTAND</strong><span>→</span><span>SIGNAL</span></div><div class="gold-rule"></div></section>
+<section class="workspace" id="surface" aria-label="Interactive surface explorer">
+ <div class="panel"><div class="panel-head"><div><div class="kicker">01 / Explore the fabric</div><h2>Recognition Ridge</h2><p>Move the controls to see how an illustrative surface changes as its threads are brought together.</p></div><span class="outline-tag">Interactive illustration</span></div>
+ <div class="figure"><canvas id="surfaceCanvas" role="img" aria-label="A three-dimensional woven teal-and-gold understanding surface. The Recognition Ridge moves as the slider values change.">Interactive fabric illustration. Use the three sliders to vary observations, context, and understanding.</canvas></div>
+ <div class="legend"><span><i class="swatch" style="background:#54d0d7;color:#54d0d7"></i> Observational threads</span><span><i class="swatch" style="background:#f0c677;color:#f0c677"></i> Contextual threads</span><span><i class="swatch" style="background:#ffe4a9;color:#ffe4a9"></i> Recognition Ridge</span></div>
+ <div class="note"><span aria-hidden="true">◇</span><span>The surface is a <strong>visual metaphor</strong>—not live Thinking Graph data, measured confidence, or proof that an interpretation is correct. A ridge is a pattern to examine, not an automatically qualified conclusion.</span></div>
+ </div>
+ <aside class="panel controls"><h2>Shape the surface</h2><p class="lead">Each slider changes the fabric and the position or prominence of Recognition Ridge.</p>
+ <div class="control"><div class="control-head"><label for="observations">Observations</label><output class="value" id="observationsValue" for="observations">58</output></div><input id="observations" type="range" min="0" max="100" step="1" value="58"><div class="limits"><span>Fewer threads</span><span>More threads</span></div><div class="help">Illustrative abundance and distribution of incoming observations.</div></div>
+ <div class="control"><div class="control-head"><label for="context">Context</label><output class="value" id="contextValue" for="context">64</output></div><input id="context" type="range" min="0" max="100" step="1" value="64"><div class="limits"><span>Limited context</span><span>Rich context</span></div><div class="help">How much surrounding history, relationship, and evidence framing is available.</div></div>
+ <div class="control"><div class="control-head"><label for="understanding">Understanding</label><output class="value" id="understandingValue" for="understanding">52</output></div><input id="understanding" type="range" min="0" max="100" step="1" value="52"><div class="limits"><span>Exploring</span><span>More coherent</span></div><div class="help">A hypothetical illustration of how prominently meaning appears—not a qualification score.</div></div>
+ <div class="controls-footer"><div class="control-buttons"><button class="btn" id="resetButton" type="button">Reset the surface</button><button class="btn btn-secondary" id="contrastButton" type="button" aria-pressed="false">Isolate the threads</button></div><p class="tiny-note">These values are independent illustrative controls, not evidence about a person or decision.</p></div>
+ <div class="live-readout" aria-live="polite" aria-atomic="true"><div class="readout-eyebrow">Interpretation / concept only</div><h3 id="stateTitle">A pattern is beginning to take shape.</h3><p id="stateDescription">The threads intersect across the landscape. The visible ridge offers a place to ask questions, not a determination of truth.</p></div>
+ </aside></section>
+<section class="recognition"><span class="mark" aria-hidden="true">“</span><p>Recognition is where we notice a pattern worth exploring. Qualification is where we determine what the evidence can actually support.</p></section>
+<section class="below" id="meaning" aria-label="How meaning emerges">
+ <article class="feature"><div class="index">01 / OBSERVE</div><h3>The individual threads</h3><p>Every observation carries its own time, perspective, context, and uncertainty. A thread can be preserved without being accepted as truth.</p></article>
+ <article class="feature"><div class="index">02 / RECOGNIZE</div><h3>Where the fabric rises</h3><p>As relationships emerge, a ridge may become visible. The experience can help someone navigate toward the signal beneath the surface.</p></article>
+ <article class="feature"><div class="index">03 / QUALIFY</div><h3>Understanding with boundaries</h3><p>A meaningful pattern still needs provenance, testing, and human judgment. Understanding does not automatically authorize action.</p></article>
+</section>
+<div class="sources"><img src="assets/proam-logo.png" alt="proAM Labs emblem"><div><p><strong>Surface of Understanding · Recognition Ridge</strong> — concept and visual exploration by proAM Labs.</p><small>Inspired by a discussion of the mathematics behind AI by <a href="https://lnkd.in/p/e-7WXfBd" target="_blank" rel="noopener noreferrer">Gabriel Millien — read his original LinkedIn post ↗</a>. Independent concept; no affiliation or endorsement implied.</small></div></div>
+<footer><span>proAM Labs · Better Understanding → Better Decisions → Better Outcomes</span><span>Demo-only interactive illustration · No data connection · <a href="https://jcholman.github.io/proam-labs-demos/">Return to Basic Demo</a></span></footer>
+</main>
+<script>
+(function(){'use strict';
+var canvas=document.getElementById('surfaceCanvas'),g=canvas.getContext('2d');
+var values={observations:58,context:64,understanding:52},ids=Object.keys(values),isolated=false;
+function mix(a,b,t){return a+(b-a)*t}
+function clamp(v,a,b){return Math.min(b,Math.max(a,v))}
+function surface(){
+ var obs=values.observations/100,ctx=values.context/100,und=values.understanding/100;
+ var centerX=-.20+(ctx-.5)*.73,centerZ=-.19+(obs-.5)*.24,spread=.42+.26*ctx;
+ var peak=.1+1.06*und*(.30+.7*Math.sqrt(obs*ctx));
+ return function(u,z){
+  var r=Math.exp(-((u-centerX)*(u-centerX)/(spread*spread)+(z-centerZ)*(z-centerZ)/((.22+.29*obs)*(.22+.29*obs))));
+  var waves=(.07+.16*obs)*Math.sin((4.3+obs*2.1)*u+1.25*z+.3)*Math.cos((3.1+ctx)*z-1.2*u);
+  var shoulder=.22*Math.exp(-((u+.57)*(u+.57)/.22+(z-.45)*(z-.45)/.43));
+  var other=.14*Math.exp(-((u-.76)*(u-.76)/.19+(z+.35)*(z+.35)/.20));
+  return{h:peak*r+waves+shoulder+other,r:r};
+ };
+}
+function roundrect(x,y,w,h,r){g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
+function path(points,style,width,shadowColor,blur){
+ g.beginPath();points.forEach(function(p,i){if(i)g.lineTo(p.x,p.y);else g.moveTo(p.x,p.y)});g.lineWidth=width;g.strokeStyle=style;g.lineCap='round';g.lineJoin='round';
+ g.shadowColor=shadowColor||'transparent';g.shadowBlur=blur||0;g.stroke();g.shadowBlur=0;
+}
+function draw(){
+ var w=canvas.clientWidth,h=canvas.clientHeight;g.clearRect(0,0,w,h);if(w<1||h<1)return;
+ var bg=g.createRadialGradient(w*.5,h*.55,25,w*.5,h*.52,w*.72);
+ bg.addColorStop(0,'rgba(23,136,153,.22)');bg.addColorStop(1,'rgba(2,17,27,0)');g.fillStyle=bg;g.fillRect(0,0,w,h);
+ var s=Math.min(w/850,h/465),compact=w<630,x0=w*.48,y0=h*(compact?.55:.60),su=(compact?242:270)*s,sv=(compact?108:132)*s,sh=132*s;
+ var surf=surface(),obs=values.observations/100,ctx=values.context/100,und=values.understanding/100;
+ function proj(u,z){var a=surf(u,z);return{x:x0+u*su+z*sv,y:y0+z*86*s-u*31*s-a.h*sh,v:a.h,r:a.r}}
+ var origin=proj(-1,-1),endU=proj(1,-1),endZ=proj(-1,1);
+ path([{x:origin.x,y:origin.y-45*s},{x:origin.x,y:origin.y+25*s}],'rgba(229,193,122,.70)',1.4);
+ path([{x:origin.x,y:origin.y+25*s},{x:endU.x,y:endU.y+25*s}],'rgba(229,193,122,.55)',1.3);
+ path([{x:origin.x,y:origin.y+25*s},{x:endZ.x,y:endZ.y+25*s}],'rgba(229,193,122,.42)',1.3);
+ var N=36;
+ for(var iz=0;iz<N;iz++){var z1=mix(-1,1,iz/N),z2=mix(-1,1,(iz+1)/N);
+  for(var iu=0;iu<N;iu++){var u1=mix(-1,1,iu/N),u2=mix(-1,1,(iu+1)/N);
+   var a=proj(u1,z1),b=proj(u2,z1),c=proj(u2,z2),d=proj(u1,z2),brightness=clamp((a.v+b.v+c.v+d.v)/4,0,1.6);
+   g.beginPath();g.moveTo(a.x,a.y);g.lineTo(b.x,b.y);g.lineTo(c.x,c.y);g.lineTo(d.x,d.y);g.closePath();
+   g.fillStyle='rgba('+Math.round(4+brightness*22)+','+Math.round(75+brightness*56)+','+Math.round(93+brightness*49)+','+(isolated?.052:.13)+')';g.fill();
+  }
+ }
+ var crossCount=Math.round(14+ctx*22);
+ for(var j=0;j<=crossCount;j++){var z=mix(-1,1,j/crossCount),pts=[];
+  for(var k=0;k<=80;k++)pts.push(proj(mix(-1,1,k/80),z));
+  var special=j%5===0;path(pts,special?'rgba(249,216,141,.78)':'rgba(199,163,94,.34)',(special?1.65:.8)*s,special?'rgba(255,205,101,.28)':null,special?5*s:0);
+ }
+ var count=Math.round(15+obs*31);
+ for(var ii=0;ii<=count;ii++){var u=mix(-1,1,ii/count),p=[];
+  for(var kk=0;kk<=72;kk++)p.push(proj(u,mix(-1,1,kk/72)));
+  var strong=ii%5===0;path(p,strong?'rgba(105,230,227,.97)':'rgba(52,197,207,.65)',(strong?2.7:1.45)*s,strong?'rgba(55,230,237,.37)':null,strong?9*s:0);
+ }
+ var ridge=[];
+ for(var t=0;t<=100;t++){var uu=mix(-.99,.99,t/100),zz=-.18+.12*Math.sin(uu*3+.8*ctx);ridge.push(proj(uu,zz))}
+ path(ridge,'rgba(180,116,26,.40)',8*s,'rgba(240,192,82,.22)',13*s);
+ path(ridge,'rgba(255,225,155,.96)',3.6*s,'rgba(255,205,116,.72)',12*s);
+ var highest=ridge.reduce(function(best,p){return(!best||p.y<best.y)?p:best},null),px=highest.x,py=highest.y;
+ g.fillStyle='#ffe09a';g.shadowColor='#ffcc6d';g.shadowBlur=22*s;g.beginPath();g.arc(px,py,6.5*s,0,Math.PI*2);g.fill();g.shadowBlur=0;
+ g.strokeStyle='rgba(247,208,122,.9)';g.lineWidth=1.3*s;g.beginPath();g.moveTo(px+4*s,py-10*s);g.lineTo(px+44*s,py-43*s);g.stroke();
+ var label='Recognition Ridge';g.font=Math.max(11,17*s)+'px Georgia, serif';var tw=g.measureText(label).width,bx=clamp(px+34*s,8,w-tw-33*s),by=clamp(py-71*s,15,h-43*s);
+ roundrect(bx,by,tw+24*s,32*s,15*s);g.fillStyle='rgba(5,37,53,.96)';g.fill();g.strokeStyle='#e2b45b';g.lineWidth=1.4*s;g.stroke();
+ g.fillStyle='#ffe6b0';g.fillText(label,bx+12*s,by+22*s);
+ g.font=Math.max(10,12*s)+'px system-ui,sans-serif';g.fillStyle='rgba(211,231,227,.87)';
+ g.fillText('OBSERVATIONS',Math.max(8,origin.x-4*s),Math.min(h-9,origin.y+67*s));
+ g.fillText('CONTEXT',Math.min(w-70,endZ.x+8*s),Math.min(h-9,endZ.y+35*s));
+ g.save();g.translate(Math.max(5,origin.x-20*s),Math.max(22,origin.y-95*s));g.rotate(-Math.PI/2);g.fillText('UNDERSTANDING',0,0);g.restore();
+}
+function update(){
+ ids.forEach(function(id){values[id]=Number(document.getElementById(id).value);document.getElementById(id+'Value').value=values[id]});
+ var ob=values.observations,co=values.context,un=values.understanding,title,desc;
+ if(ob<22||co<22){title='The threads are still separated.';desc='A surface can be drawn, but some information needed to interpret its patterns is missing. Discovery comes before certainty.'}
+ else if(un<35){title='A candidate pattern is emerging.';desc='Observations and context intersect, but the surface is provisional. Follow the threads before treating a ridge as meaningful.'}
+ else if(ob>67&&co>66&&un>67){title='The fabric has a clearer shape.';desc='Richer illustrative threads form a prominent ridge. What independent evidence could qualify this interpretation?'}
+ else{title='A pattern is beginning to take shape.';desc='The threads intersect across the landscape. The visible ridge invites better questions, not a determination of truth.'}
+ document.getElementById('stateTitle').textContent=title;document.getElementById('stateDescription').textContent=desc;draw();
+}
+function size(){
+ var b=canvas.getBoundingClientRect(),dpr=Math.min(window.devicePixelRatio||1,2);
+ canvas.width=Math.max(1,Math.round(b.width*dpr));canvas.height=Math.max(1,Math.round(b.height*dpr));g.setTransform(dpr,0,0,dpr,0,0);draw();
+}
+ids.forEach(function(id){document.getElementById(id).addEventListener('input',update)});
+document.getElementById('resetButton').addEventListener('click',function(){Object.assign(values,{observations:58,context:64,understanding:52});ids.forEach(function(id){document.getElementById(id).value=values[id]});update()});
+document.getElementById('contrastButton').addEventListener('click',function(ev){isolated=!isolated;ev.currentTarget.setAttribute('aria-pressed',String(isolated));ev.currentTarget.textContent=isolated?'Show full fabric':'Isolate the threads';draw()});
+if('ResizeObserver' in window)new ResizeObserver(size).observe(canvas);else window.addEventListener('resize',size);
+size();update();
+})();
+</script>
+</body></html>
