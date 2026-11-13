@@ -24,6 +24,12 @@ These interactive prototypes show how that approach is being developed—and wha
 
 [Open the four-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, Find Your Thread in Practice, and the Signal Before Action concept in a minimal parchment, navy, and gold design.
 
+## UNDERSTAND — Surface of Understanding (preview only)
+
+[**Open UNDERSTAND · Interactive Recognition Ridge**](https://jcholman.github.io/proam-labs-demos/showcase/understand.html) — Move the **Observations**, **Context**, and **Understanding** sliders to reshape a woven teal-and-gold surface in real time. Test Reset, Isolate the Threads, and the changing interpretation readout. The official proAM Labs emblem is included, and the attribution links directly to [Gabriel Millien's original LinkedIn post](https://lnkd.in/p/e-7WXfBd).
+
+**Proposed future website order:** ARENA → PRACTICE → **UNDERSTAND** → SIGNAL. For now, this is an independent, illustrated concept reachable from the **Basic Demo** only. No existing showcase navigation or website page order has changed. It has no live Thinking Graph data or authority to make decisions.
+
 ## The Trinity — MASTER + Career Expressions + Presentation Contracts
 
 [Open The Trinity](https://jcholman.github.io/proam-labs-demos/showcase/trinity/) — Start with one evidence-grounded **MASTER** candidate representation, then compare three simultaneous professional expressions: **Business Intelligence & Analytics**, **AI & Technical Product**, and **Data Governance & Integration**.
