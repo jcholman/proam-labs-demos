@@ -22,13 +22,13 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## proAM Labs · Minimal website
 
-[Open the four-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, Find Your Thread in Practice, and the Signal Before Action concept in a minimal parchment, navy, and gold design.
+[Open the five-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, Find Your Thread in Practice, UNDERSTAND’s interactive woven Recognition Ridge, and Signal Before Action. UNDERSTAND intentionally preserves its dark navy, teal and gold design within the five-page showcase.
 
-## UNDERSTAND — Surface of Understanding (preview only)
+## UNDERSTAND — Surface of Understanding
 
 [**Open UNDERSTAND · Interactive Recognition Ridge**](https://jcholman.github.io/proam-labs-demos/showcase/understand.html) — Move the **Observations**, **Context**, and **Understanding** sliders to reshape a woven teal-and-gold surface in real time. Test Reset, Isolate the Threads, and the changing interpretation readout. The official proAM Labs emblem is included, and the attribution links directly to [Gabriel Millien's original LinkedIn post](https://lnkd.in/p/e-7WXfBd).
 
-**Proposed future website order:** ARENA → PRACTICE → **UNDERSTAND** → SIGNAL. For now, this is an independent, illustrated concept reachable from the **Basic Demo** only. No existing showcase navigation or website page order has changed. It has no live Thinking Graph data or authority to make decisions.
+**Current website order:** ARENA → PRACTICE → **UNDERSTAND** → SIGNAL. UNDERSTAND is now the fourth page of the public showcase, with the dark interactive surface preserved and Gabriel Millien credited via a direct LinkedIn-post link. The illustration has no live Thinking Graph data or authority to make decisions.
 
 ## The Trinity — MASTER + Career Expressions + Presentation Contracts
 
