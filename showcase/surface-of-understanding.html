@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Surface of Understanding: a proAM Labs concept study about woven evidence, continuity, recognition, qualification, and decision readiness.">
+<meta name="theme-color" content="#112d3c">
+<title>Surface of Understanding · proAM Labs</title>
+<link rel="stylesheet" href="style.css?v=surface-20261113">
+<link rel="icon" type="image/png" href="assets/proam-logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/icons/proam-labs-apple-touch-icon-180x180.png">
+<style>
+:root{--su-navy:#112d3c;--su-deep:#061e2b;--su-teal:#087e86;--su-teal-bright:#5ac3c5;--su-gold:#c79c4d;--su-cream:#f4eddd;--su-paper:#fffcf5;--su-line:#d9c9a9}
+.su-main{max-width:1160px;margin:0 auto;padding:40px 30px 0}
+.su-eyebrow{letter-spacing:.19em;text-transform:uppercase;font-size:.75rem;font-weight:700;color:#896626}
+.su-hero{display:grid;grid-template-columns:1.65fr .7fr;gap:42px;align-items:center;padding:35px 0 40px}
+.su-hero h1{font-size:clamp(2.4rem,5.9vw,4.85rem);line-height:1.04;margin:11px 0 19px;letter-spacing:-.03em}
+.su-lede{font:1.34rem/1.48 Georgia,serif;color:#274552;max-width:720px}
+.su-hero p:not(.su-lede){max-width:650px;color:#595a57}
+.su-mark{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-left:1px solid var(--su-line);padding:18px}
+.su-mark img{width:148px;max-width:100%;border-radius:50%;filter:drop-shadow(0 5px 14px #122d3c24)}
+.su-mark strong{font-family:Georgia,serif;font-size:1.25rem;font-weight:400;margin-top:14px}
+.su-mark span{color:#6d695f;font-size:.8rem}
+.su-stage{background:radial-gradient(ellipse at 54% 38%,#0d5d68 0%,#083745 37%,#071d2b 78%);color:#f9f4e9;border:1px solid #90733d;border-radius:12px;box-shadow:0 25px 50px #1b2a3920;overflow:hidden}
+.su-stage-header{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;padding:24px 30px 12px}
+.su-stage-header .su-eyebrow{color:#e8c77e}
+.su-stage h2{margin:5px 0 0;font-size:clamp(1.4rem,2.7vw,2.25rem);color:#fff7e4}
+.su-stage-note{font-size:.77rem;color:#d9e5dd;max-width:400px}
+.su-surface{width:100%;display:block;height:auto;min-height:250px;max-height:540px}
+.su-stage-bottom{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:5px 30px 28px}
+.su-legend{display:flex;flex-wrap:wrap;gap:8px}
+.su-layer{font:600 .78rem/1.3 system-ui,sans-serif;cursor:pointer;border-radius:999px;border:1px solid #7b9da2;background:#0b3541;color:#e1f0ec;padding:9px 13px;min-height:42px}
+.su-layer[aria-pressed=true]{background:#eedaa6;border-color:#e4bd66;color:#15303b}
+.su-layer:focus-visible,.su-copy:focus-visible{outline:3px solid #edd28b;outline-offset:3px}
+.su-key{font-size:.77rem;color:#e2ded1;max-width:400px;line-height:1.5}
+.su-key strong{color:#ffe2a1}
+.su-caption{padding:13px 4px 28px;color:#64645d;font-size:.81rem}
+.su-quote{padding:0 0 12px;max-width:920px;font:1.45rem/1.55 Georgia,serif;color:#153947}
+.su-rule{height:1px;background:var(--su-line);margin:18px 0 36px}
+.su-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.su-card{background:var(--su-paper);border:1px solid var(--su-line);border-radius:6px;padding:26px 28px}
+.su-card h2{font-size:1.72rem;line-height:1.2;margin:8px 0 15px}
+.su-card p{color:#555a58}
+.su-card ul{padding-left:19px}
+.su-card li{margin:8px 0}
+.su-chain{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:9px;margin:25px 0 32px}
+.su-step{border-top:3px solid #b9a67e;background:#f9f4e9;padding:13px 12px 15px;min-height:108px}
+.su-step:nth-child(3){border-color:#087e86;background:#e3f0ed}
+.su-step:nth-child(4){border-color:#c79c4d}
+.su-step:nth-child(5){border-color:#112d3c}
+.su-step .su-number{color:#8c713b;font-size:.71rem;font-weight:800;letter-spacing:.11em}
+.su-step strong{display:block;color:#112d3c;font-size:.98rem;margin:6px 0 4px}
+.su-step small{display:block;line-height:1.45;color:#656760}
+.su-section{margin:48px 0}
+.su-section h2{margin:8px 0 12px;font-size:clamp(1.8rem,3.5vw,2.6rem)}
+.su-intro{max-width:830px;color:#575c58}
+.su-prompts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:22px}
+.su-prompt{background:#fffcf5;border:1px solid #d9c9a9;border-left:4px solid #ad8a4a;padding:21px}
+.su-prompt h3{font-size:1.18rem;margin:0 0 8px}
+.su-prompt p{color:#4c5658;min-height:66px;margin:0 0 16px}
+.su-copy{background:#112d3c;color:#fff;border:1px solid #112d3c;border-radius:3px;padding:10px 14px;cursor:pointer;font:600 .78rem system-ui,sans-serif;min-height:42px}
+.su-copy:hover{background:#075465}
+.su-small{font-size:.82rem;color:#636a65}
+.su-status{margin-top:12px;min-height:1.3em;color:#216b60;font-size:.85rem}
+.su-attrib{margin:45px 0 12px;padding:22px 0 15px;display:flex;gap:18px;align-items:center;border-top:1px solid var(--su-line)}
+.su-attrib img{width:70px;height:70px;border-radius:50%;flex:none}
+.su-attrib p{font-size:.82rem;margin:0 0 6px;color:#5b625e}
+.su-attrib a{color:#876324}
+.su-links{display:flex;flex-wrap:wrap;gap:13px;margin-top:20px}
+.su-links a{display:inline-block;text-decoration:none;border:1px solid #a58f63;border-radius:3px;padding:11px 17px;font-size:.82rem}
+.su-links a:first-child{background:#112d3c;border-color:#112d3c;color:#fff}
+.su-links a:hover{text-decoration:underline}
+.su-accessible-note{font-size:.8rem}
+@media(max-width:850px){.su-hero{grid-template-columns:1fr;gap:20px}.su-mark{border-left:0;border-top:1px solid var(--su-line);flex-direction:row;text-align:left;justify-content:flex-start;gap:16px}.su-mark img{width:74px}.su-mark strong{margin-top:0}.su-grid,.su-prompts{grid-template-columns:1fr}.su-chain{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.su-main{padding:26px 20px 0}.su-hero{padding:14px 0 24px}.su-stage-header,.su-stage-bottom{padding-left:17px;padding-right:17px}.su-stage-header{padding-top:20px}.su-stage-note{font-size:.73rem}.su-chain{gap:6px}.su-step{min-height:100px}.su-card{padding:21px}.su-prompt p{min-height:0}.su-surface{min-height:220px}.su-quote{font-size:1.24rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<aside class="activity-banner" aria-label="proAM Labs updates"><a href="https://www.linkedin.com/company/proam-labs" target="_blank" rel="noopener noreferrer"><span>Behind the scenes at proAM Labs</span><span class="activity-banner-link">Follow our ongoing work on LinkedIn ↗</span></a></aside>
+<header class="site-header"><div class="site-nav"><a class="site-brand" href="../front-porch-v1-0/?v=standard-20261107"><img src="assets/proam-logo.png" alt="proAM Labs emblem">proAM Labs</a><nav class="site-links" aria-label="Main navigation"><a href="index.html">01 · Value</a><a href="arena.html">02 · Arena</a><a href="practice.html">03 · Practice</a><a href="signal.html">04 · Signal Before Action</a><a href="surface-of-understanding.html" aria-current="page">05 · Surface</a><a class="begin-link" href="../front-porch-v1-0/?v=standard-20261107">Begin ↗</a></nav></div></header>
+<main class="su-main">
+<section class="su-hero" aria-labelledby="surface-title">
+<div><div class="su-eyebrow">Concept study · Surface of Understanding · v0.1</div><h1 id="surface-title">What happens when the threads come together?</h1>
+<p class="su-lede">An observation is a thread. Evidence gives it strength. Context gives it direction. Continuity allows us to see where the threads meet.</p>
+<p>The surface begins to take shape where those threads intersect. Sometimes a pattern emerges—a <strong>Recognition Ridge</strong>. But seeing a pattern is not the same as having the evidence to trust it, and understanding is not permission to act.</p>
+<p><em>A different way of seeing. Fit for purpose.</em></p></div>
+<div class="su-mark"><img src="assets/proam-logo.png" width="148" height="148" alt="Official proAM Labs gold orbit seal"><div><strong>proAM Labs</strong><span>Signal → Clarity → Continuity → Actionability</span></div></div>
+</section>
+<section aria-labelledby="weave-heading"><div class="su-stage"><div class="su-stage-header"><div><div class="su-eyebrow">An emerging landscape</div><h2 id="weave-heading">The fabric of understanding</h2></div><p class="su-stage-note">A conceptual illustration—not real telemetry, measured confidence, or a literal optimization function.</p></div>
+<svg id="su-weave" class="su-surface" viewBox="0 0 960 480" role="img" aria-labelledby="su-svg-title su-svg-desc">
+<title id="su-svg-title">Woven teal and gold strands rising into Recognition Ridge</title>
+<desc id="su-svg-desc">An illustrative mesh formed from five categories of threads. A golden crest marks a potential point of recognition, and a dotted path continues beyond it toward human qualification.</desc>
+<defs><linearGradient id="su-horizon" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#2f8994" stop-opacity=".35"/><stop offset="1" stop-color="#041a28" stop-opacity="0"/></linearGradient><filter id="su-glow"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<path d="M95 405 L95 88 M95 405 L870 405" stroke="#dcbf78" stroke-width="2" opacity=".8" fill="none"/>
+<text x="108" y="92" fill="#e8dcb8" font-size="18" font-family="Georgia,serif">Recognition ≠ qualification</text>
+<text x="102" y="432" fill="#cee3dd" font-size="16">Observations across time →</text>
+<path d="M110 345 C260 288 410 206 540 160 C680 156 740 253 857 330 L857 390 L110 390Z" fill="url(#su-horizon)"/>
+<g id="su-wefts"></g><g id="su-warps"></g>
+<path id="su-ridge" d="M90 333 C254 330 365 275 452 198 C505 138 553 130 603 168 C684 227 753 245 863 270" fill="none" stroke="#ffdf92" stroke-width="5" filter="url(#su-glow)" stroke-linecap="round"/>
+<circle cx="535" cy="147" r="9" fill="#ffdc87" stroke="#fff5c5" stroke-width="3" filter="url(#su-glow)"/>
+<path d="M542 139 L655 71" stroke="#efd293" stroke-width="2"/><rect x="649" y="39" width="230" height="52" rx="24" fill="#072b38" stroke="#dfbf70" stroke-width="2"/>
+<text x="764" y="72" text-anchor="middle" fill="#f7e5b6" font-family="Georgia,serif" font-size="23">Recognition Ridge</text>
+<circle cx="760" cy="284" r="5" fill="#efdbb0"/><path d="M771 286 C808 293 829 310 861 329" stroke="#f4e6c8" fill="none" stroke-width="2" stroke-dasharray="6 7"/><text x="740" y="363" fill="#f0e8d1" font-size="17">Still to qualify →</text>
+</svg>
+<div class="su-stage-bottom"><div class="su-legend" role="group" aria-label="Highlight one kind of thread"><button type="button" class="su-layer" data-layer="all" aria-pressed="true">All threads</button><button type="button" class="su-layer" data-layer="observation" aria-pressed="false">Observation</button><button type="button" class="su-layer" data-layer="evidence" aria-pressed="false">Evidence</button><button type="button" class="su-layer" data-layer="context" aria-pressed="false">Context</button><button type="button" class="su-layer" data-layer="continuity" aria-pressed="false">Continuity</button><button type="button" class="su-layer" data-layer="uncertainty" aria-pressed="false">Uncertainty</button></div><p class="su-key"><strong id="su-layer-label">All threads:</strong> <span id="su-layer-description">Meaning may emerge from relationships among different kinds of evidence.</span></p></div></div>
+<p class="su-caption">The lines illustrate relationships and continuity. Their shape, height, and intersections are not calculated from the Thinking Graph or any observation corpus.</p></section>
+<div class="su-section"><p class="su-quote">“The ridge isn't where a system becomes certain. It is where we notice something worth examining.”</p><div class="su-rule"></div><div class="su-eyebrow">From thread to decision</div><h2>Recognition is a beginning, not a finish line.</h2>
+<div class="su-chain" aria-label="Conceptual stages from observation to action"><div class="su-step"><span class="su-number">01</span><strong>Observe</strong><small>Capture what happened, where, and when.</small></div><div class="su-step"><span class="su-number">02</span><strong>Connect</strong><small>Relate evidence, context, and chronology.</small></div><div class="su-step"><span class="su-number">03</span><strong>Recognize</strong><small>Name a pattern without declaring it true.</small></div><div class="su-step"><span class="su-number">04</span><strong>Qualify</strong><small>Test provenance, gaps, and contradictions.</small></div><div class="su-step"><span class="su-number">05</span><strong>Decide</strong><small>Proceed only within human authorization.</small></div></div>
+<div class="su-grid"><article class="su-card"><div class="su-eyebrow">What a ridge can suggest</div><h2>Something is taking shape.</h2><p>A recognition may appear when independent observations become related across time. Evidence can strengthen a thread. Contradiction or missing measurements can change how confidently we interpret the surface.</p><p>That makes a ridge a <em>candidate recognition</em>—a reason to look more carefully, not a completed determination.</p></article>
+<article class="su-card"><div class="su-eyebrow">Where human stewardship begins</div><h2>What deserves qualification?</h2><ul><li>Can we trace the recognition to its original observations and sources?</li><li>What remains uncertain, contested, or not measured?</li><li>Does the interpretation survive an independent evaluator?</li><li>Who owns the decision, and what action is authorized?</li></ul><p class="su-small">Entering a graph does not, on its own, make an observation canonical or qualified.</p></article></div></div>
+<section class="su-section" aria-labelledby="conversation-heading"><div class="su-eyebrow">A take-off point for future conversations</div><h2 id="conversation-heading">Find a thread. Follow the recognition.</h2><p class="su-intro">Use these questions to begin another conversation in ChatGPT or another model. The buttons copy prompts only; this page does not send content anywhere, query an AI system, or write to the Thinking Graph.</p>
+<div class="su-prompts">
+<article class="su-prompt"><h3>01 · Find the thread</h3><p>Trace one observation back to what happened and the evidence that supports it.</p><button class="su-copy" type="button" data-prompt="Trace the thread behind this observation. Separate what was directly observed from inference, recover its sources and chronology, and identify what remains unknown. Do not promote an observation to a qualified fact without evidence.">Copy discussion prompt</button></article>
+<article class="su-prompt"><h3>02 · Look for Recognition Ridge</h3><p>Explore where distinct observations may converge into a meaningful pattern.</p><button class="su-copy" type="button" data-prompt="Explore whether these observations form a candidate Recognition Ridge. Show the relationships among evidence, context, chronology, and continuity. Present alternative interpretations and do not mistake pattern recognition for proof.">Copy discussion prompt</button></article>
+<article class="su-prompt"><h3>03 · Expose the missing threads</h3><p>Ask what we cannot yet see—and whether our certainty is premature.</p><button class="su-copy" type="button" data-prompt="Inspect this proposed recognition for missing evidence, contradiction, uncertainty, and NOT_MEASURED observations. Preserve those gaps explicitly, and propose a deterministic test that could resolve them.">Copy discussion prompt</button></article>
+<article class="su-prompt"><h3>04 · Test decision readiness</h3><p>Distinguish what is understood from what someone is actually authorized to do.</p><button class="su-copy" type="button" data-prompt="Assess whether this candidate recognition is ready for a decision. Identify provenance, qualification requirements, accountable human steward, remaining uncertainties, and authorization boundaries. Distinguish capability from permission to act.">Copy discussion prompt</button></article>
+</div><p class="su-status" id="su-status" role="status" aria-live="polite"></p></section>
+<section class="su-section su-grid" aria-labelledby="next-questions"><div class="su-card"><div class="su-eyebrow">Working hypothesis</div><h2 id="next-questions">Could the fabric be navigable?</h2><p>A future system might help someone move from a visible recognition to the threads beneath it: source observations, evidence, relationships, uncertainty, and the decisions still open.</p><p>This is a proposed experience layer. It is not an authorized Thinking Graph implementation, live diagnostic surface, or verified measurement product.</p></div><div class="su-card"><div class="su-eyebrow">A practical first test</div><h2>Can another person find their place?</h2><p>Choose a real decision with existing source evidence. Compare ordinary search, an LLM summary, and a governed reconstruction of the same thread.</p><p>Evaluate fidelity, missing-context recognition, orientation effort, and whether another person can explain the decision boundary without having been present originally.</p></div></section>
+<section class="su-section" aria-labelledby="next-step"><div class="su-eyebrow">Continue exploring</div><h2 id="next-step">Where will this thread take us?</h2><p class="su-intro">The Surface of Understanding is a conceptual bridge between Signal Before Action, preserved continuity, and the Thinking Graph. It is meant to raise better questions before it produces polished answers.</p><div class="su-links"><a href="signal.html">Explore Signal Before Action →</a><a href="arena.html">See the Thinking Graph Arena →</a><a href="../front-porch-v1-0/?v=standard-20261107">Begin at the Front Porch →</a></div></section>
+<section class="su-attrib" aria-label="Attribution and provenance"><img src="assets/proam-logo.png" alt="proAM Labs official emblem" width="70" height="70"><div><p><strong>Surface of Understanding · Recognition Ridge</strong> — proAM Labs concept illustration and conversation starting point · November 2026.</p><p>The exploration was prompted by <a href="https://lnkd.in/p/e-7WXfBd" target="_blank" rel="noopener noreferrer">Gabriel Millien's discussion of the mathematics behind AI</a>. The fabric metaphor, page, and conceptual interpretation are separate proAM Labs work; no affiliation or endorsement is implied.</p><p>No measurements or production Thinking Graph data are represented on this page.</p></div></section>
+</main>
+<footer class="site-footer"><span>proAM Labs · A different way of seeing.</span><a href="index.html">Return to the showcase ↗</a><span>Fit for purpose.</span></footer>
+<script>
+(function(){
+'use strict';
+var svg=document.getElementById('su-weave');
+var NS='http://www.w3.org/2000/svg';
+var warp=document.getElementById('su-warps');
+var weft=document.getElementById('su-wefts');
+var defs={
+observation:{color:'#6bd5d6',label:'Observation',desc:'Capture what was actually seen or recorded.'},
+evidence:{color:'#e2bb6c',label:'Evidence',desc:'Tie a recognition to traceable support and provenance.'},
+context:{color:'#92c6ba',label:'Context',desc:'Understand circumstances that change interpretation.'},
+continuity:{color:'#39a7bb',label:'Continuity',desc:'Preserve relationships and chronology across time.'},
+uncertainty:{color:'#df9d78',label:'Uncertainty',desc:'Expose missing, contradictory, and not-yet-measured threads.'}
+};
+var types=Object.keys(defs);
+function node(tag,attrs,parent){var n=document.createElementNS(NS,tag);Object.keys(attrs).forEach(function(k){n.setAttribute(k,attrs[k]);});parent.appendChild(n);return n;}
+function surf(x,dy,phase){var ridge=Math.exp(-Math.pow((x-514)/175,2));return 338-178*ridge+dy+12*Math.sin(x/68+phase)*(0.5+ridge);}
+for(var i=0;i<23;i++){
+ var type=types[i%types.length],d='';
+ for(var x=100;x<=866;x+=17){var y=surf(x,(i-11)*5.8,i*.21);d+=(x===100?'M':'L')+x+' '+y.toFixed(1)+' ';}
+ node('path',{d:d,fill:'none',stroke:defs[type].color,'stroke-width':i%5===0?3.1:1.8,opacity:i%5===0?.92:.65,'data-type':type},warp);
+}
+for(var j=0;j<36;j++){
+ var xx=116+j*20.7,dd='';
+ for(var k=-10;k<=10;k++){
+  var x2=xx+k*7,y2=surf(x2,k*6.1,j*.21);
+  dd+=(k===-10?'M':'L')+x2.toFixed(1)+' '+y2.toFixed(1)+' ';
+ }
+ var typ=types[(j+2)%types.length];
+ node('path',{d:dd,fill:'none',stroke:defs[typ].color,'stroke-width':j%4===0?2.5:1.3,opacity:.61,'data-type':typ},weft);
+}
+function selectLayer(layer){
+ document.querySelectorAll('[data-layer]').forEach(function(b){b.setAttribute('aria-pressed',String(b.dataset.layer===layer));});
+ svg.querySelectorAll('[data-type]').forEach(function(p){p.setAttribute('opacity',layer==='all'?(p.parentNode===warp?.73:.58):(p.getAttribute('data-type')===layer?.98:.08));});
+ document.getElementById('su-layer-label').textContent=layer==='all'?'All threads:':defs[layer].label+':';
+ document.getElementById('su-layer-description').textContent=layer==='all'?'Meaning may emerge from relationships among different kinds of evidence.':defs[layer].desc;
+}
+document.querySelectorAll('[data-layer]').forEach(function(b){b.addEventListener('click',function(){selectLayer(b.dataset.layer);});});
+selectLayer('all');
+var status=document.getElementById('su-status');
+document.querySelectorAll('.su-copy').forEach(function(b){
+ b.addEventListener('click',async function(){
+  var copy=b.dataset.prompt;
+  try{if(!navigator.clipboard||!navigator.clipboard.writeText)throw Error('Clipboard unavailable');await navigator.clipboard.writeText(copy);status.textContent='Prompt copied. Paste it into a conversation when you are ready.';}
+  catch(e){
+   var field=document.createElement('textarea');field.value=copy;field.setAttribute('aria-label','Discussion prompt');field.style.width='100%';field.style.minHeight='110px';
+   status.replaceChildren(document.createTextNode('Select and copy this prompt: '),field);field.focus();field.select();
+  }
+ });
+});
+})();
+</script></body></html>
