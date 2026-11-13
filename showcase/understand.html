@@ -8,6 +8,7 @@
 <title>UNDERSTAND · Surface of Understanding · proAM Labs</title>
 <link rel="icon" type="image/png" href="assets/proam-logo.png">
 <link rel="apple-touch-icon" href="assets/icons/proam-labs-apple-touch-icon-180x180.png">
+<link rel="stylesheet" href="style.css?v=understand-nav-20261113">
 <style>
 :root{color-scheme:dark;--night:#041624;--deep:#071e2c;--panel:#09283a;--panel2:#0b3448;--gold:#e9bf68;--goldlight:#ffe1a1;--teal:#50d8d9;--mist:#b4cbcf;--white:#fcf7ed;--border:rgba(218,179,100,.37)}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
@@ -56,13 +57,18 @@ footer{border-top:1px solid #ab8c554d;padding-top:23px;margin-top:22px;display:f
 .forward a{font-size:14px;font-weight:700}
 @media(max-width:980px){.top{flex-wrap:wrap}.nav{width:100%;gap:11px 19px;justify-content:flex-start}}
 @media(max-width:760px){.nav a:not(.basic){display:inline-block}.nav a{font-size:11px}.top{gap:11px}.nav{gap:12px 15px}.nav .basic{padding:7px 9px}}
+
+/* The site-wide navigation stays identical on every showcase page; the dark UNDERSTAND surface remains unchanged. */
+.site-header{--ink:#112d3c;--line:#d9c9a9;--gold:#a47b36;color:#112d3c}
+.site-header .site-brand,.site-header .site-links a{color:#112d3c}
+.site-header .site-links .begin-link{color:#7d5d27}
+.site-header .site-links a:hover{color:#7d5d27}
+.site-header .site-links a:focus-visible{outline-color:#a47b36}
+.hero{margin-bottom:0}
 </style>
 </head>
 <body>
-<header class="top">
- <a class="brand" href="../front-porch-v1-0/?v=standard-20261107" aria-label="proAM Labs — Enter the Front Porch"><img alt="proAM Labs gold orbital emblem" src="assets/proam-logo.png"><span><strong>proAM Labs</strong><small>A different way of seeing</small></span></a>
- <nav class="nav" aria-label="Main navigation"><a href="index.html">01 · Value</a><a href="arena.html">02 · Arena</a><a href="practice.html">03 · Practice</a><a href="understand.html" aria-current="page">04 · Understand</a><a href="signal.html">05 · Signal Before Action</a><a href="../front-porch-v1-0/?v=standard-20261107" class="basic">Begin ↗</a></nav>
-</header>
+<header class="site-header"><div class="site-nav"><a class="site-brand" href="../front-porch-v1-0/?v=standard-20261107" aria-label="Enter the Front Porch — begin POS-Lite" title="Begin with POS-Lite"><img src="assets/proam-logo.png" alt="proAM Labs emblem">proAM Labs</a><nav class="site-links" aria-label="Main navigation"><a href="index.html" >01 · Value</a><a href="arena.html">02 · Arena</a><a href="practice.html">03 · Practice</a><a href="understand.html" aria-current="page">04 · Understand</a><a href="signal.html">05 · Signal Before Action</a><a class="begin-link" href="../front-porch-v1-0/?v=standard-20261107">Begin <span aria-hidden="true">↗</span></a></nav></div></header>
 <main>
 <section class="hero" aria-labelledby="title"><div class="kicker">04 · UNDERSTAND · Interactive concept · v0.2</div><h1 id="title">The Surface of Understanding</h1><p class="sub">From observation to recognition, context, and qualified understanding</p><p class="intro">What if understanding were a fabric—formed by threads of observation, evidence, and context, woven together across time?</p><div class="sequence" aria-label="Proposed future website sequence"><span>ARENA</span><span>→</span><span>PRACTICE</span><span>→</span><strong>UNDERSTAND</strong><span>→</span><span>SIGNAL</span></div><div class="gold-rule"></div></section>
 <section class="workspace" id="surface" aria-label="Interactive surface explorer">
