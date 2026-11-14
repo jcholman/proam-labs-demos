@@ -18,13 +18,13 @@ These interactive prototypes show how that approach is being developed—and wha
 
 ## The Foundation.org — Individual-facing Foundation demo
 
-[Explore The Foundation.org concept](https://jcholman.github.io/proam-labs-demos/the-foundation-org/) — A new image-led cover and five existing pages for career identity, community resource navigation, continuity, and possible consent-based employer discovery. This is an independent, individual-first **demonstration**, not an operating nonprofit or a private talent-data marketplace.
+[Explore The Foundation.org concept](https://jcholman.github.io/proam-labs-demos/the-foundation-org/) — An image-led cover and six linked Foundation pages covering career identity, community support, a proposed Your Community view, continuity, and possible consent-based employer discovery. This is an independent, individual-first **demonstration**, not an operating nonprofit or a private talent-data marketplace.
 
 **Your Community · Surface of Understanding (v0.4 — separate exploratory demo)**
 
 [**Explore the interactive Your Community preview**](https://jcholman.github.io/proam-labs-demos/community-surface-v0-4/) — A mobile-first view of **illustrative Louisville-area, in-person community events**. Explore topics, date windows and areas; see how multiple source mentions could be reconciled into unique activities; browse a collapsible, horizontally scrollable event carousel; and investigate what recurring activity *might* suggest about community strengths, connections and unmet questions. The minimal river diagram is an illustrative area selector, not a geographic survey.
 
-**Demonstration boundary:** All events and counts are fictional examples. No live Meetup, Eventbrite or Facebook feed, individual profiles, community-needs measurement, matchmaking, or automated referrals operate through this page. A potential future **Your Community** page within The Foundation navigation remains an idea for review—not part of the current Foundation website.
+**Demonstration boundary:** All events and counts are fictional examples. No live Meetup, Eventbrite or Facebook feed, individual profiles, community-needs measurement, matchmaking, or automated referrals operate through this page. **Your Community** has now been added to [The Foundation's navigation](https://jcholman.github.io/proam-labs-demos/the-foundation-org/your-community.html) as a separate, non-operational page. This original demo remains available for comparison.
 
 
 ## proAM Labs · Minimal website
