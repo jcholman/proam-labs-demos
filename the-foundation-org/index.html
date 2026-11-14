@@ -166,6 +166,18 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
   }
 }
 
+
+/* Restore native Foundation navigation on the image-led Home cover.
+   This bar is outside the artwork, hotspots, CTAs and cards. */
+.cover-page-navigation{background:#f9f4e9;border-bottom:1px solid var(--line);color:var(--text)}
+.cover-page-navigation .nav-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:8px 23px;padding:15px 18px}
+.cover-page-navigation a{color:var(--text);text-decoration:none;font-size:13px;line-height:1.4;padding:8px 0;border-bottom:2px solid transparent;white-space:nowrap}
+.cover-page-navigation a[aria-current="page"]{border-bottom-color:#a47b36}
+.cover-page-navigation a:hover{color:#775520}
+.cover-page-navigation a.nav-start{border:1px solid #baa277;border-radius:3px;color:#7f5c25;padding:10px 15px}
+.cover-page-navigation a.nav-start:hover{background:#eee3cb}
+@media(max-width:1100px){.cover-page-navigation .nav-inner{padding:12px 19px;gap:6px 17px}}
+@media(max-width:670px){.cover-page-navigation .nav-inner{padding:10px 16px;gap:4px 15px}.cover-page-navigation a{font-size:12px;padding:7px 0}.cover-page-navigation a.nav-start{padding:8px 11px}}
 </style>
 </head>
 <body>
@@ -175,6 +187,7 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 <a class="skip skip-mobile" href="#mobile-profile">Skip to Foundation services</a>
 <div class="visual-cover" aria-label="The Foundation concept cover">
  <header class="cover-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
+ <nav class="cover-page-navigation" aria-label="Main navigation"><div class="nav-inner"><a href="index.html" aria-current="page">Home</a><a href="identity.html">Build your identity</a><a href="resources.html">Find support</a><a href="your-community.html">Your Community</a><a href="organizations.html">For organizations</a><a href="trust.html">Our promise</a><a class="nav-start" href="identity.html">Get started →</a></div></nav>
  <h1 class="sr-only">Serving Those Who Serve Us</h1>
  <div class="qa-hero-stage"><img class="approved-art" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six people from service and professional roles stand together overlooking a city at sunrise. Overlaid text: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." fetchpriority="high"></div>
  <main class="desktop-content" id="desktop-main">
@@ -191,6 +204,7 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 </div>
 <div class="mobile-landing" id="entry-mobile">
  <header class="mobile-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
+ <nav class="cover-page-navigation" aria-label="Main navigation"><div class="nav-inner"><a href="index.html" aria-current="page">Home</a><a href="identity.html">Build your identity</a><a href="resources.html">Find support</a><a href="your-community.html">Your Community</a><a href="organizations.html">For organizations</a><a href="trust.html">Our promise</a><a class="nav-start" href="identity.html">Get started →</a></div></nav>
  <img class="mobile-photo" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six service and community professionals stand shoulder to shoulder overlooking a city at sunrise. Text in the artwork: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." loading="eager">
  <main class="mobile-message"><p class="kicker">A different way of seeing · Fit for purpose</p><h1>Your next chapter shouldn’t start from scratch.</h1><p>A system that starts by understanding you, your goals, and your purpose. You've already demonstrated purpose through your commitment to the community — let’s start there.</p><div class="mobile-actions"><a id="mobile-profile" href="identity.html">Build My Profile →</a><a href="resources.html#catalog">Find Community Resources →</a></div></main>
  <section class="mobile-cards" aria-label="Explore Foundation pathways">
