@@ -20,6 +20,13 @@ These interactive prototypes show how that approach is being developed—and wha
 
 [Explore The Foundation.org concept](https://jcholman.github.io/proam-labs-demos/the-foundation-org/) — A new image-led cover and five existing pages for career identity, community resource navigation, continuity, and possible consent-based employer discovery. This is an independent, individual-first **demonstration**, not an operating nonprofit or a private talent-data marketplace.
 
+**Your Community · Surface of Understanding (v0.4 — separate exploratory demo)**
+
+[**Explore the interactive Your Community preview**](https://jcholman.github.io/proam-labs-demos/community-surface-v0-4/) — A mobile-first view of **illustrative Louisville-area, in-person community events**. Explore topics, date windows and areas; see how multiple source mentions could be reconciled into unique activities; browse a collapsible, horizontally scrollable event carousel; and investigate what recurring activity *might* suggest about community strengths, connections and unmet questions. The minimal river diagram is an illustrative area selector, not a geographic survey.
+
+**Demonstration boundary:** All events and counts are fictional examples. No live Meetup, Eventbrite or Facebook feed, individual profiles, community-needs measurement, matchmaking, or automated referrals operate through this page. A potential future **Your Community** page within The Foundation navigation remains an idea for review—not part of the current Foundation website.
+
+
 ## proAM Labs · Minimal website
 
 [Open the five-page website](https://jcholman.github.io/proam-labs-demos/showcase/) — Explore the continuity value calculator, both Arena demos, Find Your Thread in Practice, UNDERSTAND’s interactive woven Recognition Ridge, and Signal Before Action. UNDERSTAND intentionally preserves its dark navy, teal and gold design within the five-page showcase.
