@@ -1,0 +1,60 @@
+{
+  "id": "va-vet-tec-2",
+  "title": "VET TEC 2.0 — High-Tech Training",
+  "provider": "U.S. Department of Veterans Affairs",
+  "origin": "real_world_source",
+  "qualification_state": "SOURCE_VERIFIED",
+  "publication_state": "CANDIDATE_NOT_PUBLISHED",
+  "reviewed_on": "2026-11-16",
+  "category": "Training & credentials",
+  "track": "veterans",
+  "audiences": [
+    "veterans",
+    "eligible transitioning service members"
+  ],
+  "areas": [
+    "national",
+    "online"
+  ],
+  "geography": "United States · VA-approved providers; approved distance-learning options vary",
+  "summary": "VA program supporting eligible Veterans and transitioning service members seeking approved high-tech, non-degree training, including qualifying tuition, books and supplies, and housing payments.",
+  "eligibility_to_check": "Veteran with discharge other than dishonorable or active-duty member within 180 days of separation; at least 36 months active-duty service; under age 62 at VA approval; individual VA determination required.",
+  "cost_note": "VA describes tuition and fees paid directly to approved providers and additional qualifying support; exact benefits and approved courses must be checked with VA.",
+  "important_to_know": "Not the 2019–2024 VET TEC pilot. Earlier certificates of eligibility cannot be reused. Provider/course approval and individual eligibility remain unconfirmed here. VA reported 2,022 openings on November 10, 2026; this is a dated snapshot, not today's guaranteed capacity.",
+  "first_step": "Review VA's VET TEC 2.0 eligibility, approved provider listings and online application instructions.",
+  "sources": [
+    {
+      "label": "Official VA VET TEC 2.0 program",
+      "url": "https://www.va.gov/education/other-va-education-benefits/vet-tec-2/",
+      "publisher": "U.S. Department of Veterans Affairs",
+      "reviewed_on": "2026-11-16",
+      "reported_capacity_as_of": "2026-11-10"
+    },
+    {
+      "label": "Official VA training provider FAQs",
+      "url": "https://www.benefits.va.gov/gibill/vettec2_training_provider_faqs.asp",
+      "publisher": "U.S. Department of Veterans Affairs",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "label": "Former VET TEC pilot (ended 2024)",
+      "url": "https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/vettec-high-tech-program/index.html",
+      "publisher": "U.S. Department of Veterans Affairs",
+      "reviewed_on": "2026-11-16"
+    }
+  ],
+  "verification": {
+    "official_source_reviewed_on": "2026-11-16",
+    "source_review": "official_source_reviewed",
+    "provider_confirmed": false,
+    "current_provider_capacity": "not_verified",
+    "individual_eligibility_confirmed": false,
+    "application_status": "va_site_lists_online_application; dated_limit_snapshot_not_current_capacity"
+  },
+  "duplicate_review": {
+    "against_existing_21": "No direct VET TEC 2.0 record found in 2026-11-09 demo catalog",
+    "distinct_from": "Original VET TEC pilot ended 2024; retain separate version identity"
+  },
+  "next_action": "HUMAN_REVIEW_FOR_CATALOG_INCLUSION",
+  "notes": "No card will be published from this file automatically. Source-to-register reconciliation and reviewer authorization required."
+}
