@@ -18,9 +18,9 @@ Status: candidate operating convention · November 16, 2026
 **Separate state dimensions:** Provider/service availability (checked / not checked / changed), program eligibility rules, and person-specific eligibility (not inferred) must not be collapsed into a generic “real,” “verified,” or “available” badge.
 
 ## Current demonstration baseline
-- Find Support: 21 real-world **source-based** resources in the 2026-11-09 candidate catalog. Program existence and source-review history are distinct from availability, capacity, and actual referral readiness.
+- Find Support: 22 real-world **source-based** resources on the concept website (21 baseline entries reviewed 2026-11-09; VET TEC 2.0 reviewed 2026-11-16). Program existence and source-review history are distinct from availability, capacity, and actual referral readiness.
 - Your Community: 16 synthetic event fixture records in the November 2026 example dataset; any cards, metrics, chronology, and insight examples derived from them remain synthetic. No live community event feed.
-- VET TEC 2.0: source-verified 2026-11-16 **candidate**, preserved separately from the live catalog; see `candidates/va-vet-tec-2.candidate.json`.
+- VET TEC 2.0: source-verified 2026-11-16 and listed in the concept website directory, not provider-confirmed; see `candidates/va-vet-tec-2.candidate.json` for record and publication history. All resource cards now offer a direct provider website link as well as dated evidence in expandable details.
 
 ## Synthetic-to-real migration
 1. Discover the potential real resource/event and preserve official source URL, effective dates, source review timestamp, geography, provider and program version.

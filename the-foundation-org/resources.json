@@ -1,9 +1,9 @@
 {
   "catalog_id": "proam-foundation-community-pathways",
-  "version": "0.1.0-candidate",
+  "version": "0.2.0-candidate",
   "reviewed_on": "2026-11-09",
   "state": "candidate_not_published",
-  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set.",
+  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified.",
   "review_standard": {
     "official_source": "recorded",
     "provider_confirmed": false,
@@ -839,6 +839,61 @@
       },
       "display_priority": 5,
       "track": "veterans"
+    },
+    {
+      "id": "va-vet-tec-2",
+      "title": "VET TEC 2.0 — High-Tech Training",
+      "provider": "U.S. Department of Veterans Affairs",
+      "category": "Training & credentials",
+      "summary": "VA education benefit for eligible Veterans and transitioning service members pursuing approved short-term, non-degree high-tech training.",
+      "audiences": [
+        "veteran",
+        "transitioning"
+      ],
+      "areas": [
+        "national",
+        "online"
+      ],
+      "geography": "Nationwide; approved providers and distance-learning options vary",
+      "cost_code": "benefit",
+      "cost_note": "For eligible participants, VA pays approved tuition and fees directly to the school and may provide housing payments, books and supplies. Check payment amounts, remaining entitlement rules and any uncovered costs with VA.",
+      "eligibility_to_check": "VA eligibility: Veteran discharged under conditions other than dishonorable or active-duty member within 180 days of separation; at least 36 months of active duty; under age 62 at approval. Confirm that the chosen training program is VA-approved.",
+      "important_to_know": "VET TEC 2.0 differs from the pilot that ended in 2024. VA reported 2,022 remaining participant openings as of November 10, 2026; that is a dated snapshot, not guaranteed current capacity. VA currently lists three distance-learning providers with location restrictions. Provider enrollment, course availability and individual eligibility are not confirmed.",
+      "first_step": "Visit the official VA VET TEC 2.0 page to review eligibility, approved training providers and its online application.",
+      "program_url": "https://www.va.gov/education/other-va-education-benefits/vet-tec-2/",
+      "sources": [
+        {
+          "label": "Official VA VET TEC 2.0 program and application",
+          "url": "https://www.va.gov/education/other-va-education-benefits/vet-tec-2/",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA GI Bill Comparison Tool — approved providers",
+          "url": "https://www.va.gov/education/gi-bill-comparison-tool/schools-and-employers",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA VET TEC 2.0 provider FAQs",
+          "url": "https://www.benefits.va.gov/gibill/vettec2_training_provider_faqs.asp",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "VA lists online application; actual provider intake and course availability not verified"
+      },
+      "display_priority": 1,
+      "track": "veterans",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "provider_availability": "NOT_CONFIRMED"
     }
-  ]
+  ],
+  "last_catalog_update": "2026-11-16"
 }

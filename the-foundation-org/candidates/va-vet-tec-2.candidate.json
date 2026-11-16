@@ -4,7 +4,7 @@
   "provider": "U.S. Department of Veterans Affairs",
   "origin": "real_world_source",
   "qualification_state": "SOURCE_VERIFIED",
-  "publication_state": "CANDIDATE_NOT_PUBLISHED",
+  "publication_state": "PUBLISHED_SOURCE_REVIEWED_IN_CONCEPT_DIRECTORY",
   "reviewed_on": "2026-11-16",
   "category": "Training & credentials",
   "track": "veterans",
@@ -55,6 +55,10 @@
     "against_existing_21": "No direct VET TEC 2.0 record found in 2026-11-09 demo catalog",
     "distinct_from": "Original VET TEC pilot ended 2024; retain separate version identity"
   },
-  "next_action": "HUMAN_REVIEW_FOR_CATALOG_INCLUSION",
-  "notes": "No card will be published from this file automatically. Source-to-register reconciliation and reviewer authorization required."
+  "next_action": "MONITOR_APPROVED_PROVIDERS_AND_CURRENT_PROGRAM_AVAILABILITY",
+  "notes": "Included on public concept website as an actual VA source-reviewed resource following user direction. Does not indicate provider-confirmed training intake, eligibility, or referral readiness.",
+  "catalog_id": "proam-foundation-community-pathways",
+  "catalog_version": "0.2.0-candidate",
+  "published_to": "the-foundation-org/resources.html",
+  "publication_date": "2026-11-16"
 }
