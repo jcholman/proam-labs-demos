@@ -1,9 +1,9 @@
 {
   "catalog_id": "proam-foundation-community-pathways",
-  "version": "0.3.0-candidate",
+  "version": "0.4.0-candidate",
   "reviewed_on": "2026-11-09",
   "state": "candidate_not_published",
-  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified. VGLI premium holiday, SSVF and GPD separately source-reviewed Nov 16, 2026; provider-specific intake and personal eligibility unconfirmed.",
+  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified. VGLI premium holiday, SSVF and GPD separately source-reviewed Nov 16, 2026; provider-specific intake and personal eligibility unconfirmed. Six VA FY2027 GPD awardee organizations in Louisville, Elizabethtown and Shelbyville source-reviewed November 16, 2026; funded bed counts are NOT vacancy counts.",
   "review_standard": {
     "official_source": "recorded",
     "provider_confirmed": false,
@@ -1041,6 +1041,394 @@
       },
       "record_type": "existing_program",
       "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED"
+    },
+    {
+      "id": "gpd-svdp-louisville",
+      "title": "St. Vincent de Paul Louisville — Veteran Housing",
+      "provider": "Society of St. Vincent de Paul Council of Louisville",
+      "category": "Housing stability",
+      "summary": "VA-funded Louisville GPD awardee. St. Vincent de Paul Louisville also documents housing and case management for veterans.",
+      "audiences": [
+        "veteran"
+      ],
+      "areas": [
+        "louisville",
+        "kentucky"
+      ],
+      "geography": "Louisville, Kentucky",
+      "cost_code": "verify",
+      "cost_note": "VA grant awards are not direct cash benefits; confirm housing costs, VA coordination and any fees.",
+      "eligibility_to_check": "Veteran housing status, relevant VA program/facility, referral steps, eligibility and available housing.",
+      "important_to_know": "The VA lists 20 funded veteran beds, not currently vacant beds. Ozanam Inn and Waypoint House are documented separately; the precise 2027 GPD facility assignment needs confirmation.",
+      "first_step": "Visit the provider's website and ask about VA GPD veteran housing admissions.",
+      "program_url": "https://www.svdplou.org/",
+      "sources": [
+        {
+          "label": "Official provider website",
+          "url": "https://www.svdplou.org/",
+          "publisher": "Society of St. Vincent de Paul Council of Louisville",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA FY2027 GPD award list — row 148",
+          "url": "https://department.va.gov/homeless/wp-content/uploads/sites/72/2026/09/FY2027_GPD_Grant_Awards_for_PDO_TIP_SN.pdf",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Provider's additional program information",
+          "url": "https://www.svdplou.org/documents/667346/0/SVDP%2BCampus%2BMap%2B%28Google%2BEarth%29%2B%281%29.pdf/0cbb7d69-90ed-b999-e86f-d299ed7c94a8",
+          "publisher": "Society of St. Vincent de Paul Council of Louisville",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "va_award_and_provider_webpage_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked",
+        "intake_capacity": "not_checked",
+        "identity_link_status": "provider_website_identified"
+      },
+      "display_priority": 2,
+      "track": "veterans",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "record_type": "provider_awardee",
+      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "award": {
+        "fiscal_year": 2027,
+        "grant_type": "Per Diem Only",
+        "va_award_row": 148,
+        "fain": "SSVD110-7165-603-PD-27",
+        "funded_veteran_beds": 20,
+        "minor_dependents": 0,
+        "capacity_statement": "funded beds, not verified vacancies"
+      }
+    },
+    {
+      "id": "gpd-healing-louisville",
+      "title": "The Healing Place — Veteran Recovery & Housing",
+      "provider": "The Healing Place",
+      "category": "Housing stability",
+      "summary": "VA-funded Louisville GPD awardee with recovery, shelter and veterans services described by its official website.",
+      "audiences": [
+        "veteran"
+      ],
+      "areas": [
+        "louisville",
+        "kentucky"
+      ],
+      "geography": "Louisville, Kentucky",
+      "cost_code": "verify",
+      "cost_note": "General recovery services may be no-cost; verify any veteran housing program terms separately.",
+      "eligibility_to_check": "Veteran eligibility, recovery/housing situation, approved intake process, and current placement availability.",
+      "important_to_know": "VA lists 70 funded veteran beds, not confirmed vacancies. The website lists a Veterans Program, but no admission or GPD capacity has been confirmed.",
+      "first_step": "Visit the official Get Help page and inquire about VA veterans housing admissions.",
+      "program_url": "https://thehealingplace.org/get-help-now/",
+      "sources": [
+        {
+          "label": "Official provider website",
+          "url": "https://thehealingplace.org/get-help-now/",
+          "publisher": "The Healing Place",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA FY2027 GPD award list — row 149",
+          "url": "https://department.va.gov/homeless/wp-content/uploads/sites/72/2026/09/FY2027_GPD_Grant_Awards_for_PDO_TIP_SN.pdf",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Provider's additional program information",
+          "url": "https://ftp.thehealingplace.org/mens-campus/",
+          "publisher": "The Healing Place",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "va_award_and_provider_webpage_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked",
+        "intake_capacity": "not_checked",
+        "identity_link_status": "provider_website_identified"
+      },
+      "display_priority": 2,
+      "track": "veterans",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "record_type": "provider_awardee",
+      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "award": {
+        "fiscal_year": 2027,
+        "grant_type": "Per Diem Only",
+        "va_award_row": 149,
+        "fain": "THPL775-7575-603-PD-27",
+        "funded_veteran_beds": 70,
+        "minor_dependents": 0,
+        "capacity_statement": "funded beds, not verified vacancies"
+      }
+    },
+    {
+      "id": "gpd-salvation-louisville",
+      "title": "Salvation Army Louisville — Veteran Housing",
+      "provider": "The Salvation Army · Louisville",
+      "category": "Housing stability",
+      "summary": "The Louisville Center of Hope describes VA-supported veteran transitional housing and individualized case management.",
+      "audiences": [
+        "veteran"
+      ],
+      "areas": [
+        "louisville",
+        "kentucky"
+      ],
+      "geography": "Louisville, Kentucky",
+      "cost_code": "verify",
+      "cost_note": "Confirm program-specific housing expenses, benefits and terms directly with the provider.",
+      "eligibility_to_check": "Veteran status, household circumstances, VA referral needs and current available admissions.",
+      "important_to_know": "VA lists 40 funded veteran beds and 22 minor dependents, not open beds. Published provider descriptions differ on program length/capacity; ask directly. Veterans line: 502-671-4904.",
+      "first_step": "Visit the Louisville veteran services page or call its veterans contact.",
+      "program_url": "https://southernusa.salvationarmy.org/louisville/veteran-services",
+      "sources": [
+        {
+          "label": "Official provider website",
+          "url": "https://southernusa.salvationarmy.org/louisville/veteran-services",
+          "publisher": "The Salvation Army · Louisville",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA FY2027 GPD award list — row 150",
+          "url": "https://department.va.gov/homeless/wp-content/uploads/sites/72/2026/09/FY2027_GPD_Grant_Awards_for_PDO_TIP_SN.pdf",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Provider's additional program information",
+          "url": "https://southernusa.salvationarmy.org/louisville/center-of-hope",
+          "publisher": "The Salvation Army · Louisville",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "va_award_and_provider_webpage_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked",
+        "intake_capacity": "not_checked",
+        "identity_link_status": "provider_website_identified"
+      },
+      "display_priority": 2,
+      "track": "veterans",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "record_type": "provider_awardee",
+      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "award": {
+        "fiscal_year": 2027,
+        "grant_type": "Per Diem Only",
+        "va_award_row": 150,
+        "fain": "SAGC607-6866-603-PD-27",
+        "funded_veteran_beds": 40,
+        "minor_dependents": 22,
+        "capacity_statement": "funded beds, not verified vacancies"
+      }
+    },
+    {
+      "id": "gpd-wayside-louisville",
+      "title": "Wayside Christian Mission — Veteran Housing",
+      "provider": "Wayside Christian Mission",
+      "category": "Housing stability",
+      "summary": "Wayside documents veterans housing and case management coordinated with VA representatives, including an interview-based admission process.",
+      "audiences": [
+        "veteran"
+      ],
+      "areas": [
+        "louisville",
+        "kentucky"
+      ],
+      "geography": "Louisville, Kentucky",
+      "cost_code": "verify",
+      "cost_note": "Verify veteran-specific program costs and terms; general emergency shelter is a separate service.",
+      "eligibility_to_check": "VA interview and referral steps, housing eligibility, scheduled intake and open placement availability.",
+      "important_to_know": "VA lists 61 funded veteran beds and 20 minor dependents, not vacancies. Wayside publishes veteran admissions at 502-656-2541; calls do not establish open capacity.",
+      "first_step": "Review official Veteran's Services and ask about current VA admission interviews.",
+      "program_url": "https://www.waysidechristianmission.org/vets",
+      "sources": [
+        {
+          "label": "Official provider website",
+          "url": "https://www.waysidechristianmission.org/vets",
+          "publisher": "Wayside Christian Mission",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA FY2027 GPD award list — row 151",
+          "url": "https://department.va.gov/homeless/wp-content/uploads/sites/72/2026/09/FY2027_GPD_Grant_Awards_for_PDO_TIP_SN.pdf",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Provider's additional program information",
+          "url": "https://www.waysidechristianmission.org/contact",
+          "publisher": "Wayside Christian Mission",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "va_award_and_provider_webpage_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked",
+        "intake_capacity": "not_checked",
+        "identity_link_status": "provider_website_identified"
+      },
+      "display_priority": 2,
+      "track": "veterans",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "record_type": "provider_awardee",
+      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "award": {
+        "fiscal_year": 2027,
+        "grant_type": "Per Diem Only",
+        "va_award_row": 151,
+        "fain": "WCMP139-7225-603-PD-27",
+        "funded_veteran_beds": 61,
+        "minor_dependents": 20,
+        "capacity_statement": "funded beds, not verified vacancies"
+      }
+    },
+    {
+      "id": "gpd-deans-elizabethtown",
+      "title": "Dean’s House — Veteran Recovery Housing",
+      "provider": "Deans House (VA award); Dean's House Foundation (website)",
+      "category": "Housing stability",
+      "summary": "VA FY2027 GPD awardee in Elizabethtown; the Dean's House Foundation website describes structured, sober shared housing serving veterans and people in recovery.",
+      "audiences": [
+        "veteran"
+      ],
+      "areas": [
+        "kentucky"
+      ],
+      "geography": "Elizabethtown, Kentucky",
+      "cost_code": "verify",
+      "cost_note": "House rules and fees are published; whether VA participants have distinct terms or coverage is not confirmed.",
+      "eligibility_to_check": "Veteran status, recovery/housing needs, home rules, fees, VA coordination and available placements.",
+      "important_to_know": "VA lists 22 funded veteran beds, not vacancies. The connection between VA's 'Deans House' award name and the foundation website is plausible but not independently legally confirmed. Intake asks sensitive questions.",
+      "first_step": "Review provider housing information and contact them about the GPD option before sharing personal details.",
+      "program_url": "https://deanshousefoundation.org/our-homes/",
+      "sources": [
+        {
+          "label": "Official provider website",
+          "url": "https://deanshousefoundation.org/our-homes/",
+          "publisher": "Deans House (VA award); Dean's House Foundation (website)",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA FY2027 GPD award list — row 144",
+          "url": "https://department.va.gov/homeless/wp-content/uploads/sites/72/2026/09/FY2027_GPD_Grant_Awards_for_PDO_TIP_SN.pdf",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Provider's additional program information",
+          "url": "https://deanshousefoundation.org/apply-here/",
+          "publisher": "Deans House (VA award); Dean's House Foundation (website)",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "va_award_and_provider_webpage_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked",
+        "intake_capacity": "not_checked",
+        "identity_link_status": "awardee_name_to_provider_website_link_pending_legal_confirmation"
+      },
+      "display_priority": 2,
+      "track": "veterans",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "record_type": "provider_awardee",
+      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "award": {
+        "fiscal_year": 2027,
+        "grant_type": "Per Diem Only",
+        "va_award_row": 144,
+        "fain": "DEAN838-7112-603-PD-27",
+        "funded_veteran_beds": 22,
+        "minor_dependents": 0,
+        "capacity_statement": "funded beds, not verified vacancies"
+      }
+    },
+    {
+      "id": "gpd-fire-shelbyville",
+      "title": "Fire Mission Ministries — Veteran Housing",
+      "provider": "Fire Mission Ministries Inc. (VA award); Fire Missions Veteran Services (website)",
+      "category": "Housing stability",
+      "summary": "VA FY2027 GPD awardee in Shelbyville; Fire Missions Veteran Services describes veteran transitional housing, case management, and an online intake process.",
+      "audiences": [
+        "veteran"
+      ],
+      "areas": [
+        "kentucky"
+      ],
+      "geography": "Shelbyville, Kentucky",
+      "cost_code": "verify",
+      "cost_note": "Verify residential cost and benefit terms with the provider before applying.",
+      "eligibility_to_check": "Veteran/housing status, VA referral coordination, screening, program fit and current intake.",
+      "important_to_know": "VA lists 30 funded veteran beds, not vacancies. The legal link between 'Fire Mission Ministries Inc.' and the 'Fire Missions Veteran Services' website needs confirmation. Intake requests sensitive information.",
+      "first_step": "Review the provider's intake-process page and ask about VA GPD availability before applying.",
+      "program_url": "https://firemissions.org/our-process/",
+      "sources": [
+        {
+          "label": "Official provider website",
+          "url": "https://firemissions.org/our-process/",
+          "publisher": "Fire Mission Ministries Inc. (VA award); Fire Missions Veteran Services (website)",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA FY2027 GPD award list — row 154",
+          "url": "https://department.va.gov/homeless/wp-content/uploads/sites/72/2026/09/FY2027_GPD_Grant_Awards_for_PDO_TIP_SN.pdf",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Provider's additional program information",
+          "url": "https://firemissions.org/",
+          "publisher": "Fire Mission Ministries Inc. (VA award); Fire Missions Veteran Services (website)",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "va_award_and_provider_webpage_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "not_checked",
+        "intake_capacity": "not_checked",
+        "identity_link_status": "awardee_name_to_provider_website_link_pending_legal_confirmation"
+      },
+      "display_priority": 2,
+      "track": "veterans",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "record_type": "provider_awardee",
+      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "award": {
+        "fiscal_year": 2027,
+        "grant_type": "Per Diem Only",
+        "va_award_row": 154,
+        "fain": "FMVS557-6926-603-PD-27",
+        "funded_veteran_beds": 30,
+        "minor_dependents": 0,
+        "capacity_statement": "funded beds, not verified vacancies"
+      }
     }
   ],
   "last_catalog_update": "2026-11-16"

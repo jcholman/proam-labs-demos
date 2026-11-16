@@ -1,0 +1,70 @@
+{
+  "id": "FY2027_GPD_SIX_v0.1",
+  "as_of": "2026-11-16",
+  "source": "https://department.va.gov/homeless/wp-content/uploads/sites/72/2026/09/FY2027_GPD_Grant_Awards_for_PDO_TIP_SN.pdf",
+  "records": [
+    {
+      "id": "gpd-svdp-louisville",
+      "name": "Society of St. Vincent de Paul Council of Louisville",
+      "city": "Louisville, Kentucky",
+      "award_id": "SSVD110-7165-603-PD-27",
+      "award_row": 148,
+      "funded_veteran_beds": 20,
+      "provider_url": "https://www.svdplou.org/",
+      "identity_match_status": "provider_website_identified"
+    },
+    {
+      "id": "gpd-healing-louisville",
+      "name": "The Healing Place",
+      "city": "Louisville, Kentucky",
+      "award_id": "THPL775-7575-603-PD-27",
+      "award_row": 149,
+      "funded_veteran_beds": 70,
+      "provider_url": "https://thehealingplace.org/get-help-now/",
+      "identity_match_status": "provider_website_identified"
+    },
+    {
+      "id": "gpd-salvation-louisville",
+      "name": "The Salvation Army · Louisville",
+      "city": "Louisville, Kentucky",
+      "award_id": "SAGC607-6866-603-PD-27",
+      "award_row": 150,
+      "funded_veteran_beds": 40,
+      "provider_url": "https://southernusa.salvationarmy.org/louisville/veteran-services",
+      "identity_match_status": "provider_website_identified"
+    },
+    {
+      "id": "gpd-wayside-louisville",
+      "name": "Wayside Christian Mission",
+      "city": "Louisville, Kentucky",
+      "award_id": "WCMP139-7225-603-PD-27",
+      "award_row": 151,
+      "funded_veteran_beds": 61,
+      "provider_url": "https://www.waysidechristianmission.org/vets",
+      "identity_match_status": "provider_website_identified"
+    },
+    {
+      "id": "gpd-deans-elizabethtown",
+      "name": "Deans House (VA award); Dean's House Foundation (website)",
+      "city": "Elizabethtown, Kentucky",
+      "award_id": "DEAN838-7112-603-PD-27",
+      "award_row": 144,
+      "funded_veteran_beds": 22,
+      "provider_url": "https://deanshousefoundation.org/our-homes/",
+      "identity_match_status": "awardee_name_to_provider_website_link_pending_legal_confirmation"
+    },
+    {
+      "id": "gpd-fire-shelbyville",
+      "name": "Fire Mission Ministries Inc. (VA award); Fire Missions Veteran Services (website)",
+      "city": "Shelbyville, Kentucky",
+      "award_id": "FMVS557-6926-603-PD-27",
+      "award_row": 154,
+      "funded_veteran_beds": 30,
+      "provider_url": "https://firemissions.org/our-process/",
+      "identity_match_status": "awardee_name_to_provider_website_link_pending_legal_confirmation"
+    }
+  ],
+  "qualification_state": "SOURCE_VERIFIED",
+  "provider_confirmed": false,
+  "live_vacancies": "NOT_VERIFIED"
+}

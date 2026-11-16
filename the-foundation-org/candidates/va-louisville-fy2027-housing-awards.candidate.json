@@ -17,5 +17,19 @@
     "Provider intake, bed availability and capacity not confirmed",
     "Eligibility never inferred"
   ],
-  "next_action": "RECONCILE_AWARDEES_WITH_PROVIDER_EVIDENCE"
+  "next_action": "REVIEW_PROVIDER_INTAKE_AND_AWARDEE_ENTITY_LINKAGES",
+  "reconciliation": {
+    "as_of": "2026-11-16",
+    "published_provider_record_ids": [
+      "gpd-svdp-louisville",
+      "gpd-healing-louisville",
+      "gpd-salvation-louisville",
+      "gpd-wayside-louisville",
+      "gpd-deans-elizabethtown",
+      "gpd-fire-shelbyville"
+    ],
+    "va_award_source": "https://department.va.gov/homeless/wp-content/uploads/sites/72/2026/09/FY2027_GPD_Grant_Awards_for_PDO_TIP_SN.pdf",
+    "current_intake_confirmed": false,
+    "remaining_awardees_not_reviewed": true
+  }
 }
