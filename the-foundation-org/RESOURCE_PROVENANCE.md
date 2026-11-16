@@ -39,3 +39,6 @@ Status: candidate operating convention · November 16, 2026
 
 ## Six reconciled local FY2027 GPD awardees (2026-11-16)
 Four Louisville VA awardees plus Deans House (Elizabethtown) and Fire Mission Ministries (Shelbyville) are listed with award FAIN, funded beds, official provider URL and source date. Provider website/legal entity matching for Dean’s House and Fire Missions remains provisional. These records do not imply partnerships, open housing placements, or individual eligibility. The VA award funding announcement remains a separate background record. Synthetic community event fixtures remain separate.
+
+## Real-life default for Your Community (2026-11-16)
+Five verified, dated organizer listings are added: three local LFPL in-person events and two virtual Hiring Our Heroes events. Public view defaults to real-life only; users can include virtual records by unchecking in-person-only. Synthetic fixtures (16) remain for QA via explicit `?qa=1` option. They are excluded before metrics, map, insights and cards are calculated. No JavaScript fallback lists only real source-backed activities. Official event URLs are directly linked from individual real-world cards. This is a source-reviewed snapshot, not a live event feed or registration guarantee.

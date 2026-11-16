@@ -1,0 +1,59 @@
+{
+  "id": "COMMUNITY_REAL_ORIGIN_v0.1",
+  "verified_on": "2026-11-16",
+  "default_origin": "real_world_source",
+  "qa_mode": "?qa=1 unlocks synthetic QA-only choice",
+  "real_events": [
+    {
+      "id": "lfpl-resume-1118",
+      "date": "2026-11-18",
+      "title": "Resume Review — Shively Library",
+      "organizer": "Louisville Free Public Library",
+      "source": "https://events.lfpl.org/event/resume-review-26453",
+      "format": "In person",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-computer-1120",
+      "date": "2026-11-20",
+      "title": "Computer Basics — Shawnee Library",
+      "organizer": "Louisville Free Public Library",
+      "source": "https://events.lfpl.org/event/computer-basics-27338",
+      "format": "In person",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-resume-1125",
+      "date": "2026-11-25",
+      "title": "Resume Review — Shively Library",
+      "organizer": "Louisville Free Public Library",
+      "source": "https://events.lfpl.org/event/resume-review-26454",
+      "format": "In person",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "hoh-finance-1117",
+      "date": "2026-11-17",
+      "title": "Exploring Careers in Global Financial Investigations",
+      "organizer": "Hiring Our Heroes",
+      "source": "https://www.hiringourheroes.org/career-services/education-networking/",
+      "format": "Online",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "hoh-offer-1119",
+      "date": "2026-11-19",
+      "title": "Job Offer Negotiation Workshop",
+      "organizer": "Hiring Our Heroes",
+      "source": "https://www.hiringourheroes.org/career-services/education-networking/",
+      "format": "Online",
+      "reviewed_on": "2026-11-16"
+    }
+  ],
+  "synthetic_fixtures": 16,
+  "limitations": [
+    "Provider-published date is not live registration or attendance",
+    "No live event feed",
+    "Never include synthetic fixtures in real counts"
+  ]
+}
