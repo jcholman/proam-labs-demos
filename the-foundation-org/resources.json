@@ -1,9 +1,9 @@
 {
   "catalog_id": "proam-foundation-community-pathways",
-  "version": "0.4.0-candidate",
+  "version": "0.4.1-candidate",
   "reviewed_on": "2026-11-09",
   "state": "candidate_not_published",
-  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified. VGLI premium holiday, SSVF and GPD separately source-reviewed Nov 16, 2026; provider-specific intake and personal eligibility unconfirmed. Six VA FY2027 GPD awardee organizations in Louisville, Elizabethtown and Shelbyville source-reviewed November 16, 2026; funded bed counts are NOT vacancy counts.",
+  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified. VGLI premium holiday, SSVF and GPD separately source-reviewed Nov 16, 2026; provider-specific intake and personal eligibility unconfirmed. Six VA FY2027 GPD awardee organizations in Louisville, Elizabethtown and Shelbyville source-reviewed November 16, 2026; funded bed counts are NOT vacancy counts. 2026-11-16 provider-site intake route review for all six GPD awardees; Wayside's website explicitly lists veteran openings without an independently confirmed bed count.",
   "review_standard": {
     "official_source": "recorded",
     "provider_confirmed": false,
@@ -1060,7 +1060,7 @@
       "cost_note": "VA grant awards are not direct cash benefits; confirm housing costs, VA coordination and any fees.",
       "eligibility_to_check": "Veteran housing status, relevant VA program/facility, referral steps, eligibility and available housing.",
       "important_to_know": "The VA lists 20 funded veteran beds, not currently vacant beds. Ozanam Inn and Waypoint House are documented separately; the precise 2027 GPD facility assignment needs confirmation.",
-      "first_step": "Visit the provider's website and ask about VA GPD veteran housing admissions.",
+      "first_step": "Check with St. Vincent de Paul Louisville which veteran program accepts current referrals and whether Waypoint House is related to this award.",
       "program_url": "https://www.svdplou.org/",
       "sources": [
         {
@@ -1080,6 +1080,12 @@
           "url": "https://www.svdplou.org/documents/667346/0/SVDP%2BCampus%2BMap%2B%28Google%2BEarth%29%2B%281%29.pdf/0cbb7d69-90ed-b999-e86f-d299ed7c94a8",
           "publisher": "Society of St. Vincent de Paul Council of Louisville",
           "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Provider intake / program status source",
+          "url": "https://www.svdplou.org/documents/667346/1462552/Waypoint-VA-SRO-Housing-Application-FINAL-8-16-23.pdf/88a9b4d5-7276-1bdd-a368-c2411aace0c3",
+          "publisher": "Society of St. Vincent de Paul Council of Louisville",
+          "reviewed_on": "2026-11-16"
         }
       ],
       "verification": {
@@ -1096,7 +1102,7 @@
       "origin": "real_world_source",
       "qualification_state": "SOURCE_VERIFIED",
       "record_type": "provider_awardee",
-      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "availability_label": "INTAKE OPENINGS NOT CONFIRMED",
       "award": {
         "fiscal_year": 2027,
         "grant_type": "Per Diem Only",
@@ -1105,6 +1111,16 @@
         "funded_veteran_beds": 20,
         "minor_dependents": 0,
         "capacity_statement": "funded beds, not verified vacancies"
+      },
+      "intake_review": {
+        "as_of": "2026-11-16",
+        "state": "PUBLISHED_PROVIDER_PATH · NO LIVE INTAKE CONFIRMED",
+        "source_url": "https://www.svdplou.org/documents/667346/1462552/Waypoint-VA-SRO-Housing-Application-FINAL-8-16-23.pdf/88a9b4d5-7276-1bdd-a368-c2411aace0c3",
+        "source_kind": "provider_published",
+        "finding": "Waypoint House has a published veteran housing application; it is not confirmed as the FY2027 GPD placement or proof of current vacancies.",
+        "recommended_next_step": "Check with St. Vincent de Paul Louisville which veteran program accepts current referrals and whether Waypoint House is related to this award.",
+        "live_vacancies_confirmed": false,
+        "human_contact_completed": false
       }
     },
     {
@@ -1125,7 +1141,7 @@
       "cost_note": "General recovery services may be no-cost; verify any veteran housing program terms separately.",
       "eligibility_to_check": "Veteran eligibility, recovery/housing situation, approved intake process, and current placement availability.",
       "important_to_know": "VA lists 70 funded veteran beds, not confirmed vacancies. The website lists a Veterans Program, but no admission or GPD capacity has been confirmed.",
-      "first_step": "Visit the official Get Help page and inquire about VA veterans housing admissions.",
+      "first_step": "Contact the Healing Place and ask separately about VA GPD Veterans Program intake rather than interpreting general recovery access as a funded veteran placement.",
       "program_url": "https://thehealingplace.org/get-help-now/",
       "sources": [
         {
@@ -1161,7 +1177,7 @@
       "origin": "real_world_source",
       "qualification_state": "SOURCE_VERIFIED",
       "record_type": "provider_awardee",
-      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "availability_label": "INTAKE OPENINGS NOT CONFIRMED",
       "award": {
         "fiscal_year": 2027,
         "grant_type": "Per Diem Only",
@@ -1170,6 +1186,16 @@
         "funded_veteran_beds": 70,
         "minor_dependents": 0,
         "capacity_statement": "funded beds, not verified vacancies"
+      },
+      "intake_review": {
+        "as_of": "2026-11-16",
+        "state": "GENERAL_RECOVERY_INTAKE_PUBLISHED · VETERANS_PROGRAM_UNCONFIRMED",
+        "source_url": "https://thehealingplace.org/get-help-now/",
+        "source_kind": "provider_published",
+        "finding": "The Healing Place publishes 24/7 access for general recovery services, not a confirmed veterans GPD opening.",
+        "recommended_next_step": "Contact the Healing Place and ask separately about VA GPD Veterans Program intake rather than interpreting general recovery access as a funded veteran placement.",
+        "live_vacancies_confirmed": false,
+        "human_contact_completed": false
       }
     },
     {
@@ -1190,7 +1216,7 @@
       "cost_note": "Confirm program-specific housing expenses, benefits and terms directly with the provider.",
       "eligibility_to_check": "Veteran status, household circumstances, VA referral needs and current available admissions.",
       "important_to_know": "VA lists 40 funded veteran beds and 22 minor dependents, not open beds. Published provider descriptions differ on program length/capacity; ask directly. Veterans line: 502-671-4904.",
-      "first_step": "Visit the Louisville veteran services page or call its veterans contact.",
+      "first_step": "Call the published Veterans Services number to confirm the VA referral process and current available program intake.",
       "program_url": "https://southernusa.salvationarmy.org/louisville/veteran-services",
       "sources": [
         {
@@ -1210,6 +1236,12 @@
           "url": "https://southernusa.salvationarmy.org/louisville/center-of-hope",
           "publisher": "The Salvation Army · Louisville",
           "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Provider intake / program status source",
+          "url": "https://southernusa.salvationarmy.org/louisville/veteran-services/",
+          "publisher": "The Salvation Army · Louisville",
+          "reviewed_on": "2026-11-16"
         }
       ],
       "verification": {
@@ -1226,7 +1258,7 @@
       "origin": "real_world_source",
       "qualification_state": "SOURCE_VERIFIED",
       "record_type": "provider_awardee",
-      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "availability_label": "INTAKE OPENINGS NOT CONFIRMED",
       "award": {
         "fiscal_year": 2027,
         "grant_type": "Per Diem Only",
@@ -1235,6 +1267,16 @@
         "funded_veteran_beds": 40,
         "minor_dependents": 22,
         "capacity_statement": "funded beds, not verified vacancies"
+      },
+      "intake_review": {
+        "as_of": "2026-11-16",
+        "state": "VETERAN_SERVICES_CONTACT_PUBLISHED · OPENINGS_UNCONFIRMED",
+        "source_url": "https://southernusa.salvationarmy.org/louisville/veteran-services/",
+        "source_kind": "provider_published",
+        "finding": "The Center of Hope lists veterans' transitional services and publishes telephone 502-671-4904; no current vacancy count or intake confirmation.",
+        "recommended_next_step": "Call the published Veterans Services number to confirm the VA referral process and current available program intake.",
+        "live_vacancies_confirmed": false,
+        "human_contact_completed": false
       }
     },
     {
@@ -1255,7 +1297,7 @@
       "cost_note": "Verify veteran-specific program costs and terms; general emergency shelter is a separate service.",
       "eligibility_to_check": "VA interview and referral steps, housing eligibility, scheduled intake and open placement availability.",
       "important_to_know": "VA lists 61 funded veteran beds and 20 minor dependents, not vacancies. Wayside publishes veteran admissions at 502-656-2541; calls do not establish open capacity.",
-      "first_step": "Review official Veteran's Services and ask about current VA admission interviews.",
+      "first_step": "Call/text 502-656-2541 or 502-389-9009 for the latest VA Veterans Program openings. Do not treat the website listing as a guaranteed vacancy.",
       "program_url": "https://www.waysidechristianmission.org/vets",
       "sources": [
         {
@@ -1275,6 +1317,12 @@
           "url": "https://www.waysidechristianmission.org/contact",
           "publisher": "Wayside Christian Mission",
           "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Provider intake / program status source",
+          "url": "https://www.waysidechristianmission.org/current-bed-availability",
+          "publisher": "Wayside Christian Mission",
+          "reviewed_on": "2026-11-16"
         }
       ],
       "verification": {
@@ -1291,7 +1339,7 @@
       "origin": "real_world_source",
       "qualification_state": "SOURCE_VERIFIED",
       "record_type": "provider_awardee",
-      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "availability_label": "PROVIDER LISTS OPENINGS · CALL TO CONFIRM",
       "award": {
         "fiscal_year": 2027,
         "grant_type": "Per Diem Only",
@@ -1300,6 +1348,16 @@
         "funded_veteran_beds": 61,
         "minor_dependents": 20,
         "capacity_statement": "funded beds, not verified vacancies"
+      },
+      "intake_review": {
+        "as_of": "2026-11-16",
+        "state": "PROVIDER_WEBSITE_LISTS_OPENINGS · PHONE_RECHECK_REQUIRED",
+        "source_url": "https://www.waysidechristianmission.org/current-bed-availability",
+        "source_kind": "provider_published",
+        "finding": "Wayside's provider-controlled Current Bed Availability page explicitly labels its Veterans Program 'Openings', and asks callers to obtain an up-to-the-hour update; no bed count or reservation confirmed.",
+        "recommended_next_step": "Call/text 502-656-2541 or 502-389-9009 for the latest VA Veterans Program openings. Do not treat the website listing as a guaranteed vacancy.",
+        "live_vacancies_confirmed": false,
+        "human_contact_completed": false
       }
     },
     {
@@ -1319,7 +1377,7 @@
       "cost_note": "House rules and fees are published; whether VA participants have distinct terms or coverage is not confirmed.",
       "eligibility_to_check": "Veteran status, recovery/housing needs, home rules, fees, VA coordination and available placements.",
       "important_to_know": "VA lists 22 funded veteran beds, not vacancies. The connection between VA's 'Deans House' award name and the foundation website is plausible but not independently legally confirmed. Intake asks sensitive questions.",
-      "first_step": "Review provider housing information and contact them about the GPD option before sharing personal details.",
+      "first_step": "Contact Dean's House Foundation before sharing personal information; ask about VA GPD placements, cost and legal/award identity.",
       "program_url": "https://deanshousefoundation.org/our-homes/",
       "sources": [
         {
@@ -1355,7 +1413,7 @@
       "origin": "real_world_source",
       "qualification_state": "SOURCE_VERIFIED",
       "record_type": "provider_awardee",
-      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "availability_label": "INTAKE OPENINGS NOT CONFIRMED",
       "award": {
         "fiscal_year": 2027,
         "grant_type": "Per Diem Only",
@@ -1364,6 +1422,16 @@
         "funded_veteran_beds": 22,
         "minor_dependents": 0,
         "capacity_statement": "funded beds, not verified vacancies"
+      },
+      "intake_review": {
+        "as_of": "2026-11-16",
+        "state": "ONLINE_APPLICATION_PUBLISHED · LIVE_INTAKE_UNCONFIRMED",
+        "source_url": "https://deanshousefoundation.org/our-homes/",
+        "source_kind": "provider_published",
+        "finding": "Dean's House publishes recovery-house details and an application route; the relationship to FY2027 VA-funded placements and current openings needs confirmation.",
+        "recommended_next_step": "Contact Dean's House Foundation before sharing personal information; ask about VA GPD placements, cost and legal/award identity.",
+        "live_vacancies_confirmed": false,
+        "human_contact_completed": false
       }
     },
     {
@@ -1383,7 +1451,7 @@
       "cost_note": "Verify residential cost and benefit terms with the provider before applying.",
       "eligibility_to_check": "Veteran/housing status, VA referral coordination, screening, program fit and current intake.",
       "important_to_know": "VA lists 30 funded veteran beds, not vacancies. The legal link between 'Fire Mission Ministries Inc.' and the 'Fire Missions Veteran Services' website needs confirmation. Intake requests sensitive information.",
-      "first_step": "Review the provider's intake-process page and ask about VA GPD availability before applying.",
+      "first_step": "Ask Fire Missions about VA GPD application eligibility and whether current placements are available before submitting sensitive personal data.",
       "program_url": "https://firemissions.org/our-process/",
       "sources": [
         {
@@ -1419,7 +1487,7 @@
       "origin": "real_world_source",
       "qualification_state": "SOURCE_VERIFIED",
       "record_type": "provider_awardee",
-      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED",
+      "availability_label": "INTAKE OPENINGS NOT CONFIRMED",
       "award": {
         "fiscal_year": 2027,
         "grant_type": "Per Diem Only",
@@ -1428,6 +1496,16 @@
         "funded_veteran_beds": 30,
         "minor_dependents": 0,
         "capacity_statement": "funded beds, not verified vacancies"
+      },
+      "intake_review": {
+        "as_of": "2026-11-16",
+        "state": "ONLINE_INTAKE_PROCESS_PUBLISHED · LIVE_INTAKE_UNCONFIRMED",
+        "source_url": "https://firemissions.org/our-process/",
+        "source_kind": "provider_published",
+        "finding": "Fire Missions publishes an online application and VA-coordinated screening process; actual housing capacity is not confirmed.",
+        "recommended_next_step": "Ask Fire Missions about VA GPD application eligibility and whether current placements are available before submitting sensitive personal data.",
+        "live_vacancies_confirmed": false,
+        "human_contact_completed": false
       }
     }
   ],

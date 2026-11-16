@@ -66,5 +66,51 @@
   ],
   "qualification_state": "SOURCE_VERIFIED",
   "provider_confirmed": false,
-  "live_vacancies": "NOT_VERIFIED"
+  "live_vacancies": "NOT_VERIFIED",
+  "intake_review_as_of": "2026-11-16",
+  "intake_findings": [
+    {
+      "id": "gpd-svdp-louisville",
+      "state": "PUBLISHED_PROVIDER_PATH · NO LIVE INTAKE CONFIRMED",
+      "url": "https://www.svdplou.org/documents/667346/1462552/Waypoint-VA-SRO-Housing-Application-FINAL-8-16-23.pdf/88a9b4d5-7276-1bdd-a368-c2411aace0c3",
+      "meaning": "Waypoint House has a published veteran housing application; it is not confirmed as the FY2027 GPD placement or proof of current vacancies.",
+      "action": "Check with St. Vincent de Paul Louisville which veteran program accepts current referrals and whether Waypoint House is related to this award."
+    },
+    {
+      "id": "gpd-healing-louisville",
+      "state": "GENERAL_RECOVERY_INTAKE_PUBLISHED · VETERANS_PROGRAM_UNCONFIRMED",
+      "url": "https://thehealingplace.org/get-help-now/",
+      "meaning": "The Healing Place publishes 24/7 access for general recovery services, not a confirmed veterans GPD opening.",
+      "action": "Contact the Healing Place and ask separately about VA GPD Veterans Program intake rather than interpreting general recovery access as a funded veteran placement."
+    },
+    {
+      "id": "gpd-salvation-louisville",
+      "state": "VETERAN_SERVICES_CONTACT_PUBLISHED · OPENINGS_UNCONFIRMED",
+      "url": "https://southernusa.salvationarmy.org/louisville/veteran-services/",
+      "meaning": "The Center of Hope lists veterans' transitional services and publishes telephone 502-671-4904; no current vacancy count or intake confirmation.",
+      "action": "Call the published Veterans Services number to confirm the VA referral process and current available program intake."
+    },
+    {
+      "id": "gpd-wayside-louisville",
+      "state": "PROVIDER_WEBSITE_LISTS_OPENINGS · PHONE_RECHECK_REQUIRED",
+      "url": "https://www.waysidechristianmission.org/current-bed-availability",
+      "meaning": "Wayside's provider-controlled Current Bed Availability page explicitly labels its Veterans Program 'Openings', and asks callers to obtain an up-to-the-hour update; no bed count or reservation confirmed.",
+      "action": "Call/text 502-656-2541 or 502-389-9009 for the latest VA Veterans Program openings. Do not treat the website listing as a guaranteed vacancy."
+    },
+    {
+      "id": "gpd-deans-elizabethtown",
+      "state": "ONLINE_APPLICATION_PUBLISHED · LIVE_INTAKE_UNCONFIRMED",
+      "url": "https://deanshousefoundation.org/our-homes/",
+      "meaning": "Dean's House publishes recovery-house details and an application route; the relationship to FY2027 VA-funded placements and current openings needs confirmation.",
+      "action": "Contact Dean's House Foundation before sharing personal information; ask about VA GPD placements, cost and legal/award identity."
+    },
+    {
+      "id": "gpd-fire-shelbyville",
+      "state": "ONLINE_INTAKE_PROCESS_PUBLISHED · LIVE_INTAKE_UNCONFIRMED",
+      "url": "https://firemissions.org/our-process/",
+      "meaning": "Fire Missions publishes an online application and VA-coordinated screening process; actual housing capacity is not confirmed.",
+      "action": "Ask Fire Missions about VA GPD application eligibility and whether current placements are available before submitting sensitive personal data."
+    }
+  ],
+  "qualification_note": "Provider-controlled pages are evidence of published program paths; no person-specific housing placement or confirmed live vacancy."
 }
