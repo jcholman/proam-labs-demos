@@ -1,9 +1,9 @@
 {
   "catalog_id": "proam-foundation-community-pathways",
-  "version": "0.4.1-candidate",
+  "version": "0.5.0-candidate",
   "reviewed_on": "2026-11-09",
   "state": "candidate_not_published",
-  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified. VGLI premium holiday, SSVF and GPD separately source-reviewed Nov 16, 2026; provider-specific intake and personal eligibility unconfirmed. Six VA FY2027 GPD awardee organizations in Louisville, Elizabethtown and Shelbyville source-reviewed November 16, 2026; funded bed counts are NOT vacancy counts. 2026-11-16 provider-site intake route review for all six GPD awardees; Wayside's website explicitly lists veteran openings without an independently confirmed bed count.",
+  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified. VGLI premium holiday, SSVF and GPD separately source-reviewed Nov 16, 2026; provider-specific intake and personal eligibility unconfirmed. Six VA FY2027 GPD awardee organizations in Louisville, Elizabethtown and Shelbyville source-reviewed November 16, 2026; funded bed counts are NOT vacancy counts. 2026-11-16 provider-site intake route review for all six GPD awardees; Wayside's website explicitly lists veteran openings without an independently confirmed bed count. Twelve discrete Louisville Free Public Library service/access pathways were source-reviewed on 2026-11-16 from LFPL official pages. Online card access, physical workstation capacity, event/appointment reservation, room rules and in-library-only Candid access are qualified separately; no real-time availability or individual eligibility asserted.",
   "review_standard": {
     "official_source": "recorded",
     "provider_confirmed": false,
@@ -1507,6 +1507,587 @@
         "live_vacancies_confirmed": false,
         "human_contact_completed": false
       }
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-library-card",
+      "title": "LFPL Library Card — Access to Library Services",
+      "category": "Community support",
+      "summary": "Library cards provide access to borrowing and many digital learning resources. Eligibility for a free or paid card depends on where a person lives, works, studies or owns property.",
+      "areas": [
+        "louisville"
+      ],
+      "cost_code": "verify",
+      "cost_note": "LFPL lists free cards for eligible Jefferson County connections and $35/year paid cards for specified nearby counties. Verify current terms before applying.",
+      "eligibility_to_check": "LFPL says qualified Jefferson County residents, workers, students and property owners and their households can obtain free cards; certain neighboring Kentucky and Indiana county residents may purchase an annual card.",
+      "important_to_know": "An online application is not an activated card: LFPL instructs new applicants to pick up the card at a branch with photo ID and, where needed, proof of qualifying location. The library also describes adult Internet Access Cards.",
+      "first_step": "Review LFPL's official card requirements, complete the online application if appropriate, and confirm pickup and ID requirements.",
+      "program_url": "https://www.lfpl.org/howdoi",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "published_card_application_not_individually_checked"
+      },
+      "availability_label": "CARD ELIGIBILITY / ACTIVATION TO CHECK",
+      "source_service_family": "library_card",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-job-seekers",
+      "title": "LFPL Job Seekers — Resume and Career Resources",
+      "category": "Job search",
+      "summary": "LFPL's Job Seekers guide points to résumé and interview preparation, job-search learning tools, and outside community employment organizations.",
+      "areas": [
+        "louisville",
+        "online"
+      ],
+      "cost_code": "verify",
+      "cost_note": "The library publishes the guide; linked training platforms and external organizations have their own access and service terms.",
+      "eligibility_to_check": "Whether specific linked learning tools require an active LFPL card; whether an external provider serves the person's circumstances and location.",
+      "important_to_know": "This guide is a gateway, not an ongoing individualized LFPL placement or résumé-writing appointment service. Links to KentuckianaWorks and Kentucky Career Center overlap existing Find Support records; they are not new LFPL-operated programs.",
+      "first_step": "Open LFPL's official Services page, locate Job Seekers and choose the specific résumé, interview or job-search resource.",
+      "program_url": "https://www.lfpl.org/services",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Card eligibility and access rules",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "official_job_seeker_guide_listed"
+      },
+      "availability_label": "GUIDE PUBLISHED · EXTERNAL TERMS VARY",
+      "source_service_family": "job_seekers",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-learningexpress",
+      "title": "LFPL LearningExpress — Career and Exam Preparation",
+      "category": "Training & credentials",
+      "summary": "LearningExpress Library provides résumé and job-search resources, practice exams, skill improvement and preparation for GED, CDL, nursing and other professional or academic tests.",
+      "areas": [
+        "louisville",
+        "online"
+      ],
+      "cost_code": "verify",
+      "cost_note": "Available through LFPL library resources; verify any card eligibility and charges for exams taken with outside testing bodies.",
+      "eligibility_to_check": "Valid LFPL access credentials for remote database use; confirm the particular practice test or study module is included.",
+      "important_to_know": "Study materials and practice tests do not confer certificates, exam registration or professional licensing. The library's access portal may ask for a card or login.",
+      "first_step": "Visit LFPL's Lifelong Learning page, choose LearningExpress, and review sign-in and career-preparation options.",
+      "program_url": "https://www.lfpl.org/lifelong-learning",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/lifelong-learning",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "LFPL library-card requirements",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "library_resource_listed_access_not_tested"
+      },
+      "availability_label": "LIBRARY LOGIN / CONTENT TO CHECK",
+      "source_service_family": "learningexpress",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-linkedin-learning",
+      "title": "LFPL LinkedIn Learning — Professional Skills",
+      "category": "Training & credentials",
+      "summary": "LFPL provides LinkedIn Learning courses covering technology, business, creative skills and professional development in multiple languages to qualifying library cardholders.",
+      "areas": [
+        "louisville",
+        "online"
+      ],
+      "cost_code": "no_cost",
+      "cost_note": "LFPL describes access as free with an LFPL library card in good standing; separate LFPL card fees may apply to some non-residents.",
+      "eligibility_to_check": "An LFPL card in good standing is required; verify current library ID and access steps on LFPL's own page.",
+      "important_to_know": "This is library-mediated access, not a free LinkedIn Premium subscription. LFPL says a card in good standing requires current registration information and an account balance under $10.",
+      "first_step": "Visit LFPL's Lifelong Learning page and follow its LinkedIn Learning access instructions.",
+      "program_url": "https://www.lfpl.org/lifelong-learning",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/lifelong-learning",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Official card eligibility",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "library_mediated_education_access_not_tested"
+      },
+      "availability_label": "ACTIVE LFPL CARD REQUIRED",
+      "source_service_family": "linkedin_learning",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-brainfuse-adult",
+      "title": "LFPL Brainfuse Adult Learning Center",
+      "category": "Adult education",
+      "summary": "LFPL lists Brainfuse Adult Learning Center for adult tutoring, practice tests and learning support for people returning to school, changing careers, or preparing for citizenship.",
+      "areas": [
+        "louisville",
+        "online"
+      ],
+      "cost_code": "verify",
+      "cost_note": "The service is listed through LFPL; verify library-card conditions and whether specific live tutoring sessions are currently available.",
+      "eligibility_to_check": "Library account or in-library access conditions; adult tutoring session availability, supported subjects and service times.",
+      "important_to_know": "The existence of a live-tutoring platform does not establish that a tutor is available for a particular subject or time.",
+      "first_step": "Open LFPL Lifelong Learning, select Brainfuse Adult Learning Center, and verify current access and tutor hours.",
+      "program_url": "https://www.lfpl.org/lifelong-learning",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/lifelong-learning",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "Library access and card rules",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "service_listed_live_tutor_availability_not_checked"
+      },
+      "availability_label": "TUTOR AVAILABILITY NOT CHECKED",
+      "source_service_family": "brainfuse_adult",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "721 South Brook Street, Louisville, Kentucky · temporary Library Computer Center",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-computer-center",
+      "title": "LFPL Library Computer Center — Digital Access",
+      "category": "Digital access",
+      "summary": "LFPL's temporary Library Computer Center offers free public computer use, internet and faxing; LFPL also describes Wi-Fi and computer access across its library locations.",
+      "areas": [
+        "louisville"
+      ],
+      "cost_code": "no_cost",
+      "cost_note": "LFPL describes free computer, internet and fax services at the temporary center. Printing and other services may have separate fees.",
+      "eligibility_to_check": "Current center operating hours, acceptable computer-use policy, location access and workstation capacity.",
+      "important_to_know": "LFPL lists Monday–Friday, 10 a.m.–4 p.m. at 721 S Brook St and limits computer use to one visit per day due to capacity. The Main Library is closed for renovations; confirm the center before travel.",
+      "first_step": "Check the official Library Computer Center page or call 502-574-1681 for current operating details.",
+      "program_url": "https://www.lfpl.org/library-computer-center-branch-page",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/library-computer-center-branch-page",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "LFPL system-wide computer use and Wi-Fi",
+          "url": "https://www.lfpl.org/services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "LFPL current branch locations",
+          "url": "https://www.lfpl.org/branches",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "temporary_site_published_actual_workstation_capacity_not_checked"
+      },
+      "availability_label": "TEMPORARY SITE · HOURS/CAPACITY CHECK",
+      "source_service_family": "computer_center",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-makerspaces",
+      "title": "LFPL Makerspaces — Hands-on Creative and Technical Skills",
+      "category": "Creative & technical skills",
+      "summary": "LFPL lists maker activities and spaces with technology such as 3D printing, laser cutting, audio recording and creative workshops at selected locations.",
+      "areas": [
+        "louisville"
+      ],
+      "cost_code": "no_cost",
+      "cost_note": "LFPL describes its makerspaces as free, but check any materials or specialized-project rules with the branch.",
+      "eligibility_to_check": "Which makerspace has the desired equipment, age and safety rules, orientation or training requirements, branch opening hours and reservation availability.",
+      "important_to_know": "Equipment is not offered at every branch or guaranteed available on demand. LFPL lists Maker 101 orientation and specific participating maker locations.",
+      "first_step": "Open the LFPL Services page, find Makerspaces and check the relevant branch and orientation requirements.",
+      "program_url": "https://www.lfpl.org/services",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "makerspace_program_officially_described_equipment_access_not_checked"
+      },
+      "availability_label": "LOCATION / ORIENTATION TO CHECK",
+      "source_service_family": "makerspaces",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-language-services",
+      "title": "LFPL English, Language and Immigrant Learning Resources",
+      "category": "Language & citizenship",
+      "summary": "LFPL describes English-language learning materials, multilingual collections, conversation activities, Transparent Language access and citizenship study resources.",
+      "areas": [
+        "louisville",
+        "online"
+      ],
+      "cost_code": "verify",
+      "cost_note": "Library resource access depends on card status and location; some non-residents may pay for a card.",
+      "eligibility_to_check": "Availability of a particular language, class, conversation group or branch event; valid LFPL card for remote access to certain online language tools.",
+      "important_to_know": "Library resources do not establish eligibility for immigration benefits or substitute for legal counsel. Class dates and spaces are separate from continuing digital resources.",
+      "first_step": "Read LFPL's Immigrant Services information and current language programs before planning attendance or remote study.",
+      "program_url": "https://www.lfpl.org/services",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "LFPL online language learning",
+          "url": "https://www.lfpl.org/lifelong-learning",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "LFPL library card requirements",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "linguistic_resources_listed_sessions_not_checked"
+      },
+      "availability_label": "LANGUAGE / CLASS ACCESS TO CHECK",
+      "source_service_family": "language_services",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-homebound-accessibility",
+      "title": "LFPL Accessibility and Homebound Outreach Services",
+      "category": "Accessibility & outreach",
+      "summary": "LFPL describes bookmobile and mail-delivery options for qualifying homebound patrons, accessible materials, assistive services and sign-language interpretation for some library events.",
+      "areas": [
+        "louisville"
+      ],
+      "cost_code": "verify",
+      "cost_note": "Eligibility and individual services should be verified with LFPL; no guaranteed delivery, device or interpretation is implied.",
+      "eligibility_to_check": "Homebound or group residence program criteria, location and scheduled-route capacity; for interpreters, LFPL states at least one week's advance request.",
+      "important_to_know": "Services vary by branch and request. LFPL also describes hearing-loop-equipped meeting rooms at selected libraries; the Main Library is currently closed for renovations.",
+      "first_step": "Visit LFPL's Accessibility Services page and ask about bookmobile, Books To You or a specific accommodation.",
+      "program_url": "https://www.lfpl.org/accessibility-services",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/accessibility-services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "LFPL Bookmobile and Adult Outreach",
+          "url": "https://www.lfpl.org/services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "accessibility_services_listed_delivery_and_requests_not_checked"
+      },
+      "availability_label": "ELIGIBILITY / OUTREACH CAPACITY TO CHECK",
+      "source_service_family": "homebound_accessibility",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-meeting-rooms",
+      "title": "LFPL Meeting Rooms — Public Community Programs",
+      "category": "Community meeting space",
+      "summary": "LFPL makes selected meeting rooms available by reservation for qualifying educational, cultural, civic and charitable activities when not needed for library programs.",
+      "areas": [
+        "louisville"
+      ],
+      "cost_code": "verify",
+      "cost_note": "LFPL restricts fundraising, sales, solicitation, admission charges and other financial gain in meeting rooms; review any applicable facility terms.",
+      "eligibility_to_check": "Meeting must be free and open to the public; LFPL generally requires requests at least three days in advance, no more than three months ahead; branch-specific capacity and rules apply.",
+      "important_to_know": "Not an administrative office, private meeting space, fundraising venue or implied LFPL endorsement. A requested reservation is not confirmed until the library approves it.",
+      "first_step": "Review the LFPL Services meeting-room rules and submit the official reservation form for an appropriate public-use event.",
+      "program_url": "https://www.lfpl.org/services",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "LFPL room reservation overview",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "room_policy_listed_booking_not_checked"
+      },
+      "availability_label": "RESERVATION AND PURPOSE TO APPROVE",
+      "source_service_family": "meeting_rooms",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-candid-grant-research",
+      "title": "LFPL Candid — Foundation and Grant Research",
+      "category": "Grant research",
+      "summary": "LFPL lists Candid (formerly Foundation Center) research information on foundations, donors and grants as part of its research databases.",
+      "areas": [
+        "louisville"
+      ],
+      "cost_code": "verify",
+      "cost_note": "Library research access is offered under LFPL rules; costs associated with external grant applications or professional services are separate.",
+      "eligibility_to_check": "This resource is explicitly restricted to in-library use; confirm which branch location offers it and current database access.",
+      "important_to_know": "Being listed in a grant database does not mean a grant is open, available to an individual, or appropriate for a particular organization. LFPL explicitly states Candid is only available inside the library.",
+      "first_step": "Visit the LFPL Research Databases page, locate Candid, and confirm an available branch and access method.",
+      "program_url": "https://www.lfpl.org/lfpl-databases",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/lfpl-databases",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "in_library_only_listing_officially_documented_access_not_checked"
+      },
+      "availability_label": "IN-LIBRARY ACCESS ONLY",
+      "source_service_family": "candid_grant",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "audiences": [
+        "all"
+      ],
+      "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "id": "lfpl-exam-proctoring",
+      "title": "LFPL Exam Proctoring — Scheduled Learning Support",
+      "category": "Exam support",
+      "summary": "LFPL provides exam proctoring subject to staff and equipment availability, with reservation requirements and limitations on testing conditions.",
+      "areas": [
+        "louisville"
+      ],
+      "cost_code": "no_cost",
+      "cost_note": "LFPL says it does not charge proctoring fees; students remain responsible for fees their institutions or exam providers charge.",
+      "eligibility_to_check": "Reserve at least five days before each exam; institution rules, ID requirements, scheduling, technical requirements and staff authorization.",
+      "important_to_know": "No walk-in proctoring; the library does not provide constant observation or private testing rooms, and cannot guarantee testing platform compatibility.",
+      "first_step": "Read LFPL's Exam Proctoring Policy under Services, then submit the official reservation request in advance.",
+      "program_url": "https://www.lfpl.org/services",
+      "sources": [
+        {
+          "label": "Official LFPL service information",
+          "url": "https://www.lfpl.org/services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "proctoring_policy_listed_staff_appointment_not_checked"
+      },
+      "availability_label": "APPOINTMENT REQUIRED · NOT CONFIRMED",
+      "source_service_family": "exam_proctoring",
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
     }
   ],
   "last_catalog_update": "2026-11-16"

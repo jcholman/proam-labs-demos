@@ -1,0 +1,130 @@
+{
+  "id": "LFPL_SERVICES_SOURCE_REVIEW_v0.1",
+  "source_date": "2026-11-16",
+  "catalog_prev_version": "0.4.1-candidate",
+  "catalog_new_version": "0.5.0-candidate",
+  "source_origin": "REAL_WORLD_SOURCE",
+  "qualification": "SOURCE_VERIFIED (official LFPL site; no direct provider contact)",
+  "provider": "Louisville Free Public Library",
+  "record_count": 12,
+  "new_records": [
+    {
+      "id": "lfpl-library-card",
+      "title": "LFPL Library Card — Access to Library Services",
+      "url": "https://www.lfpl.org/howdoi",
+      "category": "Community support",
+      "access_condition": "CARD ELIGIBILITY / ACTIVATION TO CHECK",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-job-seekers",
+      "title": "LFPL Job Seekers — Resume and Career Resources",
+      "url": "https://www.lfpl.org/services",
+      "category": "Job search",
+      "access_condition": "GUIDE PUBLISHED · EXTERNAL TERMS VARY",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-learningexpress",
+      "title": "LFPL LearningExpress — Career and Exam Preparation",
+      "url": "https://www.lfpl.org/lifelong-learning",
+      "category": "Training & credentials",
+      "access_condition": "LIBRARY LOGIN / CONTENT TO CHECK",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-linkedin-learning",
+      "title": "LFPL LinkedIn Learning — Professional Skills",
+      "url": "https://www.lfpl.org/lifelong-learning",
+      "category": "Training & credentials",
+      "access_condition": "ACTIVE LFPL CARD REQUIRED",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-brainfuse-adult",
+      "title": "LFPL Brainfuse Adult Learning Center",
+      "url": "https://www.lfpl.org/lifelong-learning",
+      "category": "Adult education",
+      "access_condition": "TUTOR AVAILABILITY NOT CHECKED",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-computer-center",
+      "title": "LFPL Library Computer Center — Digital Access",
+      "url": "https://www.lfpl.org/library-computer-center-branch-page",
+      "category": "Digital access",
+      "access_condition": "TEMPORARY SITE · HOURS/CAPACITY CHECK",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-makerspaces",
+      "title": "LFPL Makerspaces — Hands-on Creative and Technical Skills",
+      "url": "https://www.lfpl.org/services",
+      "category": "Creative & technical skills",
+      "access_condition": "LOCATION / ORIENTATION TO CHECK",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-language-services",
+      "title": "LFPL English, Language and Immigrant Learning Resources",
+      "url": "https://www.lfpl.org/services",
+      "category": "Language & citizenship",
+      "access_condition": "LANGUAGE / CLASS ACCESS TO CHECK",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-homebound-accessibility",
+      "title": "LFPL Accessibility and Homebound Outreach Services",
+      "url": "https://www.lfpl.org/accessibility-services",
+      "category": "Accessibility & outreach",
+      "access_condition": "ELIGIBILITY / OUTREACH CAPACITY TO CHECK",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-meeting-rooms",
+      "title": "LFPL Meeting Rooms — Public Community Programs",
+      "url": "https://www.lfpl.org/services",
+      "category": "Community meeting space",
+      "access_condition": "RESERVATION AND PURPOSE TO APPROVE",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-candid-grant-research",
+      "title": "LFPL Candid — Foundation and Grant Research",
+      "url": "https://www.lfpl.org/lfpl-databases",
+      "category": "Grant research",
+      "access_condition": "IN-LIBRARY ACCESS ONLY",
+      "reviewed_on": "2026-11-16"
+    },
+    {
+      "id": "lfpl-exam-proctoring",
+      "title": "LFPL Exam Proctoring — Scheduled Learning Support",
+      "url": "https://www.lfpl.org/services",
+      "category": "Exam support",
+      "access_condition": "APPOINTMENT REQUIRED · NOT CONFIRMED",
+      "reviewed_on": "2026-11-16"
+    }
+  ],
+  "source_pages": [
+    "https://www.lfpl.org/services",
+    "https://www.lfpl.org/lifelong-learning",
+    "https://www.lfpl.org/howdoi",
+    "https://www.lfpl.org/lfpl-databases",
+    "https://www.lfpl.org/accessibility-services",
+    "https://www.lfpl.org/library-computer-center-branch-page",
+    "https://www.lfpl.org/branches"
+  ],
+  "dedupe_notes": [
+    "Existing KentuckianaWorks and Kentucky Career Center records not re-added through LFPL Job Seekers link aggregator",
+    "Five source-backed dated LFPL/HOH events in Your Community remain event records, not continuing services",
+    "Three online LFPL learning platforms receive separate service cards because their access requirements and functions differ"
+  ],
+  "unverified": [
+    "Current course module or tutoring seat availability",
+    "Library workstation capacity and site hours at time of visit",
+    "Room/event/proctor reservation capacity",
+    "Individual card eligibility and credentials",
+    "Whether nonresident card fees, fees or programs have changed after this review"
+  ],
+  "promotion_decision": "Source-backed website concept directory under existing source-review standard; no provider confirmation implied."
+}

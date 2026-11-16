@@ -42,3 +42,10 @@ Four Louisville VA awardees plus Deans House (Elizabethtown) and Fire Mission Mi
 
 ## Real-life default for Your Community (2026-11-16)
 Five verified, dated organizer listings are added: three local LFPL in-person events and two virtual Hiring Our Heroes events. Public view defaults to real-life only; users can include virtual records by unchecking in-person-only. Synthetic fixtures (16) remain for QA via explicit `?qa=1` option. They are excluded before metrics, map, insights and cards are calculated. No JavaScript fallback lists only real source-backed activities. Official event URLs are directly linked from individual real-world cards. This is a source-reviewed snapshot, not a live event feed or registration guarantee.
+
+## Louisville Free Public Library service review (2026-11-16)
+- Added 12 individual source-backed LFPL service/access cards as records 32–43. Each has an official `lfpl.org` outbound link, dated source, card/cost/access constraints, `SOURCE_VERIFIED` origin and unconfirmed live availability.
+- LFPL Job Seekers is a library-curated gateway and is not duplicated as separate KentuckianaWorks or Kentucky Career Center services already in the catalog.
+- Library services and date-specific LFPL events in Your Community remain separate record families; 16 synthetic events remain reserved for QA only, outside real-life counts.
+- Library card access depends on Jefferson County ties or a paid card for certain neighboring counties; LinkedIn Learning requires an LFPL card in good standing. LFPL reports the temporary Computer Center at 721 S Brook and its restricted weekday hours. Candid research is marked **in-library only**. Meeting rooms prohibit fundraising/commercial solicitation and require approval; exam proctoring is requested at least five days ahead.
+- Real, source-verified does not mean currently bookable, personally eligible, partnered, guaranteed or provider-confirmed. No individual patrons were profiled or referred.
