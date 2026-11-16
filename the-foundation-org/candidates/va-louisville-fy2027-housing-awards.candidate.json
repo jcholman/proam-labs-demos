@@ -1,0 +1,21 @@
+{
+  "id": "va-louisville-fy2027-housing-awards",
+  "origin": "real_world_source",
+  "qualification_state": "SOURCE_VERIFIED",
+  "publication_state": "BACKGROUND_ONLY_NOT_PROVIDER_CARD",
+  "announcement_date": "2026-09-15",
+  "reviewed_on": "2026-11-16",
+  "official_source": "https://www.va.gov/louisville-health-care/news-releases/va-awards-32891584-million-in-grants-to-fight-veteran-homelessness-in-louisville/",
+  "total_awards_usd": 32891584,
+  "organizations_reported": 17,
+  "programs": [
+    "SSVF",
+    "GPD"
+  ],
+  "uncertainties": [
+    "Individual awardees not reconciled",
+    "Provider intake, bed availability and capacity not confirmed",
+    "Eligibility never inferred"
+  ],
+  "next_action": "RECONCILE_AWARDEES_WITH_PROVIDER_EVIDENCE"
+}

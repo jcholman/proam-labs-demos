@@ -18,7 +18,7 @@ Status: candidate operating convention · November 16, 2026
 **Separate state dimensions:** Provider/service availability (checked / not checked / changed), program eligibility rules, and person-specific eligibility (not inferred) must not be collapsed into a generic “real,” “verified,” or “available” badge.
 
 ## Current demonstration baseline
-- Find Support: 22 real-world **source-based** resources on the concept website (21 baseline entries reviewed 2026-11-09; VET TEC 2.0 reviewed 2026-11-16). Program existence and source-review history are distinct from availability, capacity, and actual referral readiness.
+- Find Support: 25 real-world **source-based** resources on the concept website (21 baseline entries reviewed 2026-11-09; VET TEC 2.0, VGLI, SSVF and GPD reviewed 2026-11-16). Program existence and source-review history are distinct from availability, capacity, and actual referral readiness.
 - Your Community: 16 synthetic event fixture records in the November 2026 example dataset; any cards, metrics, chronology, and insight examples derived from them remain synthetic. No live community event feed.
 - VET TEC 2.0: source-verified 2026-11-16 and listed in the concept website directory, not provider-confirmed; see `candidates/va-vet-tec-2.candidate.json` for record and publication history. All resource cards now offer a direct provider website link as well as dated evidence in expandable details.
 
@@ -31,3 +31,8 @@ Status: candidate operating convention · November 16, 2026
 6. Never combine synthetic and real counts into unqualified community statistics. Label mixed displays by origin and source review date; do not project synthetic trends onto real community needs.
 
 **Boundaries:** Capability ≠ authorization; official source review ≠ provider confirmation; real-world source ≠ current availability; evidence ≠ eligibility; publication ≠ referral.
+
+## Additional reconciliation (2026-11-16)
+- VGLI premium holiday is an effective-date-bound change to an existing insurance program (November 1, 2026–January 31, 2027); not a separate permanent new VA program. Policy eligibility requires personal verification.
+- SSVF and GPD are distinct, actual VA-funded housing service programs. FY2027 grant announcements do not prove individual providers are accepting applicants or have open beds.
+- VA Louisville reported $32,891,584 awarded to 17 organizations on September 15, 2026; awardees and current intakes remain a separate local reconciliation task, not 17 public resource cards.

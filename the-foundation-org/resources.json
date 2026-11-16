@@ -1,9 +1,9 @@
 {
   "catalog_id": "proam-foundation-community-pathways",
-  "version": "0.2.0-candidate",
+  "version": "0.3.0-candidate",
   "reviewed_on": "2026-11-09",
   "state": "candidate_not_published",
-  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified.",
+  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified. VGLI premium holiday, SSVF and GPD separately source-reviewed Nov 16, 2026; provider-specific intake and personal eligibility unconfirmed.",
   "review_standard": {
     "official_source": "recorded",
     "provider_confirmed": false,
@@ -893,6 +893,154 @@
       "origin": "real_world_source",
       "qualification_state": "SOURCE_VERIFIED",
       "provider_availability": "NOT_CONFIRMED"
+    },
+    {
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "track": "veterans",
+      "display_priority": 2,
+      "id": "va-vgli",
+      "title": "Veterans’ Group Life Insurance (VGLI) — 2026 Premium Holiday",
+      "provider": "U.S. Department of Veterans Affairs",
+      "category": "Insurance & financial stability",
+      "summary": "VA has announced a temporary premium holiday, November 1, 2026–January 31, 2027, for eligible Veterans’ Group Life Insurance policyholders.",
+      "audiences": [
+        "veteran"
+      ],
+      "areas": [
+        "national"
+      ],
+      "geography": "Nationwide · individual VGLI coverage terms",
+      "cost_code": "benefit",
+      "cost_note": "Eligible VGLI premiums are waived for covered months. Existing overdue balances, the required first premium for newly effective policies, and payments for other months are not waived.",
+      "eligibility_to_check": "Whether your VGLI coverage was active November 1, 2026, or became effective during November or December 2026, and the applicable billing method.",
+      "important_to_know": "This is a time-limited change to existing VGLI insurance, not a new product. The relief generally applies automatically, but the number of covered months depends on when a policy becomes effective. Personal policy status has not been checked.",
+      "first_step": "Visit VA’s VGLI program page and premium holiday FAQ, then check your own policy statement.",
+      "program_url": "https://www.va.gov/life-insurance/options-eligibility/vgli/",
+      "sources": [
+        {
+          "label": "Official VA VGLI program",
+          "url": "https://www.va.gov/life-insurance/options-eligibility/vgli/",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA premium-holiday FAQ",
+          "url": "https://www.benefits.va.gov/INSURANCE/vgli_premium_holiday_faqs.asp",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "VGLI holiday effective under VA's published coverage conditions; individual status not checked"
+      },
+      "record_type": "time_limited_benefit_change",
+      "effective_from": "2026-11-01",
+      "effective_through": "2027-01-31",
+      "availability_label": "INDIVIDUAL POLICY STATUS NOT CHECKED"
+    },
+    {
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "track": "veterans",
+      "display_priority": 2,
+      "id": "va-ssvf",
+      "title": "Supportive Services for Veteran Families (SSVF)",
+      "provider": "U.S. Department of Veterans Affairs · local grantees",
+      "category": "Housing stability",
+      "summary": "VA-funded housing stabilization, homelessness prevention and rapid rehousing services delivered by community organizations serving eligible low-income Veteran families.",
+      "audiences": [
+        "veteran",
+        "family"
+      ],
+      "areas": [
+        "national",
+        "kentucky",
+        "louisville"
+      ],
+      "geography": "Nationwide, including Louisville-area grantees · verify local intake",
+      "cost_code": "verify",
+      "cost_note": "VA funds grantees; what support is offered varies by household needs and local provider. Financial assistance or services are not guaranteed.",
+      "eligibility_to_check": "Veteran household status, income, homelessness or imminent loss of housing, local grantee service area, available intake and documentation.",
+      "important_to_know": "VA announced FY2027 funding that includes Louisville-area organizations, but an organizational award does not establish enrollment capacity. For help when homeless or at immediate risk, VA's National Call Center for Homeless Veterans is 877-424-3838 (24/7).",
+      "first_step": "Review the official VA SSVF program and provider list. Contact local providers for current intake or the VA homeless veterans call center for assistance.",
+      "program_url": "https://department.va.gov/homeless/supportive-services-for-veteran-families/",
+      "sources": [
+        {
+          "label": "Official VA SSVF program",
+          "url": "https://department.va.gov/homeless/supportive-services-for-veteran-families/",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA Louisville FY2027 housing awards",
+          "url": "https://www.va.gov/louisville-health-care/news-releases/va-awards-32891584-million-in-grants-to-fight-veteran-homelessness-in-louisville/",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "Official program exists; local grantee intake not checked"
+      },
+      "record_type": "existing_program",
+      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED"
+    },
+    {
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "track": "veterans",
+      "display_priority": 2,
+      "id": "va-gpd",
+      "title": "Grant and Per Diem (GPD) — Veteran Transitional Housing",
+      "provider": "U.S. Department of Veterans Affairs · local grantees",
+      "category": "Housing stability",
+      "summary": "VA-funded transitional supportive housing, service centers and housing-related case management for Veterans experiencing homelessness.",
+      "audiences": [
+        "veteran"
+      ],
+      "areas": [
+        "national",
+        "kentucky",
+        "louisville"
+      ],
+      "geography": "Nationwide, including Louisville-area grant activity · verify local openings",
+      "cost_code": "verify",
+      "cost_note": "GPD grants fund community service providers, not direct cash awards to individual Veterans. Provider terms and costs can vary.",
+      "eligibility_to_check": "Veteran housing circumstances, local provider's service model, beds, admission requirements and VA coordination.",
+      "important_to_know": "FY2027 funding announcements confirm program grants, not open beds or referrals. For urgent housing needs, VA lists 877-424-3838 as its 24/7 National Call Center for Homeless Veterans.",
+      "first_step": "Visit VA's official GPD program and contact VA housing services or a local grantee for current housing support.",
+      "program_url": "https://department.va.gov/homeless/grant-per-diem/",
+      "sources": [
+        {
+          "label": "Official VA GPD program",
+          "url": "https://department.va.gov/homeless/grant-per-diem/",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        },
+        {
+          "label": "VA Louisville FY2027 housing awards",
+          "url": "https://www.va.gov/louisville-health-care/news-releases/va-awards-32891584-million-in-grants-to-fight-veteran-homelessness-in-louisville/",
+          "publisher": "U.S. Department of Veterans Affairs",
+          "reviewed_on": "2026-11-16"
+        }
+      ],
+      "verification": {
+        "official_source_reviewed_on": "2026-11-16",
+        "source_review": "official_source_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "Official program exists; provider bed availability not checked"
+      },
+      "record_type": "existing_program",
+      "availability_label": "LOCAL PROVIDER INTAKE UNCONFIRMED"
     }
   ],
   "last_catalog_update": "2026-11-16"
