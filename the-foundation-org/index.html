@@ -178,6 +178,11 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 .cover-page-navigation a.nav-start:hover{background:#eee3cb}
 @media(max-width:1100px){.cover-page-navigation .nav-inner{padding:12px 19px;gap:6px 17px}}
 @media(max-width:670px){.cover-page-navigation .nav-inner{padding:10px 16px;gap:4px 15px}.cover-page-navigation a{font-size:12px;padding:7px 0}.cover-page-navigation a.nav-start{padding:8px 11px}}
+
+/* Foundation logo: shared visual sizing in the desktop and mobile identity banners. */
+.cover-header a.foundation-brand,.mobile-header a.foundation-brand{display:inline-flex;align-items:center;gap:10px}
+.cover-header .foundation-mark,.mobile-header .foundation-mark{display:block;width:36px;height:36px;flex:0 0 36px;object-fit:contain}
+@media(max-width:700px){.mobile-header .foundation-mark{width:30px;height:30px;flex-basis:30px}.mobile-header a.foundation-brand{gap:8px}}
 </style>
 </head>
 <body>
@@ -186,7 +191,7 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
 <a class="skip skip-desktop" href="#desktop-profile">Skip to Foundation services</a>
 <a class="skip skip-mobile" href="#mobile-profile">Skip to Foundation services</a>
 <div class="visual-cover" aria-label="The Foundation concept cover">
- <header class="cover-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
+ <header class="cover-header"><a class="foundation-brand" href="mission.html"><img class="foundation-mark" src="assets/foundation-logo-mark-120.png" width="36" height="36" alt=""><span>THE FOUNDATION - CONCEPT</span></a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
  <nav class="cover-page-navigation" aria-label="Main navigation"><div class="nav-inner"><a href="index.html" aria-current="page">Home</a><a href="identity.html">Build your identity</a><a href="resources.html">Find support</a><a href="your-community.html">Your Community</a><a href="organizations.html">For organizations</a><a href="trust.html">Our promise</a><a class="nav-start" href="identity.html">Get started →</a></div></nav>
  <h1 class="sr-only">Serving Those Who Serve Us</h1>
  <div class="qa-hero-stage"><img class="approved-art" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six people from service and professional roles stand together overlooking a city at sunrise. Overlaid text: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." fetchpriority="high"></div>
@@ -203,7 +208,7 @@ a:focus-visible{outline:3px solid #eebd66;outline-offset:4px}
  </main>
 </div>
 <div class="mobile-landing" id="entry-mobile">
- <header class="mobile-header"><a class="foundation-brand" href="mission.html">THE FOUNDATION - CONCEPT</a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
+ <header class="mobile-header"><a class="foundation-brand" href="mission.html"><img class="foundation-mark" src="assets/foundation-logo-mark-120.png" width="36" height="36" alt=""><span>THE FOUNDATION - CONCEPT</span></a><div class="brand-context"><span class="assistance-label">Applied AI Assistance</span><a class="power" href="../showcase/" aria-label="proAM Labs technology showcase — powering the proposed Applied AI Assistance"><span>Powered by</span><img src="../showcase/assets/proam-logo.png" alt="proAM Labs icon" width="24" height="24"><span>proAM Labs</span></a></div></header>
  <nav class="cover-page-navigation" aria-label="Main navigation"><div class="nav-inner"><a href="index.html" aria-current="page">Home</a><a href="identity.html">Build your identity</a><a href="resources.html">Find support</a><a href="your-community.html">Your Community</a><a href="organizations.html">For organizations</a><a href="trust.html">Our promise</a><a class="nav-start" href="identity.html">Get started →</a></div></nav>
  <img class="mobile-photo" src="assets/approved-foundation-cover.jpg?v=full-frame-20261111" width="1536" height="864" alt="Six service and community professionals stand shoulder to shoulder overlooking a city at sunrise. Text in the artwork: Serving Those Who Serve Us. Career Continuity. Community Resources. New Opportunities." loading="eager">
  <main class="mobile-message"><p class="kicker">A different way of seeing · Fit for purpose</p><h1>Your next chapter shouldn’t start from scratch.</h1><p>A system that starts by understanding you, your goals, and your purpose. You've already demonstrated purpose through your commitment to the community — let’s start there.</p><div class="mobile-actions"><a id="mobile-profile" href="identity.html">Build My Profile →</a><a href="resources.html#catalog">Find Community Resources →</a></div></main>
