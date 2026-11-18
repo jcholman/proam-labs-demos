@@ -61,7 +61,7 @@ This is designed as an **optional reusable resume supplement** for future opport
 
 - [v0.2 — Governed Team Orchestration](./thinking-graph-arena-v0-2/) — Follow a conflicting-evidence case through LIVE + LAND inputs, HOLD, authorized federated query, requalification, human authority, and RELEASE.
 - [v0.3 — Continuity Across Interactions](./thinking-graph-arena-v0-3/) — See how qualified understanding from one interaction can change the starting orientation of the next.
-- [**v.4 — Concurrent Decision Simulator**](./thinking-graph-arena-v.4/) — Switch between **Logical View** (the required order of evidence qualification, continuity, and governed action) and **Runtime View** (overlapping Aletheia, Jev-style micro-judgments, Andreas, Athena, and Alex). Play, pause, step, adjust speed, inspect eight synthetic observations, and export the simulated trace across LIVE, LAND, federated query, and combined-convergence scenarios. **Read-only illustration:** no real Jev or other model calls, no canonical writes, and simulated speedups do not establish measured performance.
+- [**v0.4 — Concurrent Decision Simulator**](./thinking-graph-arena-v0-4/) — Switch between **Logical View** (the required order of evidence qualification, continuity, and governed action) and **Runtime View** (overlapping Aletheia, Jev-style micro-judgments, Andreas, Athena, and Alex). Play, pause, step, adjust speed, inspect eight synthetic observations, and export the simulated trace across LIVE, LAND, federated query, and combined-convergence scenarios. **Read-only illustration:** no real Jev or other model calls, no canonical writes, and simulated speedups do not establish measured performance.
 
 ## Orientation Graph
 
