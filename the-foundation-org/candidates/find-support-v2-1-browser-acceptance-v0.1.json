@@ -1,0 +1,55 @@
+{
+  "id": "FIND_SUPPORT_V2_1_BROWSER_ACCEPTANCE_v0.1",
+  "date": "2026-11-19",
+  "mode": "READ_ONLY",
+  "page": "https://jcholman.github.io/proam-labs-demos/the-foundation-org/resources-v2-1.html?track=general#catalog",
+  "implementation_commit": "666b4fef5dec2a016dbc4a6a8a12d6758a09d0e4",
+  "independent_browser_run": "https://agent.tinyfish.ai/runs/a1382449-c947-429a-99e9-3be4080f2059",
+  "status": "PASS_INITIAL_ACCEPTANCE_TEST",
+  "catalog_records": 47,
+  "tests": [
+    {
+      "name": "Community default suggestions",
+      "result": "PASS",
+      "observed": "Print documents 1; Computer or Wi-Fi 2; Resume 7; Explore housing referrals 2; Learn skill 4; Business research 1"
+    },
+    {
+      "name": "Community housing qualification",
+      "result": "PASS",
+      "observed": "Two Goodwill Opportunity Center referrals; no guaranteed housing openings or availability claim"
+    },
+    {
+      "name": "Veterans pathway switches topics",
+      "result": "PASS",
+      "observed": "Resume 2; Explore veteran housing pathways 5; Learn skill 2; Job search 1; unrelated general printing, computer and business chips absent"
+    },
+    {
+      "name": "Business & entrepreneurship filter",
+      "result": "PASS",
+      "observed": "Only Research starting a business 1, LFPL Small Business Reference Center"
+    },
+    {
+      "name": "Geography Online / virtual",
+      "result": "PASS",
+      "observed": "Housing referrals chip absent; seven supported needs, six initially displayed"
+    },
+    {
+      "name": "More/fewer options",
+      "result": "PASS",
+      "observed": "Show 1 more topics expands to seven, then Show fewer topics available"
+    },
+    {
+      "name": "Page health and filters",
+      "result": "PASS",
+      "observed": "47 catalog records loaded, control changes and clear filters worked, no page errors observed"
+    }
+  ],
+  "limits": [
+    "Human mobile accessibility test not complete",
+    "Not a live intake/eligibility index",
+    "Need categories require editorial mapping when entirely new kinds of support enter the catalog",
+    "Catalog snapshot must be resynchronized before promotion",
+    "No provider URLs clicked by browser tester"
+  ],
+  "publication_authorized": false
+}
