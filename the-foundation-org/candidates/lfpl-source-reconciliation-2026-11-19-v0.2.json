@@ -1,0 +1,274 @@
+{
+  "id": "LFPL_DELTA_2026_11_19_v0.2",
+  "as_of": "2026-11-19",
+  "source_origin": "REAL_WORLD_SOURCE",
+  "qualification": "SOURCE_VERIFIED",
+  "baseline": {
+    "version": "0.5.0-candidate",
+    "records": 43,
+    "lfpl_records": 12
+  },
+  "result": {
+    "version": "0.6.0-candidate",
+    "records": 47,
+    "lfpl_records": 16
+  },
+  "added": [
+    {
+      "id": "lfpl-computers-wifi",
+      "title": "LFPL Branch Computers and Free Wi-Fi",
+      "source": "https://www.lfpl.org/services",
+      "reviewed_on": "2026-11-19",
+      "available_now": "NOT_CONFIRMED"
+    },
+    {
+      "id": "lfpl-printing-faxing",
+      "title": "LFPL Printing, Copying and Free Faxing",
+      "source": "https://www.lfpl.org/services",
+      "reviewed_on": "2026-11-19",
+      "available_now": "NOT_CONFIRMED"
+    },
+    {
+      "id": "lfpl-ask-librarian",
+      "title": "LFPL Ask a Librarian — Information and Research Help",
+      "source": "https://www.lfpl.org/form/ask-a-librarian",
+      "reviewed_on": "2026-11-19",
+      "available_now": "NOT_CONFIRMED"
+    },
+    {
+      "id": "lfpl-small-business-reference",
+      "title": "LFPL Small Business Reference Center — Research Tools",
+      "source": "https://www.lfpl.org/lfpl-databases?page=1",
+      "reviewed_on": "2026-11-19",
+      "available_now": "NOT_CONFIRMED"
+    }
+  ],
+  "modified": [
+    {
+      "id": "lfpl-meeting-rooms",
+      "before": {
+        "provider": "Louisville Free Public Library",
+        "audiences": [
+          "all"
+        ],
+        "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+        "track": "general",
+        "display_priority": 4,
+        "record_type": "library_service",
+        "origin": "real_world_source",
+        "qualification_state": "SOURCE_VERIFIED",
+        "id": "lfpl-meeting-rooms",
+        "title": "LFPL Meeting Rooms — Public Community Programs",
+        "category": "Community meeting space",
+        "summary": "LFPL makes selected meeting rooms available by reservation for qualifying educational, cultural, civic and charitable activities when not needed for library programs.",
+        "areas": [
+          "louisville"
+        ],
+        "cost_code": "verify",
+        "cost_note": "LFPL restricts fundraising, sales, solicitation, admission charges and other financial gain in meeting rooms; review any applicable facility terms.",
+        "eligibility_to_check": "Meeting must be free and open to the public; LFPL generally requires requests at least three days in advance, no more than three months ahead; branch-specific capacity and rules apply.",
+        "important_to_know": "Not an administrative office, private meeting space, fundraising venue or implied LFPL endorsement. A requested reservation is not confirmed until the library approves it.",
+        "first_step": "Review the LFPL Services meeting-room rules and submit the official reservation form for an appropriate public-use event.",
+        "program_url": "https://www.lfpl.org/services",
+        "sources": [
+          {
+            "label": "Official LFPL service information",
+            "url": "https://www.lfpl.org/services",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-16"
+          },
+          {
+            "label": "LFPL room reservation overview",
+            "url": "https://www.lfpl.org/howdoi",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-16"
+          }
+        ],
+        "verification": {
+          "official_source_reviewed_on": "2026-11-16",
+          "source_review": "official_LFPL_service_page_reviewed",
+          "provider_confirmed": false,
+          "individual_eligibility_confirmed": false,
+          "application_status": "room_policy_listed_booking_not_checked"
+        },
+        "availability_label": "RESERVATION AND PURPOSE TO APPROVE",
+        "source_service_family": "meeting_rooms",
+        "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+      },
+      "after": {
+        "provider": "Louisville Free Public Library",
+        "audiences": [
+          "all"
+        ],
+        "geography": "Louisville and Jefferson County, Kentucky · check library-card eligibility",
+        "track": "general",
+        "display_priority": 4,
+        "record_type": "library_service",
+        "origin": "real_world_source",
+        "qualification_state": "SOURCE_VERIFIED",
+        "id": "lfpl-meeting-rooms",
+        "title": "LFPL Meeting Rooms — Public Community Programs",
+        "category": "Community meeting space",
+        "summary": "LFPL makes selected meeting rooms available by reservation for qualifying educational, cultural, civic and charitable activities when not needed for library programs.",
+        "areas": [
+          "louisville"
+        ],
+        "cost_code": "verify",
+        "cost_note": "LFPL restricts fundraising, sales, solicitation, admission charges and other financial gain in meeting rooms; review any applicable facility terms.",
+        "eligibility_to_check": "Meeting must be free and open to the public; LFPL generally requires requests at least three days in advance, no more than three months ahead; branch-specific capacity and rules apply.",
+        "important_to_know": "Not an administrative office, private meeting space, fundraising venue or implied LFPL endorsement. A requested reservation is not confirmed until the library approves it. LFPL prohibits the use of its logo or publicity implying sponsorship; event advertisements must include a non-sponsorship notice.",
+        "first_step": "Review the LFPL Services meeting-room rules and submit the official reservation form for an appropriate public-use event.",
+        "program_url": "https://www.lfpl.org/services",
+        "sources": [
+          {
+            "label": "Official LFPL service information",
+            "url": "https://www.lfpl.org/services",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-19"
+          },
+          {
+            "label": "LFPL room reservation overview",
+            "url": "https://www.lfpl.org/howdoi",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-19"
+          }
+        ],
+        "verification": {
+          "official_source_reviewed_on": "2026-11-19",
+          "source_review": "official_LFPL_service_page_reviewed",
+          "provider_confirmed": false,
+          "individual_eligibility_confirmed": false,
+          "application_status": "room_policy_listed_booking_not_checked"
+        },
+        "availability_label": "RESERVATION AND PURPOSE TO APPROVE",
+        "source_service_family": "meeting_rooms",
+        "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+      }
+    },
+    {
+      "id": "lfpl-computer-center",
+      "before": {
+        "provider": "Louisville Free Public Library",
+        "audiences": [
+          "all"
+        ],
+        "geography": "721 South Brook Street, Louisville, Kentucky · temporary Library Computer Center",
+        "track": "general",
+        "display_priority": 4,
+        "record_type": "library_service",
+        "origin": "real_world_source",
+        "qualification_state": "SOURCE_VERIFIED",
+        "id": "lfpl-computer-center",
+        "title": "LFPL Library Computer Center — Digital Access",
+        "category": "Digital access",
+        "summary": "LFPL's temporary Library Computer Center offers free public computer use, internet and faxing; LFPL also describes Wi-Fi and computer access across its library locations.",
+        "areas": [
+          "louisville"
+        ],
+        "cost_code": "no_cost",
+        "cost_note": "LFPL describes free computer, internet and fax services at the temporary center. Printing and other services may have separate fees.",
+        "eligibility_to_check": "Current center operating hours, acceptable computer-use policy, location access and workstation capacity.",
+        "important_to_know": "LFPL lists Monday–Friday, 10 a.m.–4 p.m. at 721 S Brook St and limits computer use to one visit per day due to capacity. The Main Library is closed for renovations; confirm the center before travel.",
+        "first_step": "Check the official Library Computer Center page or call 502-574-1681 for current operating details.",
+        "program_url": "https://www.lfpl.org/library-computer-center-branch-page",
+        "sources": [
+          {
+            "label": "Official LFPL service information",
+            "url": "https://www.lfpl.org/library-computer-center-branch-page",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-16"
+          },
+          {
+            "label": "LFPL system-wide computer use and Wi-Fi",
+            "url": "https://www.lfpl.org/services",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-16"
+          },
+          {
+            "label": "LFPL current branch locations",
+            "url": "https://www.lfpl.org/branches",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-16"
+          }
+        ],
+        "verification": {
+          "official_source_reviewed_on": "2026-11-16",
+          "source_review": "official_LFPL_service_page_reviewed",
+          "provider_confirmed": false,
+          "individual_eligibility_confirmed": false,
+          "application_status": "temporary_site_published_actual_workstation_capacity_not_checked"
+        },
+        "availability_label": "TEMPORARY SITE · HOURS/CAPACITY CHECK",
+        "source_service_family": "computer_center",
+        "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+      },
+      "after": {
+        "provider": "Louisville Free Public Library",
+        "audiences": [
+          "all"
+        ],
+        "geography": "721 South Brook Street, Louisville, Kentucky · temporary Library Computer Center",
+        "track": "general",
+        "display_priority": 4,
+        "record_type": "library_service",
+        "origin": "real_world_source",
+        "qualification_state": "SOURCE_VERIFIED",
+        "id": "lfpl-computer-center",
+        "title": "LFPL Library Computer Center — Digital Access",
+        "category": "Digital access",
+        "summary": "LFPL's temporary Library Computer Center offers free public computer use, internet and faxing; LFPL also describes Wi-Fi and computer access across its library locations.",
+        "areas": [
+          "louisville"
+        ],
+        "cost_code": "no_cost",
+        "cost_note": "LFPL describes free computer, internet and fax services at the temporary center. Printing and other services may have separate fees.",
+        "eligibility_to_check": "Current center operating hours, acceptable computer-use policy, location access and workstation capacity.",
+        "important_to_know": "LFPL lists Monday–Friday, 10 a.m.–4 p.m. at 721 S Brook St and limits computer use to one visit per day due to capacity. The Main Library is closed for renovations; confirm the center before travel.",
+        "first_step": "Check the temporary Computer Center's official page or call 502-574-1681; also explore separate LFPL branch computer/Wi-Fi access if its hours do not fit.",
+        "program_url": "https://www.lfpl.org/library-computer-center-branch-page",
+        "sources": [
+          {
+            "label": "Official LFPL service information",
+            "url": "https://www.lfpl.org/library-computer-center-branch-page",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-19"
+          },
+          {
+            "label": "LFPL system-wide computer use and Wi-Fi",
+            "url": "https://www.lfpl.org/services",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-19"
+          },
+          {
+            "label": "LFPL current branch locations",
+            "url": "https://www.lfpl.org/branches",
+            "publisher": "Louisville Free Public Library",
+            "reviewed_on": "2026-11-16"
+          }
+        ],
+        "verification": {
+          "official_source_reviewed_on": "2026-11-19",
+          "source_review": "official_LFPL_service_page_reviewed",
+          "provider_confirmed": false,
+          "individual_eligibility_confirmed": false,
+          "application_status": "temporary_site_published_actual_workstation_capacity_not_checked"
+        },
+        "availability_label": "TEMPORARY SITE · HOURS/CAPACITY CHECK",
+        "source_service_family": "computer_center",
+        "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked",
+        "related_resource_ids": [
+          "lfpl-computers-wifi"
+        ]
+      }
+    }
+  ],
+  "unchanged_old_records": 41,
+  "source_urls": [
+    "https://www.lfpl.org/services",
+    "https://www.lfpl.org/howdoi",
+    "https://www.lfpl.org/form/ask-a-librarian",
+    "https://www.lfpl.org/lfpl-databases?page=1"
+  ],
+  "governance": "No provider confirmation, capacity claim, individual eligibility, automated referral, synthetic promotion or website editorial modifications.",
+  "visual_review": "PENDING"
+}

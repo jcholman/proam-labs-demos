@@ -1,9 +1,9 @@
 {
   "catalog_id": "proam-foundation-community-pathways",
-  "version": "0.5.0-candidate",
+  "version": "0.6.0-candidate",
   "reviewed_on": "2026-11-09",
   "state": "candidate_not_published",
-  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified. VGLI premium holiday, SSVF and GPD separately source-reviewed Nov 16, 2026; provider-specific intake and personal eligibility unconfirmed. Six VA FY2027 GPD awardee organizations in Louisville, Elizabethtown and Shelbyville source-reviewed November 16, 2026; funded bed counts are NOT vacancy counts. 2026-11-16 provider-site intake route review for all six GPD awardees; Wayside's website explicitly lists veteran openings without an independently confirmed bed count. Twelve discrete Louisville Free Public Library service/access pathways were source-reviewed on 2026-11-16 from LFPL official pages. Online card access, physical workstation capacity, event/appointment reservation, room rules and in-library-only Candid access are qualified separately; no real-time availability or individual eligibility asserted.",
+  "source_note": "General-resource records reviewed against official web pages November 9, 2026; veterans records derived without substantive edits from Serving Those Who Serve Us Resource Catalog v0.1. No provider confirmation performed for either set. VET TEC 2.0 added after separate official VA page review on 2026-11-16; actual provider openings and individual eligibility remain unverified. VGLI premium holiday, SSVF and GPD separately source-reviewed Nov 16, 2026; provider-specific intake and personal eligibility unconfirmed. Six VA FY2027 GPD awardee organizations in Louisville, Elizabethtown and Shelbyville source-reviewed November 16, 2026; funded bed counts are NOT vacancy counts. 2026-11-16 provider-site intake route review for all six GPD awardees; Wayside's website explicitly lists veteran openings without an independently confirmed bed count. Twelve discrete Louisville Free Public Library service/access pathways were source-reviewed on 2026-11-16 from LFPL official pages. Online card access, physical workstation capacity, event/appointment reservation, room rules and in-library-only Candid access are qualified separately; no real-time availability or individual eligibility asserted. Nov 19, 2026: added four official LFPL services and clarified computer-center relationships and meeting-room publicity restrictions. Live availability, individual access and reservations remain unconfirmed.",
   "review_standard": {
     "official_source": "recorded",
     "provider_confirmed": false,
@@ -1773,20 +1773,20 @@
       "cost_note": "LFPL describes free computer, internet and fax services at the temporary center. Printing and other services may have separate fees.",
       "eligibility_to_check": "Current center operating hours, acceptable computer-use policy, location access and workstation capacity.",
       "important_to_know": "LFPL lists Monday–Friday, 10 a.m.–4 p.m. at 721 S Brook St and limits computer use to one visit per day due to capacity. The Main Library is closed for renovations; confirm the center before travel.",
-      "first_step": "Check the official Library Computer Center page or call 502-574-1681 for current operating details.",
+      "first_step": "Check the temporary Computer Center's official page or call 502-574-1681; also explore separate LFPL branch computer/Wi-Fi access if its hours do not fit.",
       "program_url": "https://www.lfpl.org/library-computer-center-branch-page",
       "sources": [
         {
           "label": "Official LFPL service information",
           "url": "https://www.lfpl.org/library-computer-center-branch-page",
           "publisher": "Louisville Free Public Library",
-          "reviewed_on": "2026-11-16"
+          "reviewed_on": "2026-11-19"
         },
         {
           "label": "LFPL system-wide computer use and Wi-Fi",
           "url": "https://www.lfpl.org/services",
           "publisher": "Louisville Free Public Library",
-          "reviewed_on": "2026-11-16"
+          "reviewed_on": "2026-11-19"
         },
         {
           "label": "LFPL current branch locations",
@@ -1796,7 +1796,7 @@
         }
       ],
       "verification": {
-        "official_source_reviewed_on": "2026-11-16",
+        "official_source_reviewed_on": "2026-11-19",
         "source_review": "official_LFPL_service_page_reviewed",
         "provider_confirmed": false,
         "individual_eligibility_confirmed": false,
@@ -1804,7 +1804,10 @@
       },
       "availability_label": "TEMPORARY SITE · HOURS/CAPACITY CHECK",
       "source_service_family": "computer_center",
-      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+      "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked",
+      "related_resource_ids": [
+        "lfpl-computers-wifi"
+      ]
     },
     {
       "provider": "Louisville Free Public Library",
@@ -1975,7 +1978,7 @@
       "cost_code": "verify",
       "cost_note": "LFPL restricts fundraising, sales, solicitation, admission charges and other financial gain in meeting rooms; review any applicable facility terms.",
       "eligibility_to_check": "Meeting must be free and open to the public; LFPL generally requires requests at least three days in advance, no more than three months ahead; branch-specific capacity and rules apply.",
-      "important_to_know": "Not an administrative office, private meeting space, fundraising venue or implied LFPL endorsement. A requested reservation is not confirmed until the library approves it.",
+      "important_to_know": "Not an administrative office, private meeting space, fundraising venue or implied LFPL endorsement. A requested reservation is not confirmed until the library approves it. LFPL prohibits the use of its logo or publicity implying sponsorship; event advertisements must include a non-sponsorship notice.",
       "first_step": "Review the LFPL Services meeting-room rules and submit the official reservation form for an appropriate public-use event.",
       "program_url": "https://www.lfpl.org/services",
       "sources": [
@@ -1983,17 +1986,17 @@
           "label": "Official LFPL service information",
           "url": "https://www.lfpl.org/services",
           "publisher": "Louisville Free Public Library",
-          "reviewed_on": "2026-11-16"
+          "reviewed_on": "2026-11-19"
         },
         {
           "label": "LFPL room reservation overview",
           "url": "https://www.lfpl.org/howdoi",
           "publisher": "Louisville Free Public Library",
-          "reviewed_on": "2026-11-16"
+          "reviewed_on": "2026-11-19"
         }
       ],
       "verification": {
-        "official_source_reviewed_on": "2026-11-16",
+        "official_source_reviewed_on": "2026-11-19",
         "source_review": "official_LFPL_service_page_reviewed",
         "provider_confirmed": false,
         "individual_eligibility_confirmed": false,
@@ -2088,7 +2091,197 @@
       "availability_label": "APPOINTMENT REQUIRED · NOT CONFIRMED",
       "source_service_family": "exam_proctoring",
       "published_service_vs_live_status": "official_web_listing; provider contact and current operational availability not checked"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "geography": "Louisville and Jefferson County, Kentucky",
+      "audiences": [
+        "all"
+      ],
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "verification": {
+        "official_source_reviewed_on": "2026-11-19",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "published_information; personal_access_unconfirmed"
+      },
+      "id": "lfpl-computers-wifi",
+      "title": "LFPL Branch Computers and Free Wi-Fi",
+      "category": "Digital access",
+      "areas": [
+        "louisville",
+        "kentucky"
+      ],
+      "cost_code": "no_cost",
+      "summary": "Free public internet and Wi-Fi access at LFPL locations, including public computer workstations; distinct from the temporary Library Computer Center.",
+      "cost_note": "LFPL describes computer and Wi-Fi access as free. Printing and copying have separate fees.",
+      "eligibility_to_check": "Current library branch hours, computer use policies, login requirements and workstation capacity.",
+      "important_to_know": "Computers can have time limits or sign-up rules, and staff instruction is limited. A free public service does not mean a workstation is immediately available.",
+      "first_step": "Review LFPL's Computer Use & Internet Access information and confirm hours at the branch you intend to visit.",
+      "program_url": "https://www.lfpl.org/services",
+      "sources": [
+        {
+          "label": "LFPL computer and internet policy",
+          "url": "https://www.lfpl.org/services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-19"
+        },
+        {
+          "label": "Library card and computer access",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-19"
+        }
+      ],
+      "availability_label": "BRANCH COMPUTER CAPACITY NOT CONFIRMED",
+      "related_resource_ids": [
+        "lfpl-computer-center"
+      ]
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "geography": "Louisville and Jefferson County, Kentucky",
+      "audiences": [
+        "all"
+      ],
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "verification": {
+        "official_source_reviewed_on": "2026-11-19",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "published_information; personal_access_unconfirmed"
+      },
+      "id": "lfpl-printing-faxing",
+      "title": "LFPL Printing, Copying and Free Faxing",
+      "category": "Digital access",
+      "areas": [
+        "louisville",
+        "kentucky"
+      ],
+      "cost_code": "verify",
+      "summary": "Print documents from your device for pickup at a library branch, and access LFPL's published free faxing service.",
+      "cost_note": "LFPL lists black-and-white printing at $0.05 per side, color at $0.50 per side, free faxing, and a $5 maximum per print job (reviewed November 19, 2026).",
+      "eligibility_to_check": "Branch printing and fax equipment, pickup arrangements, payment method and mobile-printing email requirements.",
+      "important_to_know": "Print jobs are held 48 hours. Card payments may create a temporary $5 authorization hold. Posted rates and access may change.",
+      "first_step": "Open LFPL's Printing & Faxing instructions, select a branch and review submission, pickup and payment requirements.",
+      "program_url": "https://www.lfpl.org/services",
+      "sources": [
+        {
+          "label": "Official printing, faxing, rates and pickup",
+          "url": "https://www.lfpl.org/services",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-19"
+        }
+      ],
+      "availability_label": "PICKUP, FEES AND EQUIPMENT TO CHECK"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "geography": "Louisville and Jefferson County, Kentucky",
+      "audiences": [
+        "all"
+      ],
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "verification": {
+        "official_source_reviewed_on": "2026-11-19",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "published_information; personal_access_unconfirmed"
+      },
+      "id": "lfpl-ask-librarian",
+      "title": "LFPL Ask a Librarian — Information and Research Help",
+      "category": "Community support",
+      "areas": [
+        "louisville",
+        "kentucky",
+        "online"
+      ],
+      "cost_code": "no_cost",
+      "summary": "Submit a research or reference question to LFPL staff for help finding information or sources worth exploring.",
+      "cost_note": "No charge is stated for the reference question service; third-party resources may have their own terms.",
+      "eligibility_to_check": "Whether the information request is appropriate for reference support and which contact route is accessible.",
+      "important_to_know": "LFPL describes short replies within 24 hours and longer questions as taking more time; requests received after 3 PM Friday are answered Monday. This is not a guaranteed decision, referral, or personalized benefits service.",
+      "first_step": "Use the official Ask a Librarian form or call LFPL information services at 502-574-1611, press 0.",
+      "program_url": "https://www.lfpl.org/form/ask-a-librarian",
+      "sources": [
+        {
+          "label": "Official Ask A Librarian request form",
+          "url": "https://www.lfpl.org/form/ask-a-librarian",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-19"
+        },
+        {
+          "label": "Information Services contact guidance",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-19"
+        }
+      ],
+      "availability_label": "INDIVIDUAL REFERENCE RESPONSE UNCONFIRMED"
+    },
+    {
+      "provider": "Louisville Free Public Library",
+      "geography": "Louisville and Jefferson County, Kentucky",
+      "audiences": [
+        "all"
+      ],
+      "track": "general",
+      "display_priority": 4,
+      "record_type": "library_service",
+      "origin": "real_world_source",
+      "qualification_state": "SOURCE_VERIFIED",
+      "verification": {
+        "official_source_reviewed_on": "2026-11-19",
+        "source_review": "official_LFPL_service_page_reviewed",
+        "provider_confirmed": false,
+        "individual_eligibility_confirmed": false,
+        "application_status": "published_information; personal_access_unconfirmed"
+      },
+      "id": "lfpl-small-business-reference",
+      "title": "LFPL Small Business Reference Center — Research Tools",
+      "category": "Business & entrepreneurship",
+      "areas": [
+        "louisville",
+        "kentucky"
+      ],
+      "cost_code": "verify",
+      "summary": "Research information and tools for entrepreneurs and small-business owners through the LFPL-linked Small Business Reference Center.",
+      "cost_note": "Confirm LFPL account or library access terms; any business registration, professional or external costs are separate.",
+      "eligibility_to_check": "Library login, possible in-library or remote access restrictions, and whether the desired business research is included.",
+      "important_to_know": "A research database is not a funding program or promise of personalized business counseling. Remote access has not been tested for an individual account.",
+      "first_step": "Open LFPL's second Research Databases page and select Small Business Reference Center.",
+      "program_url": "https://www.lfpl.org/lfpl-databases?page=1",
+      "sources": [
+        {
+          "label": "Small Business Reference Center official listing",
+          "url": "https://www.lfpl.org/lfpl-databases?page=1",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-19"
+        },
+        {
+          "label": "Library card access requirements",
+          "url": "https://www.lfpl.org/howdoi",
+          "publisher": "Louisville Free Public Library",
+          "reviewed_on": "2026-11-19"
+        }
+      ],
+      "availability_label": "LIBRARY DATABASE ACCESS TO VERIFY"
     }
   ],
-  "last_catalog_update": "2026-11-16"
+  "last_catalog_update": "2026-11-19"
 }

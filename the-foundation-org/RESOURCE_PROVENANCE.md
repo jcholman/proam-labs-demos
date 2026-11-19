@@ -49,3 +49,9 @@ Five verified, dated organizer listings are added: three local LFPL in-person ev
 - Library services and date-specific LFPL events in Your Community remain separate record families; 16 synthetic events remain reserved for QA only, outside real-life counts.
 - Library card access depends on Jefferson County ties or a paid card for certain neighboring counties; LinkedIn Learning requires an LFPL card in good standing. LFPL reports the temporary Computer Center at 721 S Brook and its restricted weekday hours. Candid research is marked **in-library only**. Meeting rooms prohibit fundraising/commercial solicitation and require approval; exam proctoring is requested at least five days ahead.
 - Real, source-verified does not mean currently bookable, personally eligible, partnered, guaranteed or provider-confirmed. No individual patrons were profiled or referred.
+
+## LFPL source-to-register delta — November 19, 2026
+
+Four previously unlisted LFPL service pathways were source-reviewed and added: branch computer/Wi-Fi access; printing, copying and free faxing; Ask a Librarian reference assistance; Small Business Reference Center. The existing temporary Computer Center was linked to the separate all-branch computer offering. Meeting-room publicity restrictions were added to the existing card. Original IDs and the other 41 records remain unchanged. New total: **47 Find Support records, 16 LFPL services**.
+
+This is a source-backed concept directory, not an active referral or eligibility service. Provider-published fees, hours, access rules and response expectations are dated observations rather than guaranteed current availability. No provider contact, participant record or editorial page was changed.
