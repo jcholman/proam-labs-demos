@@ -1,0 +1,52 @@
+{
+  "id": "FIND_SUPPORT_V2_INDEPENDENT_BROWSER_READBACK_v0.1",
+  "date": "2026-11-19",
+  "test_page": "https://jcholman.github.io/proam-labs-demos/the-foundation-org/resources-v2.html?track=general#catalog",
+  "source_commit": "75667da9b669d7ac2163da23af9c32c0631abad7",
+  "browser_test_run_id": "ecf08bf3-4803-4c3a-b794-8fcf83da3a18",
+  "browser_run_url": "https://agent.tinyfish.ai/runs/ecf08bf3-4803-4c3a-b794-8fcf83da3a18",
+  "mode": "READ_ONLY",
+  "disposition": "PASS_INITIAL_BROWSER_SMOKE_TEST",
+  "observations": [
+    {
+      "test": "Initial page and catalog",
+      "pass": true,
+      "observed": "Find Support v2 · Test version banner visible; What do you need help with? field present; Community support view displayed 22 of 47 records."
+    },
+    {
+      "test": "Plain-language printing",
+      "pass": true,
+      "query": "I need to print my job application",
+      "observed": "1 of 47 displayed; LFPL Printing, Copying and Free Faxing; matching explanation/feedback presented."
+    },
+    {
+      "test": "Legacy keyword search",
+      "pass": true,
+      "query": "LFPL",
+      "observed": "16 of 47 records displayed; all are LFPL library service entries."
+    },
+    {
+      "test": "Example-chip interaction",
+      "pass": true,
+      "control": "Use a computer",
+      "observed": "2 of 47 displayed; LFPL Branch Computers and Free Wi-Fi, LFPL Library Computer Center — Digital Access; Why this appeared shown for both."
+    }
+  ],
+  "independent_source_checks": [
+    "Current resources.html blob unchanged from baseline",
+    "V2 embedded catalog matches resources.json (47 records)",
+    "V2 JavaScript syntactically valid",
+    "Original official website links and qualification warnings preserved in renderer",
+    "11 deterministic functional cases passed"
+  ],
+  "unresolved": [
+    "Manual iOS viewport and screen-reader testing",
+    "More extensive false-positive/negative matching evaluation",
+    "Real click-through of every official outbound URL",
+    "Full support type/geography filter behavior",
+    "Re-sync embedded catalog after future resource updates",
+    "Human approval for replacing v1"
+  ],
+  "promotion_authorized": false,
+  "note": "Browser smoke test confirms initial page interaction, not comprehensive accessibility or semantic accuracy."
+}
