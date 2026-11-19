@@ -1,0 +1,449 @@
+{
+  "id": "FIND_SUPPORT_SEARCH_V2_QA_v0.1",
+  "date": "2026-11-19",
+  "status": "CANDIDATE_FOR_HUMAN_TESTING",
+  "baseline": {
+    "original_file": "the-foundation-org/resources.html",
+    "source_sha": "49d7fcaf336b7adca09773390e4210ed67f16a57",
+    "resource_count": 47,
+    "catalog_version": "0.6.0-candidate"
+  },
+  "test_page": "the-foundation-org/resources-v2.html",
+  "test_script": "the-foundation-org/assets/find-support-search-v2.js",
+  "rules": [
+    {
+      "key": "printing",
+      "label": "Printing, copying or faxing",
+      "cues": [
+        "print",
+        "printing",
+        "printer",
+        "photocopy",
+        "photocopies",
+        "copy documents",
+        "make copies",
+        "fax",
+        "faxing"
+      ],
+      "targets": [
+        "lfpl-printing-faxing"
+      ]
+    },
+    {
+      "key": "computer_skills",
+      "label": "Learning computer skills",
+      "cues": [
+        "learn to use a computer",
+        "learn how to use a computer",
+        "computer classes",
+        "computer class",
+        "digital literacy",
+        "computer basics",
+        "computer skills",
+        "learn computers",
+        "teach me to use a computer"
+      ],
+      "targets": [
+        "goodwill-south",
+        "lfpl-learningexpress",
+        "lfpl-brainfuse-adult"
+      ]
+    },
+    {
+      "key": "computer_access",
+      "label": "Computer or internet access",
+      "cues": [
+        "computer",
+        "laptop",
+        "wifi",
+        "wi fi",
+        "internet",
+        "internet access",
+        "use a computer",
+        "no computer",
+        "computer access"
+      ],
+      "targets": [
+        "lfpl-computers-wifi",
+        "lfpl-computer-center"
+      ]
+    },
+    {
+      "key": "resume",
+      "label": "Résumé and interview support",
+      "cues": [
+        "resume",
+        "resumes",
+        "cv",
+        "cover letter",
+        "interview help",
+        "interview preparation",
+        "write a resume"
+      ],
+      "targets": [
+        "lfpl-job-seekers",
+        "kcc-general",
+        "kentuckianaworks",
+        "goodwill-south",
+        "goodwill-west",
+        "goodwill-downtown",
+        "ky-ovr",
+        "kentucky-career-center",
+        "usa-cares-transition"
+      ]
+    },
+    {
+      "key": "job",
+      "label": "Finding employment or career guidance",
+      "cues": [
+        "find a job",
+        "find work",
+        "looking for work",
+        "looking for a job",
+        "job search",
+        "career coaching",
+        "job openings",
+        "unemployed",
+        "employment help"
+      ],
+      "targets": [
+        "kcc-general",
+        "kentuckianaworks",
+        "goodwill-west",
+        "goodwill-south",
+        "goodwill-downtown",
+        "lfpl-job-seekers",
+        "kentucky-career-center"
+      ]
+    },
+    {
+      "key": "housing",
+      "label": "Housing assistance or referrals (eligibility varies)",
+      "cues": [
+        "housing",
+        "homeless",
+        "shelter",
+        "eviction",
+        "need a place to stay",
+        "somewhere to sleep",
+        "nowhere to sleep",
+        "rent help",
+        "help with rent"
+      ],
+      "targets": [
+        "goodwill-west",
+        "goodwill-downtown",
+        "va-ssvf",
+        "va-gpd",
+        "gpd-svdp-louisville",
+        "gpd-wayside-louisville",
+        "gpd-healing-louisville"
+      ]
+    },
+    {
+      "key": "transport",
+      "label": "Transportation support or referrals",
+      "cues": [
+        "transportation",
+        "need a ride",
+        "bus fare",
+        "get to work",
+        "commute help"
+      ],
+      "targets": [
+        "goodwill-west",
+        "goodwill-downtown"
+      ]
+    },
+    {
+      "key": "learning",
+      "label": "Classes and skill development",
+      "cues": [
+        "learn a new skill",
+        "training",
+        "skills training",
+        "online class",
+        "online classes",
+        "career classes",
+        "courses",
+        "certification",
+        "study online"
+      ],
+      "targets": [
+        "lfpl-linkedin-learning",
+        "lfpl-learningexpress",
+        "lfpl-brainfuse-adult",
+        "goodwill-south",
+        "o2o",
+        "va-vet-tec-2"
+      ]
+    },
+    {
+      "key": "business",
+      "label": "Small-business research",
+      "cues": [
+        "start a business",
+        "small business",
+        "business plan",
+        "entrepreneur",
+        "entrepreneurship",
+        "business research"
+      ],
+      "targets": [
+        "lfpl-small-business-reference"
+      ]
+    },
+    {
+      "key": "reference",
+      "label": "Help finding information or research",
+      "cues": [
+        "ask a librarian",
+        "librarian",
+        "research question",
+        "find reliable information",
+        "find information",
+        "reference help"
+      ],
+      "targets": [
+        "lfpl-ask-librarian"
+      ]
+    },
+    {
+      "key": "exam",
+      "label": "Tests and exam preparation",
+      "cues": [
+        "ged",
+        "test prep",
+        "practice exam",
+        "exam prep",
+        "proctor",
+        "proctoring",
+        "take a test"
+      ],
+      "targets": [
+        "lfpl-learningexpress",
+        "lfpl-exam-proctoring",
+        "lfpl-brainfuse-adult"
+      ]
+    },
+    {
+      "key": "language",
+      "label": "English and language learning",
+      "cues": [
+        "learn english",
+        "english class",
+        "english classes",
+        "language learning",
+        "citizenship study",
+        "practice english"
+      ],
+      "targets": [
+        "lfpl-language-services",
+        "lfpl-brainfuse-adult"
+      ]
+    },
+    {
+      "key": "grant_research",
+      "label": "Grant and foundation research",
+      "cues": [
+        "find grants",
+        "research grants",
+        "foundation grants",
+        "grant research",
+        "funding research"
+      ],
+      "targets": [
+        "lfpl-candid-grant-research"
+      ]
+    },
+    {
+      "key": "library_card",
+      "label": "Accessing library services",
+      "cues": [
+        "library card",
+        "get a library card",
+        "join the library"
+      ],
+      "targets": [
+        "lfpl-library-card"
+      ]
+    }
+  ],
+  "tests": [
+    {
+      "q": "I need to print my job application",
+      "track": "general",
+      "expect": [
+        "lfpl-printing-faxing"
+      ],
+      "exclude": [
+        "lfpl-small-business-reference"
+      ],
+      "returned": 1,
+      "top": [
+        "lfpl-printing-faxing"
+      ],
+      "pass": true
+    },
+    {
+      "q": "I don't have a printer",
+      "track": "general",
+      "expect": [
+        "lfpl-printing-faxing"
+      ],
+      "returned": 1,
+      "top": [
+        "lfpl-printing-faxing"
+      ],
+      "pass": true
+    },
+    {
+      "q": "Where can I learn to use a computer?",
+      "track": "general",
+      "expect": [
+        "goodwill-south",
+        "lfpl-computers-wifi"
+      ],
+      "returned": 5,
+      "top": [
+        "goodwill-south",
+        "lfpl-brainfuse-adult",
+        "lfpl-computers-wifi",
+        "lfpl-learningexpress",
+        "lfpl-computer-center"
+      ],
+      "pass": true
+    },
+    {
+      "q": "Help me make a résumé",
+      "track": "general",
+      "expect": [
+        "lfpl-job-seekers",
+        "kcc-general"
+      ],
+      "returned": 7,
+      "top": [
+        "goodwill-downtown",
+        "goodwill-south",
+        "goodwill-west",
+        "kentuckianaworks",
+        "kcc-general",
+        "ky-ovr"
+      ],
+      "pass": true
+    },
+    {
+      "q": "I want to start a small business",
+      "track": "general",
+      "expect": [
+        "lfpl-small-business-reference"
+      ],
+      "exclude": [
+        "lfpl-candid-grant-research"
+      ],
+      "returned": 1,
+      "top": [
+        "lfpl-small-business-reference"
+      ],
+      "pass": true
+    },
+    {
+      "q": "I need somewhere to sleep",
+      "track": "all",
+      "expect": [
+        "va-ssvf",
+        "goodwill-west"
+      ],
+      "returned": 7,
+      "top": [
+        "goodwill-downtown",
+        "goodwill-west",
+        "va-gpd",
+        "gpd-svdp-louisville",
+        "va-ssvf",
+        "gpd-healing-louisville"
+      ],
+      "pass": true
+    },
+    {
+      "q": "Where can I find information?",
+      "track": "general",
+      "expect": [
+        "lfpl-ask-librarian"
+      ],
+      "returned": 1,
+      "top": [
+        "lfpl-ask-librarian"
+      ],
+      "pass": true
+    },
+    {
+      "q": "I need to get a library card",
+      "track": "general",
+      "expect": [
+        "lfpl-library-card"
+      ],
+      "returned": 1,
+      "top": [
+        "lfpl-library-card"
+      ],
+      "pass": true
+    },
+    {
+      "q": "LFPL",
+      "track": "general",
+      "expect": [
+        "lfpl-printing-faxing",
+        "lfpl-learningexpress"
+      ],
+      "count": 16,
+      "returned": 16,
+      "top": [
+        "lfpl-homebound-accessibility",
+        "lfpl-ask-librarian",
+        "lfpl-brainfuse-adult",
+        "lfpl-computers-wifi",
+        "lfpl-candid-grant-research",
+        "lfpl-language-services"
+      ],
+      "pass": true
+    },
+    {
+      "q": "zzzxxyy",
+      "track": "all",
+      "expect": [],
+      "count": 0,
+      "returned": 0,
+      "top": [],
+      "pass": true
+    },
+    {
+      "q": "I don't have a printer",
+      "track": "veterans",
+      "expect": [],
+      "count": 0,
+      "returned": 0,
+      "top": [],
+      "pass": true
+    }
+  ],
+  "checks": {
+    "baseline47": true,
+    "parity": true,
+    "originalUnchanged": true,
+    "v2Only": true,
+    "searchExamples": true,
+    "officialLinks": true,
+    "explainMatches": true,
+    "hasEngine": true,
+    "testResults": true,
+    "noBackend": true
+  },
+  "known_limitations": [
+    "No semantic model inference",
+    "Curated triggers and resource IDs require editorial maintenance",
+    "Shared snapshot becomes stale if canonical resource JSON changes",
+    "No availability, eligibility, outreach or referral confirmation"
+  ],
+  "promotion": "NOT_AUTHORIZED"
+}
