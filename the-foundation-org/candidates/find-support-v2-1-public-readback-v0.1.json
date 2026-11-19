@@ -1,0 +1,73 @@
+{
+  "id": "FIND_SUPPORT_V2_1_PUBLIC_POST_PROMOTION_READBACK_v0.1",
+  "date": "2026-11-19",
+  "canonical_page": "https://jcholman.github.io/proam-labs-demos/the-foundation-org/resources.html",
+  "promotion_commit": "2f546c29bde61874822ee410fff65ce4725fd0c1",
+  "source_page_blob": "6e114fae241daecce01661ed1c6bea27673dc5f2",
+  "canonical_resource_count": 47,
+  "catalog_blob": "085e875522c7d8136dc4214af1c44ff289b8c38c",
+  "browser_run_id": "dddc8d6d-0c8e-464b-beab-5eca5191f6db",
+  "browser_run_url": "https://agent.tinyfish.ai/runs/dddc8d6d-0c8e-464b-beab-5eca5191f6db",
+  "pass_count": 9,
+  "disposition": "PASS_CANONICAL_PRODUCTION_SMOKE_TEST",
+  "checks": [
+    {
+      "test": "Title",
+      "pass": true,
+      "details": "Find community support · The Foundation.org · proAM Labs concept"
+    },
+    {
+      "test": "No test banner",
+      "pass": true,
+      "details": "No visible test, beta, or experimental banner"
+    },
+    {
+      "test": "Catalog counts",
+      "pass": true,
+      "details": "Community 22 of 47; All 47 of 47; Veterans 25 of 47"
+    },
+    {
+      "test": "Default examples",
+      "pass": true,
+      "details": "Print 1; computer 2; resume 7; housing referrals 2; learning 4; business 1; show 8 more topics"
+    },
+    {
+      "test": "Printing matching and explanation",
+      "pass": true,
+      "details": "LFPL Printing, Copying and Free Faxing; Why this appeared visible"
+    },
+    {
+      "test": "Veterans-specific housing",
+      "pass": true,
+      "details": "Explore veteran housing pathways 5; printing absent"
+    },
+    {
+      "test": "Business-only filter",
+      "pass": true,
+      "details": "Research starting a business 1; other suggestions hidden"
+    },
+    {
+      "test": "Official website outbound",
+      "pass": true,
+      "details": "Goodwill Downtown resource card retains official external source link"
+    },
+    {
+      "test": "Errors",
+      "pass": true,
+      "details": "No visible page or JS errors observed"
+    }
+  ],
+  "safety_boundaries": {
+    "semantic_search_deployed": false,
+    "provider_capacity_verified": false,
+    "individual_eligibility_decided": false,
+    "record_catalog_modified": false,
+    "reference_pages_preserved": true
+  },
+  "outstanding": [
+    "Manual iOS mobile accessibility check",
+    "Screen reader acceptance test",
+    "Future catalog-to-HTML parity after authorized record changes",
+    "Future semantic-search risk and privacy evaluation"
+  ]
+}

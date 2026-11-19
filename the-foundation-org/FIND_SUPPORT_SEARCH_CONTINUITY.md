@@ -26,3 +26,6 @@ Example counts mean **source-backed catalog record matches** only. They are not 
 6. Maintain `resources.json` ↔ embedded catalog parity on subsequent authorized updates.
 
 **Protect the House — deterministic search is the operational baseline; semantic search remains exploratory.**
+
+## Post-promotion verification (2026-11-19)
+The actual published canonical page was independently opened and exercised in a read-only browser run. Nine checks passed: valid production title, no test banner, 47 records, dynamic Community example counts, printing-to-LFPL matching and explanation, Veterans housing/pathway distinction, Business category narrowing, direct official provider links, and no visible page errors. Browser evidence: https://agent.tinyfish.ai/runs/dddc8d6d-0c8e-464b-beab-5eca5191f6db . This verifies the checked public behavior, not exhaustive mobile accessibility or all 47 external sites.
