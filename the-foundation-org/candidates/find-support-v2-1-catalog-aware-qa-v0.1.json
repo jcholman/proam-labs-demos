@@ -1,0 +1,95 @@
+{
+  "id": "FIND_SUPPORT_V2_1_CATALOG_AWARE_QA_v0.1",
+  "as_of": "2026-11-19",
+  "state": "CANDIDATE_FOR_TESTING",
+  "baseline": {
+    "records": 47,
+    "version": "0.6.0-candidate",
+    "resource_sha": "085e875522c7d8136dc4214af1c44ff289b8c38c",
+    "v2_page_sha": "e891d14bfe528eda20950c351708fe67632da392",
+    "v2_js_sha": "a6aace131a72dbdf2bf36e87022f64e930736781"
+  },
+  "example_mappings": [
+    {
+      "key": "printing",
+      "label": "Print documents",
+      "query": "I need to print my application"
+    },
+    {
+      "key": "computer_access",
+      "label": "Use a computer or Wi-Fi",
+      "query": "I need a computer"
+    },
+    {
+      "key": "resume",
+      "label": "Get résumé help",
+      "query": "Help with my résumé"
+    },
+    {
+      "key": "housing",
+      "label": "Explore housing programs and referrals",
+      "query": "I need housing assistance"
+    },
+    {
+      "key": "learning",
+      "label": "Learn a new skill",
+      "query": "I want to learn a new skill"
+    },
+    {
+      "key": "business",
+      "label": "Research starting a business",
+      "query": "I want to start a small business"
+    },
+    {
+      "key": "job",
+      "label": "Find job-search support",
+      "query": "I need help finding a job"
+    },
+    {
+      "key": "computer_skills",
+      "label": "Learn computer skills",
+      "query": "I want to learn computer skills"
+    },
+    {
+      "key": "exam",
+      "label": "Prepare for an exam",
+      "query": "I need test prep"
+    },
+    {
+      "key": "language",
+      "label": "Explore English learning",
+      "query": "I want to learn English"
+    },
+    {
+      "key": "reference",
+      "label": "Get help finding information",
+      "query": "I want to ask a librarian"
+    },
+    {
+      "key": "library_card",
+      "label": "Get a library card",
+      "query": "I need to get a library card"
+    },
+    {
+      "key": "grant_research",
+      "label": "Research grants",
+      "query": "I want to research grants"
+    },
+    {
+      "key": "transport",
+      "label": "Explore transportation referrals",
+      "query": "I need transportation"
+    }
+  ],
+  "display": {
+    "maxDefault": 6,
+    "expandable": true,
+    "dynamicDimensions": [
+      "pathway",
+      "category",
+      "geography"
+    ],
+    "availabilityNotConfirmed": true
+  },
+  "publication_authorized": false
+}
