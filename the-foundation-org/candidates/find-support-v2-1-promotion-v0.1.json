@@ -1,0 +1,34 @@
+{
+  "id": "FIND_SUPPORT_V2_1_CANONICAL_PROMOTION_v0.1",
+  "authorized_on": "2026-11-19",
+  "approval": "User explicitly requested replacing v1 with tested v2.1",
+  "initial_branch_sha": "85e38246829da7c7450b54b7c0ec1ef64cfa3f55",
+  "status": "PROMOTION_READY_FOR_PUBLIC_READBACK",
+  "catalog_sha": "085e875522c7d8136dc4214af1c44ff289b8c38c",
+  "catalog_version": "0.6.0-candidate",
+  "catalog_records": 47,
+  "canonical_page": "the-foundation-org/resources.html",
+  "canonical_script": "the-foundation-org/assets/find-support-search.js",
+  "rollback_archive": "the-foundation-org/resources-v1-archive.html",
+  "preserved_qa": [
+    "the-foundation-org/resources-v2.html",
+    "the-foundation-org/resources-v2-1.html"
+  ],
+  "source_acceptance": "the-foundation-org/candidates/find-support-v2-1-browser-acceptance-v0.1.json",
+  "checks": {
+    "originalCatalog47": true,
+    "canonicalCatalogMirrors": true,
+    "archiveCatalogMirrors": true,
+    "correctPublicScript": true,
+    "noTestBanner": true,
+    "canonicalIndexable": true,
+    "archiveNoindex": true,
+    "archiveHasOriginalInlineSearch": true,
+    "productionHasDefaultNav": true,
+    "officialLinksRemain": true,
+    "semanticNotDeployed": true,
+    "unchangedSourceBackedRecords": true
+  },
+  "semantic_search": "NOT_DEPLOYED",
+  "publication_scope": "Search presentation only. No provider record changes, no outreach, no referrals, no model API."
+}
