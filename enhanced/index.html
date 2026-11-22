@@ -74,11 +74,93 @@
     @media(max-width:430px){ .container { width:calc(100% - 26px); } .topnav { font-size:12px; } .topbar .container { gap:10px; } }
     @media(prefers-reduced-motion:reduce){ html { scroll-behavior:auto; } }
   </style>
-<link rel="apple-touch-icon" sizes="180x180" href="/proam-labs-demos/showcase/assets/icons/proam-labs-apple-touch-icon-180x180.png?v=tan-1"><meta name="apple-mobile-web-app-title" content="proAM Demos"></head>
+<link rel="apple-touch-icon" sizes="180x180" href="/proam-labs-demos/showcase/assets/icons/proam-labs-apple-touch-icon-180x180.png?v=tan-1"><meta name="apple-mobile-web-app-title" content="proAM Demos">
+<!-- Approved Orientation Graph design system: adapted for demo library layout. -->
+<style id="enhanced-orientation-glass">
+:root{--library-smoke:.82}
+html{background:#08131c}
+body{isolation:isolate;background:transparent!important}
+body::before{
+ content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+ background:
+ linear-gradient(180deg,rgba(4,13,21,.15),rgba(3,15,24,.1) 45%,rgba(3,12,19,.35)),
+ radial-gradient(ellipse 65% 38% at 50% -7%,#153242 0%,transparent 84%),
+ radial-gradient(ellipse 80% 80% at 70% 84%,rgba(15,57,79,.42),transparent 78%),
+ repeating-linear-gradient(0deg,transparent 0 39px,rgba(88,145,172,.09) 39px 40px),
+ repeating-linear-gradient(90deg,transparent 0 39px,rgba(88,145,172,.09) 39px 40px),
+ #08131c;
+ background-position:center;background-size:cover;
+ transform:translateZ(0);
+}
+.topbar{
+ background:rgba(8,22,32,.86);
+ -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+ border-bottom:1px solid #26404f;
+}
+.topbar .container{gap:20px;padding:16px 0}
+.brand{display:flex;gap:13px;align-items:center;font-weight:initial;letter-spacing:normal;min-width:0}
+.brand-logo{
+ display:block;flex:0 0 auto;width:53px;height:53px;
+ object-fit:cover;border-radius:50%;clip-path:circle(49.5%);
+ filter:drop-shadow(0 0 7px rgba(247,192,76,.24));
+}
+.brand-word{
+ white-space:nowrap;color:#fff;
+ font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ font-size:23px;font-weight:800;line-height:1.2;letter-spacing:-1px;
+}
+.brand-word span{font-weight:400;color:#b68c40}
+.brand-divider{width:1px;height:35px;background:#315061;flex:none;margin:0 5px}
+.brand-library{font-size:17px;line-height:1.25;color:#eaf3f7;white-space:nowrap;letter-spacing:-.2px}
+.topnav{align-items:center;gap:14px}
+.topnav a{color:#c7d9e5;white-space:nowrap}
+.topnav a:hover{color:#fff}
+.hero{
+ background:rgba(8,22,32,.69);
+ -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+ border:1px solid rgba(70,109,129,.35);border-radius:16px;
+ margin:26px 0 35px;padding:30px 32px;
+ box-shadow:0 12px 30px rgba(0,5,10,.14);
+}
+.card,.planned-card,.clarifier{
+ background:rgba(9,26,37,var(--library-smoke));
+ -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+ box-shadow:0 10px 24px rgba(0,5,10,.15);
+}
+.chip{background:rgba(12,34,47,.8);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+footer{background:rgba(7,19,31,.43);-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+@media(max-width:1100px){
+ .topbar .container{flex-wrap:wrap;gap:12px}
+ .topnav{width:100%;justify-content:flex-start;gap:13px;row-gap:7px}
+}
+@media(max-width:760px){
+ body::before{height:100dvh}
+ .brand-logo{width:46px;height:46px}
+ .brand-word{font-size:21px}
+ .brand-library{font-size:15px}
+ .hero{padding:22px 20px;margin:20px 0 30px}
+ .card,.planned-card,.clarifier{-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+}
+@media(max-width:430px){
+ .brand{gap:9px;flex-wrap:wrap}
+ .brand-logo{width:43px;height:43px}
+ .brand-word{font-size:21px}
+ .brand-divider{height:25px;margin:0 2px}
+ .brand-library{font-size:12px}
+ .topnav{gap:8px 12px}
+}
+@media(prefers-reduced-transparency:reduce){:root{--library-smoke:.96}}
+</style>
+</head>
 <body>
   <header class="topbar">
     <div class="container">
-      <div class="brand"><span class="brandmark" aria-hidden="true">p</span><div>proAM Labs<small>Interactive Demo Library</small></div></div>
+      <div class="brand">
+        <img class="brand-logo" src="data:image/jpeg;base64,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" width="53" height="53" alt="proAM Labs gold-and-teal orbital emblem">
+        <div class="brand-word">proAM <span>Labs</span></div>
+        <div class="brand-divider" aria-hidden="true"></div>
+        <div class="brand-library">Interactive Demo Library</div>
+      </div>
       <nav class="topnav" aria-label="Page navigation"><a href="https://jcholman.github.io/proam-labs-demos/">← Basic view</a>
         <a href="#arena">Arena</a><a href="#orientation">Orientation</a><a href="#continuity">Continuity</a><a href="#value">Value</a><a href="#upcoming">Coming next</a>
       </nav>
