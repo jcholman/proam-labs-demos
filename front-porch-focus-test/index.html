@@ -353,6 +353,34 @@
 #app-container.state-3:not(.state-4) #drafting-lower-right-cluster *{animation:none!important}
 }
 </style>
+
+<!-- Test-only final-render backdrop. Original parchment and SVG stay unchanged. -->
+<style id="front-porch-final-backdrop">
+/* The background is behind the SVG and UI. It is hidden for the archival
+   opening, begins to fade in as the modern seal resolves (state 6),
+   and is fully visible as the content appears (states 7 and 8). */
+#app-container::before {
+ content:"";
+ position:fixed;
+ inset:0;
+ z-index:0;
+ pointer-events:none;
+ background:#06111f url("assets/final-grid-background.jpg") center center / cover no-repeat;
+ opacity:0;
+ transition:none;
+}
+#app-container.state-6:not(.mode-static)::before {
+ opacity:1;
+ transition:opacity 1.2s ease-in-out;
+}
+#app-container.mode-static::before {
+ opacity:0!important;
+ transition:none!important;
+}
+@media(prefers-reduced-motion:reduce){
+ #app-container.state-6::before { transition:none!important; }
+}
+</style>
 </head>
 <body>
 
