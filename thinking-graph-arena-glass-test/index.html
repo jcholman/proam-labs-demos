@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>proAM Labs · Thinking Graph Arena v0.4 · North Star Glass Test</title>
+<style>
+:root{color-scheme:dark;--bg:#06111c;--nav:#071521;--panel:#0b1d2b;--panel2:#102738;--line:#244155;--ink:#ebf6fc;--muted:#94adbd;--cyan:#4fdcff;--green:#72e3ab;--gold:#f0c06f;--red:#fa828e;--purple:#b2a5fa;--soft:#152d3c}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;font-size:14px}body{min-height:100vh;background:radial-gradient(ellipse 65% 40% at 14% -8%,#12344d 0,transparent 90%),linear-gradient(175deg,#071522,var(--bg) 60%)}button,select,input{font:inherit}button,select{color:var(--ink);background:#102637;border:1px solid #305166;border-radius:9px;padding:9px 11px}button{cursor:pointer}button:hover{border-color:#6bb8d6}button:focus-visible,select:focus-visible,input:focus-visible,.task:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}button:disabled{opacity:.4;cursor:not-allowed}.primary{background:#12516a;border-color:#2e9abc;font-weight:700}.selected{background:#174b61;border-color:var(--cyan)!important;box-shadow:inset 0 0 0 1px #329ab9}.top{max-width:1500px;margin:auto;padding:23px 26px 18px;display:flex;justify-content:space-between;align-items:flex-start;gap:24px}.brand{font-size:11px;font-weight:750;color:var(--cyan);letter-spacing:.16em;text-transform:uppercase}.top h1{margin:9px 0 7px;font-size:clamp(22px,3vw,34px);letter-spacing:-.035em;line-height:1.12}.sub{margin:0;color:var(--muted);max-width:800px;line-height:1.5}.version{white-space:nowrap;border-radius:999px;border:1px solid #36566b;padding:8px 11px;font-size:11px;color:#a8ccdb}.wrap{max-width:1500px;margin:auto;padding:0 26px 40px}.banner{display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:12px 15px;border:1px solid #35546a;border-radius:13px;background:#11283a;margin-bottom:14px}.banner strong{font-size:12px;color:#d9e9f3}.banner span{font-size:12px;color:var(--muted)}.banner .signal{height:8px;width:8px;background:var(--gold);border-radius:50%;box-shadow:0 0 15px #f0c06f55}.shell{display:grid;grid-template-columns:minmax(0,1fr) 336px;gap:14px}.main,.side{border:1px solid var(--line);background:#0b1b29c9;border-radius:16px;overflow:hidden;min-width:0}.toolbar{padding:14px;display:flex;flex-wrap:wrap;align-items:center;gap:9px;border-bottom:1px solid var(--line)}.toolbar label{font-size:12px;color:var(--muted)}.toolbar .spacer{flex:1}.segment{border:1px solid #345267;display:flex;border-radius:10px;overflow:hidden}.segment button{border:0;border-right:1px solid #294758;border-radius:0;padding:10px 12px;min-width:110px}.segment button:last-child{border-right:0}.controls{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-left:auto}.controls button{padding:9px 10px}.strip{padding:11px 16px;border-bottom:1px solid #203b4c;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}.strip .label{font-size:11px;letter-spacing:.08em;color:var(--muted);text-transform:uppercase}.strip .right{display:flex;gap:13px;align-items:center;font-size:12px;color:#d7e8ef}.dot{display:inline-block;height:8px;width:8px;border-radius:50%;background:#527086;margin-right:6px}.dot.running{background:var(--green);box-shadow:0 0 13px var(--green)}.timeslider{width:min(270px,34vw);accent-color:var(--cyan)}.content{padding:16px;min-height:500px}.surface{display:none}.surface.active{display:block}.foot{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 16px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);flex-wrap:wrap}.foot strong{color:var(--ink)}.metricgrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px;margin-bottom:14px}.metric{border:1px solid #294759;background:#0c2635;border-radius:10px;padding:10px 11px;min-width:0}.metric .lbl{color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.07em}.metric .num{font-size:20px;font-weight:760;margin-top:4px;letter-spacing:-.02em}.metric small{font-size:10px;color:#91abbc}.note{padding:11px 13px;background:#142937;border:1px solid #31536a;border-radius:10px;line-height:1.45;color:#c5deeb;font-size:12px;margin-bottom:15px}.note b{color:var(--cyan)}.flow-area{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:8px;align-items:stretch}.stage{background:#0e2535;border:1px solid #375266;border-radius:11px;padding:13px 11px;position:relative;min-height:128px;display:flex;flex-direction:column;gap:7px;transition:background .2s,border-color .2s;cursor:pointer}.stage h3{font-size:14px;margin:0}.stage small{font-size:11px;color:var(--muted);line-height:1.4}.stage .count{font-size:10px;color:#8fb4c7;margin-top:auto}.stage.active{border-color:var(--cyan);background:#123a4b;box-shadow:0 0 0 1px #4fdcff20}.stage.done{border-color:#386b5a}.stage .stageNum{position:absolute;right:9px;top:7px;font-size:10px;color:#84a4b8}.arr{display:flex;justify-content:center;align-items:center;font-size:21px;color:#4e829a}.secondary-flow{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:8px;margin-top:14px}.under{margin-top:13px;padding:12px;border-radius:10px;background:#0d2933;border:1px dashed #547a81;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.under .dot{background:var(--green)}.under strong{color:#bdebd3}.under span{font-size:11px;color:#a4c4c9}.govern{margin-top:12px;border:1px solid #875359;border-radius:10px;background:#301e2a45;padding:12px;display:flex;gap:12px;align-items:flex-start}.govern strong{color:#ffacb3}.govern div{color:#dac4c6;font-size:11px;line-height:1.5}.key{display:flex;gap:11px;flex-wrap:wrap;color:var(--muted);font-size:11px;margin-top:14px}.key i{display:inline-block;width:11px;height:8px;border-radius:3px;margin-right:5px}.key .c1{background:var(--cyan)}.key .c2{background:var(--gold)}.key .c3{background:var(--green)}.key .c4{background:var(--red)}.axis{display:flex;margin-left:122px;position:relative;height:25px;border-bottom:1px solid #325269;margin-bottom:6px}.tick{position:absolute;top:0;transform:translateX(-50%);font-size:10px;color:#80a8ba}.timeline{position:relative}.lane{display:grid;grid-template-columns:122px minmax(0,1fr);gap:0;align-items:stretch;border-bottom:1px solid #22394a}.lane .left{padding:14px 8px 10px 0}.left strong{display:block;font-size:12px}.left span{color:#8daabd;font-size:10px}.track{position:relative;min-height:83px;overflow:hidden;background:repeating-linear-gradient(to right,transparent 0,transparent calc(20% - 1px),#1f3745 calc(20% - 1px),#1f3745 20%)}.task{position:absolute;height:17px;border-radius:4px;border:1px solid #ffffff26;min-width:3px;overflow:hidden;text-overflow:clip;white-space:nowrap;font-size:9px;padding:2px 4px;color:#031823;font-weight:750;cursor:pointer;opacity:.42;transition:opacity .1s,filter .1s}.task.active{opacity:1;filter:brightness(1.18);box-shadow:0 0 10px #4fdcff55;z-index:3}.task.finished{opacity:.87}.task.chosen{outline:2px solid white;outline-offset:1px;z-index:4}.task.a{background:#55d2fb}.task.j{background:#f2c47b}.task.d{background:#a3b1ff}.task.t{background:#86d7c3}.task.h{background:#70dfaa}.task.x{background:#f69aa6}.cursor{position:absolute;top:0;bottom:0;width:2px;background:white;opacity:.88;pointer-events:none;z-index:5;box-shadow:0 0 10px #fff9}.runtime-foot{display:flex;gap:15px;flex-wrap:wrap;margin-top:12px;font-size:11px;color:var(--muted)}.runtime-foot span{line-height:1.5}.side{padding:16px;display:flex;flex-direction:column;gap:13px}.side h2{font-size:15px;margin:0 0 8px}.section-head{font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:720;color:#94b5c7;margin-bottom:8px}.packetlist{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}.packet{border:1px solid #315168;background:#0c2435;border-radius:8px;padding:9px 2px;cursor:pointer;font-size:11px;text-align:center}.packet.active{border-color:var(--cyan);background:#134053}.packet .ps{font-size:9px;color:#adc4d1;display:block;margin-top:3px}.packet.finished .ps{color:var(--green)}.card{border:1px solid #2f4c61;border-radius:11px;padding:12px;background:#0e2635}.card-title{font-size:13px;font-weight:750;margin:0 0 5px}.card-sub{font-size:11px;color:var(--muted);line-height:1.5}.kv{display:grid;grid-template-columns:1fr auto;gap:9px;font-size:11px;padding:7px 0;border-bottom:1px solid #234357}.kv:last-child{border-bottom:0}.kv span:first-child{color:var(--muted)}.kv b{font-weight:650}.gate-hold{color:var(--red)}.gate-release{color:var(--green)}.gate-review{color:var(--gold)}.divider{border:0;border-top:1px solid #2a4759;margin:0}.log{max-height:260px;overflow:auto;display:flex;flex-direction:column;gap:6px;scrollbar-color:#335a70 transparent}.event{font-size:11px;padding:8px 9px;border-left:2px solid #45677a;background:#102636;border-radius:4px;line-height:1.42}.event b{color:#cbe5f3}.event .time{color:var(--cyan);font-variant-numeric:tabular-nums}.event.hold{border-color:var(--red)}.event.release{border-color:var(--green)}.footer-doc{margin-top:14px;padding:14px;border:1px solid #2a4b60;border-radius:12px;background:#0d2231;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.footer-doc b{font-size:13px}.footer-doc p{margin:5px 0 0;font-size:11px;color:var(--muted);line-height:1.5;max-width:820px} .mini{font-size:11px;color:var(--muted)}.scenario-facts{display:flex;gap:16px;flex-wrap:wrap}.chip{display:inline-flex;align-items:center;border:1px solid #405c6b;border-radius:999px;padding:4px 8px;font-size:10px;color:#a8cad9}.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+@media(max-width:1100px){.shell{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr}.side>.long{grid-column:1/-1}.top{padding:16px}.wrap{padding:0 16px 20px}}@media(max-width:680px){.top{flex-direction:column;gap:8px}.wrap{padding:0 9px 25px}.top{padding:15px 12px}.toolbar{padding:10px}.content{padding:10px}.metricgrid{grid-template-columns:1fr 1fr}.flow-area,.secondary-flow{grid-template-columns:1fr;gap:5px}.arr{transform:rotate(90deg);height:18px}.stage{min-height:84px;padding:9px 11px}.side{grid-template-columns:1fr}.side>.long{grid-column:auto}.axis{margin-left:88px}.lane{grid-template-columns:88px minmax(0,1fr)}.lane .left{padding:14px 4px 8px 0}.lane .left strong{font-size:10px}.track{min-height:72px}.task{font-size:0}.timeslider{width:125px}.segment button{min-width:83px}.metric .num{font-size:18px}.foot{padding:10px}}
+</style>
+<!-- Test-only style: no changes to the v0.4 application code -->
+<style id="arena-glass-experiment">
+:root{--arena-glass-opacity:.80}
+html{background:#05101c}
+body{isolation:isolate;background:transparent!important}
+body::before{
+  content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(180deg,rgba(3,12,22,.33) 0%,rgba(3,12,22,.19) 35%,rgba(3,12,22,.36) 100%),url("assets/north-star-compass.jpg");
+  background-size:cover;background-position:center center;background-repeat:no-repeat;
+  transform:translateZ(0);
+}
+.top{
+  background:rgba(6,18,30,.73);border:1px solid rgba(75,122,148,.34);border-radius:12px;
+  -webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);
+  margin-top:12px;margin-bottom:13px;
+}
+.banner,.main,.side{
+  background:rgba(8,24,37,var(--arena-glass-opacity));
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
+}
+.metric,.note,.card,.event,.footer-doc,.under,.govern,.packet:not(.active),.stage:not(.active),.banner .chip{
+  background:rgba(12,32,47,var(--arena-glass-opacity));
+  -webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);
+}
+.main,.side,.banner,.metric,.note,.card,.footer-doc{box-shadow:0 12px 28px rgba(0,4,10,.17)}
+.top h1,.top .sub,.note,.card-sub,.event{ text-shadow:0 1px 3px rgba(0,0,0,.42) }
+@media(max-width:680px){
+  body::before{height:100dvh;background-position:center center}
+  .top{margin:8px 9px 12px}
+  .main,.side,.banner{-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px)}
+}
+@media(prefers-reduced-transparency:reduce){:root{--arena-glass-opacity:.94}}
+</style>
+<style id="arena-glass-test-controls-style">
+#arena-glass-controls{
+ max-width:1500px;margin:0 auto 13px;padding:9px 18px;
+ display:flex;align-items:center;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;
+ border:1px solid rgba(152,180,194,.48);border-radius:11px;
+ background:rgba(6,16,27,.93);color:#e8f3f7;font:12px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+}
+#arena-glass-controls strong{color:#f0c06f;letter-spacing:.025em}
+#arena-glass-controls label{display:inline-flex;align-items:center;gap:7px;cursor:pointer}
+#arena-glass-controls input[type=checkbox],#arena-glass-controls input[type=range]{accent-color:#f0c06f}
+#arena-glass-controls input[type=range]{width:115px}
+#arena-glass-controls output{min-width:3em;font-variant-numeric:tabular-nums}
+#arena-glass-controls small{color:#afc6d2;font-size:11px}
+@media(max-width:680px){#arena-glass-controls{margin:0 9px 10px;padding:9px 12px;justify-content:flex-start}}
+</style>
+</head>
+<body>
+<header class="top"><div><div class="brand">proAM Labs / The Thinking Graph</div><h1>Arena <span style="color:var(--cyan)">v0.4</span> <span style="color:#91b0bf;font-weight:430">· Concurrent Decision Simulator</span></h1><p class="sub">One governed decision architecture. Two views: <b>logical meaning</b> and <b>runtime execution</b>. Watch Jev-style micro-judgments overlap with the 3A's without treating a fast answer as qualified truth.</p></div><div class="version">DEMO v0.4 · READ-ONLY SIMULATION</div></header>
+<div id="arena-glass-controls" role="group" aria-label="North Star Compass smoked-glass experiment">
+ <strong>VISUAL TEST · NORTH STAR COMPASS</strong>
+ <label for="arena-glass-on"><input type="checkbox" id="arena-glass-on" checked> Glass on</label>
+ <label for="arena-glass-smoke">Smoke <input type="range" id="arena-glass-smoke" min="45" max="96" step="1" value="80" aria-label="Smoked glass opacity"><output id="arena-glass-value" for="arena-glass-smoke">80%</output></label>
+ <small>Scroll to inspect background · toggle glass to compare with v0.4 · simulation unchanged</small>
+</div>
+<div class="wrap">
+<div class="banner"><span class="signal" aria-hidden="true"></span><strong>Recognition candidate · qualified for controlled testing</strong><span>Concurrent bounded judgment may improve throughput and reduce cost while preserving evidence, qualification, and authorization boundaries. Not yet empirically demonstrated.</span></div>
+<div class="shell">
+<main class="main">
+<div class="toolbar"><div class="segment" role="group" aria-label="Arena view"><button id="logicalBtn" class="selected" aria-pressed="true">Logical view</button><button id="runtimeBtn" aria-pressed="false">Runtime view</button></div><label for="scenario">Scenario</label><select id="scenario"><option value="live">LIVE · New observations</option><option value="land">LAND · Historical</option><option value="query">QUERY · Federated</option><option value="combined">COMBINED · Convergence</option></select><div class="spacer"></div><div class="controls"><button id="play" class="primary">▶ Play</button><button id="pause">Ⅱ Pause</button><button id="step">↦ Next event</button><button id="reset">↻ Reset</button></div></div>
+<div class="strip"><div class="scenario-facts"><span class="chip" id="sourceFact">8 observations</span><span class="chip" id="policyFact">Mixed authorization</span><span class="chip">No external APIs / no canonical writes</span></div><div class="right"><span><i class="dot" id="runDot"></i><b id="runStatus">READY</b></span><label for="speed">Speed</label><select id="speed"><option value="1">1×</option><option value="2" selected>2×</option><option value="4">4×</option><option value="8">8×</option></select></div></div>
+<div class="strip"><div><span class="label">Simulation time</span> <strong style="font-variant-numeric:tabular-nums" id="elapsed">0.0s / 0.0s</strong></div><input class="timeslider" type="range" id="scrub" min="0" max="100" value="0" aria-label="Scrub simulation timeline"/><span class="mini" id="activity">0 tasks active</span></div>
+<section class="content"><div class="metricgrid">
+<div class="metric"><div class="lbl">Observations</div><div class="num" id="kpiObs">0 / 8</div><small>Ingested source envelopes</small></div>
+<div class="metric"><div class="lbl">Qualified</div><div class="num" id="kpiQual">0 / 8</div><small>Only after source + triage</small></div>
+<div class="metric"><div class="lbl">Simulated makespan</div><div class="num" id="kpiTime">—</div><small id="makespanNote">Not measured in production</small></div>
+<div class="metric"><div class="lbl">Relative concurrency</div><div class="num" id="kpiGain">—</div><small>Against serialized toy baseline</small></div>
+</div>
+<div id="logical" class="surface active" aria-label="Logical progression"><div class="note"><b>What must happen in order?</b> Evidence must be complete before qualification, qualification precedes graph-state promotion, and authorization precedes consequential action. Jev is a supporting service, not an agent or governing authority.</div>
+<div class="flow-area"><div class="stage" data-stage="a"><span class="stageNum">01</span><h3>Aletheia</h3><small>Observe · preserve source and uncertainty</small><span class="count">0 ready</span></div><div class="arr">→</div><div class="stage" data-stage="j"><span class="stageNum">02</span><h3>Jev · initial triage</h3><small>Provisional classification · routing</small><span class="count">0 ready</span></div><div class="arr">→</div><div class="stage" data-stage="d"><span class="stageNum">03</span><h3>Andreas</h3><small>Independent evidence / meaning qualification</small><span class="count">0 ready</span></div></div>
+<div class="secondary-flow"><div class="stage" data-stage="t"><span class="stageNum">04</span><h3>Thinking Graph</h3><small>Governed continuity · provenance · no automatic canonization</small><span class="count">0 ready</span></div><div class="arr">→</div><div class="stage" data-stage="h"><span class="stageNum">05</span><h3>Athena</h3><small>Readiness · options · proposed action</small><span class="count">0 ready</span></div><div class="arr">→</div><div class="stage" data-stage="x"><span class="stageNum">06</span><h3>Alex · gated disposition</h3><small>HOLD / REVIEW / RELEASE under Themis policy</small><span class="count">0 ready</span></div></div>
+<div class="under"><i class="dot"></i><strong>Concurrent supporting work:</strong><span>Jev may begin bounded triage once a minimal source envelope exists; other observations can be at different stages simultaneously.</span></div>
+<div class="govern"><b style="font-size:18px">⛨</b><div><strong>Themis · continuous governance boundary</strong><br/>Policy, access scope, the limits of Jev's provisional score, and required human approval remain enforceable at every stage. Alex applies the operational conditions; it does not create authority.</div></div><div class="key"><span><i class="c1"></i> Evidence work</span><span><i class="c2"></i> Bounded judgment</span><span><i class="c3"></i> Qualified progress</span><span><i class="c4"></i> Authority boundary</span></div>
+</div>
+<div id="runtime" class="surface" aria-label="Concurrent runtime"><div class="note"><b>What can happen at the same time?</b> Each bar is a simulated task for an individual observation. Overlapping bars represent concurrent work. Jev starts after a bounded envelope is available; Andreas waits for both full capture and triage. Alex monitors throughout and performs a separate final authorization check.</div><div id="timeline"><div class="axis" id="timeAxis"></div><div class="timeline" id="lanes"></div></div><div class="runtime-foot"><span>Bars: <span style="color:var(--cyan)">Aletheia</span> · <span style="color:var(--gold)">Jev</span> · <span style="color:var(--purple)">Andreas</span> · <span style="color:var(--green)">Athena</span> · <span style="color:var(--red)">Alex</span></span><span>Click any bar to inspect its observation.</span><span>All durations and concurrency limits are illustrative assumptions, not performance measurements.</span></div></div></section>
+<div class="foot"><span><strong>Source contract:</strong> LIVE / LAND / query-in-place / combined convergence from the existing Arena prototype.</span><span><strong>Simulation:</strong> synthetic records · deterministic schedule · no real Jev model calls.</span></div></main>
+<aside class="side"><div><div class="section-head">Observation selector</div><div class="packetlist" id="packetlist"></div></div><div><div class="section-head">Selected observation</div><div class="card" id="inspector"><p>Loading…</p></div></div><div class="long"><div style="display:flex;justify-content:space-between;align-items:center;gap:8px"><div class="section-head">Execution & governance events</div><button id="exportTrace" title="Export simulated events as JSON" style="font-size:10px;padding:6px 8px">Export trace ↓</button></div><div class="log" id="eventLog" aria-live="polite"></div></div></aside>
+</div>
+<div class="footer-doc"><div><b>Recognition hypothesis: Logical order ≠ runtime serialization</b><p>Acceptance for a future real test requires improved end-to-end throughput or cost <em>without regression</em> in source fidelity, missed consequential observations, qualification accuracy, unauthorized releases, or recovery consistency. Simulator results cannot qualify that claim.</p></div><div style="display:flex;align-items:center;gap:10px"><button id="downloadContract">Download test contract ↓</button></div></div>
+</div>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const stages=[{key:'a',name:'Aletheia',tag:'Capture',cap:2},{key:'j',name:'Jev / Adapter',tag:'Triage',cap:3},{key:'d',name:'Andreas',tag:'Qualify',cap:2},{key:'t',name:'Thinking Graph',tag:'Reconcile',cap:1},{key:'h',name:'Athena',tag:'Readiness',cap:1},{key:'x',name:'Alex / Themis',tag:'Gate',cap:1}];
+const scenarios={
+ live:{name:'LIVE',policy:'Mixed: some authority absent',sources:['New observation','User question','Session event','Fresh signal','Application status','New recognition','Current report','Operational alert'],durable:true},
+ land:{name:'LAND',policy:'Historical, append-only',sources:['Archived chat','Legacy thread','Recovered note','Original source','Observation record','Historical signal','Prior decision','Previous case'],durable:true},
+ query:{name:'QUERY',policy:'Read-only federated consultation',sources:['Benefit listing','Provider directory','Official notice','Resource registry','Public program','Eligibility rule','Availability page','Source reference'],durable:false},
+ combined:{name:'COMBINED',policy:'Mixed LIVE + LAND + QUERY',sources:['LIVE intake','LAND history','Federated check','Source change','Historical context','External response','LIVE contradiction','Cross-source signal'],durable:'selective'}
+};
+const recognition={
+ id:'REC-CANDIDATE-SBA-CONCURRENCY-V4-2026-11-17',status:'CANDIDATE_ACCEPTED_FOR_CONTROLLED_TESTING',claim:'Logical evidence and authority gates can remain sequential while independent agent and bounded decision-model tasks execute concurrently, improving throughput or cost without material quality or governance regression.',
+ context:'proAM Labs Thinking Graph Arena v0.4 · Aletheia / Jev-style adapter / Andreas / Athena / Alex',
+ invariant:['LAND: entering the graph is not canonization','Aletheia source evidence must be complete before Andreas qualifies','Jev outputs are provisional judgments, never source evidence or authorization','Unknown and not-measured values stay distinguishable','No source material is overwritten','Alex is not the source of governing authority','Model and evaluator replacement must preserve qualified meaning'],
+ independent_variables:['sequential vs concurrent execution','decision adapter enabled vs disabled','observations per batch','resource capacity','routing confidence threshold'],
+ dependent_measures:['end-to-end wall-clock latency','throughput','token/API cost','source fidelity','missed consequential observations (false-negative triage)','qualification errors','unauthorized release rate','resume/retry correctness'],
+ comparison:'Use identical frozen observation fixtures, authorization policy, model identity and evaluation contract in serial and concurrent modes. Record schedules, task traces, source lineage and independent dispositions.',
+ falsification:'Reject the performance hypothesis if concurrency does not improve throughput or cost under equivalent resources, or if missed candidates, evidence fidelity, HOLD/RELEASE correctness or recovery materially regress.',
+ status_note:'The v0.4 browser simulator is illustrative only. No real models or production systems execute. Simulator speedups are not evidence of actual efficiency.'
+};
+let scenario='live',mode='logical',records=[],jobs=[],baseline=[],total=0,now=0,playing=false,selected=0,lastFrame=null,rafId=null,lastUiUpdate=0;
+const nowfmt=x=>(x||0).toFixed(1)+'s';
+function recordFactory(){const sc=scenarios[scenario];return Array.from({length:8},(_,i)=>({id:`${sc.name}-${String(i+1).padStart(3,'0')}`,name:sc.sources[i],source:i%3===0?'source-bound':i%3===1?'source-candidate':'needs-corroboration',arrival:i*4,score:[0.92,0.61,0.87,0.55,0.96,0.79,0.71,0.89][i],consequential:[true,false,true,false,true,false,false,true][i],authority:scenario==='query'?false:(i%5!==1 && i%5!==3),contradiction:i===3||i===6,eligible:scenario!=='query' && i%5!==3,durable:scenario==='query'?false:scenario==='combined'?![2,5].includes(i):true,complete:false}));}
+function duration(r,k){const i=records.indexOf(r);return {a:17+(i%3)*4,j:5+(i%2)*2,d:22+(i%4)*3,t:7+(i%2),h:16+(i%3)*4,x:8+(i%2)*2}[k];}
+function disposition(r){if(r.contradiction||r.score<.64)return 'REVIEW';if(!r.authority)return 'HOLD';return 'RELEASE';}
+function schedule(kind){const avail=Object.fromEntries(stages.map(s=>[s.key,Array(s.cap).fill(0)]));let globalAvail=0;const j=[];
+ const task=(rec,key,earliest)=>{let dur=duration(rec,key);let start,slot=0;
+ if(kind==='serial'){start=Math.max(globalAvail,earliest);globalAvail=start+dur;}else{const a=avail[key];slot=a.indexOf(Math.min(...a));start=Math.max(a[slot],earliest);a[slot]=start+dur;}
+ const obj={id:`${rec.id}-${key}`,rid:rec.id,key,start,end:start+dur,slot,recIndex:records.indexOf(rec)};j.push(obj);return obj;};
+ for(const rec of records){const a=task(rec,'a',rec.arrival);const jev=task(rec,'j',kind==='serial'?a.end:a.start+(a.end-a.start)*0.46);const d=task(rec,'d',Math.max(a.end,jev.end));const tg=task(rec,'t',d.end);const h=task(rec,'h',tg.end);task(rec,'x',h.end);}
+ return j;}
+function tasksOf(rid){return jobs.filter(x=>x.rid===rid);}
+function one(rid,k){return jobs.find(j=>j.rid===rid&&j.key===k);}
+function stagesCompleted(){return Object.fromEntries(stages.map(s=>[s.key,jobs.filter(j=>j.key===s.key&&j.end<=now).length]));}
+function stateOf(rec){const a=one(rec.id,'a'),j=one(rec.id,'j'),d=one(rec.id,'d'),h=one(rec.id,'h'),x=one(rec.id,'x');if(now>=x.end)return disposition(rec);if(now>=h.end)return 'PENDING GATE';if(now>=d.end)return 'QUALIFIED CANDIDATE';if(now>=j.end)return 'TRIAGED';if(now>=a.start)return 'ACQUIRING';return 'QUEUED';}
+function init(){records=recordFactory();baseline=schedule('serial');jobs=schedule('concurrent');total=Math.max(...jobs.map(j=>j.end));now=0;selected=0;playing=false;lastFrame=null;if(rafId)cancelAnimationFrame(rafId);buildTimeline();renderPacketList();render(true);}
+function setView(v){mode=v;$('logicalBtn').classList.toggle('selected',v==='logical');$('runtimeBtn').classList.toggle('selected',v==='runtime');$('logicalBtn').setAttribute('aria-pressed',v==='logical');$('runtimeBtn').setAttribute('aria-pressed',v==='runtime');$('logical').classList.toggle('active',v==='logical');$('runtime').classList.toggle('active',v==='runtime');render(true);}
+function select(i){selected=i;render(true);}
+function buildTimeline(){const max=total;
+ $('timeAxis').innerHTML=Array.from({length:6},(_,i)=>`<span class="tick" style="left:${i*20}%">${Math.round(max*i/5)}s</span>`).join('');
+ $('lanes').innerHTML=stages.map(s=>{const tasks=jobs.filter(j=>j.key===s.key);return `<div class="lane"><div class="left"><strong>${s.name}</strong><span>${s.tag} · cap ${s.cap}</span></div><div class="track" data-track="${s.key}">${tasks.map(j=>`<button class="task ${s.key}" data-job="${j.id}" data-rec="${j.recIndex}" title="${j.rid} · ${s.name} · ${nowfmt(j.start)}–${nowfmt(j.end)}" style="top:${5+j.slot*23}px;left:${(j.start/max*100).toFixed(4)}%;width:${Math.max(0.25,(j.end-j.start)/max*100).toFixed(4)}%">${j.recIndex+1}</button>`).join('')}<span class="cursor"></span></div></div>`}).join('');
+ document.querySelectorAll('.task').forEach(el=>el.addEventListener('click',()=>select(Number(el.dataset.rec))));
+}
+function renderPacketList(){ $('packetlist').innerHTML=records.map((r,i)=>`<button class="packet" data-packet="${i}">${String(i+1).padStart(2,'0')}<span class="ps">QUEUED</span></button>`).join('');document.querySelectorAll('.packet').forEach(el=>el.addEventListener('click',()=>select(Number(el.dataset.packet)))); }
+function statTag(text){const c=text==='RELEASE'?'gate-release':text==='HOLD'?'gate-hold':text==='REVIEW'?'gate-review':'';return `<b class="${c}">${text}</b>`;}
+function renderInspector(){const r=records[selected],m=tasksOf(r.id),done=stagesCompleted(),s=stateOf(r);const a=one(r.id,'a'),j=one(r.id,'j'),d=one(r.id,'d'),x=one(r.id,'x');
+ const facts=[['Record',r.id],['Source / context',r.source],['Aletheia complete',now>=a.end?'YES':'NOT YET'],['Jev triage',now>=j.end?'PROVISIONAL':'NOT YET'],['Andreas qualified',now>=d.end?'SIMULATED YES':'NOT YET'],['Jev illustrative score',r.score.toFixed(2)+' · not calibrated'],['Durable state',!r.durable?'NONE (QUERY-IN-PLACE)':now>=one(r.id,'t').end?'SIMULATED CANDIDATE':'NOT PROMOTED'],['Authority present',r.authority?'YES (fixture)':'NO'],['Gate disposition',now>=x.end?disposition(r):'NOT EVALUATED']];
+ $('inspector').innerHTML=`<div class="card-title">${r.name}</div><div class="card-sub">${r.id} · Selected record ${selected+1} of ${records.length}</div><div style="margin:10px 0 8px">${statTag(s)}</div>${facts.map(([k,v])=>`<div class="kv"><span>${k}</span><b>${v}</b></div>`).join('')}<div class="card-sub" style="margin-top:10px">${r.contradiction?'Contradictory evidence requires independent review.':'Provisional scores cannot approve an observation.'} This demo performs no actual release or write.</div>`;
+}
+function renderEvents(){const events=[];for(const j of jobs){if(j.start<=now)events.push({time:j.start,msg:`${j.rid}: ${stages.find(s=>s.key===j.key).name} started`,cls:''});if(j.end<=now)events.push({time:j.end,msg:j.key==='x'?`${j.rid}: ${disposition(records[j.recIndex])} (simulated gate)`:`${j.rid}: ${stages.find(s=>s.key===j.key).name} completed`,cls:j.key==='x'?disposition(records[j.recIndex]).toLowerCase():''});}
+ events.sort((a,b)=>b.time-a.time);$('eventLog').innerHTML=events.slice(0,14).map(e=>`<div class="event ${e.cls}"><span class="time">${nowfmt(e.time)}</span> &nbsp; ${e.msg}</div>`).join('')||'<div class="event">Advance the simulator to view source, triage, qualification and governance events.</div>';
+}
+function render(force=false){const done=stagesCompleted(),act=jobs.filter(j=>j.start<=now&&j.end>now),ended=jobs.filter(j=>j.end<=now).length,serialTotal=Math.max(...baseline.map(j=>j.end));
+ $('kpiObs').textContent=`${done.a} / ${records.length}`;$('kpiQual').textContent=`${done.d} / ${records.length}`;$('kpiTime').textContent=nowfmt(total);$('kpiGain').textContent=(serialTotal/total).toFixed(2)+'×';$('makespanNote').textContent=`Serialized toy baseline ${nowfmt(serialTotal)}`;
+ $('elapsed').textContent=`${nowfmt(now)} / ${nowfmt(total)}`;$('scrub').value=total?String(Math.round(now/total*10000)/100):0;$('activity').textContent=`${act.length} tasks active · ${ended}/${jobs.length} completed`; $('runDot').classList.toggle('running',playing);$('runStatus').textContent=playing?'SIMULATING':now>=total?'COMPLETE':now===0?'READY':'PAUSED'; $('sourceFact').textContent=`${records.length} synthetic observations`; $('policyFact').textContent=scenarios[scenario].policy;
+ document.querySelectorAll('.stage').forEach(el=>{const k=el.dataset.stage,active=act.some(j=>j.key===k);el.classList.toggle('active',active);el.classList.toggle('done',done[k]===records.length);el.querySelector('.count').textContent=`${done[k]} / ${records.length} finished`;});
+ document.querySelectorAll('.task').forEach(el=>{const j=jobs.find(x=>x.id===el.dataset.job);el.classList.toggle('active',now>=j.start&&now<j.end);el.classList.toggle('finished',now>=j.end);el.classList.toggle('chosen',j.recIndex===selected)});
+ document.querySelectorAll('.cursor').forEach(el=>el.style.left=`${(now/total*100).toFixed(4)}%`);
+ document.querySelectorAll('.packet').forEach(el=>{const i=Number(el.dataset.packet),s=stateOf(records[i]);el.classList.toggle('active',i===selected);el.classList.toggle('finished',['HOLD','RELEASE','REVIEW'].includes(s));el.querySelector('.ps').textContent=s.length>12?s.slice(0,10)+'…':s;});
+ if(force || performance.now()-lastUiUpdate>140){renderInspector();renderEvents();lastUiUpdate=performance.now();}
+}
+function frame(ts){if(!playing)return;if(lastFrame!==null){now=Math.min(total,now+(ts-lastFrame)/1000*Number($('speed').value));}lastFrame=ts;if(now>=total){playing=false;lastFrame=null;}render();if(playing)rafId=requestAnimationFrame(frame);else render(true);}
+function play(){if(now>=total)now=0;if(!playing){playing=true;lastFrame=null;rafId=requestAnimationFrame(frame);render(true);}}
+function pause(){playing=false;lastFrame=null;if(rafId)cancelAnimationFrame(rafId);render(true);}
+function scrub(t){pause();now=Math.min(total,Math.max(0,t));render(true);}
+function step(){pause();const later=jobs.flatMap(j=>[j.start,j.end]).filter(t=>t>now+0.00001).sort((a,b)=>a-b);now=later.length?Math.min(total,later[0]):total;render(true);}
+function download(name,text,type){const a=document.createElement('a'),blob=new Blob([text],{type});a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),2000);}
+$('play').addEventListener('click',play);$('pause').addEventListener('click',pause);$('reset').addEventListener('click',init);$('step').addEventListener('click',step);$('logicalBtn').addEventListener('click',()=>setView('logical'));$('runtimeBtn').addEventListener('click',()=>setView('runtime'));$('scenario').addEventListener('change',e=>{scenario=e.target.value;init()});$('scrub').addEventListener('input',e=>scrub(total*Number(e.target.value)/100));
+$('exportTrace').addEventListener('click',()=>download('arena-v0.4-simulated-trace.json',JSON.stringify({demo:'v0.4',scenario,disclaimer:'Synthetic deterministic simulation. No empirical performance or real model evaluation.',resource_caps:Object.fromEntries(stages.map(x=>[x.key,x.cap])),concurrent_duration:total,serialized_duration:Math.max(...baseline.map(j=>j.end)),selected_observations:records.map(r=>({id:r.id,source:r.source,provisional_score:r.score,authority:r.authority,disposition:disposition(r)})),schedule:jobs},null,2),'application/json'));
+$('downloadContract').addEventListener('click',()=>download('REC-CANDIDATE-SBA-CONCURRENCY-V4.json',JSON.stringify(recognition,null,2),'application/json'));
+init();
+</script>
+<script id="arena-glass-controls-script">
+(function(){
+ 'use strict';
+ const pane=document.getElementById('arena-glass-experiment');
+ const enabled=document.getElementById('arena-glass-on');
+ const range=document.getElementById('arena-glass-smoke');
+ const value=document.getElementById('arena-glass-value');
+ function update(){
+   pane.disabled=!enabled.checked;
+   range.disabled=!enabled.checked;
+   value.textContent=range.value+'%';
+   document.documentElement.style.setProperty('--arena-glass-opacity',(Number(range.value)/100).toFixed(2));
+ }
+ enabled.addEventListener('change',update);
+ range.addEventListener('input',update);
+ update();
+}());
+</script>
+</body>
+</html>
