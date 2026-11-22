@@ -356,29 +356,61 @@
 
 <!-- Test-only final-render backdrop. Original parchment and SVG stay unchanged. -->
 <style id="front-porch-final-backdrop">
-/* The background is behind the SVG and UI. It is hidden for the archival
-   opening, begins to fade in as the modern seal resolves (state 6),
-   and is fully visible as the content appears (states 7 and 8). */
-#app-container::before {
- content:"";
- position:fixed;
- inset:0;
- z-index:0;
- pointer-events:none;
- background:#06111f url("assets/final-grid-background.jpg") center center / cover no-repeat;
- opacity:0;
- transition:none;
+/*
+ * Front Porch focus-test background, revision 2.
+ * An explicit element is more dependable than a positioned pseudo-element
+ * for the final viewport background on mobile iOS.
+ * The original parchment and logo animation render above this layer.
+ */
+#app-container {
+  background-color: transparent;
 }
-#app-container.state-6:not(.mode-static)::before {
- opacity:1;
- transition:opacity 1.2s ease-in-out;
+#front-porch-grid-layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background-image: url("assets/final-grid-background.jpg");
+  background-color: #051021;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: opacity 1.35s ease-in-out;
+  will-change: opacity;
 }
-#app-container.mode-static::before {
- opacity:0!important;
- transition:none!important;
+#app-container.state-6:not(.mode-static) #front-porch-grid-layer {
+  opacity: 1;
 }
-@media(prefers-reduced-motion:reduce){
- #app-container.state-6::before { transition:none!important; }
+#app-container.mode-static #front-porch-grid-layer {
+  opacity: 0 !important;
+  transition: none !important;
+}
+/* Preserve the logo and input controls above the backdrop. */
+#app-container #svg-stage { z-index: 10; }
+#app-container #ui-stage { z-index: 20; }
+/* Only after the modern stage appears: gentle smoked glass protects text,
+   but leaves the architectural grid and bottom glow visible around and through it. */
+#app-container.state-7:not(.mode-static) #ui-stage {
+  background: rgba(4, 16, 28, .28);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(137, 192, 211, .14);
+  border-radius: 18px;
+  box-shadow: 0 10px 32px rgba(0, 5, 14, .13);
+}
+@media(max-width:600px) {
+  #app-container.state-7:not(.mode-static) #ui-stage {
+    background: rgba(4, 16, 28, .23);
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  #front-porch-grid-layer {
+    transition: none !important;
+  }
 }
 </style>
 </head>
@@ -392,6 +424,7 @@
     </div>
 
     <div id="app-container">
+        <div id="front-porch-grid-layer" aria-hidden="true"></div>
         
         <!-- MASTER GOVERNED SVG -->
         <div id="svg-stage">
