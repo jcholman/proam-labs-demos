@@ -293,7 +293,124 @@
         body,html{overflow:auto}#app-container{min-height:950px}
         @media(max-width:600px){#app-container{min-height:1000px}#ui-stage{top:42%}#dev-controls{position:absolute;bottom:auto;top:14px} .state-7 #svg-stage{transform:scale(.35) translateY(-130%)}}
         </style>
-<link rel="apple-touch-icon" sizes="180x180" href="/proam-labs-demos/showcase/assets/icons/proam-labs-apple-touch-icon-180x180.png?v=tan-1"><meta name="apple-mobile-web-app-title" content="proAM Labs"></head>
+<link rel="apple-touch-icon" sizes="180x180" href="/proam-labs-demos/showcase/assets/icons/proam-labs-apple-touch-icon-180x180.png?v=tan-1"><meta name="apple-mobile-web-app-title" content="proAM Labs"><style id="focus-reveal-v1-test">
+/* Four existing SVG corner motifs, with each relative to its original footprint. */
+#drafting-axis-cluster{--fx:240px;--fy:220px;--mx:105px;--my:90px;--delay:0s}
+#drafting-compass-cluster{--fx:-240px;--fy:220px;--mx:-105px;--my:90px;--delay:0s}
+#drafting-equation-cluster{--fx:235px;--fy:-245px;--mx:100px;--my:-100px;--delay:.2s}
+#drafting-lower-right-cluster{--fx:-240px;--fy:-230px;--mx:-100px;--my:-95px;--delay:.4s}
+@keyframes focus-resolve{
+ 0%{opacity:0;filter:drop-shadow(0 0 10px rgba(246,213,150,.7));transform:translate(var(--fx),var(--fy)) scale(3.075)}
+ 9%{opacity:1;filter:drop-shadow(0 0 10px rgba(246,213,150,.7));transform:translate(var(--fx),var(--fy)) scale(3.075)}
+ 48%{opacity:1;filter:drop-shadow(0 0 8px rgba(232,183,93,.6));transform:translate(var(--mx),var(--my)) scale(2.05)}
+ 100%{opacity:1;filter:drop-shadow(0 0 1px rgba(0,0,0,.16));transform:translate(0px,0px) scale(1.025)}
+}
+@keyframes focus-text{0%,42%{fill:#ffe6b4}100%{fill:#090705}}
+@keyframes focus-ink{0%,42%{stroke:#ffe6b4}100%{stroke:#090705}}
+#app-container.state-2:not(.state-4):not(.mode-static) #drafting-axis-cluster,
+#app-container.state-3:not(.state-4):not(.mode-static) #drafting-compass-cluster,
+#app-container.state-3:not(.state-4):not(.mode-static) #drafting-equation-cluster,
+#app-container.state-3:not(.state-4):not(.mode-static) #drafting-lower-right-cluster{
+ animation:focus-resolve 1.9s cubic-bezier(.18,.74,.25,1) var(--delay) both!important;
+ transform-box:fill-box;transform-origin:center;mix-blend-mode:normal;
+}
+#app-container.state-2:not(.state-4) #drafting-axis-cluster text,
+#app-container.state-3:not(.state-4) #drafting-compass-cluster text,
+#app-container.state-3:not(.state-4) #drafting-equation-cluster text,
+#app-container.state-3:not(.state-4) #drafting-lower-right-cluster text{
+ animation:focus-text 1.9s ease-out var(--delay) both!important;
+}
+#app-container.state-2:not(.state-4) #drafting-axis-cluster circle,
+#app-container.state-2:not(.state-4) #drafting-axis-cluster ellipse,
+#app-container.state-2:not(.state-4) #drafting-axis-cluster line,
+#app-container.state-3:not(.state-4) #drafting-compass-cluster circle,
+#app-container.state-3:not(.state-4) #drafting-compass-cluster path,
+#app-container.state-3:not(.state-4) #drafting-compass-cluster line,
+#app-container.state-3:not(.state-4) #drafting-equation-cluster path,
+#app-container.state-3:not(.state-4) #drafting-equation-cluster line,
+#app-container.state-3:not(.state-4) #drafting-lower-right-cluster path,
+#app-container.state-3:not(.state-4) #drafting-lower-right-cluster line,
+#app-container.state-3:not(.state-4) #drafting-lower-right-cluster circle{
+ animation:focus-ink 1.9s ease-out var(--delay) both!important;
+}
+#app-container.state-4 #drafting-axis-cluster,
+#app-container.state-4 #drafting-compass-cluster,
+#app-container.state-4 #drafting-equation-cluster,
+#app-container.state-4 #drafting-lower-right-cluster,
+#app-container.state-4 #drafting-axis-cluster *,
+#app-container.state-4 #drafting-compass-cluster *,
+#app-container.state-4 #drafting-equation-cluster *,
+#app-container.state-4 #drafting-lower-right-cluster *{animation:none!important}
+@media(prefers-reduced-motion:reduce){
+#app-container.state-2:not(.state-4) #drafting-axis-cluster,
+#app-container.state-3:not(.state-4) #drafting-compass-cluster,
+#app-container.state-3:not(.state-4) #drafting-equation-cluster,
+#app-container.state-3:not(.state-4) #drafting-lower-right-cluster{animation:none!important;opacity:1;filter:none;transform:scale(1.025)}
+#app-container.state-2:not(.state-4) #drafting-axis-cluster *,
+#app-container.state-3:not(.state-4) #drafting-compass-cluster *,
+#app-container.state-3:not(.state-4) #drafting-equation-cluster *,
+#app-container.state-3:not(.state-4) #drafting-lower-right-cluster *{animation:none!important}
+}
+</style>
+<style id="front-porch-final-backdrop">
+/*
+ * Front Porch focus-test background, revision 2.
+ * An explicit element is more dependable than a positioned pseudo-element
+ * for the final viewport background on mobile iOS.
+ * The original parchment and logo animation render above this layer.
+ */
+#app-container {
+  background-color: transparent;
+}
+#front-porch-grid-layer {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0;
+  background-image: url("assets/final-grid-background.jpg");
+  background-color: #051021;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: opacity 1.35s ease-in-out;
+  will-change: opacity;
+}
+#app-container.state-6:not(.mode-static) #front-porch-grid-layer {
+  opacity: 1;
+}
+#app-container.mode-static #front-porch-grid-layer {
+  opacity: 0 !important;
+  transition: none !important;
+}
+/* Preserve the logo and input controls above the backdrop. */
+#app-container #svg-stage { z-index: 10; }
+#app-container #ui-stage { z-index: 20; }
+/* Only after the modern stage appears: gentle smoked glass protects text,
+   but leaves the architectural grid and bottom glow visible around and through it. */
+#app-container.state-7:not(.mode-static) #ui-stage {
+  background: rgba(4, 16, 28, .28);
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  border: 1px solid rgba(137, 192, 211, .14);
+  border-radius: 18px;
+  box-shadow: 0 10px 32px rgba(0, 5, 14, .13);
+}
+@media(max-width:600px) {
+  #app-container.state-7:not(.mode-static) #ui-stage {
+    background: rgba(4, 16, 28, .23);
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  #front-porch-grid-layer {
+    transition: none !important;
+  }
+}
+</style>
+</head>
 <body>
 
     <!-- Dev Controls -->
@@ -304,6 +421,7 @@
     </div>
 
     <div id="app-container">
+        <div id="front-porch-grid-layer" aria-hidden="true"></div>
         
         <!-- MASTER GOVERNED SVG -->
         <div id="svg-stage">
@@ -570,5 +688,34 @@
             setMode(frontPorchMode);
         });
     </script>
+<script id="focus-reveal-test-controller">
+(function(){
+'use strict';
+const app=document.getElementById('app-container');
+const svg=document.querySelector('#svg-stage > svg');
+if(!app||!svg)return;
+const ids=['drafting-axis-cluster','drafting-compass-position','drafting-equation-cluster','drafting-lower-right-position'];
+const records=ids.map(id=>{
+ const element=document.getElementById(id);
+ if(!element)return null;
+ const anchor=document.createComment('Original SVG location: '+id);
+ element.parentNode.insertBefore(anchor,element);
+ return {element,anchor};
+}).filter(Boolean);
+const prefersReduced=window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function reconcile(){
+const done=app.classList.contains('state-4')||app.classList.contains('mode-static')||prefersReduced;
+const hasAxis=app.classList.contains('state-2');
+const hasOthers=app.classList.contains('state-3');
+records.forEach(({element,anchor},i)=>{
+ const foreground=!done&&(i===0?hasAxis:hasOthers);
+ if(foreground){ if(element.parentNode!==svg||element.nextSibling!==null)svg.appendChild(element); }
+ else if(anchor.parentNode&&element.previousSibling!==anchor)anchor.parentNode.insertBefore(element,anchor.nextSibling);
+});
+}
+new MutationObserver(reconcile).observe(app,{attributes:true,attributeFilter:['class']});
+reconcile();
+}());
+</script>
 </body>
 </html>
