@@ -410,6 +410,7 @@
   }
 }
 </style>
+<style id="conceptualists-handoff-visibility">\n#app-container.handoff-ready #ui-stage{display:block!important;opacity:1!important;pointer-events:auto!important;transform:none!important}\n#app-container.handoff-ready .input-wrapper{opacity:1!important;transform:none!important}\n#app-container.handoff-ready #svg-stage{opacity:0!important;pointer-events:none!important}\n#app-container.handoff-ready #ui-stage .subtitle{opacity:1!important}\n</style>
 </head>
 <body>
 
@@ -684,7 +685,8 @@
                     const note=document.getElementById('handoff-note');
                     note.textContent='Context received from Conceptualists. Review or edit it before continuing to POS-Lite. No automatic submission.';
                     const app=document.getElementById('app-container');
-                    frontPorchMode='static';
+                    frontPorchMode='standard';
+                    app.dataset.handoff='received';
                 }
             }
         }catch(error){ /* Leave the normal Front Porch available. */ }
@@ -701,6 +703,13 @@
         // Initialize
         window.addEventListener("load", () => {
             setMode(frontPorchMode);
+            if(app.dataset.handoff==="received"){
+                clearSequenceTimers();
+                for(let i=1;i<=8;i++)app.classList.add("state-"+i);
+                app.classList.add("handoff-ready");
+                contextInput.scrollIntoView({block:"center"});
+                contextInput.focus({preventScroll:true});
+            }
         });
     </script>
 <script id="focus-reveal-test-controller">
