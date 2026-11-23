@@ -14,6 +14,12 @@ Interactive product and architecture demos from proAM Labs.
 
 The interactive site includes a four-signal explorer, a private browser-local reflection exercise (**Try the Lens**), and a connected gallery of nine existing proAM Labs demos—including The Trinity, Resume-to-Submission, Find Your Thread, and Thinking Graph explorations—with navigation back to Conceptualists. **This is a conceptual and exploratory experience**, not a verified capability-scoring system, live employer-matching service, production Thinking Graph, or automated assessment. Human agency, evidence boundaries, and the freedom to begin again remain central.
 
+## POS-Lite v0.35 — From capability plan to an AI building conversation
+
+[**Open POS-Lite · Mobile-First Bridge**](https://jcholman.github.io/thinking-graph-arena/pos-lite/) — A working, mobile-oriented demonstration with a queue, observation inspection, orientation, and Arena navigation. When reached through **Conceptualists → Let's Begin → Front Porch → Enter POS-Lite**, it can display the visitor's browser-local candidate demonstration plan. A new **Continue in ChatGPT** action prepares that plan for an explicit, user-reviewed ChatGPT conversation about building a safe, inspectable artifact; a **Copy context** fallback is provided.
+
+**Current boundaries:** The queue uses illustrative fixtures. The context is not automatically interpreted, qualified, written to the Thinking Graph, or submitted to ChatGPT. Opening ChatGPT with a prepared draft depends on browser and ChatGPT behavior; the visitor must review and send it. Do not enter confidential or sensitive data. The handoff is a prototype, not a production AI integration.
+
 ## What if your AI didn't make you start over?
 
 Today, conversations, research, decisions, and project history are scattered across applications. Every interruption, handoff, or change of tools can force us to reconstruct what we already understood.
