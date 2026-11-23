@@ -673,6 +673,21 @@
         }
         
         const contextInput=document.getElementById('starting-context');
+        // Explicit same-origin handoff from Conceptualists. Never auto-submit.
+        try {
+            const raw=sessionStorage.getItem('proam.conceptualists.frontPorch.handoff.v1');
+            if(raw){
+                const handoff=JSON.parse(raw);
+                sessionStorage.removeItem('proam.conceptualists.frontPorch.handoff.v1');
+                if(handoff&&typeof handoff.text==='string'&&Date.now()-handoff.at<15*60*1000){
+                    contextInput.value=handoff.text.slice(0,4000);
+                    const note=document.getElementById('handoff-note');
+                    note.textContent='Context received from Conceptualists. Review or edit it before continuing to POS-Lite. No automatic submission.';
+                    const app=document.getElementById('app-container');
+                    if(app)app.classList.add('mode-static','state-8');
+                }
+            }
+        }catch(error){ /* Leave the normal Front Porch available. */ }
         document.querySelectorAll('.example-prompt').forEach(button=>button.addEventListener('click',()=>{contextInput.value=button.textContent;contextInput.focus();}));
         document.getElementById('enter-pos').addEventListener('click',event=>{
             try{
