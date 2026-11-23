@@ -124,10 +124,10 @@ This is a **read-only proof surface**. It does not submit applications, modify W
 
 ## What comes next (planned)
 
-These are prospective demonstrations, not published or verified capabilities. Live demo links will be added here when the prototypes are ready.
+This section includes both planned work and a live prototype. A working demo does not establish a verified capability; links are provided where available.
 
 - **Arena v0.35 — Switching Quarterbacks** *(planned)* — Add or change LLMs, note-taking apps, and other tools while preserving qualified continuity, stable contracts, provenance, and human authority.
-- **POS-Lite — Mobile-First Bridge** *(in design)* — Find observations, inspect documented relationships and available metric states, ask what needs attention, and initiate a governed Output Contract from a phone.
+- [**POS-Lite v0.35 — Mobile-First Bridge (live demo)**](https://jcholman.github.io/thinking-graph-arena/pos-lite/) — Find observations, inspect documented relationships and available metric states, carry forward a candidate demonstration plan, and open a user-reviewed ChatGPT draft to begin building an artifact. This remains a prototype, not a verified capability or production Thinking Graph integration.
 - **Output Demo v0.4 — Intent to Artifact** *(proposed)* — Follow a small request, such as updating a demo from a phone, from prior orientation and authority checks through a bounded change, verification, and carry-forward.
 
 ---
