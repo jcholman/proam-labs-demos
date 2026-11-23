@@ -685,7 +685,7 @@
                     const note=document.getElementById('handoff-note');
                     note.textContent='Context received from Conceptualists. Review or edit it before continuing to POS-Lite. No automatic submission.';
                     const app=document.getElementById('app-container');
-                    frontPorchMode='cinematic';
+                    frontPorchMode='standard';
                     app.dataset.handoff='received';
                 }
             }
@@ -706,10 +706,10 @@
             if(app.dataset.handoff==="received"){
                 // Preserve the full cinematic reveal; only focus the context after it finishes.
                 const timer=setTimeout(()=>{
-                    if(frontPorchMode!=="cinematic")return;
+                    if(frontPorchMode!=="standard")return;
                     contextInput.scrollIntoView({behavior:"smooth",block:"center"});
                     contextInput.focus({preventScroll:true});
-                },15900);
+                },9300);
                 sequenceTimers.push(timer);
             }
         });
