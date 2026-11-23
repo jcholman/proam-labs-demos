@@ -16,6 +16,12 @@ proAM Labs is exploring a different approach: **preserving qualified understandi
 
 These interactive prototypes show how that approach is being developed—and what it may eventually make possible. They are demonstrations of specific capabilities, **not a claim that the full system is already operating in production**.
 
+## Our Community · Living Postcards — Photo-first Front Porch demo
+
+[**Open Our Community — Living Postcards v0.1**](https://jcholman.github.io/proam-labs-demos/community-front-porch-v0-1/) — Full-screen Louisville photography with glass overlays, photographic story navigation, an optional Guest List simulation, and local-only photo preview. The community is already here; we need a better way to see one another.
+
+**Photo and participation boundary:** This is a visual proof of concept, not a community registry or photo-submission service. Its hero photographs are licensed for reuse and credited. Marc Weinberg/WDRB+WAVE are research and outreach references only; none of Marc's or his viewers' photographs have been republished or approved for this demo.
+
 ## The Foundation.org — Individual-facing Foundation demo
 
 [Explore The Foundation.org concept](https://jcholman.github.io/proam-labs-demos/the-foundation-org/) — An image-led cover and six linked Foundation pages covering career identity, community support, a proposed Your Community view, continuity, and possible consent-based employer discovery. This is an independent, individual-first **demonstration**, not an operating nonprofit or a private talent-data marketplace.
