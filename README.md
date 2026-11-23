@@ -8,6 +8,12 @@
 # proam-labs-demos
 Interactive product and architecture demos from proAM Labs.
 
+## Conceptualists — Knowledge-work capability and the Four Signals
+
+[**Explore Conceptualists · proAM Labs**](https://jcholman.github.io/proam-labs-demos/conceptualists/?utm_source=chatgpt.com) — A new knowledge-worker-facing front porch for analysts, builders, conceptualists, displaced professionals, and career changers. It explores why a resume is an incomplete representation of human capability through four proposed signal dimensions: **Declared** (what we say we can do), **Demonstrated** (what we have produced), **Qualified** (what evidence can substantiate), and **Continuity** (how judgment, learning, and contribution develop over time).
+
+The interactive site includes a four-signal explorer, a private browser-local reflection exercise (**Try the Lens**), and a connected gallery of nine existing proAM Labs demos—including The Trinity, Resume-to-Submission, Find Your Thread, and Thinking Graph explorations—with navigation back to Conceptualists. **This is a conceptual and exploratory experience**, not a verified capability-scoring system, live employer-matching service, production Thinking Graph, or automated assessment. Human agency, evidence boundaries, and the freedom to begin again remain central.
+
 ## What if your AI didn't make you start over?
 
 Today, conversations, research, decisions, and project history are scattered across applications. Every interruption, handoff, or change of tools can force us to reconstruct what we already understood.
