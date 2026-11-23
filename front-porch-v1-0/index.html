@@ -609,6 +609,25 @@
     </div>
 
     <script>
+(function(){
+ const KEY='proam.handoff.diagnostics.v1';
+ const ua=navigator.userAgent||'';
+ const browser=/CriOS\//.test(ua)?'Chrome iOS':/FxiOS\//.test(ua)?'Firefox iOS':/EdgiOS\//.test(ua)?'Edge iOS':/Safari\//.test(ua)?'Safari':/Chrome\//.test(ua)?'Chrome':'Other/unknown';
+ const device=/iPhone/.test(ua)?'iPhone (model unavailable)':/iPad/.test(ua)?'iPad':/Android/.test(ua)?'Android device (model unverified)':'Other/unknown';
+ const platform=/iPhone|iPad/.test(ua)?'iOS/iPadOS':/Android/.test(ua)?'Android':'Other/unknown';
+ const events=[];let status='not_checked';
+ const report=(step,details={})=>{const item={time:new Date().toISOString(),step,...details};events.push(item);try{const prev=JSON.parse(localStorage.getItem(KEY)||'[]');localStorage.setItem(KEY,JSON.stringify([...prev,item].slice(-40)))}catch(e){};render()};
+ const panel=document.createElement('details');panel.style.cssText='position:relative;z-index:1000;margin:14px;padding:14px;border:1px solid #8ba5b4;border-radius:10px;background:#102a3a;color:white;font:14px system-ui';
+ panel.innerHTML='<summary style="cursor:pointer">Handoff diagnostics · local only</summary><p>Browser and device are estimates from the browser user-agent, not a verified phone model. No plan text, IP address, or identifiers are logged. Nothing is sent to a server.</p><pre id="proam-diagnostic-status" style="white-space:pre-wrap"></pre><button type="button" id="proam-diagnostic-export" style="padding:10px">Download diagnostic JSON</button>';
+ document.body.appendChild(panel);
+ function render(){const el=document.getElementById('proam-diagnostic-status');if(el)el.textContent='Browser: '+browser+' | Device: '+device+' | OS: '+platform+'\nHandoff: '+status+'\nEvents this page: '+events.length}
+ document.getElementById('proam-diagnostic-export').onclick=()=>{const data={schema:'proam-handoff-diagnostics/v0.1',page:'front-porch',browser,device,platform,userAgent:ua,events:(()=>{try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return events}})()};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='proam-handoff-diagnostics.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
+ window.proamHandoffLog=(step,details)=>report(step,details);
+ window.proamHandoffStatus=s=>{status=s;render()};
+ render();
+})();
+</script>
+<script>
         /**
          * MASTER COMPONENT CONTROLLER
          * Single governed source driving 3 different modes.
@@ -743,23 +762,5 @@ new MutationObserver(reconcile).observe(app,{attributes:true,attributeFilter:['c
 reconcile();
 }());
 </script>
-<script>
-(function(){
- const KEY='proam.handoff.diagnostics.v1';
- const ua=navigator.userAgent||'';
- const browser=/CriOS\//.test(ua)?'Chrome iOS':/FxiOS\//.test(ua)?'Firefox iOS':/EdgiOS\//.test(ua)?'Edge iOS':/Safari\//.test(ua)?'Safari':/Chrome\//.test(ua)?'Chrome':'Other/unknown';
- const device=/iPhone/.test(ua)?'iPhone (model unavailable)':/iPad/.test(ua)?'iPad':/Android/.test(ua)?'Android device (model unverified)':'Other/unknown';
- const platform=/iPhone|iPad/.test(ua)?'iOS/iPadOS':/Android/.test(ua)?'Android':'Other/unknown';
- const events=[];let status='not_checked';
- const report=(step,details={})=>{const item={time:new Date().toISOString(),step,...details};events.push(item);try{const prev=JSON.parse(localStorage.getItem(KEY)||'[]');localStorage.setItem(KEY,JSON.stringify([...prev,item].slice(-40)))}catch(e){};render()};
- const panel=document.createElement('details');panel.style.cssText='position:relative;z-index:1000;margin:14px;padding:14px;border:1px solid #8ba5b4;border-radius:10px;background:#102a3a;color:white;font:14px system-ui';
- panel.innerHTML='<summary style="cursor:pointer">Handoff diagnostics · local only</summary><p>Browser and device are estimates from the browser user-agent, not a verified phone model. No plan text, IP address, or identifiers are logged. Nothing is sent to a server.</p><pre id="proam-diagnostic-status" style="white-space:pre-wrap"></pre><button type="button" id="proam-diagnostic-export" style="padding:10px">Download diagnostic JSON</button>';
- document.body.appendChild(panel);
- function render(){const el=document.getElementById('proam-diagnostic-status');if(el)el.textContent='Browser: '+browser+' | Device: '+device+' | OS: '+platform+'\nHandoff: '+status+'\nEvents this page: '+events.length}
- document.getElementById('proam-diagnostic-export').onclick=()=>{const data={schema:'proam-handoff-diagnostics/v0.1',page:'front-porch',browser,device,platform,userAgent:ua,events:(()=>{try{return JSON.parse(localStorage.getItem(KEY)||'[]')}catch(e){return events}})()};const url=URL.createObjectURL(new Blob([JSON.stringify(data,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='proam-handoff-diagnostics.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};
- window.proamHandoffLog=(step,details)=>report(step,details);
- window.proamHandoffStatus=s=>{status=s;render()};
- render();
-})();
-</script></body>
+</body>
 </html>
