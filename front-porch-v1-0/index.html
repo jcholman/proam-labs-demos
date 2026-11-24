@@ -410,7 +410,12 @@
   }
 }
 </style>
-<style id="conceptualists-handoff-visibility">\n#app-container.handoff-ready #ui-stage{display:block!important;opacity:1!important;pointer-events:auto!important;transform:none!important}\n#app-container.handoff-ready .input-wrapper{opacity:1!important;transform:none!important}\n#app-container.handoff-ready #svg-stage{opacity:0!important;pointer-events:none!important}\n#app-container.handoff-ready #ui-stage .subtitle{opacity:1!important}\n</style>
+<style id="conceptualists-handoff-visibility">
+#app-container.handoff-ready #ui-stage{display:block!important;opacity:1!important;pointer-events:auto!important;transform:none!important}
+#app-container.handoff-ready .input-wrapper{opacity:1!important;transform:none!important}
+#app-container.handoff-ready #svg-stage{opacity:0!important;pointer-events:none!important}
+#app-container.handoff-ready #ui-stage .subtitle{opacity:1!important}
+</style>
 </head>
 <body>
 
@@ -730,7 +735,8 @@
                 const timer=setTimeout(()=>{
                     if(frontPorchMode!=="standard")return;
                     window.proamHandoffLog?.('front_porch_after_animation',{length:contextInput.value.length});
-                    window.proamHandoffStatus?.(contextInput.value.length?'received':'lost_after_animation');\n                    contextInput.scrollIntoView({behavior:"smooth",block:"center"});
+                    window.proamHandoffStatus?.(contextInput.value.length?'received':'lost_after_animation');
+                    contextInput.scrollIntoView({behavior:"smooth",block:"center"});
                     contextInput.focus({preventScroll:true});
                 },9300);
                 sequenceTimers.push(timer);
