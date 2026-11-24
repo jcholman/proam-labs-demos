@@ -21,25 +21,12 @@
     .player-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:#d2b377}
     .player-panel h2{color:#fff8ed;font-size:30px;line-height:1.2;margin:24px 0 12px;max-width:340px}
     .player-panel p{color:#d0d9db;font-size:14px}
-    .waveform-launch{width:100%;position:relative;display:flex;align-items:center;justify-content:center;min-height:90px;margin:28px 0 16px;padding:0;cursor:pointer;overflow:hidden;color:#fff8ed;background:#0d2838;border:1px solid #a88b55;border-radius:11px;transition:border-color .18s,background .18s}
+    .waveform-launch{width:100%;position:relative;display:flex;align-items:center;justify-content:center;min-height:90px;margin:28px 0 16px;padding:0;cursor:pointer;text-decoration:none;overflow:hidden;color:#fff8ed;background:#0d2838;border:1px solid #a88b55;border-radius:11px;transition:border-color .18s,background .18s}
     .waveform-launch:hover{background:#15384a;border-color:#ecd09a}
     .waveform{position:absolute;inset:0 14px;display:flex;align-items:center;justify-content:center;gap:4px;opacity:.48;pointer-events:none}
     .waveform span{flex:1;max-width:7px;height:var(--h);border-radius:10px;background:#c5a76c}
     .waveform-cta{position:relative;z-index:1;display:inline-flex;align-items:center;gap:12px;background:#dfc188;color:#0c2635;padding:12px 22px;border-radius:999px;font:700 19px/1.2 Georgia,serif;box-shadow:0 5px 22px rgba(0,0,0,.35);pointer-events:none}
     .waveform-cta .play-symbol{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;border-radius:50%;background:#0c2635;color:#f4dca9;font:700 13px/1 system-ui}
-    /* Keep the proAM cover artwork visible; show the third-party player only in a dialog. */
-    .waveform-launch:focus-visible,.modal-close:focus-visible{outline:3px solid #fff0b9;outline-offset:4px}
-    .descript-modal{box-sizing:border-box;width:min(900px,calc(100vw - 28px));max-width:none;max-height:min(92dvh,850px);margin:auto;padding:0;color:#f8f0e3;background:linear-gradient(150deg,#183c4c,#091c29 82%);border:1px solid #a88b55;border-radius:16px;box-shadow:0 28px 70px rgba(0,0,0,.46);overflow:auto}
-    .descript-modal::backdrop{background:rgba(7,20,29,.82);backdrop-filter:blur(5px)}
-    .descript-modal-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:18px 22px;border-bottom:1px solid rgba(216,188,127,.28)}
-    .descript-modal-header h2{margin:0;color:#f1d7a0;font-size:clamp(20px,3vw,27px)}
-    .modal-close{flex:none;border:1px solid #b69963;background:transparent;color:#f1d7a0;border-radius:8px;padding:8px 12px;cursor:pointer;font-size:16px;min-width:44px;min-height:44px}
-    .modal-close:hover{background:rgba(255,255,255,.09)}
-    .descript-modal-body{padding:18px 22px 8px}
-    .descript-modal-body iframe{display:block;width:100%;aspect-ratio:16/9;min-height:240px;border:0;border-radius:10px;background:#fffcf5}
-    .descript-modal-note{margin:0;padding:3px 22px 22px;color:#d6dadd;font-size:13px}
-    .descript-modal-note a{color:#f1d7a0}
-    @media(max-width:640px){.descript-modal{width:calc(100vw - 20px)}.descript-modal-header,.descript-modal-body{padding-left:14px;padding-right:14px}.descript-modal-body iframe{min-height:200px}.descript-modal-note{padding-left:14px;padding-right:14px}}
     .player-time{font-size:12px;display:flex;justify-content:space-between;color:#d0d9db;border-top:1px solid #365463;padding-top:12px}
     .listen-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:24px 0 10px}
     .listen-actions .button{font-weight:700;min-height:47px;padding:12px 20px}
@@ -98,12 +85,12 @@
         <span class="player-label">Featured listening · Audio overview</span>
         <h2>Fixing AI Bottlenecks with Agent Trust Architecture</h2>
         <p>A conversation about Truth, Trust, Practice, qualification, and when systems should proceed—or hold.</p>
-        <button id="listen-in" class="waveform-launch" type="button" aria-haspopup="dialog" aria-controls="descript-modal" aria-expanded="false" aria-label="Listen In — open the podcast player">
+        <a id="listen-in" class="waveform-launch" href="https://share.descript.com/view/AhV3svZ7pmH" target="_blank" rel="noopener noreferrer" aria-label="Listen In — open Descript listening page in a new tab">
           <span class="waveform" aria-hidden="true">
             <span style="--h:20%"></span><span style="--h:42%"></span><span style="--h:70%"></span><span style="--h:31%"></span><span style="--h:90%"></span><span style="--h:52%"></span><span style="--h:22%"></span><span style="--h:76%"></span><span style="--h:49%"></span><span style="--h:96%"></span><span style="--h:38%"></span><span style="--h:69%"></span><span style="--h:27%"></span><span style="--h:87%"></span><span style="--h:47%"></span><span style="--h:73%"></span><span style="--h:20%"></span><span style="--h:55%"></span><span style="--h:93%"></span><span style="--h:34%"></span><span style="--h:80%"></span><span style="--h:44%"></span><span style="--h:60%"></span><span style="--h:24%"></span><span style="--h:68%"></span><span style="--h:40%"></span><span style="--h:82%"></span><span style="--h:29%"></span><span style="--h:58%"></span><span style="--h:33%"></span>
           </span>
           <span class="waveform-cta"><span class="play-symbol" aria-hidden="true">▶</span> Listen In</span>
-        </button>
+        </a>
         <div class="player-time"><span>Audio · Descript</span><span>45:20</span></div>
       </div>
     </section>
@@ -130,49 +117,7 @@
     <a href="../enhanced/">Explore the demo library ↗</a>
     <span>Fit for purpose.</span>
   </footer>
-  <dialog id="descript-modal" class="descript-modal" aria-labelledby="descript-modal-title" aria-describedby="descript-modal-note">
-    <div class="descript-modal-header">
-      <h2 id="descript-modal-title">Listen In</h2>
-      <button id="close-player" class="modal-close" type="button" aria-label="Close audio player">✕</button>
-    </div>
-    <div class="descript-modal-body">
-      <iframe id="descript-frame" title="Descript podcast player — Fixing AI Bottlenecks with Agent Trust Architecture" data-src="https://share.descript.com/embed/AhV3svZ7pmH" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-    </div>
-    <p class="descript-modal-note" id="descript-modal-note">Use the player controls to listen. Descript may require sign-in. <a href="https://share.descript.com/view/AhV3svZ7pmH" target="_blank" rel="noopener noreferrer">Open in Descript ↗</a></p>
-  </dialog>
-  <script>
-    (() => {
-      'use strict';
-      const trigger = document.getElementById('listen-in');
-      const dialog = document.getElementById('descript-modal');
-      const frame = document.getElementById('descript-frame');
-      const closeButton = document.getElementById('close-player');
 
-      trigger.addEventListener('click', () => {
-        if (!frame.getAttribute('src')) frame.setAttribute('src', frame.dataset.src);
-        dialog.showModal();
-        trigger.setAttribute('aria-expanded', 'true');
-        closeButton.focus();
-      });
 
-      closeButton.addEventListener('click', () => dialog.close());
-
-      // Native dialog handles Escape, focus containment, and restores focus on close.
-      dialog.addEventListener('close', () => {
-        frame.removeAttribute('src'); // Stop playback when the player closes.
-        trigger.setAttribute('aria-expanded', 'false');
-        trigger.focus();
-      });
-
-      // Close only when the backdrop itself is clicked, never the embedded player.
-      dialog.addEventListener('click', (event) => {
-        if (event.target !== dialog) return;
-        const bounds = dialog.getBoundingClientRect();
-        const outside = event.clientX < bounds.left || event.clientX > bounds.right ||
-          event.clientY < bounds.top || event.clientY > bounds.bottom;
-        if (outside) dialog.close();
-      });
-    })();
-  </script>
 </body>
 </html>
