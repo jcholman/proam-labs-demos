@@ -114,8 +114,45 @@ background:rgba(12,32,47,var(--arena-glass-opacity));-webkit-backdrop-filter:blu
 @media(max-width:1100px){.top{padding:16px}}
 @media(max-width:680px){.top{flex-direction:column;gap:8px;margin:8px 9px 12px;padding:15px 12px}}
 </style>
+<style id="arena-transparency-settings-style">
+:root{--arena-backdrop-visibility:1;--arena-glass-blur:8px}
+body::before{opacity:var(--arena-backdrop-visibility,1);transition:opacity .16s ease-out}
+.shell,.side,.banner,.main{-webkit-backdrop-filter:blur(var(--arena-glass-blur,8px));backdrop-filter:blur(var(--arena-glass-blur,8px))}
+.arena{-webkit-backdrop-filter:blur(calc(var(--arena-glass-blur,8px) * .625));backdrop-filter:blur(calc(var(--arena-glass-blur,8px) * .625))}
+#arena-transparency-settings{position:fixed;z-index:400;right:clamp(10px,1.5vw,22px);bottom:clamp(10px,1.5vh,20px);width:254px;max-width:calc(100vw - 20px);color:#eaf4f9;background:rgba(5,18,31,.93);border:1px solid rgba(112,162,185,.48);border-radius:11px;box-shadow:0 12px 30px rgba(0,5,12,.30);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);font:12px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;letter-spacing:normal}
+#arena-transparency-settings summary{cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;padding:10px 12px;font-weight:650;color:#e1edf4;list-style:none;user-select:none}
+#arena-transparency-settings summary::-webkit-details-marker{display:none}
+#arena-transparency-settings summary::after{content:"▾";color:#9dbbc9;font-size:14px;transition:transform .16s ease}
+#arena-transparency-settings:not([open]) summary::after{transform:rotate(-90deg)}
+#arena-transparency-settings summary:focus-visible,#arena-transparency-settings input:focus-visible,#arena-transparency-settings button:focus-visible{outline:2px solid #f0c06f;outline-offset:3px;border-radius:4px}
+#arena-transparency-settings .transparency-settings-body{padding:1px 12px 12px;border-top:1px solid rgba(94,140,159,.27)}
+#arena-transparency-settings .transparency-settings-row{margin-top:10px}
+#arena-transparency-settings .transparency-settings-heading{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:3px;color:#bed3df}
+#arena-transparency-settings output{color:#f0c06f;font-variant-numeric:tabular-nums;font-weight:700;min-width:36px;text-align:right}
+#arena-transparency-settings input[type=range]{display:block;width:100%;height:20px;margin:0;padding:0;background:transparent;accent-color:#77d9e8;cursor:pointer}
+#arena-transparency-settings .transparency-settings-footer{margin-top:8px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+#arena-transparency-settings small{color:#91aab7;font-size:10px}
+#arena-transparency-settings button{border:1px solid rgba(122,166,182,.5);border-radius:5px;padding:4px 8px;background:rgba(17,44,62,.86);color:#e1f5fc;font:inherit;cursor:pointer}
+#arena-transparency-settings button:hover{background:rgba(32,67,83,.95)}
+@media(max-width:680px){#arena-transparency-settings{right:9px;bottom:9px;width:236px;font-size:12px}}
+@media(prefers-reduced-motion:reduce){body::before{transition:none}#arena-transparency-settings summary::after{transition:none}}
+</style>
 </head>
 <body>
+<details id="arena-transparency-settings" open>
+ <summary>Transparency values</summary>
+ <div class="transparency-settings-body" role="group" aria-label="Arena transparency tuning">
+  <div class="transparency-settings-row">
+   <label class="transparency-settings-heading" for="arena-glass-setting"><span>Smoked-glass opacity</span><output id="arena-glass-setting-value" for="arena-glass-setting">80%</output></label>
+   <input type="range" id="arena-glass-setting" min="45" max="96" step="1" value="80" aria-label="Smoked-glass opacity">
+  </div>
+  <div class="transparency-settings-row">
+   <label class="transparency-settings-heading" for="arena-background-setting"><span>Background visibility</span><output id="arena-background-setting-value" for="arena-background-setting">100%</output></label>
+   <input type="range" id="arena-background-setting" min="20" max="100" step="1" value="100" aria-label="Compass background visibility">
+  </div>
+  <div class="transparency-settings-footer"><small>Temporary review values</small><button type="button" id="arena-transparency-reset">Reset</button></div>
+ </div>
+</details>
 <header class="top"><div><div class="brand">proAM Labs / The Thinking Graph</div><h1>Arena <span style="color:var(--cyan)">v0.2</span> <span style="color:#91b0bf;font-weight:430">· Governed Team Orchestration</span></h1><p class="sub">One case, multiple evidence paths. Watch LIVE and LAND observations create conflict, trigger an authorized federated query, requalify meaning, preserve selective continuity, and reach RELEASE only after human authority is verified.</p></div><div class="version">DEMO v0.2 · READ-ONLY SIMULATION</div></header>
 
 <div class="app">
@@ -326,6 +363,31 @@ $('step').addEventListener('click',async()=>{paused=true;setStatus('Stepping','r
 $('back').addEventListener('click',()=>{paused=true;if(index>0)index--;showState(index);setStatus(index===0?'Ready':'Back','')});
 $('reset').addEventListener('click',()=>{paused=true;running=false;index=0;clearActive();renderProgress();setStatus('Ready','')});
 renderProgress();
+</script>
+<script id="arena-transparency-settings-controller">
+(function(){
+'use strict';
+const g=document.getElementById('arena-glass-setting');
+const b=document.getElementById('arena-background-setting');
+const go=document.getElementById('arena-glass-setting-value');
+const bo=document.getElementById('arena-background-setting-value');
+const reset=document.getElementById('arena-transparency-reset');
+if(!g||!b||!go||!bo||!reset)return;
+function apply(){
+ const glass=Number(g.value),background=Number(b.value);
+ if(!Number.isFinite(glass)||!Number.isFinite(background))return;
+ const root=document.documentElement.style;
+ root.setProperty('--arena-glass-opacity',(glass/100).toFixed(2));
+ root.setProperty('--arena-backdrop-visibility',(background/100).toFixed(2));
+ const blur=Math.min(8,Math.max(2,2+((glass-45)/35)*6));
+ root.setProperty('--arena-glass-blur',blur.toFixed(1)+'px');
+ go.textContent=glass+'%';bo.textContent=background+'%';
+}
+g.addEventListener('input',apply);
+b.addEventListener('input',apply);
+reset.addEventListener('click',function(){g.value='80';b.value='100';apply()});
+apply();
+}());
 </script>
 </body>
 </html>
