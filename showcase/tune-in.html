@@ -27,6 +27,18 @@
     .waveform span{flex:1;max-width:7px;height:var(--h);border-radius:10px;background:#c5a76c}
     .waveform-cta{position:relative;z-index:1;display:inline-flex;align-items:center;gap:12px;background:#dfc188;color:#0c2635;padding:12px 22px;border-radius:999px;font:700 19px/1.2 Georgia,serif;box-shadow:0 5px 22px rgba(0,0,0,.35);pointer-events:none}
     .waveform-cta .play-symbol{display:inline-flex;width:24px;height:24px;align-items:center;justify-content:center;border-radius:50%;background:#0c2635;color:#f4dca9;font:700 13px/1 system-ui}
+
+    /* Inline, bounded audio experience. No modal or third-party UI dependency. */
+    .waveform-launch[hidden],.compact-audio[hidden]{display:none!important}
+    .compact-audio{width:100%;min-width:0;margin:28px 0 16px;background:#fff;color:#112d3c;border:1px solid #ddcaa9;border-radius:12px;overflow:hidden;box-shadow:0 6px 22px rgba(0,0,0,.16)}
+    .compact-audio-top{display:grid;grid-template-columns:46px minmax(0,1fr) 36px;gap:10px;align-items:center;padding:12px 12px 8px}
+    .compact-audio-art{width:46px;height:46px;display:grid;place-items:center;background:#f5eedf;border-radius:9px}
+    .compact-audio-name{min-width:0;font:700 15px/1.3 Georgia,serif;color:#102d3d;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+    .compact-audio-close{width:36px;height:36px;display:grid;place-items:center;padding:0;background:transparent;border:0;border-radius:6px;font:400 25px/1 system-ui;color:#102d3d;cursor:pointer}
+    .compact-audio-close:hover,.compact-audio-close:focus-visible{background:#f2e9d8}
+    .compact-audio-close:focus-visible,.waveform-launch:focus-visible{outline:3px solid #cf9b3e;outline-offset:2px}
+    .compact-audio iframe{display:block;width:100%;height:170px;background:#fff;border:0}
+    @media (max-width:480px){.compact-audio-top{grid-template-columns:40px minmax(0,1fr) 36px;gap:8px;padding:10px 9px 7px}.compact-audio-art{width:40px;height:40px}.compact-audio-name{font-size:13px}.compact-audio iframe{height:158px}}
     .player-time{font-size:12px;display:flex;justify-content:space-between;color:#d0d9db;border-top:1px solid #365463;padding-top:12px}
     .listen-actions{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:24px 0 10px}
     .listen-actions .button{font-weight:700;min-height:47px;padding:12px 20px}
@@ -85,12 +97,24 @@
         <span class="player-label">Featured listening · Audio overview</span>
         <h2>Fixing AI Bottlenecks with Agent Trust Architecture</h2>
         <p>A conversation about Truth, Trust, Practice, qualification, and when systems should proceed—or hold.</p>
-        <a id="listen-in" class="waveform-launch" href="https://share.descript.com/view/AhV3svZ7pmH" target="_blank" rel="noopener noreferrer" aria-label="Listen In — open Descript listening page in a new tab">
+        <button id="listen-in" class="waveform-launch" type="button" aria-controls="compact-audio-player" aria-expanded="false" aria-label="Listen In — open compact audio player">
           <span class="waveform" aria-hidden="true">
             <span style="--h:20%"></span><span style="--h:42%"></span><span style="--h:70%"></span><span style="--h:31%"></span><span style="--h:90%"></span><span style="--h:52%"></span><span style="--h:22%"></span><span style="--h:76%"></span><span style="--h:49%"></span><span style="--h:96%"></span><span style="--h:38%"></span><span style="--h:69%"></span><span style="--h:27%"></span><span style="--h:87%"></span><span style="--h:47%"></span><span style="--h:73%"></span><span style="--h:20%"></span><span style="--h:55%"></span><span style="--h:93%"></span><span style="--h:34%"></span><span style="--h:80%"></span><span style="--h:44%"></span><span style="--h:60%"></span><span style="--h:24%"></span><span style="--h:68%"></span><span style="--h:40%"></span><span style="--h:82%"></span><span style="--h:29%"></span><span style="--h:58%"></span><span style="--h:33%"></span>
           </span>
           <span class="waveform-cta"><span class="play-symbol" aria-hidden="true">▶</span> Listen In</span>
-        </a>
+        </button>
+        <div id="compact-audio-player" class="compact-audio" hidden role="region" aria-label="Embedded Descript audio player">
+          <div class="compact-audio-top">
+            <span class="compact-audio-art" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12V18M7 8V22M11 5V25M15 10V20M19 3V27M23 9V21M27 12V18" stroke="#a68648" stroke-width="2.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div class="compact-audio-name" title="Fixing AI Bottlenecks with Agent Trust Architecture">Fixing AI Bottlenecks with Agent Trust Architecture</div>
+            <button id="close-audio-player" class="compact-audio-close" type="button" aria-label="Close audio player" title="Close audio player">&times;</button>
+          </div>
+          <iframe id="descript-audio-frame" title="Fixing AI Bottlenecks with Agent Trust Architecture — Descript audio player" data-src="https://share.descript.com/embed/AhV3svZ7pmH" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
         <div class="player-time"><span>Audio · Descript</span><span>45:20</span></div>
       </div>
     </section>
@@ -118,6 +142,34 @@
     <span>Fit for purpose.</span>
   </footer>
 
+
+  <script>
+    (() => {
+      const launch = document.getElementById('listen-in');
+      const player = document.getElementById('compact-audio-player');
+      const close = document.getElementById('close-audio-player');
+      const frame = document.getElementById('descript-audio-frame');
+      if (!launch || !player || !close || !frame) return;
+      launch.addEventListener('click', () => {
+        launch.hidden = true;
+        launch.setAttribute('aria-expanded', 'true');
+        player.hidden = false;
+        frame.src = frame.dataset.src;
+        close.focus();
+      });
+      const closePlayer = () => {
+        frame.removeAttribute('src'); // Stop audio by unloading the embedded player.
+        player.hidden = true;
+        launch.hidden = false;
+        launch.setAttribute('aria-expanded', 'false');
+        launch.focus();
+      };
+      close.addEventListener('click', closePlayer);
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && !player.hidden) closePlayer();
+      });
+    })();
+  </script>
 
 </body>
 </html>
