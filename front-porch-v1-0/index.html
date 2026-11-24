@@ -700,7 +700,9 @@
                 const handoff=JSON.parse(raw);
                 sessionStorage.removeItem('proam.conceptualists.frontPorch.handoff.v1');
                 if(handoff&&typeof handoff.text==='string'&&Date.now()-handoff.at<15*60*1000){
-                    contextInput.value=handoff.text.slice(0,4000);\n                    window.proamHandoffLog?.('front_porch_received',{length:contextInput.value.length});\n                    window.proamHandoffStatus?.(contextInput.value.length?'received':'empty');
+                    contextInput.value=handoff.text.slice(0,4000);
+                    window.proamHandoffLog?.('front_porch_received',{length:contextInput.value.length});
+                    window.proamHandoffStatus?.(contextInput.value.length?'received':'empty');
                     const note=document.getElementById('handoff-note');
                     note.textContent='Context received from Conceptualists. Review or edit it before continuing to POS-Lite. No automatic submission.';
                     const app=document.getElementById('app-container');
@@ -713,7 +715,8 @@
         document.getElementById('enter-pos').addEventListener('click',event=>{
             try{
                 sessionStorage.removeItem('proam.frontPorch.context.v1');
-                if(contextInput.value.trim())sessionStorage.setItem('proam.frontPorch.context.v1',JSON.stringify({text:contextInput.value.trim(),at:Date.now()}));\n                window.proamHandoffLog?.('enter_pos_lite',{length:contextInput.value.trim().length});
+                if(contextInput.value.trim())sessionStorage.setItem('proam.frontPorch.context.v1',JSON.stringify({text:contextInput.value.trim(),at:Date.now()}));
+                window.proamHandoffLog?.('enter_pos_lite',{length:contextInput.value.trim().length});
             }catch(error){
                 if(contextInput.value.trim()){event.preventDefault();document.getElementById('handoff-note').textContent='Local session storage is unavailable. Copy your context, then open POS-Lite using the link again, or clear the field to continue.';}
             }
@@ -726,7 +729,8 @@
                 // Preserve the full cinematic reveal; only focus the context after it finishes.
                 const timer=setTimeout(()=>{
                     if(frontPorchMode!=="standard")return;
-                    window.proamHandoffLog?.('front_porch_after_animation',{length:contextInput.value.length});\n                    window.proamHandoffStatus?.(contextInput.value.length?'received':'lost_after_animation');\n                    contextInput.scrollIntoView({behavior:"smooth",block:"center"});
+                    window.proamHandoffLog?.('front_porch_after_animation',{length:contextInput.value.length});
+                    window.proamHandoffStatus?.(contextInput.value.length?'received':'lost_after_animation');\n                    contextInput.scrollIntoView({behavior:"smooth",block:"center"});
                     contextInput.focus({preventScroll:true});
                 },9300);
                 sequenceTimers.push(timer);
