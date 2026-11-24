@@ -39,10 +39,12 @@ $("frontPorchHandoff").addEventListener("click",()=>{
  if(!planText){$("handoffStatus").textContent="Create a demonstration plan before continuing.";return}
  const context=planText.slice(0,4000);
  try{
-  sessionStorage.setItem("proam.conceptualists.frontPorch.handoff.v1",JSON.stringify({text:context,at:Date.now()}));\n  window.proamHandoffLog?.("next_step_written",{length:context.length});
+  sessionStorage.setItem("proam.conceptualists.frontPorch.handoff.v1",JSON.stringify({text:context,at:Date.now()}));
+  window.proamHandoffLog?.("next_step_written",{length:context.length});
   window.location.assign("https://jcholman.github.io/proam-labs-demos/front-porch-v1-0/?from=conceptualists");
  }catch(error){
-  window.proamHandoffLog?.("next_step_failed",{code:"storage_or_navigation_error"});\n  $("handoffStatus").textContent="This browser does not allow session handoff. Copy your plan and open the Front Porch manually."; 
+  window.proamHandoffLog?.("next_step_failed",{code:"storage_or_navigation_error"});
+  $("handoffStatus").textContent="This browser does not allow session handoff. Copy your plan and open the Front Porch manually."; 
  }
 });
 </script></body></html>
