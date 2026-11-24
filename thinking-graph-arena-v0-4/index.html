@@ -10,7 +10,7 @@
 @media(max-width:1100px){.shell{grid-template-columns:1fr}.side{display:grid;grid-template-columns:1fr 1fr}.side>.long{grid-column:1/-1}.top{padding:16px}.wrap{padding:0 16px 20px}}@media(max-width:680px){.top{flex-direction:column;gap:8px}.wrap{padding:0 9px 25px}.top{padding:15px 12px}.toolbar{padding:10px}.content{padding:10px}.metricgrid{grid-template-columns:1fr 1fr}.flow-area,.secondary-flow{grid-template-columns:1fr;gap:5px}.arr{transform:rotate(90deg);height:18px}.stage{min-height:84px;padding:9px 11px}.side{grid-template-columns:1fr}.side>.long{grid-column:auto}.axis{margin-left:88px}.lane{grid-template-columns:88px minmax(0,1fr)}.lane .left{padding:14px 4px 8px 0}.lane .left strong{font-size:10px}.track{min-height:72px}.task{font-size:0}.timeslider{width:125px}.segment button{min-width:83px}.metric .num{font-size:18px}.foot{padding:10px}}
 </style>
 <style id="arena-glass-treatment">
-:root{--arena-glass-opacity:.80}
+:root{--arena-glass-opacity:.45}
 html{background:#05101c}
 body{isolation:isolate;background:transparent!important}
 body::before{
@@ -66,12 +66,12 @@ body::before{opacity:var(--arena-backdrop-visibility,1);transition:opacity .16s 
 </style>
 </head>
 <body>
-<details id="arena-transparency-settings" open>
+<details id="arena-transparency-settings">
  <summary>Transparency values</summary>
  <div class="transparency-settings-body" role="group" aria-label="Arena transparency tuning">
   <div class="transparency-settings-row">
-   <label class="transparency-settings-heading" for="arena-glass-setting"><span>Smoked-glass opacity</span><output id="arena-glass-setting-value" for="arena-glass-setting">80%</output></label>
-   <input type="range" id="arena-glass-setting" min="45" max="96" step="1" value="80" aria-label="Smoked-glass opacity">
+   <label class="transparency-settings-heading" for="arena-glass-setting"><span>Smoked-glass opacity</span><output id="arena-glass-setting-value" for="arena-glass-setting">45%</output></label>
+   <input type="range" id="arena-glass-setting" min="45" max="96" step="1" value="45" aria-label="Smoked-glass opacity">
   </div>
   <div class="transparency-settings-row">
    <label class="transparency-settings-heading" for="arena-background-setting"><span>Background visibility</span><output id="arena-background-setting-value" for="arena-background-setting">100%</output></label>
@@ -199,7 +199,7 @@ function apply(){
 }
 g.addEventListener('input',apply);
 b.addEventListener('input',apply);
-reset.addEventListener('click',function(){g.value='80';b.value='100';apply()});
+reset.addEventListener('click',function(){g.value='45';b.value='100';apply()});
 apply();
 }());
 </script>

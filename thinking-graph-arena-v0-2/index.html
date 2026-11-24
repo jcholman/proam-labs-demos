@@ -79,7 +79,7 @@ progress::-webkit-progress-bar{background:#122737} progress::-webkit-progress-va
 @media(max-width:1050px){.app{grid-template-columns:1fr}.side{min-height:520px}.arena{height:620px}}
 </style>
 <style id="arena-glass-treatment">
-:root{--arena-glass-opacity:.80}
+:root{--arena-glass-opacity:.45}
 html{background:#05101c}
 body{isolation:isolate;background:transparent!important}
 body::before{
@@ -139,12 +139,12 @@ body::before{opacity:var(--arena-backdrop-visibility,1);transition:opacity .16s 
 </style>
 </head>
 <body>
-<details id="arena-transparency-settings" open>
+<details id="arena-transparency-settings">
  <summary>Transparency values</summary>
  <div class="transparency-settings-body" role="group" aria-label="Arena transparency tuning">
   <div class="transparency-settings-row">
-   <label class="transparency-settings-heading" for="arena-glass-setting"><span>Smoked-glass opacity</span><output id="arena-glass-setting-value" for="arena-glass-setting">80%</output></label>
-   <input type="range" id="arena-glass-setting" min="45" max="96" step="1" value="80" aria-label="Smoked-glass opacity">
+   <label class="transparency-settings-heading" for="arena-glass-setting"><span>Smoked-glass opacity</span><output id="arena-glass-setting-value" for="arena-glass-setting">45%</output></label>
+   <input type="range" id="arena-glass-setting" min="45" max="96" step="1" value="45" aria-label="Smoked-glass opacity">
   </div>
   <div class="transparency-settings-row">
    <label class="transparency-settings-heading" for="arena-background-setting"><span>Background visibility</span><output id="arena-background-setting-value" for="arena-background-setting">100%</output></label>
@@ -385,7 +385,7 @@ function apply(){
 }
 g.addEventListener('input',apply);
 b.addEventListener('input',apply);
-reset.addEventListener('click',function(){g.value='80';b.value='100';apply()});
+reset.addEventListener('click',function(){g.value='45';b.value='100';apply()});
 apply();
 }());
 </script>
