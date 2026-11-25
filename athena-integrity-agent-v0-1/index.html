@@ -468,6 +468,98 @@
 }
 @media(prefers-reduced-motion:reduce){.athena-workflow{transition:none}}
 </style>
+
+<style id="athena-helmet-three-phase-fix-v02">
+/* Only the Athena candidate is changed; original Front Porch unchanged. */
+#athena-brand{z-index:90;top:12px;left:18px;max-width:calc(100% - 36px);text-shadow:0 1px 6px rgba(0,0,0,.65)}
+#athena-brand img{display:none!important}
+#athena-brand .athena-name{font-size:clamp(.9rem,2.4vw,1.06rem);letter-spacing:.035em}
+#athena-brand .athena-meta{font-size:.7rem}
+#athena-brand .candidate{font-size:.66rem}
+#app-container{box-sizing:border-box;min-height:100svh;height:100svh;overflow:hidden}
+#svg-stage{isolation:isolate}
+.athena-medallion{
+ --helmet-color:#cba25c;display:grid;place-items:center;aspect-ratio:1/1;
+ border-radius:50%;background:rgba(5,20,33,.95);
+ box-shadow:0 0 0 1px rgba(221,180,104,.55),0 9px 30px rgba(0,0,0,.25);
+ overflow:hidden
+}
+.athena-helmet-ink{
+ display:block;width:94%;height:94%;
+ background-image:url("assets/athena-helmet-mark.svg");
+ background-position:center;background-size:contain;background-repeat:no-repeat
+}
+@supports (-webkit-mask-image: url("assets/athena-helmet-mark.svg")) or (mask-image: url("assets/athena-helmet-mark.svg")){
+ .athena-helmet-ink{
+  background-image:none;background-color:var(--helmet-color);
+  -webkit-mask-image:url("assets/athena-helmet-mark.svg");
+  mask-image:url("assets/athena-helmet-mark.svg");
+  -webkit-mask-size:contain;mask-size:contain;
+  -webkit-mask-position:center;mask-position:center;
+  -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
+  transition:background-color 850ms ease
+ }
+}
+#athena-stage-emblem{
+ position:absolute;z-index:15;left:50%;top:50%;transform:translate(-50%,-50%);
+ width:34%;max-width:260px;transition:opacity 700ms ease,box-shadow 800ms ease
+}
+#app-container.state-4 #athena-stage-emblem{
+ --helmet-color:#fff;box-shadow:0 0 0 1px rgba(240,246,250,.62),0 9px 30px rgba(0,0,0,.23)
+}
+#app-container.state-6 #athena-stage-emblem{
+ --helmet-color:#64ffda;box-shadow:0 0 0 1px rgba(100,255,218,.62),0 0 27px rgba(100,255,218,.17)
+}
+#app-container.state-7 #athena-stage-emblem{opacity:0}
+#app-container:not(.state-8) #ui-stage.athena-ui{
+ visibility:hidden!important;opacity:0!important;pointer-events:none!important;
+ border:0!important;background:transparent!important;
+ -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+ box-shadow:none!important
+}
+#app-container.state-8{
+ height:auto;min-height:100svh;display:block;padding:155px 12px 42px;overflow:visible
+}
+#app-container.state-8 #svg-stage{opacity:.21;pointer-events:none}
+#app-container.state-8 #ui-stage.athena-ui{
+ position:relative;left:auto;top:auto;transform:none;
+ width:100%;max-width:630px;margin:0 auto;padding:72px 20px 24px;
+ box-sizing:border-box;visibility:visible!important;opacity:1!important;pointer-events:auto;
+ border-radius:16px;background:rgba(6,23,38,.52)!important;
+ border:1px solid rgba(100,255,218,.26)!important;
+ -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
+ box-shadow:0 12px 38px rgba(0,0,0,.16)!important
+}
+#athena-context-emblem{
+ --helmet-color:#64ffda;position:absolute;z-index:26;
+ left:50%;top:-58px;transform:translateX(-50%);width:112px;
+ box-shadow:0 0 0 1px rgba(100,255,218,.75),0 8px 30px rgba(0,0,0,.4)
+}
+#app-container:not(.state-8) #athena-context-emblem{visibility:hidden}
+#app-container.state-8 #ui-stage.athena-ui h1,
+#app-container.state-8 #ui-stage.athena-ui .subtitle,
+#app-container.state-8 #ui-stage.athena-ui .input-wrapper{opacity:1;transform:none}
+#app-container.state-8 .athena-workflow{opacity:1;pointer-events:auto;transform:none}
+#app-container.state-8 .example-prompt{opacity:1;transform:none}
+@media(max-width:600px){
+ #athena-brand{top:12px;left:14px;gap:0}
+ #athena-stage-emblem{width:38%;max-width:175px}
+ #app-container.state-8{padding:145px 10px 35px}
+ #app-container.state-8 #ui-stage.athena-ui{width:100%;padding:66px 13px 24px}
+ #athena-context-emblem{width:106px;top:-54px}
+ #app-container.state-8 #ui-stage.athena-ui h1{font-size:clamp(1.3rem,5vw,1.7rem)}
+ #app-container.state-8 #ui-stage.athena-ui .subtitle{font-size:.87rem}
+ .athena-tracks{gap:8px}
+}
+@media(max-width:390px){
+ #app-container.state-8{padding-top:145px}
+ #athena-stage-emblem{width:40%}
+ .athena-track{padding:9px}
+}
+@media(prefers-reduced-motion:reduce){
+ .athena-medallion,.athena-helmet-ink{transition:none!important}
+}
+</style>
 </head>
 <body>
 
@@ -481,7 +573,7 @@
     <div id="app-container">
         <div id="front-porch-grid-layer" aria-hidden="true"></div>
         <div id="athena-brand" aria-label="Athena Integrity Agent, candidate test">
-<img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCABkAGQDASIAAhEBAxEB/8QAGwAAAwEBAQEBAAAAAAAAAAAAAAUGBAcCAwH/xABBEAABAwMCAwMJBQYEBwAAAAABAgMEAAURBiESMUETUWEHFCIyQmJxgZEVFiNSoVNygrHB0SU2kpQzQ0RWc7Lh/8QAFwEBAQEBAAAAAAAAAAAAAAAAAQIAA//EAB0RAQEBAAMBAQEBAAAAAAAAAAABEQIhMRJRQWH/2gAMAwEAAhEDEQA/AOR0UUV3cBWmBbpt0lJiQIj0p9XJtlBUfjtyHjTay6cZfgm9XySqBZ0K4QtKcuyVD2Gknme9R2FVcKPdLtZlORFMaN0oPXkKUQ7JHepXrOE/JPdmi1U4p46PiWv/ADJqKFbXAN4scGU+PAhHop+Zr6MNaMOEwrVqO8KHNQUhpJ+AQlR/Wtn3h0Xpz8Ow6f8AtiQn/rbqfRJ70t930NZ5HlW1c6ns481iC0OTcSMhIH1BNT3T1H1XHsSU5d8n9/ZR+cS3Cf1bxWJUPQ0pfZpuF5sr3dNjpfQPmjCv0ryjykazbVxDUEkn3koI+hTW9HlTu8lPZX23Wy9M4wRJjAKx4KHL6VsrbCyXoi5piqm2t2Ne4aRlT1vX2ikD3m/WT9KnK6DBb0lfZaH9O3GTpG9Z/DbedJYWe5Lg3Hz+hr8vUZuTP+y9bRBaLyofgXhlsdjI7i6BsR76dx1FM5frXj+Of0VuvFnnWK4Lg3Bns3UgKSQcpcSeSknqk99YapAooorAU901ZY00yLpdlKbtFuAVIKdlPKPqtI95R+gyaSstOPvIZZQXHHFBCEDmpROAPrXR2bPEmXqPpZboTZNNtKlXd4HZ57GXCfn6A8Aqi1fGPKDGXEb1pq9hHmgHZ2WyN+ilaRy26NjqevM9AY7UWprpqif51cXspTsywjZtlPclPT48zXvVepH9UXxyc4OzYSOzisDYMtD1UgfqfGktEjWinmnoVvdhXW4z47kv7NZbdTFS72aXOJYQSpQGcDIOBgnPMUjqq0hbpXmd2mSGSza37bIYVKdwhsrxxIAJ9Y8aU7DJpvg4+vnGvtuucpqDL0pbeyeWltswSth5BJwMLJVxc/aBpNeoTNtvk+BHdU81FkuMocUBlQSojO3wrdosMffK0rlONttNyEuEuKCU5TlQBJ2GVAD51gu0G4wLg43dIrseSslxSXU44snOR3jxG1E9N7jHVlpzWMd2CNOasQqbZnNm3ju7CV0UhXPA7unw2MbRTZolx0WZZzDfb0bfpSHYb47Sw3fmlBVyST+zVsCOhII2IqBmwpFumvQpbSmpDCyhxCuaVCrTST6NXaekaJnLHnLaVSLO8o7ocAypvPcRn9e4VhvqV6g0yzfXEEXO2rTBugI9JQ5NOK8dignvAqZcuKs2akqKKKtCm0IhDF4kXp5IU1ZojkzB5FwDhbH+tQ+lMJUg2byWtILoVP1LLU/IVxel2KDsD8Vb/M0vth828nN/fA9KVLixcjuHE4R+grV9kNMow7oO4FSSELV9oq9bGTyRtUX10niPoqx+zI+Fn7g3LDeOL/EV7Zxj2PEUs1BDREjMqRpmTa+JxSe1dll5K8bFI2ABB/lVan5erVEh2u0C/wB0jplFxxTVvhuZ4Hlp9ZxfehOQMe0TjkDSy6Xi4XqSH7hKW+pIwhJ2Q2O5KRskeAFM9Wns3LPDTs3HtEbgT4rT2ij81LNT9afov4Kd2vUa2IybZdWjcbSTvHWr02feZVzQrw5HqKSUUiXDK/Wj7HnJQ0+JMSQ2l+JIAx2rSuRx0IwQR0INLaoJijJ8n9rcWcri3GRHbPuKQ25j/USfma3xLbGdt0KSNFS30y1JaacTdCO1WcgHh4cpBKVYJ22O+1Tqs1M2+e/arlGuEZXC9GdS6g+IOcf0rpktmE75QnI7K0C26zt2QM5CHVpyk/ELSD/FU8bRG4pafuNKV5mgLeKbvkAFJWCk8OFZSCr0c7AmschKLPLsl1jafetQMlt5t12b23aAFKgMYHCcEHfcgjpRe1SYmVoW04ptwcK0EpUO4jY0U61pFTE1temEjCUzXCkdwUeL+tFXEX1pjHj8mFwSnm1eGFq+BaWP5iqJjWttL0lx2FMSH5Lih2MUABsniCiM7qJ2P1z0qe0sPPtPams43W7DRMaT3qZXxED+FSq3T5upbfpCz32Lqu5usTStlxsPKSI60bBOc75APdyrnna54eK8oNtdLTrtvnhbISEpSx6wAI3OegUfjwjvqY1LeYU2zsRIjT4UJCnFExQw2BlwgJAJ/acumPGsH3z1T/3Hc/8AdL/vWS4X68XZpDVyusuY2hXElL7ylhJ5ZANM4i8lmkNpuTzxgRpriNLRnWGZDfaJWUpa4sDmdgvcbjB7qRx7ZY9TvJZtC3LVcnThEKQouMOq7m3fWTy5LB/erzepMm3Q9LrZfWzOj27tA4hXCtCVOuKb3/dP0NMrXeo78R/VMi3NJulpeay5H/DRKLgWkFaBsFAgHKcZ6it/p68TFmtLl5nGM2+zHShpbzrzxPC22gZUo4BJwOgFUNjdsUe/QLfaLYq8SXpLaFS5zfogFQ4i2wPDJysn4CkWnrk1a5zrkhKy0/DfjK4AMjtGykHfuJBpxqS4HT06dpyytJhMMq7F+Qk5kSthnjc5hJ/KnA7803fBMk0X3shpRfZcIaVqGWWuDkUhCOXhyrZYLvbrNAs6kOSVuImpkT2/NVlSgOIICVcuFAUTjqVHwpRd8r0VpxTZ/BQZbax3O9oFH6oKPpWdrV+pmWkNNaguSG20hKUJkqASBsAN6M2NuVROXS1gzXGJklElq2MwIbioa+FXC1wOLCfZJGUgnkFE1l1Tc7deY1pRDjKTNUttLilRuzKEhppsIKvbPElRB6AgeFKfvnqkDP3juf8Aul/3qtNruqta6Ztt5v0u4ngbuMpqQslMUAFZG5PRPPajMMupzygOJd1/e1DkJRT9AB/Sikt0nKud3mXBXOVIW8f4lE/1oq54i+tOm7wbBqGHcynjbZcw8j87ahwrHzSTV1brQhTl98nrjqVNysT7K8o+is44k4PvIwPkquZVZ2SQ/qKzR4UV0t6hsWXrYsH0n2QeJTQ71JO6R1GRU8p/Vcb/ABHutOMPLZdQptxtRStChgpIOCD868HcV0DUFuZ11al6ssjITcmEgXe3oHpBQH/FQOZBxv8ADvBrn9VLqbMUl7bGoLY3qGJu5Gaaj3CMP+QUpCEOJH7NQAHuqyOor5Wr/I+of/PC/wDZyltpu0qy3BMyIUlQBQttY4kOoOykLHVJHMVSyEWb7mXmXaJIQ3LfikwXVZdjKSpeRn2kbjCvkdxU3rpU77RtUOtmnH9f3ZlpCnHHJhShCRkqJwAAOpqeG5Hxq91XdLfZNSXWZa5KJd3mPK4ZDe6IKCMEIPV0jYkbJHLfk30Twkvym7RaGNMoWl6QzIMma4DxJbeKeHskH3R6x6q+FTtHWttns86/XNm3W5hT8h44CRyA6knoB1NPg9OdBWJq86gEibhFstqfO5rivVCE7hJ+JH0BpvLvTrtu1BrGRluTfHFW+3oPNLW3aKHwQEpz3k1tlRGBHRoDT0pBZbPnF+uvJHo+tv8AlTjl1OB31H6ovTF2ntMwEKatcBsR4LSuYbHNR95R9I//ACp9q/IS0UUVbmK+saQ/DktSozq2X2VBbbiDgpUORFfKiszoFsnvX24JvunH0W/VTQzIhDCW7gPaUgHbiPtIPPmN69Sbfp7XDzhjqb03qTJD0KRlEd9fXhJ9VR7v0POufJUpC0rQopWkgpUk4IPeDVQjVcO8tpj6vt6rgUgJRcY5CJaB4nk4B3K38ajMXLL6V3rTN6088WrrbnowBwHCnLavgobGlWM7866ZZp18jshnSusoV2ikYFuumG3APy8Lmx/hVivvLdnBZN88kbL6/adhNqQD45QFD9afpvlyygDKgkDc7ADma6QiTYlLIY8kc9bv5VOvEfThpjHmasislyzaKtGmGhzlzEobUn+Jwg/oa303ykbP5PLvOj+f3Mt2W2J3XLneht7qTuT9Kfw5jSokmxaBaVEhhP8AieoJZ4CU9fS9hPcBuegHOlt0mWfznzvUuopWqZydxFhLKIyT3FwgbfuJpBe9UT70y3DKWYVuZOWoMVPA0jxI9pXicmjut1Gy93uDFth07p0r+z+IKlS1p4XJ6xyJHsoHsp+Zqaooq5MTboooorAUUUVmFFFFZn4QDzGa2RLtcoGPM7jLjY/YvrR/I0UVi1r1ZqRxPCvUN0Uk9DMc/vSx996UvtJDzjy/zOLKj9TRRRI1rxRRRSBRRRWYUUUVmf/Z" width="64" height="64" alt="Athena helmet badge (provisional crop from November 2026 branding collection)">
+
 <div><div class="athena-name">ATHENA · INTEGRITY AGENT</div><div class="athena-meta">proAM Labs · Human review v0.1</div><span class="candidate">CANDIDATE · NOT QUALIFIED</span></div></div>
         
         <!-- MASTER GOVERNED SVG -->
@@ -651,10 +743,13 @@
                     <circle cx="500" cy="500" r="50" fill="url(#modern-nucleus)" />
                 </g>
             </svg>
+            <!-- Same source-derived helmet in gold, white, then teal. -->
+            <div id="athena-stage-emblem" class="athena-medallion" aria-label="Athena helmet transitioning gold, white, teal"><span class="athena-helmet-ink" aria-hidden="true"></span></div>
         </div>
 
         <!-- USER INTERFACE -->
         <div id="ui-stage" class="athena-ui">
+            <div id="athena-context-emblem" class="athena-medallion" aria-label="Athena helmet in new-age teal"><span class="athena-helmet-ink" aria-hidden="true"></span></div>
             <h1>What are we going to do, now?</h1>
             <p class="subtitle">Begin where you are. Materialize your intent, with uncertainty and choice preserved.</p>
             <div class="input-wrapper">

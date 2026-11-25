@@ -19,6 +19,21 @@ This folder is a **separate copy** of `front-porch-v1-0/index.html`, preserving 
 
 These are working candidate transcriptions; source-fidelity review and human acceptance are still pending. The Qualification Suite belongs to the independent evaluator; it is not embedded in the candidate's instructions.
 
+## Three-phase Athena helmet visual correction (2026-11-25)
+
+Source mark: `assets/athena-helmet-mark.svg` is a transparent vector trace of the **white Athena badge** from the existing proAM Labs three-badge collection. Its geometry is unchanged between phases. It is a provisional derived mark pending visual review of the source artwork; no invented helmet or image-generation substitute is used in the site.
+
+The original Front Porch animation still drives the timing:
+
+- **Old World · Gold** — states 1–3: gold source-derived medallion centered on the archival seal.
+- **Transition · White** — states 4–5: exactly the same helmet becomes white.
+- **New Age · Teal** — state 6: helmet becomes teal.
+- **Arrival · Context** — states 7–8: cinematic emblem gives way to a teal helmet centered above the working context panel.
+
+The initial source preview was defective because a data-URL image displayed as a broken icon and an opaque blurred glass panel covered the animated architecture. The new v0.2 visual fix removes that image, delays the panel until state 8, removes the large blur filter, and reduces mobile layout dead space. The original `front-porch-v1-0/` is untouched.
+
+Unchanged governance: visual candidate only, Athena contract path disabled, no data submission, no qualification or agent enforcement.
+
 ## Correct operation
 
 1. Enter a **synthetic/public** observation or select an example.
