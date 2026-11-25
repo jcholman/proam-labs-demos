@@ -8,6 +8,12 @@
 # proam-labs-demos
 Interactive product and architecture demos from proAM Labs.
 
+## Athena Integrity Agent v0.1 — Visual Front Porch candidate
+
+[**Open Athena Integrity Agent · Front Porch visual preview**](https://jcholman.github.io/proam-labs-demos/athena-integrity-agent-v0-1/) — A separate, Athena-branded copy of the original Front Porch for early human review. Enter a synthetic observation, copy it, and compare it later with a standard ChatGPT conversation. The candidate Athena track is deliberately **disabled** until the Agent Profile and Operating Contract are configured in an isolated, verified ChatGPT Project. Its Qualification Suite is reserved for independent evaluation. **Visual preview only; no contract binding, automatic ChatGPT handoff, or independently qualified agent behavior.**
+
+[**View Athena in the Interactive Demo Library**](https://jcholman.github.io/proam-labs-demos/enhanced/#athena) · [**Explore the public showcase**](https://jcholman.github.io/proam-labs-demos/showcase/)
+
 ## Conceptualists — Knowledge-work capability and the Four Signals
 
 [**Explore Conceptualists · proAM Labs**](https://jcholman.github.io/proam-labs-demos/conceptualists/?utm_source=chatgpt.com) — A new knowledge-worker-facing front porch for analysts, builders, conceptualists, displaced professionals, and career changers. It explores why a resume is an incomplete representation of human capability through four proposed signal dimensions: **Declared** (what we say we can do), **Demonstrated** (what we have produced), **Qualified** (what evidence can substantiate), and **Continuity** (how judgment, learning, and contribution develop over time).
