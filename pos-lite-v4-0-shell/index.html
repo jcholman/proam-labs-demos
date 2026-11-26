@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#06121e"><meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'none'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<title>proAM Labs · POS-Lite v4.0_shell — Candidate</title>
+<style>
+:root{color-scheme:dark;--bg:#06121e;--panel:#0d2433;--line:#294b5d;--txt:#eff8fc;--muted:#a9bed0;--teal:#64ffda;--gold:#f4d69a}
+*{box-sizing:border-box}html,body{margin:0;min-height:100%;font:15px/1.5 system-ui,-apple-system,sans-serif;color:var(--txt);background:var(--bg)}
+body{background:radial-gradient(ellipse at 50% -10%,#124154,transparent 48%),var(--bg)}
+header{padding:14px 16px;border-bottom:1px solid var(--line);background:#081925}
+.head{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px}.head img{width:46px;height:46px;object-fit:contain}.head .brand{flex:1;min-width:0}.head strong{display:block;font-size:1.1rem}.head small{color:var(--muted);font-size:.76rem}.badge{padding:5px 8px;border:1px solid #8a7351;border-radius:10px;font-size:.68rem;color:var(--gold);white-space:nowrap}
+main{max-width:1100px;margin:auto;padding:20px 15px 80px}.intro h1{font-size:clamp(1.45rem,3.5vw,2.1rem);margin:3px 0}.intro p{margin:5px 0 13px;color:var(--muted)}
+.eyebrow{font-size:.7rem;letter-spacing:.12em;font-weight:750;color:var(--teal);text-transform:uppercase}
+.card{background:linear-gradient(148deg,#0f2d3d,#081b28);border:1px solid var(--line);border-radius:15px;padding:16px;margin-top:15px;min-width:0}
+.card h2{font-size:1.13rem;margin:2px 0 8px}.hint{font-size:.84rem;color:var(--muted);line-height:1.48}
+.grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.8fr);gap:14px}.grid>.card{margin-top:0}
+textarea{width:100%;min-height:133px;background:#061b28;border:1px solid #426779;color:var(--txt);padding:12px;font:inherit;border-radius:9px;resize:vertical}
+button{cursor:pointer;padding:10px 12px;border-radius:9px;font:inherit;font-weight:680;border:1px solid #4d7584;color:var(--txt);background:#13394d}
+button.primary{background:var(--teal);border-color:var(--teal);color:#092330}button.secondary{background:#0b2333}button:disabled{cursor:not-allowed;opacity:.52}
+button:focus-visible,textarea:focus-visible,a:focus-visible{outline:2px solid var(--teal);outline-offset:3px}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:11px}.actions button{font-size:.86rem}
+.notice{padding:10px 12px;background:#122f40;border-left:3px solid var(--gold);border-radius:4px;color:#dce5ed;font-size:.86rem;margin:12px 0}
+.small{font-size:.79rem;color:var(--muted)}.chips{display:flex;gap:7px;flex-wrap:wrap;margin:9px 0}.chip{padding:3px 8px;border:1px solid #516b76;border-radius:99px;color:#cedee9;font-size:.73rem}
+#history{display:flex;flex-direction:column;gap:6px;max-height:225px;overflow:auto}
+.history-item{display:block;width:100%;text-align:left;font-size:.83rem;background:#0b2533;border-color:#3d6275;overflow-wrap:anywhere}
+.history-item.selected{border-color:var(--teal)}.history-item small{display:block;color:var(--muted);margin-top:4px;font-size:.73rem}
+.modes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.mode{padding:13px;border:1px solid #385a6d;border-radius:12px;background:#0c2535;display:flex;flex-direction:column;gap:6px}
+.mode h3{font-size:.97rem;margin:0}.mode p{font-size:.83rem;color:var(--muted);margin:0;flex:1}.mode button{margin-top:10px}
+.results{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+.result{padding:13px;border:1px solid #3f6778;border-radius:11px;background:#091c2a;white-space:pre-line}
+.result h3{margin:5px 0;font-size:.96rem}.result p{font-size:.87rem;line-height:1.55}
+.fixture{font-size:.68rem;font-weight:800;color:var(--gold);letter-spacing:.08em}
+a{color:var(--teal)}details{margin-top:10px;padding:11px;border:1px solid var(--line);border-radius:9px}summary{cursor:pointer}pre{max-height:300px;overflow:auto;white-space:pre-wrap;overflow-wrap:anywhere;color:#c5f2e9;font-size:.75rem}
+footer{max-width:1100px;margin:auto;padding:0 15px 24px;color:var(--muted);font-size:.77rem}[hidden]{display:none!important}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+@media(max-width:560px){main{padding:12px 10px 66px}.card{padding:12px}.head img{width:39px;height:39px}.head strong{font-size:.93rem}.head small{font-size:.67rem}.badge{font-size:.59rem}.modes,.results{grid-template-columns:1fr}.mode{gap:4px}}
+</style></head><body>
+<header><div class="head"><img alt="proAM Labs logo" src="../showcase/assets/proam-logo.png"><div class="brand"><strong>proAM Labs · POS-Lite</strong><small>v4.0_shell · Intent &amp; Comparison Workspace</small></div><span class="badge">CANDIDATE · NOT QUALIFIED</span></div></header>
+<main>
+<div class="intro"><div class="eyebrow">Observe · Orient · Compare · Preserve</div><h1>What are we going to do, now?</h1><p>Begin where you are. Record an observation, preserve its revisions, and inspect the future Standard / Athena comparison without leaving POS-Lite.</p></div>
+<div class="notice" role="status" id="readiness">Shell available. Model execution and Athena contract binding are NOT CONNECTED. No model calls, external sharing, or Thinking Graph writes occur.</div>
+<div class="grid">
+<section class="card" aria-labelledby="obshead">
+<div class="eyebrow">01 · ORIENTATION</div><h2 id="obshead">Your original observation</h2>
+<label for="observation" class="small">Use fictional or public information only</label>
+<textarea id="observation" maxlength="3000" placeholder="Describe an idea, question, or uncertainty…"></textarea>
+<p id="handoff-status" class="hint" role="status">Nothing is automatically submitted. Record it locally when you're ready.</p>
+<div class="actions"><button class="primary" id="record">Record candidate observation</button><button class="secondary" id="sample">Use fictional AT-01</button></div>
+<div class="chips"><span class="chip">Not canonized</span><span class="chip">No external AI call</span><span class="chip" id="revision">New observation</span></div>
+<p class="hint" id="status" role="status" aria-live="polite">Your text remains in this tab unless you choose to record it.</p>
+</section>
+<section class="card" aria-labelledby="historyhead">
+<div class="eyebrow">02 · CONTINUITY</div><h2 id="historyhead">Session observations</h2>
+<p class="hint">Tab-local session storage only. No cross-device retrieval, long-term memory, or qualified graph assimilation.</p>
+<div id="history"><p class="hint">No observations recorded.</p></div>
+<p class="small" id="count">0 candidate observations</p>
+<div class="actions"><button id="revise" disabled>Revise selected</button><button id="export">Export JSON</button><button id="clear" class="secondary">Clear session</button></div>
+<p class="hint">Revisions create new records referencing the original. Earlier records are not overwritten.</p>
+</section></div>
+<section class="card" aria-labelledby="runhead">
+<div class="eyebrow">03 · EXECUTION</div><h2 id="runhead">Same observation. Different execution conditions.</h2>
+<p class="hint">The following controls are intentionally disabled until a secure model service is deployed, frozen contract versions are verified, and independent testing is possible.</p>
+<div class="modes">
+<div class="mode"><h3>Run Standard</h3><p>A general assistant without Athena-specific instructions.</p><button disabled id="run-standard">Model not connected</button></div>
+<div class="mode"><h3>Run Athena</h3><p>The same observation with the frozen Athena Agent Profile and Operating Contract.</p><button disabled id="run-athena">Binding pending</button></div>
+<div class="mode"><h3>Run Both</h3><p>Execute both independently, then present actual responses side-by-side.</p><button disabled id="run-both">Comparison pending</button></div>
+</div>
+<div class="notice"><strong>Switching Quarterbacks:</strong> OpenAI, Claude, Gemini and local models are future provider adapters. This shell makes no claim that any provider is currently connected.</div>
+<div class="actions"><button id="inspect" class="secondary">Inspect candidate Run Both request</button><span class="small">Preview only · Nothing sent</span></div>
+<details id="request-detail" hidden><summary>Execution envelope · NOT SENT</summary><pre id="request-json"></pre></details>
+</section>
+<section class="card" aria-labelledby="comparehead">
+<div class="eyebrow">04 · HUMAN REVIEW</div><h2 id="comparehead">Comparison workspace</h2>
+<p class="hint">When live integrations exist, this is where both actual outputs will appear. For now, preview only a fictional layout fixture—not an Athena test result.</p>
+<div class="actions"><button id="preview" class="secondary">Preview fictional AT-01 comparison</button><button id="hide" hidden>Hide preview</button></div>
+<div class="results" id="results" hidden>
+<div class="result"><div class="fixture">SYNTHETIC UI FIXTURE · NOT AI OUTPUT</div><h3>A · Standard</h3><p>Possible next steps: organize volunteers, start a shared spreadsheet, or draft a signup form. These are illustrative suggestions, not tested advice.</p></div>
+<div class="result"><div class="fixture">SYNTHETIC UI FIXTURE · NOT AI OUTPUT</div><h3>B · Athena</h3><p>Observed: you have an idea for helping neighbors and are uncertain where to begin. Inferred possibilities—not confirmed—include matching volunteers with requests or making an information resource. A small first expression might be an intent card. What problem matters most?</p></div>
+</div>
+<p class="hint" id="fixture-note">No real model responses or qualification evidence currently exist here.</p>
+</section>
+<section class="card" aria-labelledby="boundaryhead">
+<h2 id="boundaryhead">Version boundaries</h2>
+<p class="hint">This is a separate successor candidate. <a href="https://jcholman.github.io/thinking-graph-arena/pos-lite/">POS-Lite v0.35</a> is unchanged. <a href="../athena-integrity-agent-v0-1/">Athena Front Porch</a> remains the entry experience. <a href="../enhanced/#athena">Demo library</a>.</p>
+<p class="hint">Google Drive holds candidate agent contract specifications. GitHub holds the versioned shell code. A future governed process—not this interface—will determine whether any observation may enter the Thinking Graph.</p>
+</section>
+</main>
+<footer>proAM Labs · POS-Lite v4.0_shell · Candidate interface only · Truth + Trust + Practice → Integrity</footer>
+<script>
+(function(){
+'use strict';
+var KEY='proam.posLiteV4.session.v0.1',HANDOFF='proam.athena.posLiteV4.handoff.v0.1',MAX=25;
+var E=function(id){return document.getElementById(id)},textArea=E('observation');
+var state={records:[],selected:null,revision:null},source='direct';
+function message(s){E('status').textContent=s}
+function persist(){try{sessionStorage.setItem(KEY,JSON.stringify(state));return true}catch(e){return false}}
+function read(key){try{return JSON.parse(sessionStorage.getItem(key)||'null')}catch(e){return null}}
+function id(){return typeof crypto!=='undefined'&&crypto.randomUUID?crypto.randomUUID():'candidate-'+Date.now()+'-'+Math.random().toString(36).slice(2)}
+function render(){
+ E('count').textContent=state.records.length+' candidate observation(s)';
+ E('revise').disabled=!state.selected;
+ E('revision').textContent=state.revision?'Revising '+state.revision.slice(0,8):'New observation';
+ var box=E('history');box.replaceChildren();
+ if(!state.records.length){var p=document.createElement('p');p.className='hint';p.textContent='No observations recorded.';box.append(p);return}
+ state.records.slice().reverse().forEach(function(r){
+  var b=document.createElement('button');b.className='history-item'+(state.selected===r.id?' selected':'');
+  var name=document.createElement('span');name.textContent=r.text.slice(0,95)+(r.text.length>95?'…':'');
+  var m=document.createElement('small');m.textContent=r.at+' · '+r.source+(r.revises?' · revision':'')+' · CANDIDATE';
+  b.append(name,m);b.onclick=function(){state.selected=r.id;state.revision=null;textArea.value=r.text;render();message('Existing candidate selected. Choose Revise selected to preserve the original.')};box.append(b)
+ })
+}
+function load(){
+ var saved=read(KEY);
+ if(saved&&Array.isArray(saved.records)){state.records=saved.records.filter(function(x){return x&&typeof x.id==='string'&&typeof x.text==='string'&&x.text.length<=3000}).slice(-MAX);state.selected=state.records.some(function(x){return x.id===saved.selected})?saved.selected:null}
+ var handoff=read(HANDOFF);try{sessionStorage.removeItem(HANDOFF)}catch(e){}
+ if(handoff&&handoff.schema==='proam.athena.poslite-handoff/v0.1'&&typeof handoff.at==='number'&&Date.now()>=handoff.at&&Date.now()-handoff.at<900000&&typeof handoff.text==='string'&&handoff.text.length<=3000){
+  textArea.value=handoff.text;source='athena-front-porch';E('handoff-status').textContent='Starting context carried from Athena Front Porch within this browser tab. Review it before recording.'
+ }else if(handoff){E('handoff-status').textContent='Outdated or invalid handoff ignored; please enter a new observation.'}
+ render()
+}
+E('sample').onclick=function(){textArea.value="I have an idea for helping neighbors, but I don't know how to start.";source='synthetic-at-01';state.revision=null;render();message('Fictional fixture loaded. It has not been recorded or submitted.')};
+E('record').onclick=function(){
+ var value=textArea.value.trim();if(!value){message('Enter an observation first.');textArea.focus();return}
+ if(state.records.length>=MAX){message('25-record limit reached. Export and clear the session to continue; existing records remain unchanged.');return}
+ var saved=JSON.stringify(state),r={id:id(),text:value.slice(0,3000),at:new Date().toISOString(),source:source,revises:state.revision,qualification:'CANDIDATE',assimilation:'NOT_PERFORMED'};
+ state.records.push(r);state.selected=r.id;state.revision=null;source='direct';
+ if(!persist()){state=JSON.parse(saved);message('Session storage unavailable; nothing was saved.');render();return}
+ render();message('Recorded candidate observation within this tab only. No model request or Thinking Graph write.')
+};
+E('revise').onclick=function(){var r=state.records.find(function(x){return x.id===state.selected});if(!r)return;state.revision=r.id;textArea.value=r.text;render();textArea.focus();message('Edit and record a new linked revision. The source record remains unchanged.')};
+E('clear').onclick=function(){if(!state.records.length){message('Nothing to clear.');return}if(!confirm('Clear all candidate observations in this tab? Export first if needed.'))return;state={records:[],selected:null,revision:null};try{sessionStorage.removeItem(KEY)}catch(e){}textArea.value='';render();message('Session candidate records cleared locally.')};
+E('export').onclick=function(){var payload=JSON.stringify({schema:'proam.poslite.session/v0.1',exportedAt:new Date().toISOString(),status:'CANDIDATE',state:state},null,2),u=URL.createObjectURL(new Blob([payload],{type:'application/json'})),a=document.createElement('a');a.href=u;a.download='pos-lite-v4-0-shell-session.json';a.click();setTimeout(function(){URL.revokeObjectURL(u)},1200);message('Candidate session export requested. Review file contents before sharing.')};
+E('inspect').onclick=function(){
+ var r=state.records.find(function(x){return x.id===state.selected});if(!r){message('Record and select an observation before inspecting its comparison envelope.');return}
+ function request(mode){return {schema:'proam.poslite.request/v0.1',condition:mode,observation:{id:r.id,text:r.text,source:r.source,qualification:r.qualification},model:{provider:'UNBOUND',model:'NOT_SELECTED'},contracts:mode==='athena'?{profile:'CANDIDATE_NOT_FROZEN',operating:'CANDIDATE_NOT_FROZEN'}:null,authorization:'INSPECTION_ONLY',status:'NOT_SENT'}}
+ E('request-json').textContent=JSON.stringify({schema:'proam.poslite.comparison/v0.1',sharedObservationId:r.id,requests:[request('standard'),request('athena')],qualificationSuiteInjected:false,status:'NOT_SENT'},null,2);
+ E('request-detail').hidden=false;E('request-detail').open=true;message('Candidate request package prepared for inspection; no execution took place.')
+};
+E('preview').onclick=function(){E('results').hidden=false;E('hide').hidden=false;E('fixture-note').textContent='These manually authored fictional examples only demonstrate the interface layout; they are not AI outputs or test evidence.'};
+E('hide').onclick=function(){E('results').hidden=true;E('hide').hidden=true;E('fixture-note').textContent='No real model responses or qualification evidence currently exist here.'};
+load();
+})();
+</script></body></html>
