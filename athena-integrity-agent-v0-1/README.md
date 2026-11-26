@@ -44,6 +44,14 @@ The helmet uses one unchanged silhouette through Gold → White → Teal; no sec
 
 Alpha's iPhone screenshots showed that a detached helmet in the open area above the seal still competed visually with the proAM Labs primary artwork. The fix places the **same single Athena-only helmet inside the actual `#athena-brand` header container**, to the right of the “ATHENA · INTEGRITY AGENT” title, as a small flex item rather than an absolutely positioned overlay. The marker remains in one fixed header position through the existing gold → white → teal animation. No new icon or duplicated roundel is introduced. No changes to the proAM Labs central SVG, original Front Porch, contract binding, or POS-Lite handoff.
 
+## Final proAM Labs logo visibility — v0.5 (2026-11-26)
+
+Alpha's iPhone review showed the fully resolved modern proAM Labs orbital image fading behind the top of the final context panel. The logo is part of the visual story and must remain visible when Athena's conversation experience becomes active.
+
+**Change:** Reserve a dedicated final-state logo area above the context panel. Restore the original `#core-modern` SVG at 94% stage opacity, without changing its geometry or cloning it into a new image. Position and size the complete stage above the panel; use normal document flow and calculated top padding to move the panel below the logo. For narrower devices, scale the logo according to the viewport width while retaining a gap from the panel. The top-right Athena helmet remains a separate small header mark, not over the logo. The gold-to-white-to-teal cinematic stages remain unchanged.
+
+**Acceptance criteria:** On a narrow iPhone, the full final modern logo is visible between title header and context panel, not masked by the panel; the panel is usable with normal scrolling; the final logo remains readable on the grid background; the Athena helmet stays in its header; same-origin POS-Lite handoff works as before. Real mobile review required—source tests alone are insufficient.
+
 ## Correct operation — POS-Lite v4.0_shell handoff
 
 1. Enter a **fictional/public** observation or select an example.

@@ -649,6 +649,50 @@
  #app-container #athena-brand .athena-name{font-size:.82rem!important}
 }
 </style>
+
+<style id="athena-modern-logo-clearance-v05">
+/*
+  Final state only: reserve a dedicated, unobstructed area for the existing
+  proAM Labs modern orbital SVG. The context panel follows it in normal flow.
+  Earlier gold/white/teal animation stages and Athena header are untouched.
+*/
+#app-container.state-8:not(.mode-static) {
+  --athena-logo-top: clamp(84px, 11svh, 118px);
+  --athena-logo-size: clamp(275px, 30vw, 355px);
+  padding-top: calc(var(--athena-logo-top) + var(--athena-logo-size) + 10px) !important;
+}
+#app-container.state-8:not(.mode-static) #svg-stage {
+  position: absolute !important;
+  top: var(--athena-logo-top) !important;
+  left: 50% !important;
+  right: auto !important;
+  width: var(--athena-logo-size) !important;
+  max-width: none !important;
+  height: auto !important;
+  transform: translateX(-50%) !important;
+  opacity: 0.94 !important;
+  pointer-events: none !important;
+}
+#app-container.state-8:not(.mode-static) #core-modern {
+  opacity: 1 !important;
+}
+#app-container.state-8:not(.mode-static) #ui-stage.athena-ui {
+  margin-top: 0 !important;
+}
+/* In a narrow mobile viewport, keep the title and helmet clear above the logo. */
+@media (max-width: 600px) {
+  #app-container.state-8:not(.mode-static) {
+    --athena-logo-top: clamp(86px, 10svh, 105px);
+    --athena-logo-size: min(295px, 78vw);
+    padding-top: calc(var(--athena-logo-top) + var(--athena-logo-size) + 10px) !important;
+  }
+}
+@media (max-width: 360px) {
+  #app-container.state-8:not(.mode-static) {
+    --athena-logo-size: min(265px, 77vw);
+  }
+}
+</style>
 </head>
 <body>
 
@@ -665,7 +709,7 @@
         <div id="athena-brand" aria-label="Athena Integrity Agent, candidate test">
           <div class="athena-header-copy">
             <div class="athena-name">ATHENA · INTEGRITY AGENT</div>
-            <div class="athena-meta">proAM Labs · Human review v0.4</div>
+            <div class="athena-meta">proAM Labs · Human review v0.5</div>
             <span class="candidate">CANDIDATE · NOT QUALIFIED</span>
           </div>
           <div id="athena-stage-emblem" class="athena-medallion" role="img" aria-label="Athena helmet context marker, gold then white then teal">
