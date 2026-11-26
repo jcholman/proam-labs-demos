@@ -40,6 +40,10 @@ Alpha's screenshots showed that the original multi-part Athena badge was visuall
 
 The helmet uses one unchanged silhouette through Gold → White → Teal; no second icon is created when the final context panel appears. Review on a narrow iPhone before declaring acceptance.
 
+## November 26: Helmets belong in the title header (v0.4)
+
+Alpha's iPhone screenshots showed that a detached helmet in the open area above the seal still competed visually with the proAM Labs primary artwork. The fix places the **same single Athena-only helmet inside the actual `#athena-brand` header container**, to the right of the “ATHENA · INTEGRITY AGENT” title, as a small flex item rather than an absolutely positioned overlay. The marker remains in one fixed header position through the existing gold → white → teal animation. No new icon or duplicated roundel is introduced. No changes to the proAM Labs central SVG, original Front Porch, contract binding, or POS-Lite handoff.
+
 ## Correct operation — POS-Lite v4.0_shell handoff
 
 1. Enter a **fictional/public** observation or select an example.
