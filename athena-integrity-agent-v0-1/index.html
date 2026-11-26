@@ -560,6 +560,19 @@
  .athena-medallion,.athena-helmet-ink{transition:none!important}
 }
 </style>
+
+<style id="athena-poslite-v4-shell-bridge-v01">
+/* Final context badge moves to top right; animated gold/white/teal stage stays centered. */
+#app-container.state-8 #athena-context-emblem{
+ left:auto!important;right:16px!important;top:-38px!important;
+ width:70px!important;transform:none!important;
+}
+#app-container.state-8 #ui-stage.athena-ui{padding-top:66px}
+@media(max-width:600px){
+ #app-container.state-8 #athena-context-emblem{right:14px!important;top:-36px!important;width:66px!important}
+ #app-container.state-8 #ui-stage.athena-ui{padding-top:62px}
+}
+</style>
 </head>
 <body>
 
@@ -756,18 +769,19 @@
               <input id="starting-context" type="text" aria-label="Synthetic test observation" placeholder="Describe an idea, concern, or question..." maxlength="4000" autocomplete="off"/>
             </div>
             <div class="athena-workflow">
-              <button id="copy-observation" class="athena-copy" type="button">Copy the same observation for both tests</button>
-              <div class="small-note">Use only fictional or public information. Nothing here is submitted to ChatGPT automatically.</div>
+              <button id="continue-pos" class="athena-copy" type="button">Continue to POS-Lite v4.0_shell</button>
+              <button id="copy-observation" class="athena-copy" type="button" style="background:transparent;color:#64ffda;border:1px solid #64ffda">Copy observation (optional)</button>
+              <div class="small-note">Use fictional or public information only. Your observation will be carried locally into POS-Lite for review; it will not be sent to an AI model.</div>
               <div class="athena-tracks" aria-label="Comparison conditions">
-                <section class="athena-track"><strong>A · Standard Assistant</strong><p>Use a fresh general-purpose ChatGPT chat. Paste the identical observation.</p><a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">Open standard ChatGPT</a></section>
-                <section class="athena-track"><strong>B · Athena Integrity Agent</strong><p>Requires an isolated ChatGPT Project with frozen Profile and Operating Contract.</p><button type="button" disabled title="Step 3 must configure the contract-bound Project">Setup pending · Step 3</button></section>
+                <section class="athena-track"><strong>A · Run Standard</strong><p>General assistant comparison within POS-Lite. Live model connection pending.</p><button type="button" disabled>Unbound</button></section>
+                <section class="athena-track"><strong>B · Run Athena / Run Both</strong><p>Frozen agent contracts and independent comparison will run inside POS-Lite.</p><button type="button" disabled>Binding pending</button></section>
               </div>
               <nav class="athena-contracts" aria-label="Candidate agent contracts">
                 <a href="https://docs.google.com/document/d/1nFBcHgjIYgpKNacwp_xCmRiHqVdaq8VVIzSLVv_E2QU/edit" target="_blank" rel="noopener noreferrer">Agent Profile</a>
                 <a href="https://docs.google.com/document/d/1YcBM_5bBRJe3Wb7kGzwpK9sxJnXiQpKZ3mUOtJro3fM/edit" target="_blank" rel="noopener noreferrer">Operating Contract</a>
                 <a href="https://docs.google.com/document/d/1Hfdkd-mnurGvScptlhWF5VrdBWWNsRbZ-UodpW9GGxA/edit" target="_blank" rel="noopener noreferrer">Evaluator Suite</a>
               </nav>
-              <p id="athena-status" role="status" aria-live="polite">Contract-bound comparison is NOT ACTIVE until Step 3.</p>
+              <p id="athena-status" role="status" aria-live="polite">POS-Lite shell is available. Live model execution and contract binding are not yet active.</p>
               <div class="examples">
                 <button type="button" class="example-prompt">I have an idea for helping neighbors, but I don't know how to start.</button>
                 <button type="button" class="example-prompt">I think I need an app, but I don't know what problem it should solve.</button>
@@ -873,7 +887,7 @@
                     window.proamHandoffLog?.('front_porch_received',{length:contextInput.value.length});
                     window.proamHandoffStatus?.(contextInput.value.length?'received':'empty');
                     const note=document.getElementById('handoff-note');
-                    note.textContent='Context received. Review it before copying for a synthetic test. No automatic submission.';
+                    if(note)note.textContent='Context received. Review it before continuing into POS-Lite. No automatic model submission.';
                     const app=document.getElementById('app-container');
                     frontPorchMode='standard';
                     app.dataset.handoff='received';
@@ -885,17 +899,31 @@
         const copyButton=document.getElementById('copy-observation');
         copyButton.addEventListener('click',async()=>{
           const observation=contextInput.value.trim();
-          if(!observation){status.textContent='Enter an observation or select a synthetic example first.';contextInput.focus();return;}
+          if(!observation){status.textContent='Enter an observation or choose a fictional example first.';contextInput.focus();return;}
           try{
             if(!navigator.clipboard || !navigator.clipboard.writeText)throw new Error('Clipboard unavailable');
             await navigator.clipboard.writeText(observation);
-            status.textContent='Observation copied. Paste the exact same text into each separately configured test session.';
+            status.textContent='Observation copied locally. POS-Lite can also receive it directly through Continue.';
           }catch(error){
             contextInput.focus();contextInput.select();
             status.textContent='Clipboard access unavailable. The observation is selected; copy it manually.';
           }
         });
-        contextInput.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();copyButton.click();}});
+        const continueButton=document.getElementById('continue-pos');
+        continueButton.addEventListener('click',()=>{
+          const observation=contextInput.value.trim();
+          if(!observation){status.textContent='Enter an observation or choose a fictional example.';contextInput.focus();return;}
+          if(observation.length>3000){status.textContent='POS-Lite currently accepts up to 3000 characters. Please shorten the observation without losing its meaning.';contextInput.focus();return;}
+          const packet={schema:'proam.athena.poslite-handoff/v0.1',text:observation,at:Date.now(),source:'athena-integrity-agent-v0-1'};
+          try{
+            sessionStorage.setItem('proam.athena.posLiteV4.handoff.v0.1',JSON.stringify(packet));
+            if(!sessionStorage.getItem('proam.athena.posLiteV4.handoff.v0.1'))throw new Error('readback failed');
+            window.location.assign('../pos-lite-v4-0-shell/');
+          }catch(err){
+            status.textContent='Local handoff unavailable in this browser. Copy your observation and open the POS-Lite shell directly.';
+          }
+        });
+        contextInput.addEventListener('keydown',event=>{if(event.key==='Enter'){event.preventDefault();continueButton.click();}});
         // Initialize
         window.addEventListener("load", () => {
             setMode(frontPorchMode);
