@@ -561,16 +561,56 @@
 }
 </style>
 
-<style id="athena-poslite-v4-shell-bridge-v01">
-/* Final context badge moves to top right; animated gold/white/teal stage stays centered. */
-#app-container.state-8 #athena-context-emblem{
- left:auto!important;right:16px!important;top:-38px!important;
- width:70px!important;transform:none!important;
+<style id="athena-independent-context-badge-v03">
+/*
+ * Athena is a contextual identity independent of the central proAM Labs mark.
+ * The stage SVG is never altered or covered. Only the single small badge changes color.
+ * The medallion is a direct #app-container child — not inside the animated #svg-stage.
+ */
+#app-container #athena-stage-emblem{
+  position:absolute!important;
+  top:14px!important;
+  right:16px!important;
+  left:auto!important;
+  width:72px!important;
+  max-width:72px!important;
+  height:72px!important;
+  transform:none!important;
+  z-index:100!important;
+  opacity:1!important;
+  pointer-events:none!important;
+  transition:box-shadow 850ms ease!important;
 }
-#app-container.state-8 #ui-stage.athena-ui{padding-top:66px}
+#app-container #athena-brand{
+  max-width:calc(100% - 111px)!important;
+}
+#app-container.state-8 #ui-stage.athena-ui{
+  padding-top:26px!important;
+}
 @media(max-width:600px){
- #app-container.state-8 #athena-context-emblem{right:14px!important;top:-36px!important;width:66px!important}
- #app-container.state-8 #ui-stage.athena-ui{padding-top:62px}
+  #app-container #athena-stage-emblem{
+    top:12px!important;
+    right:12px!important;
+    width:64px!important;
+    max-width:64px!important;
+    height:64px!important;
+  }
+  #app-container #athena-brand{
+    max-width:calc(100% - 98px)!important;
+  }
+  #app-container.state-8 #ui-stage.athena-ui{
+    padding-top:22px!important;
+  }
+}
+@media(max-width:370px){
+  #app-container #athena-stage-emblem{
+    width:58px!important;
+    max-width:58px!important;
+    height:58px!important;
+  }
+  #app-container #athena-brand{
+    max-width:calc(100% - 86px)!important;
+  }
 }
 </style>
 </head>
@@ -587,7 +627,9 @@
         <div id="front-porch-grid-layer" aria-hidden="true"></div>
         <div id="athena-brand" aria-label="Athena Integrity Agent, candidate test">
 
-<div><div class="athena-name">ATHENA · INTEGRITY AGENT</div><div class="athena-meta">proAM Labs · Human review v0.1</div><span class="candidate">CANDIDATE · NOT QUALIFIED</span></div></div>
+<div><div class="athena-name">ATHENA · INTEGRITY AGENT</div><div class="athena-meta">proAM Labs · Human review v0.3</div><span class="candidate">CANDIDATE · NOT QUALIFIED</span></div></div>
+        <!-- Athena's separate context identity: one badge, fixed at top-right for ALL phases. -->
+        <div id="athena-stage-emblem" class="athena-medallion" aria-label="Athena context badge, gold then white then teal"><span class="athena-helmet-ink" aria-hidden="true"></span></div>
         
         <!-- MASTER GOVERNED SVG -->
         <div id="svg-stage">
@@ -756,13 +798,12 @@
                     <circle cx="500" cy="500" r="50" fill="url(#modern-nucleus)" />
                 </g>
             </svg>
-            <!-- Same source-derived helmet in gold, white, then teal. -->
-            <div id="athena-stage-emblem" class="athena-medallion" aria-label="Athena helmet transitioning gold, white, teal"><span class="athena-helmet-ink" aria-hidden="true"></span></div>
+
         </div>
 
         <!-- USER INTERFACE -->
         <div id="ui-stage" class="athena-ui">
-            <div id="athena-context-emblem" class="athena-medallion" aria-label="Athena helmet in new-age teal"><span class="athena-helmet-ink" aria-hidden="true"></span></div>
+
             <h1>What are we going to do, now?</h1>
             <p class="subtitle">Begin where you are. Materialize your intent, with uncertainty and choice preserved.</p>
             <div class="input-wrapper">
