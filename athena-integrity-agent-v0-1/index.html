@@ -469,7 +469,7 @@
 @media(prefers-reduced-motion:reduce){.athena-workflow{transition:none}}
 </style>
 
-<style id="athena-helmet-three-phase-fix-v02">
+<style id="athena-helmet-three-phase-fix-v03">
 /* Only the Athena candidate is changed; original Front Porch unchanged. */
 #athena-brand{z-index:90;top:12px;left:18px;max-width:calc(100% - 36px);text-shadow:0 1px 6px rgba(0,0,0,.65)}
 #athena-brand img{display:none!important}
@@ -479,38 +479,36 @@
 #app-container{box-sizing:border-box;min-height:100svh;height:100svh;overflow:hidden}
 #svg-stage{isolation:isolate}
 .athena-medallion{
- --helmet-color:#cba25c;display:grid;place-items:center;aspect-ratio:1/1;
- border-radius:50%;background:rgba(5,20,33,.95);
- box-shadow:0 0 0 1px rgba(221,180,104,.55),0 9px 30px rgba(0,0,0,.25);
- overflow:hidden
+ --helmet-color:#cba25c;display:grid;place-items:center;
+ background:transparent;border:0;border-radius:0;box-shadow:none;
+ pointer-events:none
 }
 .athena-helmet-ink{
- display:block;width:94%;height:94%;
- background-image:url("assets/athena-helmet-mark.svg");
+ display:block;width:100%;height:100%;
+ background-image:url("assets/athena-helmet-only.svg");
  background-position:center;background-size:contain;background-repeat:no-repeat
 }
-@supports (-webkit-mask-image: url("assets/athena-helmet-mark.svg")) or (mask-image: url("assets/athena-helmet-mark.svg")){
+@supports (-webkit-mask-image: url("assets/athena-helmet-only.svg")) or (mask-image: url("assets/athena-helmet-only.svg")){
  .athena-helmet-ink{
   background-image:none;background-color:var(--helmet-color);
-  -webkit-mask-image:url("assets/athena-helmet-mark.svg");
-  mask-image:url("assets/athena-helmet-mark.svg");
+  -webkit-mask-image:url("assets/athena-helmet-only.svg");
+  mask-image:url("assets/athena-helmet-only.svg");
   -webkit-mask-size:contain;mask-size:contain;
   -webkit-mask-position:center;mask-position:center;
   -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
   transition:background-color 850ms ease
  }
 }
+/* Fixed visual identity within Athena's own stage, independent of the transforming proAM Labs logo. */
 #athena-stage-emblem{
- position:absolute;z-index:15;left:50%;top:50%;transform:translate(-50%,-50%);
- width:34%;max-width:260px;transition:opacity 700ms ease,box-shadow 800ms ease
+ position:absolute;z-index:91;left:auto;right:clamp(15px,3.8vw,40px);
+ top:clamp(115px,12vh,150px);transform:none;
+ width:clamp(56px,5.6vw,76px);height:clamp(75px,8vw,103px);
+ opacity:1;transition:opacity 250ms ease;
 }
-#app-container.state-4 #athena-stage-emblem{
- --helmet-color:#fff;box-shadow:0 0 0 1px rgba(240,246,250,.62),0 9px 30px rgba(0,0,0,.23)
-}
-#app-container.state-6 #athena-stage-emblem{
- --helmet-color:#64ffda;box-shadow:0 0 0 1px rgba(100,255,218,.62),0 0 27px rgba(100,255,218,.17)
-}
-#app-container.state-7 #athena-stage-emblem{opacity:0}
+#app-container.state-4 #athena-stage-emblem{--helmet-color:#fff}
+#app-container.state-6 #athena-stage-emblem{--helmet-color:#64ffda}
+/* Cumulative state classes keep the teal identity visible in states 7–8. */
 #app-container:not(.state-8) #ui-stage.athena-ui{
  visibility:hidden!important;opacity:0!important;pointer-events:none!important;
  border:0!important;background:transparent!important;
@@ -530,12 +528,6 @@
  -webkit-backdrop-filter:none!important;backdrop-filter:none!important;
  box-shadow:0 12px 38px rgba(0,0,0,.16)!important
 }
-#athena-context-emblem{
- --helmet-color:#64ffda;position:absolute;z-index:26;
- left:50%;top:-58px;transform:translateX(-50%);width:112px;
- box-shadow:0 0 0 1px rgba(100,255,218,.75),0 8px 30px rgba(0,0,0,.4)
-}
-#app-container:not(.state-8) #athena-context-emblem{visibility:hidden}
 #app-container.state-8 #ui-stage.athena-ui h1,
 #app-container.state-8 #ui-stage.athena-ui .subtitle,
 #app-container.state-8 #ui-stage.athena-ui .input-wrapper{opacity:1;transform:none}
@@ -543,17 +535,16 @@
 #app-container.state-8 .example-prompt{opacity:1;transform:none}
 @media(max-width:600px){
  #athena-brand{top:12px;left:14px;gap:0}
- #athena-stage-emblem{width:38%;max-width:175px}
+ #athena-stage-emblem{right:16px;top:118px;width:58px;height:80px}
  #app-container.state-8{padding:145px 10px 35px}
  #app-container.state-8 #ui-stage.athena-ui{width:100%;padding:66px 13px 24px}
- #athena-context-emblem{width:106px;top:-54px}
  #app-container.state-8 #ui-stage.athena-ui h1{font-size:clamp(1.3rem,5vw,1.7rem)}
  #app-container.state-8 #ui-stage.athena-ui .subtitle{font-size:.87rem}
  .athena-tracks{gap:8px}
 }
 @media(max-width:390px){
  #app-container.state-8{padding-top:145px}
- #athena-stage-emblem{width:40%}
+ #athena-stage-emblem{right:13px;top:118px;width:55px;height:75px}
  .athena-track{padding:9px}
 }
 @media(prefers-reduced-motion:reduce){
@@ -561,17 +552,10 @@
 }
 </style>
 
-<style id="athena-poslite-v4-shell-bridge-v01">
-/* Final context badge moves to top right; animated gold/white/teal stage stays centered. */
-#app-container.state-8 #athena-context-emblem{
- left:auto!important;right:16px!important;top:-38px!important;
- width:70px!important;transform:none!important;
-}
-#app-container.state-8 #ui-stage.athena-ui{padding-top:66px}
-@media(max-width:600px){
- #app-container.state-8 #athena-context-emblem{right:14px!important;top:-36px!important;width:66px!important}
- #app-container.state-8 #ui-stage.athena-ui{padding-top:62px}
-}
+<style id="athena-poslite-v4-shell-bridge-v02">
+/* Final state retains the same right-aligned helmet; no second centered badge. */
+#app-container.state-8 #ui-stage.athena-ui{padding-top:36px}
+@media(max-width:600px){#app-container.state-8 #ui-stage.athena-ui{padding-top:30px}}
 </style>
 </head>
 <body>
@@ -588,7 +572,13 @@
         <div id="athena-brand" aria-label="Athena Integrity Agent, candidate test">
 
 <div><div class="athena-name">ATHENA · INTEGRITY AGENT</div><div class="athena-meta">proAM Labs · Human review v0.1</div><span class="candidate">CANDIDATE · NOT QUALIFIED</span></div></div>
-        
+
+        <!-- One standalone helmet context marker, outside the proAM Labs SVG and UI panel.
+             It changes gold → white → teal with the existing sequence. -->
+        <div id="athena-stage-emblem" class="athena-medallion" aria-label="Athena context helmet, gold white and teal">
+          <span class="athena-helmet-ink" aria-hidden="true"></span>
+        </div>
+
         <!-- MASTER GOVERNED SVG -->
         <div id="svg-stage">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="xMidYMid meet">
@@ -756,13 +746,10 @@
                     <circle cx="500" cy="500" r="50" fill="url(#modern-nucleus)" />
                 </g>
             </svg>
-            <!-- Same source-derived helmet in gold, white, then teal. -->
-            <div id="athena-stage-emblem" class="athena-medallion" aria-label="Athena helmet transitioning gold, white, teal"><span class="athena-helmet-ink" aria-hidden="true"></span></div>
         </div>
 
         <!-- USER INTERFACE -->
         <div id="ui-stage" class="athena-ui">
-            <div id="athena-context-emblem" class="athena-medallion" aria-label="Athena helmet in new-age teal"><span class="athena-helmet-ink" aria-hidden="true"></span></div>
             <h1>What are we going to do, now?</h1>
             <p class="subtitle">Begin where you are. Materialize your intent, with uncertainty and choice preserved.</p>
             <div class="input-wrapper">
