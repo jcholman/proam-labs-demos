@@ -479,21 +479,20 @@
 #app-container{box-sizing:border-box;min-height:100svh;height:100svh;overflow:hidden}
 #svg-stage{isolation:isolate}
 .athena-medallion{
- --helmet-color:#cba25c;display:grid;place-items:center;aspect-ratio:1/1;
- border-radius:50%;background:rgba(5,20,33,.95);
- box-shadow:0 0 0 1px rgba(221,180,104,.55),0 9px 30px rgba(0,0,0,.25);
- overflow:hidden
+ --helmet-color:#cba25c;display:grid;place-items:center;
+ background:transparent;border:0;border-radius:0;box-shadow:none;
+ overflow:visible
 }
 .athena-helmet-ink{
- display:block;width:94%;height:94%;
- background-image:url("assets/athena-helmet-mark.svg");
+ display:block;width:100%;height:100%;
+ background-image:url("assets/athena-helmet-only.svg");
  background-position:center;background-size:contain;background-repeat:no-repeat
 }
-@supports (-webkit-mask-image: url("assets/athena-helmet-mark.svg")) or (mask-image: url("assets/athena-helmet-mark.svg")){
+@supports (-webkit-mask-image: url("assets/athena-helmet-only.svg")) or (mask-image: url("assets/athena-helmet-only.svg")){
  .athena-helmet-ink{
   background-image:none;background-color:var(--helmet-color);
-  -webkit-mask-image:url("assets/athena-helmet-mark.svg");
-  mask-image:url("assets/athena-helmet-mark.svg");
+  -webkit-mask-image:url("assets/athena-helmet-only.svg");
+  mask-image:url("assets/athena-helmet-only.svg");
   -webkit-mask-size:contain;mask-size:contain;
   -webkit-mask-position:center;mask-position:center;
   -webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;
@@ -564,39 +563,41 @@
 <style id="athena-independent-context-badge-v03">
 /*
  * Athena is a contextual identity independent of the central proAM Labs mark.
- * The stage SVG is never altered or covered. Only the single small badge changes color.
+ * The original central SVG stays unobstructed. Only the standalone helmet changes color.
  * The medallion is a direct #app-container child — not inside the animated #svg-stage.
  */
 #app-container #athena-stage-emblem{
   position:absolute!important;
-  top:14px!important;
+  top:clamp(112px,12vh,148px)!important;
   right:16px!important;
   left:auto!important;
-  width:72px!important;
-  max-width:72px!important;
-  height:72px!important;
+  width:70px!important;
+  max-width:70px!important;
+  height:90px!important;
   transform:none!important;
   z-index:100!important;
   opacity:1!important;
   pointer-events:none!important;
-  transition:box-shadow 850ms ease!important;
+  box-shadow:none!important;
+   background:transparent!important;
+   transition:opacity 300ms ease!important;
 }
 #app-container #athena-brand{
-  max-width:calc(100% - 111px)!important;
+  max-width:calc(100% - 30px)!important;
 }
 #app-container.state-8 #ui-stage.athena-ui{
   padding-top:26px!important;
 }
 @media(max-width:600px){
   #app-container #athena-stage-emblem{
-    top:12px!important;
+    top:118px!important;
     right:12px!important;
-    width:64px!important;
-    max-width:64px!important;
-    height:64px!important;
+    width:60px!important;
+    max-width:60px!important;
+    height:82px!important;
   }
   #app-container #athena-brand{
-    max-width:calc(100% - 98px)!important;
+    max-width:calc(100% - 24px)!important;
   }
   #app-container.state-8 #ui-stage.athena-ui{
     padding-top:22px!important;
@@ -604,12 +605,12 @@
 }
 @media(max-width:370px){
   #app-container #athena-stage-emblem{
-    width:58px!important;
-    max-width:58px!important;
-    height:58px!important;
+    width:56px!important;
+    max-width:56px!important;
+    height:77px!important;
   }
   #app-container #athena-brand{
-    max-width:calc(100% - 86px)!important;
+    max-width:calc(100% - 24px)!important;
   }
 }
 </style>
