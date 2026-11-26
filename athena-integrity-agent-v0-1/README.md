@@ -2,12 +2,12 @@
 
 STATUS: CANDIDATE / NOT QUALIFIED. Not a deployed autonomous agent or a contract-enforced ChatGPT integration.
 
-This folder is a **separate copy** of `front-porch-v1-0/index.html`, preserving the existing animation, SVG stage, and public Front Porch. It adds Athena branding, a source observation field, a standard ChatGPT baseline path, and a visibly gated candidate condition. No original files are changed.
+This folder is a **separate copy** of `front-porch-v1-0/index.html`, preserving the existing animation, SVG stage, and public Front Porch. It adds Athena branding, a source observation field, and a bounded same-origin handoff into the separate POS-Lite v4.0_shell. Standard, Athena and Run Both model execution remain gated. No original files are changed.
 
 ## Origin and brand
 
 - Source: `front-porch-v1-0/index.html` on main, blob `b17e6077f8b8f075cff670e38f3b146f92afdde0`.
-- The Athena badge is a small **provisional crop** of the previously saved proAM Labs Badge Collection; prior brand-art concerns remain open. Replace it only with a human-approved final logo asset. The embedded logo is purely visual.
+- The Athena badge now uses the provisional transparent source-derived helmet mark from the saved proAM Labs Badge Collection. Its same geometry is recolored gold, white, and teal; visual brand acceptance remains pending.
 - Background asset is reused by relative path from the original Front Porch.
 
 ## Google Drive candidate contract sources
@@ -28,21 +28,21 @@ The original Front Porch animation still drives the timing:
 - **Old World · Gold** — states 1–3: gold source-derived medallion centered on the archival seal.
 - **Transition · White** — states 4–5: exactly the same helmet becomes white.
 - **New Age · Teal** — state 6: helmet becomes teal.
-- **Arrival · Context** — states 7–8: cinematic emblem gives way to a teal helmet centered above the working context panel.
+- **Arrival · Context** — states 7–8: cinematic emblem gives way to a smaller teal helmet aligned at the top-right of the context panel, subordinate to the proAM Labs identity.
 
 The initial source preview was defective because a data-URL image displayed as a broken icon and an opaque blurred glass panel covered the animated architecture. The new v0.2 visual fix removes that image, delays the panel until state 8, removes the large blur filter, and reduces mobile layout dead space. The original `front-porch-v1-0/` is untouched.
 
 Unchanged governance: visual candidate only, Athena contract path disabled, no data submission, no qualification or agent enforcement.
 
-## Correct operation
+## Correct operation — POS-Lite v4.0_shell handoff
 
-1. Enter a **synthetic/public** observation or select an example.
-2. Click **Copy the same observation for both tests**.
-3. Condition A: Open a fresh general-purpose ChatGPT conversation and paste the observation, without additional Athena instructions.
-4. Condition B: **Not enabled yet**. Step 3 must create an isolated ChatGPT Project configured with a frozen, fidelity-reviewed Agent Profile + Operating Contract and establish its exact link/configuration. Only then activate the B launch path.
-5. Evaluate both separately using the Qualification Suite with matched model, source material, and available tools where possible.
+1. Enter a **fictional/public** observation or select an example.
+2. Click **Continue to POS-Lite v4.0_shell**. An explicit click writes a bounded handoff into this browser tab's `sessionStorage` and navigates on the same origin to the new POS-Lite shell.
+3. The shell displays the original text for human review. **Record candidate observation** is a distinct action; nothing is automatically saved as a governed Thinking Graph record.
+4. Review the retained candidate observation, linked revisions, and the three conditions: Run Standard, Run Athena and Run Both. **All model execution remains disabled.**
+5. The synthetic AT-01 side-by-side preview is a layout fixture, **not a Standard or Athena generated response**.
 
-A link from GitHub Pages to chatgpt.com **cannot by itself load Google Drive contracts into ChatGPT**. This page does not read Google Drive files, access model APIs, submit or save visitor input, or certify a result. Clipboard copying requires a user click and may be unavailable under restrictive browser settings; select and copy manually if needed.
+The original `front-porch-v1-0/` and POS-Lite v0.35 remain unchanged. The Athena page does not access Google Drive contracts or any model API. No external ChatGPT handoff, auto-submission, or automatic qualification occurs. Local clipboard copy remains an optional fallback.
 
 ## First fixture to use after Step 3
 
@@ -54,9 +54,9 @@ Expected Athena behavior: distinguish observation from inference; offer a bounde
 
 ## Open items
 
-- Complete source-fidelity review of the three Drive transcriptions and freeze exact test revisions.
-- Configure the isolated Athena ChatGPT Project and validate that its instructions actually apply.
-- Replace disabled B button with a verified Athena Project deep link only when available, with accurate limitations.
-- Human-review responsive design and conduct browser tests.
-- Run AT-01; preserve input, output, model/configuration, reviewer disposition, and exceptions in Drive.
-- Do **not** merge or deploy this review branch before human acceptance.
+- Human mobile review of the final teal helmet's top-right alignment and safe context handoff.
+- Preserve and independently review exact Athena contract source versions in Google Drive.
+- Build a secure provider-independent execution service and verified contract-loading boundary.
+- Enable Run Standard, Run Athena and Run Both only after actual execution and independent evidence are available.
+- Apply AT-01 and record receipts in Google Drive; do not imply qualification from a synthetic preview.
+- No automatic Thinking Graph promotion or private source copy into GitHub.
