@@ -614,6 +614,41 @@
   }
 }
 </style>
+
+<style id="athena-header-integrated-helmet-v04">
+/* Helmet and title share the same header layout, outside the proAM Labs animation. */
+#app-container #athena-brand{
+ position:absolute!important;top:12px!important;left:14px!important;right:14px!important;
+ width:auto!important;max-width:none!important;display:flex!important;
+ justify-content:space-between!important;align-items:center!important;
+ gap:10px!important;z-index:115!important
+}
+#app-container #athena-brand .athena-header-copy{
+ flex:1 1 auto;min-width:0;max-width:calc(100% - 55px)
+}
+#app-container #athena-brand .athena-name{
+ font-size:clamp(.85rem,2.5vw,1.04rem)!important;line-height:1.23
+}
+#app-container #athena-brand #athena-stage-emblem{
+ position:relative!important;top:auto!important;right:auto!important;
+ bottom:auto!important;left:auto!important;
+ display:grid!important;place-items:center!important;
+ flex:0 0 40px!important;width:40px!important;max-width:40px!important;height:55px!important;
+ margin:0!important;transform:none!important;
+ z-index:116!important;opacity:1!important;
+ border:0!important;background:transparent!important;box-shadow:none!important;
+ pointer-events:none!important
+}
+#app-container #athena-brand #athena-stage-emblem .athena-helmet-ink{width:100%;height:100%}
+@media(max-width:370px){
+ #app-container #athena-brand{gap:7px!important;left:10px!important;right:10px!important}
+ #app-container #athena-brand .athena-header-copy{max-width:calc(100% - 46px)}
+ #app-container #athena-brand #athena-stage-emblem{
+  flex-basis:36px!important;width:36px!important;max-width:36px!important;height:50px!important
+ }
+ #app-container #athena-brand .athena-name{font-size:.82rem!important}
+}
+</style>
 </head>
 <body>
 
@@ -626,11 +661,17 @@
 
     <div id="app-container">
         <div id="front-porch-grid-layer" aria-hidden="true"></div>
+        <!-- Athena's own title header; the helmet remains a small, contextual identity. -->
         <div id="athena-brand" aria-label="Athena Integrity Agent, candidate test">
-
-<div><div class="athena-name">ATHENA · INTEGRITY AGENT</div><div class="athena-meta">proAM Labs · Human review v0.3</div><span class="candidate">CANDIDATE · NOT QUALIFIED</span></div></div>
-        <!-- Athena's separate context identity: one badge, fixed at top-right for ALL phases. -->
-        <div id="athena-stage-emblem" class="athena-medallion" aria-label="Athena context badge, gold then white then teal"><span class="athena-helmet-ink" aria-hidden="true"></span></div>
+          <div class="athena-header-copy">
+            <div class="athena-name">ATHENA · INTEGRITY AGENT</div>
+            <div class="athena-meta">proAM Labs · Human review v0.4</div>
+            <span class="candidate">CANDIDATE · NOT QUALIFIED</span>
+          </div>
+          <div id="athena-stage-emblem" class="athena-medallion" role="img" aria-label="Athena helmet context marker, gold then white then teal">
+            <span class="athena-helmet-ink" aria-hidden="true"></span>
+          </div>
+        </div>
         
         <!-- MASTER GOVERNED SVG -->
         <div id="svg-stage">
