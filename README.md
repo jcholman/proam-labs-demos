@@ -26,6 +26,12 @@ The interactive site includes a four-signal explorer, a private browser-local re
 
 **Current boundaries:** The queue uses illustrative fixtures. The context is not automatically interpreted, qualified, written to the Thinking Graph, or submitted to ChatGPT. Opening ChatGPT with a prepared draft depends on browser and ChatGPT behavior; the visitor must review and send it. Do not enter confidential or sensitive data. The handoff is a prototype, not a production AI integration.
 
+## POS-Lite v4.0_shell — Contained Athena comparison candidate
+
+[**Open POS-Lite v4.0_shell**](https://jcholman.github.io/proam-labs-demos/pos-lite-v4-0-shell/) — A new candidate, not a replacement for POS-Lite v0.35. It demonstrates in-app, same-origin observation intake from the [Athena Front Porch](https://jcholman.github.io/proam-labs-demos/athena-integrity-agent-v0-1/), explicit local candidate recording, version-linked revisions, and a side-by-side synthetic comparison layout. No ChatGPT browser jump is required for the *local handoff*. The Run Standard / Run Athena / Run Both model calls are NOT CONNECTED and are explicitly disabled.
+
+Switching Quarterbacks remains a separate research and architecture branch: a future provider-independent model execution layer should support additional providers without rewriting Athena's accepted behavioral contract. [Implementation scope and limitations](./pos-lite-v4-0-shell/README.md).
+
 ## What if your AI didn't make you start over?
 
 Today, conversations, research, decisions, and project history are scattered across applications. Every interruption, handoff, or change of tools can force us to reconstruct what we already understood.
@@ -134,8 +140,9 @@ This section includes both planned work and a live prototype. A working demo doe
 
 - **Arena v0.35 — Switching Quarterbacks** *(planned)* — Add or change LLMs, note-taking apps, and other tools while preserving qualified continuity, stable contracts, provenance, and human authority.
 - [**POS-Lite v0.35 — Mobile-First Bridge (live demo)**](https://jcholman.github.io/thinking-graph-arena/pos-lite/) — Find observations, inspect documented relationships and available metric states, carry forward a candidate demonstration plan, and open a user-reviewed ChatGPT draft to begin building an artifact. This remains a prototype, not a verified capability or production Thinking Graph integration.
+- [**POS-Lite v4.0_shell — Intent & Comparison Workspace (live candidate shell)**](https://jcholman.github.io/proam-labs-demos/pos-lite-v4-0-shell/) — A separate successor shell with browser-session observation capture, append-only candidate revisions, and a synthetic side-by-side display preview. The Athena Front Porch can now hand off context into this same-origin shell rather than sending users to web ChatGPT. **Run Standard, Run Athena, and Run Both are not live:** their execution controls remain disabled until a secure, independently tested model service and frozen contracts exist. Future Switching Quarterbacks adapters are a design target, not integrated providers.
 - **Output Demo v0.4 — Intent to Artifact** *(proposed)* — Follow a small request, such as updating a demo from a phone, from prior orientation and authority checks through a bounded change, verification, and carry-forward.
 
 ---
 
-[View the enhanced demo library](https://jcholman.github.io/proam-labs-demos/enhanced/) — All six demos and prospective work in a more visual layout. This page remains the **Basic View**.
+[View the enhanced demo library](https://jcholman.github.io/proam-labs-demos/enhanced/) — Current demos, candidate shells, and prospective work in a more visual layout. This page remains the **Basic View**.
