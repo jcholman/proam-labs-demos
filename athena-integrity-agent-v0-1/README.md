@@ -19,16 +19,30 @@ This folder is a **separate copy** of `front-porch-v1-0/index.html`, preserving 
 
 These are working candidate transcriptions; source-fidelity review and human acceptance are still pending. The Qualification Suite belongs to the independent evaluator; it is not embedded in the candidate's instructions.
 
+## Single-helmet contextual positioning correction (2026-11-26)
+
+Alpha's iPhone screenshots revealed that the earlier color-transition implementation **overlaid a complete Athena roundel (with Founded 2026 text and rings) directly on top of the existing proAM Labs central SVG logo**. This repeated the visual identity and competed with the proAM Labs logo. Moving only the final teal context emblem to the upper-right was insufficient.
+
+Correction:
+- **One helmet only:** `assets/athena-helmet-only.svg` isolates the original helmet linework, preserving its source path geometry but removing the outer circle, date, and other repeated brand elements.
+- **One placement for every phase:** the small helmet is now positioned at the **upper-right of the dark Athena context area**, above the central transforming proAM Labs artwork. It no longer belongs to the scaled/transformed `#svg-stage`.
+- **Three colors, same geometry, same location:** Gold during the initial archival states, white from state 4, teal from state 6 through final arrival.
+- **No duplicate final emblem:** remove the separately centered final badge. The original upper-right helmet persists through the final context state.
+- **No change to product scope:** the same-origin Athena → POS-Lite v4.0_shell handoff remains; Standard/Athena/Both model executions and contract binding remain disabled.
+- **Visual acceptance remains pending**, especially narrow iPhone layout.
+
+The original proAM Labs central SVG logo and the independent Front Porch v1.0 remain untouched.
+
 ## Three-phase Athena helmet visual correction (2026-11-25)
 
 Source mark: `assets/athena-helmet-mark.svg` is a transparent vector trace of the **white Athena badge** from the existing proAM Labs three-badge collection. Its geometry is unchanged between phases. It is a provisional derived mark pending visual review of the source artwork; no invented helmet or image-generation substitute is used in the site.
 
 The original Front Porch animation still drives the timing:
 
-- **Old World · Gold** — states 1–3: gold source-derived medallion centered on the archival seal.
-- **Transition · White** — states 4–5: exactly the same helmet becomes white.
-- **New Age · Teal** — state 6: helmet becomes teal.
-- **Arrival · Context** — states 7–8: cinematic emblem gives way to a smaller teal helmet aligned at the top-right of the context panel, subordinate to the proAM Labs identity.
+- **Old World · Gold** — states 1–3: gold helmet stands separately at the upper-right; the original central seal stays unobscured.
+- **Transition · White** — states 4–5: the same upper-right helmet becomes white.
+- **New Age · Teal** — from state 6 onward, the same helmet becomes teal.
+- **Arrival · Context** — states 7–8: the teal helmet remains discreetly in its established upper-right position; no second icon is added over the interface.
 
 The initial source preview was defective because a data-URL image displayed as a broken icon and an opaque blurred glass panel covered the animated architecture. The new v0.2 visual fix removes that image, delays the panel until state 8, removes the large blur filter, and reduces mobile layout dead space. The original `front-porch-v1-0/` is untouched.
 
