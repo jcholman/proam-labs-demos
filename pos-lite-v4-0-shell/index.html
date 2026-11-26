@@ -10,7 +10,7 @@
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font:15px/1.5 system-ui,-apple-system,sans-serif;color:var(--txt);background:var(--bg)}
 body{background:radial-gradient(ellipse at 50% -10%,#124154,transparent 48%),var(--bg)}
 header{padding:14px 16px;border-bottom:1px solid var(--line);background:#081925}
-.head{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px}.head img{width:46px;height:46px;object-fit:contain}.head .brand{flex:1;min-width:0}.head strong{display:block;font-size:1.1rem}.head small{color:var(--muted);font-size:.76rem}.badge{padding:5px 8px;border:1px solid #8a7351;border-radius:10px;font-size:.68rem;color:var(--gold);white-space:nowrap}
+.head{max-width:1100px;margin:auto;display:flex;align-items:center;gap:12px}.head img{width:46px;height:46px;object-fit:cover;border-radius:50%;clip-path:circle(47% at 50% 50%);background:transparent;flex-shrink:0}.head .brand{flex:1;min-width:0}.head strong{display:block;font-size:1.1rem}.head small{color:var(--muted);font-size:.76rem}.badge{padding:5px 8px;border:1px solid #8a7351;border-radius:10px;font-size:.68rem;color:var(--gold);white-space:nowrap}
 main{max-width:1100px;margin:auto;padding:20px 15px 80px}.intro h1{font-size:clamp(1.45rem,3.5vw,2.1rem);margin:3px 0}.intro p{margin:5px 0 13px;color:var(--muted)}
 .eyebrow{font-size:.7rem;letter-spacing:.12em;font-weight:750;color:var(--teal);text-transform:uppercase}
 .card{background:linear-gradient(148deg,#0f2d3d,#081b28);border:1px solid var(--line);border-radius:15px;padding:16px;margin-top:15px;min-width:0}
@@ -37,7 +37,7 @@ footer{max-width:1100px;margin:auto;padding:0 15px 24px;color:var(--muted);font-
 @media(max-width:760px){.grid{grid-template-columns:1fr}}
 @media(max-width:560px){main{padding:12px 10px 66px}.card{padding:12px}.head img{width:39px;height:39px}.head strong{font-size:.93rem}.head small{font-size:.67rem}.badge{font-size:.59rem}.modes,.results{grid-template-columns:1fr}.mode{gap:4px}}
 </style></head><body>
-<header><div class="head"><img alt="proAM Labs logo" src="../showcase/assets/proam-logo.png"><div class="brand"><strong>proAM Labs · POS-Lite</strong><small>v4.0_shell · Intent &amp; Comparison Workspace</small></div><span class="badge">CANDIDATE · NOT QUALIFIED</span></div></header>
+<header><div class="head"><img alt="proAM Labs emblem (circular presentation)" src="../showcase/assets/proam-logo.png"><div class="brand"><strong>proAM Labs · POS-Lite</strong><small>v4.0_shell · Intent &amp; Comparison Workspace</small></div><span class="badge">CANDIDATE · NOT QUALIFIED</span></div></header>
 <main>
 <div class="intro"><div class="eyebrow">Observe · Orient · Compare · Preserve</div><h1>What are we going to do, now?</h1><p>Begin where you are. Record an observation, preserve its revisions, and inspect the future Standard / Athena comparison without leaving POS-Lite.</p></div>
 <div class="notice" role="status" id="readiness">Shell available. Model execution and Athena contract binding are NOT CONNECTED. No model calls, external sharing, or Thinking Graph writes occur.</div>

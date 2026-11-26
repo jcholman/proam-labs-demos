@@ -26,6 +26,10 @@ Athena Front Porch (same GitHub Pages origin)
               └── Preview AT-01 side-by-side UI [SYNTHETIC FIXTURE ONLY]
 ```
 
+## November 26: Logo display correction
+
+The same `showcase/assets/proam-logo.png` is used in POS-Lite v0.35 and this shell. The image is **opaque (not an alpha-transparent source)** and displays white square corners when rendered unmasked in v4.0_shell. POS-Lite v0.35 presents it in a circular frame. The v4.0_shell header now applies a centered CSS circular clip and transparent background to restore the established presentation without altering the original logo asset. The source PNG was not modified or replaced by an invented emblem. Human mobile approval remains pending.
+
 ## What actually works
 
 - User-triggered same-origin handoff through `sessionStorage`.
