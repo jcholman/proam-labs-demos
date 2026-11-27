@@ -1,0 +1,56 @@
+/* Stay Tuned · first embedded Signal Tuner, scoped to the Value-page hero. */
+.value-intro-tuner{display:grid;grid-template-columns:minmax(0,1.48fr) minmax(338px,.92fr);gap:34px;align-items:start}
+.value-intro-tuner>.value-intro-copy,.stay-tuned-column{min-width:0}
+.stay-tuned-column{align-self:start}
+.stay-tuned-column .tuner-overline{font-size:10px;letter-spacing:.19em;text-transform:uppercase;color:#94713d;font-weight:750}
+.stay-tuned-column h2{font:400 clamp(30px,3vw,39px)/1.08 Georgia,serif;letter-spacing:-.03em;margin:8px 0 8px;color:#112d3c}
+.stay-tuned-column .tuner-lede{font:17px/1.4 Georgia,serif;margin:0 0 6px;color:#112d3c}
+.stay-tuned-column .tuner-support{font-size:12px;line-height:1.5;color:#6d695f;margin:0 0 14px}
+.signal-tuner{--tuner-gold:#dfc188;--tuner-ink:#0b2838;position:relative;isolation:isolate;overflow:hidden;padding:17px 17px 16px;color:#f9f2e5;background:linear-gradient(140deg,#1c3d4b 0%,#0b2635 55%,#081e2b 100%);border:1px solid #a48452;border-radius:14px;box-shadow:0 15px 30px rgba(17,45,60,.12)}
+.signal-tuner:before{content:"";pointer-events:none;position:absolute;width:175px;height:175px;right:-75px;top:-80px;border:1px solid rgba(218,187,125,.2);border-radius:50%;box-shadow:0 0 0 27px rgba(218,187,125,.035),0 0 0 56px rgba(218,187,125,.023)}
+.signal-tuner .tuner-top{position:relative;display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:14px}
+.signal-tuner .tuner-brand{font:700 9px/1.4 system-ui,sans-serif;letter-spacing:.15em;text-transform:uppercase;color:#e8c991}
+.signal-tuner .tuner-status{display:flex;gap:7px;align-items:center;color:#bdcfd0;font:650 9px/1.3 ui-monospace,Consolas,monospace;text-transform:uppercase;white-space:nowrap}
+.signal-tuner .tuner-light{display:inline-block;width:7px;height:7px;border-radius:50%;background:#95c7a5;box-shadow:0 0 0 3px rgba(149,199,165,.12)}
+.signal-tuner .tuner-light.searching{background:#ddb571;box-shadow:0 0 0 3px rgba(221,181,113,.17)}
+.signal-tuner .tuner-display{position:relative;background:linear-gradient(180deg,#071e2b,#123443);border:1px solid #8c7857;border-radius:9px;padding:15px 13px 13px;box-shadow:0 3px 12px rgba(0,0,0,.22) inset}
+.signal-tuner .tuner-display-head{display:flex;justify-content:space-between;gap:8px;align-items:center;font:650 9px/1.4 ui-monospace,Consolas,monospace;letter-spacing:.1em;text-transform:uppercase;color:#b9c8c8}
+.signal-tuner .tuner-channel-number{color:#efd39a}
+.signal-tuner .tuner-now-title{font:400 21px/1.2 Georgia,serif;color:#fff9ed;margin:15px 0 5px;min-height:50px}
+.signal-tuner .tuner-now-note{font-size:11px;line-height:1.48;color:#c4d0d1;margin:0;min-height:33px}
+.signal-tuner .tuner-rule{position:relative;display:flex;align-items:center;height:45px;margin:15px 5px 2px}
+.signal-tuner .tuner-rail{position:absolute;inset:auto 0;height:2px;background:linear-gradient(90deg,#bfa375,#f0d7a8,#bfa375);box-shadow:0 0 5px rgba(211,173,102,.5)}
+.signal-tuner .tuner-ticks{position:absolute;inset:5px 0;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+.signal-tuner .tuner-ticks span{width:1px;height:7px;background:rgba(224,209,179,.42)}
+.signal-tuner .tuner-ticks span:nth-child(5n+1){height:17px;background:rgba(238,210,165,.78)}
+.signal-tuner #tuner-dial{position:relative;z-index:2;appearance:none;-webkit-appearance:none;width:100%;height:38px;background:transparent;cursor:ew-resize;touch-action:pan-y;margin:0}
+.signal-tuner #tuner-dial::-webkit-slider-runnable-track{height:2px;background:transparent}
+.signal-tuner #tuner-dial::-moz-range-track{height:2px;background:transparent}
+.signal-tuner #tuner-dial::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;margin-top:-15px;width:18px;height:31px;border:1px solid #f8dfac;border-radius:4px;background:linear-gradient(90deg,#c3a66a,#fff2cc 50%,#b49458);box-shadow:0 0 0 3px #071d28,0 0 13px rgba(244,217,158,.5)}
+.signal-tuner #tuner-dial::-moz-range-thumb{width:18px;height:31px;border:1px solid #f8dfac;border-radius:4px;background:linear-gradient(90deg,#c3a66a,#fff2cc 50%,#b49458)}
+.signal-tuner #tuner-dial:focus-visible{outline:2px solid #f8db98;outline-offset:3px;border-radius:5px}
+.signal-tuner .tuner-stations{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px}
+.signal-tuner .tuner-station{appearance:none;display:block;min-width:0;text-align:left;border:1px solid transparent;border-radius:6px;padding:7px 5px;background:transparent;color:#d7e0df;cursor:pointer;font:500 10px/1.3 system-ui,sans-serif}
+.signal-tuner .tuner-station:hover,.signal-tuner .tuner-station[aria-pressed=true]{color:#fff8e9;border-color:#a88b55;background:rgba(241,214,162,.07)}
+.signal-tuner .tuner-station .tuner-station-code{display:block;color:#d8b979;font:700 9px/1.5 ui-monospace,Consolas,monospace;letter-spacing:.08em;margin-bottom:3px}
+.signal-tuner .tuner-station:focus-visible,.signal-tuner button:focus-visible,.signal-tuner a:focus-visible{outline:2px solid #efd39a;outline-offset:2px}
+.signal-tuner .tuner-footer{display:flex;align-items:center;gap:9px;justify-content:space-between;flex-wrap:wrap;border-top:1px solid rgba(85,112,122,.6);margin-top:13px;padding-top:12px}
+.signal-tuner .tuner-sound{border:1px solid #b3955c;border-radius:100px;background:transparent;color:#e7d6b7;padding:6px 10px;font-size:10px;cursor:pointer}
+.signal-tuner .tuner-sound[aria-pressed=false]{color:#a9b7be;border-color:#67818c}
+.signal-tuner .tuner-helper{color:#adbdc5;font-size:10px}
+.signal-tuner .tuner-listen{appearance:none;width:100%;display:flex;justify-content:center;gap:10px;align-items:center;margin-top:11px;padding:11px 13px;color:#0d2937;border:0;border-radius:999px;background:#dfc188;font:700 15px/1.25 Georgia,serif;cursor:pointer}
+.signal-tuner .tuner-listen:hover{background:#f5deb0}
+.signal-tuner .tuner-listen:disabled{opacity:.4;cursor:not-allowed}
+.signal-tuner [hidden]{display:none!important}
+.signal-tuner .tuner-player{width:100%;min-width:0;margin-top:12px;border:1px solid #decbaa;border-radius:11px;background:white;color:#112d3c;overflow:hidden;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+.signal-tuner .tuner-player-head{display:grid;grid-template-columns:40px minmax(0,1fr) 34px;align-items:center;gap:8px;padding:10px 9px 7px}
+.signal-tuner .tuner-player-art{width:40px;height:40px;display:grid;place-items:center;border-radius:8px;background:#f5eedf}
+.signal-tuner .tuner-player-name{font:700 13px/1.3 Georgia,serif;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+.signal-tuner .tuner-close{appearance:none;display:grid;place-items:center;background:transparent;border:0;border-radius:5px;color:#112d3c;font:400 25px/1 system-ui;cursor:pointer;width:34px;height:34px}
+.signal-tuner .tuner-close:hover{background:#f2e9d8}
+.signal-tuner iframe{display:block;width:100%;height:168px;background:#fff;border:0}
+.signal-tuner .tuner-player-details{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:8px 11px;background:#f9f6ee;color:#5e6665;font-size:10px}
+.signal-tuner .tuner-player-details a{color:#554625}
+@media(max-width:950px){.value-intro-tuner{grid-template-columns:1fr}.stay-tuned-column{width:100%;max-width:520px}.signal-tuner .tuner-now-title{min-height:0}}
+@media(max-width:480px){.signal-tuner{padding:15px 12px}.signal-tuner .tuner-display{padding:13px 9px}.signal-tuner .tuner-station{font-size:9px;padding:7px 3px}.signal-tuner .tuner-brand,.signal-tuner .tuner-status{font-size:8px}.signal-tuner iframe{height:158px}}
+@media(prefers-reduced-motion:reduce){.signal-tuner *{transition:none!important}}
