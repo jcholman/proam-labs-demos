@@ -125,6 +125,31 @@
     </section>
     <p class="listen-meta">Can't see the player? <a href="https://share.descript.com/view/AhV3svZ7pmH" target="_blank" rel="noopener noreferrer">Open the private Descript listening page in a new tab ↗</a>. Playback and access depend on Descript's private sharing permissions.</p>
 
+    <section class="listen-additional" aria-labelledby="undecided-users-v1-title">
+      <div class="player-panel" aria-label="Why AI Must Respect Undecided Users edit v1 listening preview">
+        <span class="player-label">New listening · Audio overview · edit v1</span>
+        <h2 id="undecided-users-v1-title">Why AI Must Respect Undecided Users</h2>
+        <p>A conversation about the difference between being undecided and being indecisive—and why trustworthy AI must respect the choice to wait.</p>
+        <button id="listen-in-undecided-v1" class="waveform-launch" type="button" aria-controls="compact-audio-undecided-v1" aria-expanded="false" aria-label="Listen In — open the Undecided Users compact audio player">
+          <span class="waveform" aria-hidden="true"><span style="--h:20%"></span><span style="--h:42%"></span><span style="--h:70%"></span><span style="--h:31%"></span><span style="--h:90%"></span><span style="--h:52%"></span><span style="--h:22%"></span><span style="--h:76%"></span><span style="--h:49%"></span><span style="--h:96%"></span><span style="--h:38%"></span><span style="--h:69%"></span><span style="--h:27%"></span><span style="--h:87%"></span><span style="--h:47%"></span><span style="--h:73%"></span><span style="--h:20%"></span><span style="--h:55%"></span><span style="--h:93%"></span><span style="--h:34%"></span></span>
+          <span class="waveform-cta"><span class="play-symbol" aria-hidden="true">▶</span> Listen In</span>
+        </button>
+        <div id="compact-audio-undecided-v1" class="compact-audio" hidden role="region" aria-label="Embedded Why AI Must Respect Undecided Users edit v1 audio">
+          <div class="compact-audio-top">
+            <span class="compact-audio-art" aria-hidden="true">
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 12V18M7 8V22M11 5V25M15 10V20M19 3V27M23 9V21M27 12V18" stroke="#a68648" stroke-width="2.7" stroke-linecap="round"/>
+              </svg>
+            </span>
+            <div class="compact-audio-name" title="Why AI Must Respect Undecided Users — edit v1">Why AI Must Respect Undecided Users · edit v1</div>
+            <button class="compact-audio-close" type="button" aria-label="Close Undecided Users audio player" title="Close audio player">&times;</button>
+          </div>
+          <iframe title="Why AI Must Respect Undecided Users edit v1 — Descript audio player" data-src="https://share.descript.com/embed/bh4rw9XWpwD" allow="autoplay; encrypted-media" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        </div>
+        <div class="player-time"><span>Audio · Descript · edit v1</span><span>25:03</span></div>
+      </div>
+      <p class="listen-meta">For personal listening review. <a href="https://share.descript.com/view/bh4rw9XWpwD" target="_blank" rel="noopener noreferrer">Open the unlisted Descript listening page ↗</a>.</p>
+    </section>
     <section class="listen-additional" aria-labelledby="evidence-v3-title">
       <div class="player-panel" aria-label="Evidence Ledgers edit v3 listening preview">
         <span class="player-label">Personal listening test · Audio overview · edit v3</span>
@@ -178,7 +203,7 @@
 
   <script>
     (() => {
-      // Both audio cards share one small, accessible listener; only one plays at a time.
+      // Audio cards share one small, accessible listener; only one plays at a time.
       const cards = [...document.querySelectorAll('.player-panel')].map(panel => ({
         launch: panel.querySelector('.waveform-launch'),
         player: panel.querySelector('.compact-audio'),
